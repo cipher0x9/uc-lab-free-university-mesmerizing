@@ -11,19 +11,19 @@ Same author · same safety bar · two domains · one hub.
 | | **🌿 UC Lab Free University** | **🧠 AI Lab Free University** |
 |--|-------------------------------|-------------------------------|
 | **Who** | Voice / UC / CC engineers | AI learners & builders |
-| **Repo** | https://github.com/cipher0x9/uc-lab-free-university | https://github.com/cipher0x9/ai-lab-free-university |
-| **Main zip ⭐** | [v17-UNIVERSITY.html.zip](https://github.com/cipher0x9/uc-lab-free-university/releases/download/v17.0-free/v17-UNIVERSITY.html.zip) | [v4-PORTFOLIO.html.zip](https://github.com/cipher0x9/ai-lab-free-university/releases/download/v4.0-free/v4-PORTFOLIO.html.zip) |
+| **Repo** | https://github.com/CYPHER0X9/uc-lab-free-university | https://github.com/CYPHER0X9/ai-lab-free-university |
+| **Main zip ⭐** | [v17-UNIVERSITY.html.zip](https://github.com/CYPHER0X9/uc-lab-free-university/releases/download/v17.0-free/v17-UNIVERSITY.html.zip) | [v4-PORTFOLIO.html.zip](https://github.com/CYPHER0X9/ai-lab-free-university/releases/download/v4.0-free/v4-PORTFOLIO.html.zip) |
 | **Open file** | `university/v17-UNIVERSITY.html` | `university/v4-PORTFOLIO.html` |
 | **Grammar** | **LICC** — Leg · ID · Counter · Capture | **RTMA** — Run · Trace · Metric · Artifact |
 | **Color** | Teal `#0F9B8E` | Indigo `#6366F1` |
 | **Themes** | Warm · Night · Cobalt · Forest · Aurora · Sunset | **Aurora Dream** default + portfolio themes |
-| **How-to** | [HOW-TO-GET.md](./HOW-TO-GET.md) | [HOW-TO-GET.md](https://github.com/cipher0x9/ai-lab-free-university/blob/main/HOW-TO-GET.md) |
+| **How-to** | [HOW-TO-GET.md](./HOW-TO-GET.md) | [HOW-TO-GET.md](https://github.com/CYPHER0X9/ai-lab-free-university/blob/main/HOW-TO-GET.md) |
 
 ## Clone both
 
 ```bash
-git clone https://github.com/cipher0x9/uc-lab-free-university.git
-git clone https://github.com/cipher0x9/ai-lab-free-university.git
+git clone https://github.com/CYPHER0X9/uc-lab-free-university.git
+git clone https://github.com/CYPHER0X9/ai-lab-free-university.git
 open uc-lab-free-university/university/v17-UNIVERSITY.html
 open ai-lab-free-university/university/v4-PORTFOLIO.html
 ```
@@ -34,7 +34,7 @@ open ai-lab-free-university/university/v4-PORTFOLIO.html
 2. 🌿 UC Free University — GitHub  
 3. 🧠 AI Free University — Download  
 4. 🧠 AI Free University — GitHub  
-5. 🐵 Profile — https://github.com/cipher0x9  
+5. 🐵 Profile — https://github.com/CYPHER0X9  
 
 Hub: **https://linktr.ee/cyphermonkey**
 

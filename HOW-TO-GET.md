@@ -20,23 +20,23 @@
 ## A) Download zip (easiest) ⭐
 
 1. Open:  
-   **https://github.com/cipher0x9/uc-lab-free-university/releases/tag/v17.0-free**
+   **https://github.com/CYPHER0X9/uc-lab-free-university/releases/tag/v17.0-free**
 2. Download **`v17-UNIVERSITY.html.zip`**
 3. Unzip  
 4. Open **`v17-UNIVERSITY.html`** in Chrome / Safari / Edge / Firefox  
 
 Direct file:  
-https://github.com/cipher0x9/uc-lab-free-university/releases/download/v17.0-free/v17-UNIVERSITY.html.zip
+https://github.com/CYPHER0X9/uc-lab-free-university/releases/download/v17.0-free/v17-UNIVERSITY.html.zip
 
 ### Optional prompt labs zip
 
-https://github.com/cipher0x9/uc-lab-free-university/releases/download/v17.0-free/PROMPTS-THREE-PROJECTS.zip
+https://github.com/CYPHER0X9/uc-lab-free-university/releases/download/v17.0-free/PROMPTS-THREE-PROJECTS.zip
 
 ---
 
 ## B) Download full repo as ZIP (no Git)
 
-1. Open: **https://github.com/cipher0x9/uc-lab-free-university**  
+1. Open: **https://github.com/CYPHER0X9/uc-lab-free-university**  
 2. Green **Code** → **Download ZIP**  
 3. Unzip → open `university/v17-UNIVERSITY.html`  
 
@@ -47,7 +47,7 @@ Safe public educational tree only.
 ## C) Clone with Git
 
 ```bash
-git clone https://github.com/cipher0x9/uc-lab-free-university.git
+git clone https://github.com/CYPHER0X9/uc-lab-free-university.git
 cd uc-lab-free-university
 open university/v17-UNIVERSITY.html
 ```
@@ -77,9 +77,9 @@ Recommended buttons:
 
 | | |
 |--|--|
-| Repo | https://github.com/cipher0x9/ai-lab-free-university |
-| Main zip | https://github.com/cipher0x9/ai-lab-free-university/releases/download/v4.0-free/v4-PORTFOLIO.html.zip |
-| How-to | https://github.com/cipher0x9/ai-lab-free-university/blob/main/HOW-TO-GET.md |
+| Repo | https://github.com/CYPHER0X9/ai-lab-free-university |
+| Main zip | https://github.com/CYPHER0X9/ai-lab-free-university/releases/download/v4.0-free/v4-PORTFOLIO.html.zip |
+| How-to | https://github.com/CYPHER0X9/ai-lab-free-university/blob/main/HOW-TO-GET.md |
 
 ---
 
@@ -122,7 +122,7 @@ If you keep large files on your Mac Mini for personal study, that is fine — ju
 ## Support
 
 - GitHub Issues (kind educational questions)  
-- Profile: https://github.com/cipher0x9  
+- Profile: https://github.com/CYPHER0X9  
 - Linktree: https://linktr.ee/cyphermonkey  
 
 Share freely for learning. Lab safely.
