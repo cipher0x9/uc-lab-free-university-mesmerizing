@@ -1,0 +1,12 @@
+.DS_Store
+**/.DS_Store
+*.log
+.env
+.env.*
+secrets/
+**/node_modules/
+# never commit huge local archives
+university/v16-TRANSCEND.html
+university/full-archive-optional/
+*.html.gz
+!releases/*.zip

@@ -1,0 +1,8 @@
+📦 Free pack (browser-friendly):
+UC-LAB-FREE-SHARE → zips/v17-UNIVERSITY.html.zip
+
+Or open:
+university/v17-UNIVERSITY.html
+
+Includes multi-vendor UC/CC curriculum + prompt labs for languages, AI/Mac Mini, and remote builder life.
+Share freely for learning. No warranty — lab safely, pin vendor docs for production.
