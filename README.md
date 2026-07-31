@@ -106,7 +106,7 @@ open university/v17-UNIVERSITY.html
 | **Campus themes** | Warm · Night · Cobalt · Forest · **Aurora** · Sunset |
 | **Sibling** | 🧠 AI Lab — indigo `#6366F1` · grammar **RTMA** |
 | **Hub** | [linktr.ee/cyphermonkey](https://linktr.ee/cyphermonkey) |
-| **Author** | [@CYPHER0X9](https://github.com/cipher0x9) |
+| **Author** | **CYPHER0X9** · [@cipher0x9](https://github.com/cipher0x9) |
 
 ---
 
@@ -126,6 +126,13 @@ No production secrets, customer data, or private dial plans in this pack.
 Lab safely. Pin current vendor docs for production work.
 
 [SECURITY.md](./SECURITY.md) · [CONTRIBUTING.md](./CONTRIBUTING.md) · [LICENSE](./LICENSE)
+
+---
+
+## 🏷️ Brand (canonical)
+
+**Display:** CYPHER0X9 · **GitHub login/links:** [@cipher0x9](https://github.com/cipher0x9) only  
+Full rule sheet: **[BRAND.md](./BRAND.md)**
 
 ---
 
