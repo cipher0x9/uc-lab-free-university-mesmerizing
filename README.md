@@ -1,32 +1,63 @@
-# 🌿 UC Lab Free University
+<p align="center">
+  <img src="https://img.shields.io/badge/🌿_UC_Lab-Free_University-0F9B8E?style=for-the-badge&labelColor=0B1220" alt="UC Lab Free University"/>
+</p>
 
-**Free multi-vendor Unified Communications & Contact Center learning pack.**
+<h1 align="center">🌿 UC Lab Free University</h1>
 
-Built for engineers who spent years in Cisco voice (or any single stack) and still wanted mentorship-style structure, multi-vendor clarity, and proof habits that work at 2 a.m.
+<p align="center">
+  <strong>Free multi-vendor Unified Communications & Contact Center campus</strong><br/>
+  Offline · browser-friendly · mentorship energy · not just another cert pack
+</p>
 
-> If this helps **even one person**, it was worth sharing.
+<p align="center">
+  <a href="https://github.com/cipher0x9/uc-lab-free-university/releases/download/v17.0-free/v17-UNIVERSITY.html.zip"><img src="https://img.shields.io/badge/⬇_Download-v17_HTML_zip-0F9B8E?style=for-the-badge&labelColor=0B1220" alt="Download"/></a>
+  <a href="https://github.com/cipher0x9/ai-lab-free-university"><img src="https://img.shields.io/badge/🧠_Sibling-AI_Lab_Free-6366F1?style=for-the-badge&labelColor=0B1220" alt="AI Lab"/></a>
+  <a href="https://linktr.ee/cyphermonkey"><img src="https://img.shields.io/badge/🔗_Hub-Linktree-E8820C?style=for-the-badge&labelColor=0B1220" alt="Linktree"/></a>
+  <a href="./LICENSE"><img src="https://img.shields.io/badge/License-MIT-159947?style=for-the-badge&labelColor=0B1220" alt="MIT"/></a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Themes-Warm_·_Night_·_Cobalt_·_Forest_·_Aurora_·_Sunset-8B5CF6?style=flat-square&labelColor=0B1220" alt="Themes"/>
+  <img src="https://img.shields.io/badge/Proof-LICC_·_Leg_·_ID_·_Counter_·_Capture-F59E0B?style=flat-square&labelColor=0B1220" alt="LICC"/>
+  <img src="https://img.shields.io/badge/Status-Educational_free_share-22C55E?style=flat-square&labelColor=0B1220" alt="Edu"/>
+</p>
 
 ---
 
-## How to get it (safe · free · clear)
+## ✨ Why this exists
 
-**Full guide:** **[HOW-TO-GET.md](./HOW-TO-GET.md)** · **Sibling map:** **[SIBLINGS.md](./SIBLINGS.md)** · **Linktree:** https://linktr.ee/cyphermonkey
+Almost **10 years in Cisco voice / collaboration**.  
+Certs stacked. Screens known. Still missing what actually matters at **2 a.m.**:
 
-### Option A — Download zip (easiest) ⭐
+- a **path**, not only product clicks  
+- **multi-vendor** clarity (jobs never hire one logo)  
+- **proof habits** — not “it looked fine on my phone”
 
-**→ [Download v17-UNIVERSITY.html.zip](https://github.com/cipher0x9/uc-lab-free-university/releases/download/v17.0-free/v17-UNIVERSITY.html.zip)**
+So I built the free UC / Contact Center university I wish someone had handed me earlier.
 
-1. Download the zip  
+> If it helps **even one person** feel less alone in this craft — worth shipping.
+
+---
+
+## 🚀 Get it in 60 seconds (no Git needed)
+
+### ⭐ Option A — Download zip (recommended)
+
+**→ [Download `v17-UNIVERSITY.html.zip`](https://github.com/cipher0x9/uc-lab-free-university/releases/download/v17.0-free/v17-UNIVERSITY.html.zip)**
+
+1. Download  
 2. Unzip  
 3. Open **`v17-UNIVERSITY.html`** in Chrome / Safari / Edge / Firefox  
 
-Also: [Release page](https://github.com/cipher0x9/uc-lab-free-university/releases/tag/v17.0-free)
+**Works offline. No account. No install.**
 
-### Option B — Download whole repo (no Git)
+Also: [Release page](https://github.com/cipher0x9/uc-lab-free-university/releases/tag/v17.0-free) · optional [prompt labs zip](https://github.com/cipher0x9/uc-lab-free-university/releases/download/v17.0-free/PROMPTS-THREE-PROJECTS.zip)
 
-GitHub → green **Code** → **Download ZIP** → open `university/v17-UNIVERSITY.html`.
+### Option B — Whole repo as ZIP
 
-### Option C — Clone
+GitHub → green **Code** → **Download ZIP** → open `university/v17-UNIVERSITY.html`
+
+### Option C — Clone (builders)
 
 ```bash
 git clone https://github.com/cipher0x9/uc-lab-free-university.git
@@ -34,65 +65,85 @@ cd uc-lab-free-university
 open university/v17-UNIVERSITY.html
 ```
 
-### About large / multi-hundred-MB files
+### Full instructions
 
-**Public free default is browser-friendly** (~3.7 MB university HTML).  
-Huge local archives (if you keep any for personal power-user study) are **optional** and **not required** for free learners — and are **not** the default GitHub download path.  
-See [HOW-TO-GET.md](./HOW-TO-GET.md#about-large--multi-hundred-mb-files-honest).
-
-### Prompt labs zip
-
-**→ [Download PROMPTS-THREE-PROJECTS.zip](https://github.com/cipher0x9/uc-lab-free-university/releases/download/v17.0-free/PROMPTS-THREE-PROJECTS.zip)**
-
-Languages · AI/ML Mac Mini lab seeds · Nature-remote agentic life prompts.
-
-Full list: **[DOWNLOADS.md](./DOWNLOADS.md)**
+**[HOW-TO-GET.md](./HOW-TO-GET.md)** · **[START-HERE.md](./START-HERE.md)** · **[DOWNLOADS.md](./DOWNLOADS.md)**
 
 ---
 
-## 🔗 Links
+## 🧭 What’s inside
+
+| 🔮 Symbol | Path | What you get |
+|:--:|------|--------------|
+| 🏛️ | `university/v17-UNIVERSITY.html` | **Main campus** — ~240 curriculum sections, search, themes |
+| 📦 | `releases/` | Same idea as GitHub Release assets |
+| 🗣️ | `prompts/01-languages-mastery/` | Polyglot / language mastery prompt labs |
+| 🤖 | `prompts/02-ai-ml-future-lab/` | AI + Mac Mini lab seeds (bridge to AI pack) |
+| 🌿 | `prompts/03-agentic-nature-remote/` | Nature-remote / one-person agency prompts |
+| 🐒 | `hermes/` | Hermes wiring notes (future enrich) |
+| 📣 | `share-post/` | Gentle LinkedIn drafts |
+| 🧩 | [SIBLINGS.md](./SIBLINGS.md) | Pair with **AI Lab Free University** |
+
+### Teaching grammar — **LICC** 🔍
+
+| Letter | Meaning | Interview line |
+|:--:|--|--|
+| **L** | **Leg** | Which call leg failed? |
+| **I** | **ID** | Which Call-ID / correlation? |
+| **C** | **Counter** | What counter moved? |
+| **C** | **Capture** | What prove-it artifact? |
+
+> An SBC is not magic — it is **policy + interop + media anchor** at a trust boundary.
+
+---
+
+## 🎨 Themes & brand
+
+| | |
+|--|--|
+| **Emoji** | 🌿 |
+| **Color** | Teal `#0F9B8E` on deep night `#0B1220` |
+| **Campus themes** | Warm · Night · Cobalt · Forest · **Aurora** · Sunset |
+| **Sibling** | 🧠 AI Lab — indigo `#6366F1` · grammar **RTMA** |
+| **Hub** | [linktr.ee/cyphermonkey](https://linktr.ee/cyphermonkey) |
+| **Author** | [@cipher0x9](https://github.com/cipher0x9) · **CYPHER0X9** |
+
+---
+
+## 🧠 Who it’s for
+
+- Cisco / collab engineers who want **multi-vendor braid**  
+- Career switchers tired of fragmented training  
+- Anyone who can configure screens but wants **path + proof**  
+- Voice people crossing into **AI + agents** (use the sibling pack)
+
+---
+
+## ⚠️ Safety
+
+Educational only — **no warranty**.  
+No production secrets, customer data, or private dial plans in this pack.  
+Lab safely. Pin current vendor docs for production work.
+
+[SECURITY.md](./SECURITY.md) · [CONTRIBUTING.md](./CONTRIBUTING.md) · [LICENSE](./LICENSE)
+
+---
+
+## 🔗 Share / copy links
 
 | | |
 |--|--|
 | **This repo** | https://github.com/cipher0x9/uc-lab-free-university |
-| **Main download zip** | https://github.com/cipher0x9/uc-lab-free-university/releases/download/v17.0-free/v17-UNIVERSITY.html.zip |
-| **Release page** | https://github.com/cipher0x9/uc-lab-free-university/releases/tag/v17.0-free |
-| **Sibling AI free pack** | https://github.com/cipher0x9/ai-lab-free-university |
-| **AI main download zip** | https://github.com/cipher0x9/ai-lab-free-university/releases/download/v4.0-free/v4-PORTFOLIO.html.zip |
+| **Main zip ⭐** | https://github.com/cipher0x9/uc-lab-free-university/releases/download/v17.0-free/v17-UNIVERSITY.html.zip |
+| **Release** | https://github.com/cipher0x9/uc-lab-free-university/releases/tag/v17.0-free |
+| **Sibling AI Lab** | https://github.com/cipher0x9/ai-lab-free-university |
+| **AI main zip** | https://github.com/cipher0x9/ai-lab-free-university/releases/download/v4.0-free/v4-PORTFOLIO.html.zip |
 | **Profile** | https://github.com/cipher0x9 |
-| **Linktree (all free links)** | https://linktr.ee/cyphermonkey |
-| **How to download / clone** | [HOW-TO-GET.md](./HOW-TO-GET.md) |
+| **Linktree** | https://linktr.ee/cyphermonkey |
 
 ---
 
-## 📚 What’s in the repo
-
-| Path | Contents |
-|------|----------|
-| `university/v17-UNIVERSITY.html` | **240 curriculum sections** — offline university |
-| `releases/*.zip` | Ready downloads (same idea as GitHub Release assets) |
-| `prompts/` | Language · AI lab · nature-remote prompt projects |
-| `hermes/` | Future Hermes auto-enrich notes |
-| `share-post/` | LinkedIn draft text |
-| `HOW-TO-GET.md` | Download · clone · safety |
-| `SIBLINGS.md` | Pair with AI free university |
-
----
-
-## 🧭 Study tips
-
-Search topics (SIP, Teams, CUBE, migrations…).  
-Practice **Leg · ID · Counter · Capture**.  
-Themes: Warm · Night · Cobalt · Forest · Aurora · Sunset.
-
----
-
-## ⚠️ Safety / note
-
-Educational only — **no warranty**.  
-Pin current vendor docs for production. Lab safely. Share freely for learning.  
-No production secrets or customer data in this free pack.
-
-## License
-
-MIT · **[@cipher0x9](https://github.com/cipher0x9)**
+<p align="center">
+  <strong>Build calmly · Prove carefully · Share freely</strong><br/>
+  <em>MIT · CYPHER0X9 / cipher0x9 · Free for learning</em>
+</p>

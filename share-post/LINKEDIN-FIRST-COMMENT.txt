@@ -1,14 +1,15 @@
-📦 Free UC Lab University (download anytime):
+Direct downloads (no Git):
 
-https://github.com/cipher0x9/uc-lab-free-university
-
-Direct zip:
+🌿 UC campus zip
 https://github.com/cipher0x9/uc-lab-free-university/releases/download/v17.0-free/v17-UNIVERSITY.html.zip
 
-Release page:
-https://github.com/cipher0x9/uc-lab-free-university/releases/tag/v17.0-free
+🧠 AI campus zip (Aurora Portfolio)
+https://github.com/cipher0x9/ai-lab-free-university/releases/download/v4.0-free/v4-PORTFOLIO.html.zip
 
-Linktree:
-https://linktr.ee/cyphermonkey
+Repos
+🌿 https://github.com/cipher0x9/uc-lab-free-university
+🧠 https://github.com/cipher0x9/ai-lab-free-university
 
-Unzip → open v17-UNIVERSITY.html → learn free.
+Hub: https://linktr.ee/cyphermonkey
+
+Unzip → open the HTML → learn offline.

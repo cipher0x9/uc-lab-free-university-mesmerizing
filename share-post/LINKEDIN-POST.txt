@@ -5,8 +5,6 @@ Job posts that asked for “everything.”
 Training that taught product screens…
 but not the quiet things that actually save a call at 2 a.m.
 
-And for a long time, I carried a quiet gap:
-
 I didn’t need another badge.
 I needed mentorship.
 I needed multi-vendor clarity.
@@ -17,36 +15,28 @@ Here’s the evidence.
 Here’s how you prove it —
 not just how you configure it.”
 
-Because real enterprise voice isn’t one logo.
-
-It’s CUCM and CUBE… and also Teams, Webex, Zoom, Contact Center platforms, SBCs, carriers, certificates, QoS, dual-run migrations, recording, emergency calling, identity, and the human on the other end of the line.
-
-Access was uneven.
-Jobs wanted “senior” before anyone offered a map.
-Training was expensive, fragmented, and often single-vendor.
-I felt that. Deeply.
-
-So I built something I wish I had years ago —
-
-a free UC / Contact Center university pack
+So I built a free UC / Contact Center university pack
 I can share with anyone who needs it.
 
-No hype.
-No gatekeeping.
-Just structured learning:
-call path thinking, failure labs, multi-vendor braid, migrations, evidence habits (Leg · ID · Counter · Capture), and room to grow into AI + voice futures.
+🌿 UC Lab Free University
+• Offline browser campus (~240 sections)
+• Themes: Warm · Night · Cobalt · Forest · Aurora · Sunset
+• Proof grammar: LICC — Leg · ID · Counter · Capture
+• Prompt labs + multi-vendor braid energy
+
+And the sibling for AI learners:
+
+🧠 AI Lab Free University
+• Aurora Dream campus · 425 lessons · 1000+ links
+• Proof grammar: RTMA — Run · Trace · Metric · Artifact
+• Optional Python labs · no API keys to start
+
+No hype. No gatekeeping.
+Educational · MIT · free · lab safely.
 
 If it helps even one person feel less alone in this craft —
 the late nights were worth it.
 
-I’m happy to share.
-I’m happy to contribute more.
-If you’re early, mid, or 10 years in and still hungry for real understanding — this is for you.
+Links in the first comment.
 
-Open. Learn. Share freely.
-If it helps you, pass it to one more engineer.
-
-🌿 UC Lab Free Share
-(Link in comments / first comment)
-
-#UnifiedCommunications #Cisco #Collaboration #ContactCenter #VoiceEngineering #SBC #TeamsPhone #Webex #CareerGrowth #Mentorship #ContinuousLearning #FreeLearning
+#UnifiedCommunications #Cisco #Collaboration #ContactCenter #VoiceEngineering #AI #OpenSource #FreeLearning #Mentorship #LearningInPublic
