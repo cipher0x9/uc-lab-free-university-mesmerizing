@@ -1,37 +1,63 @@
-# Downloads
+# Downloads & clone (UC Lab Free University)
 
-Everything here is **free to download** for learning.
+**Linktree hub:** https://linktr.ee/cyphermonkey  
+**How-to (full):** [HOW-TO-GET.md](./HOW-TO-GET.md) · **Siblings:** [SIBLINGS.md](./SIBLINGS.md)
 
-## University HTML (main pack)
+Everything here is **free** for learning. Educational only — no warranty.
 
-| File | Link |
+---
+
+## Recommended (almost everyone)
+
+| What | Link |
 |------|------|
-| **Zip (recommended)** | https://github.com/cipher0x9/uc-lab-free-university/releases/download/v17.0-free/v17-UNIVERSITY.html.zip |
+| **Main zip ⭐** | https://github.com/cipher0x9/uc-lab-free-university/releases/download/v17.0-free/v17-UNIVERSITY.html.zip |
 | Release page | https://github.com/cipher0x9/uc-lab-free-university/releases/tag/v17.0-free |
-| Also in repo | [`releases/v17-UNIVERSITY.html.zip`](./releases/v17-UNIVERSITY.html.zip) |
-| Unzipped HTML in repo | [`university/v17-UNIVERSITY.html`](./university/v17-UNIVERSITY.html) |
+| Unzipped HTML | [`university/v17-UNIVERSITY.html`](./university/v17-UNIVERSITY.html) |
 
-**How to use:** download zip → unzip → double-click `v17-UNIVERSITY.html` → open in Chrome/Safari/Edge/Firefox.
+**Use:** download → unzip → open `v17-UNIVERSITY.html`
 
-## Prompt labs zip
+### Prompt labs zip
 
-| File | Link |
+https://github.com/cipher0x9/uc-lab-free-university/releases/download/v17.0-free/PROMPTS-THREE-PROJECTS.zip
+
+---
+
+## Clone / copy whole repo
+
+### Git clone
+
+```bash
+git clone https://github.com/cipher0x9/uc-lab-free-university.git
+cd uc-lab-free-university
+open university/v17-UNIVERSITY.html
+```
+
+### No Git (GitHub UI)
+
+Repo → green **Code** → **Download ZIP**.
+
+### Safe note
+
+Public free pack is **browser-friendly**.  
+Multi-hundred-MB personal archives (if any on your lab machine) are **not** the public default path — friends should use the Release zip above.
+
+---
+
+## Sibling AI pack downloads
+
+| What | Link |
 |------|------|
-| **Prompts zip** | https://github.com/cipher0x9/uc-lab-free-university/releases/download/v17.0-free/PROMPTS-THREE-PROJECTS.zip |
-| Also in repo | [`releases/PROMPTS-THREE-PROJECTS.zip`](./releases/PROMPTS-THREE-PROJECTS.zip) |
+| AI repo | https://github.com/cipher0x9/ai-lab-free-university |
+| AI main zip ⭐ | https://github.com/cipher0x9/ai-lab-free-university/releases/download/v4.0-free/v4-PORTFOLIO.html.zip |
+| AI how-to | https://github.com/cipher0x9/ai-lab-free-university/blob/main/HOW-TO-GET.md |
 
-## Full repository
+---
 
-| | |
-|--|--|
-| Clone | `git clone https://github.com/cipher0x9/uc-lab-free-university.git` |
-| Browse | https://github.com/cipher0x9/uc-lab-free-university |
+## Support
 
-## Other links
+- GitHub Issues (kind educational questions)  
+- Profile: https://github.com/cipher0x9  
+- Linktree: https://linktr.ee/cyphermonkey  
 
-| | |
-|--|--|
-| Author profile | https://github.com/cipher0x9 |
-| Linktree | https://linktr.ee/cyphermonkey |
-
-Educational only — no warranty. Lab safely. Pin vendor docs for production.
+Lab safely. Share freely for learning.
