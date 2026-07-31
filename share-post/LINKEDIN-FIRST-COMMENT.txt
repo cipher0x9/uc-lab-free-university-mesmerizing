@@ -1,8 +1,14 @@
-📦 Free pack (browser-friendly):
-UC-LAB-FREE-SHARE → zips/v17-UNIVERSITY.html.zip
+📦 Free UC Lab University (download anytime):
 
-Or open:
-university/v17-UNIVERSITY.html
+https://github.com/cipher0x9/uc-lab-free-university
 
-Includes multi-vendor UC/CC curriculum + prompt labs for languages, AI/Mac Mini, and remote builder life.
-Share freely for learning. No warranty — lab safely, pin vendor docs for production.
+Direct zip:
+https://github.com/cipher0x9/uc-lab-free-university/releases/download/v17.0-free/v17-UNIVERSITY.html.zip
+
+Release page:
+https://github.com/cipher0x9/uc-lab-free-university/releases/tag/v17.0-free
+
+Linktree:
+https://linktr.ee/cyphermonkey
+
+Unzip → open v17-UNIVERSITY.html → learn free.

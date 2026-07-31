@@ -2,83 +2,74 @@
 
 **Free multi-vendor Unified Communications & Contact Center learning pack.**
 
-Built for engineers who spent years in Cisco voice (or any single stack) and still wanted:
-
-- real **mentorship-style structure**
-- **multi-vendor** clarity (not one logo)
-- proof habits that work at 2 a.m. — not only exam screenshots
+Built for engineers who spent years in Cisco voice (or any single stack) and still wanted mentorship-style structure, multi-vendor clarity, and proof habits that work at 2 a.m.
 
 > If this helps **even one person**, it was worth sharing.
 
 ---
 
-## 🚀 Quick start (30 seconds)
+## ⬇️ Download (for everyone)
 
-### Option A — download zip
-1. Open **[Releases](../../releases)** or grab [`releases/v17-UNIVERSITY.html.zip`](./releases/v17-UNIVERSITY.html.zip)
-2. Unzip
-3. Double-click **`v17-UNIVERSITY.html`** (Chrome / Safari / Edge / Firefox)
+### Main university (browser pack)
 
-### Option B — browse in repo
-- Open [`university/v17-UNIVERSITY.html`](./university/v17-UNIVERSITY.html) after cloning, or use raw download.
+**→ [Download v17-UNIVERSITY.html.zip](https://github.com/cipher0x9/uc-lab-free-university/releases/download/v17.0-free/v17-UNIVERSITY.html.zip)**
 
-```bash
-git clone https://github.com/cipher0x9/uc-lab-free-university.git
-cd uc-lab-free-university
-open university/v17-UNIVERSITY.html
-```
+1. Download the zip  
+2. Unzip  
+3. Open **`v17-UNIVERSITY.html`** in Chrome / Safari / Edge / Firefox  
+
+Also available on the **[Releases page](https://github.com/cipher0x9/uc-lab-free-university/releases/tag/v17.0-free)** and inside this repo at [`releases/v17-UNIVERSITY.html.zip`](./releases/v17-UNIVERSITY.html.zip).
+
+### Prompt labs zip
+
+**→ [Download PROMPTS-THREE-PROJECTS.zip](https://github.com/cipher0x9/uc-lab-free-university/releases/download/v17.0-free/PROMPTS-THREE-PROJECTS.zip)**
+
+Languages · AI/ML Mac Mini lab · Nature-remote agentic life prompts.
+
+### Full list
+
+See **[DOWNLOADS.md](./DOWNLOADS.md)** for every link in one place.
 
 ---
 
-## 📚 What’s inside
+## 🔗 Links
+
+| | |
+|--|--|
+| **This repo** | https://github.com/cipher0x9/uc-lab-free-university |
+| **Release / downloads** | https://github.com/cipher0x9/uc-lab-free-university/releases/tag/v17.0-free |
+| **Profile** | https://github.com/cipher0x9 |
+| **Linktree** | https://linktr.ee/cyphermonkey |
+
+*(Add this GitHub repo + release zip to your Linktree so people always find the free pack.)*
+
+---
+
+## 📚 What’s in the repo
 
 | Path | Contents |
 |------|----------|
-| `university/v17-UNIVERSITY.html` | **240 curriculum sections** — browser-friendly offline university |
-| `prompts/01-languages-mastery/` | 9–10 language mastery prompt system |
-| `prompts/02-ai-ml-future-lab/` | AI/ML/future tools + Mac Mini lab prompts (large library) |
-| `prompts/03-agentic-nature-remote/` | One-person agentic AI + nature-remote life OS |
-| `hermes/` | How to wire Hermes later for auto-enrichment |
-| `share-post/` | LinkedIn post drafts |
-| `releases/` | Ready-to-share zip of the university HTML |
-
-**Not in git (by design):** multi-hundred-MB archive builds. Those are optional local power-user artifacts. The free share stays fast and safe for everyone.
+| `university/v17-UNIVERSITY.html` | **240 curriculum sections** — offline university |
+| `releases/*.zip` | Ready downloads (same as GitHub Release assets) |
+| `prompts/` | Language · AI lab · nature-remote prompt projects |
+| `hermes/` | Future Hermes auto-enrich notes |
+| `share-post/` | LinkedIn draft text |
 
 ---
 
-## 🧭 How to study
+## 🧭 Study tips
 
-1. Open the university HTML  
-2. Search (or `Cmd/Ctrl+K`) for SIP, Teams, CUBE, migrations, trading, CC…  
-3. Practice **Leg · ID · Counter · Capture** on every failure  
-4. Use prompt labs for languages / AI lab / remote life when ready  
-
-Themes: Warm · Night · Cobalt · Forest · Aurora · Sunset  
+Search topics (SIP, Teams, CUBE, migrations…).  
+Practice **Leg · ID · Counter · Capture**.  
+Themes: Warm · Night · Cobalt · Forest · Aurora · Sunset.
 
 ---
 
-## ⚠️ Important
+## ⚠️ Note
 
-- Educational material only — **no warranty**  
-- Always pin **current vendor/official docs** for production  
-- Lab safely — never test emergency calling without authorization  
-- Share freely for learning  
+Educational only — **no warranty**.  
+Pin current vendor docs for production. Lab safely. Share freely for learning.
 
----
+## License
 
-## 👤 Author
-
-**CYPHER0X9** ([@cipher0x9](https://github.com/cipher0x9))  
-~10 years Cisco voice · multi-vendor collaboration · builders on Mac Mini · free education
-
----
-
-## 📄 License
-
-MIT — free to use, share, and build upon with attribution appreciated.
-
----
-
-### Safe public link
-
-**https://github.com/cipher0x9/uc-lab-free-university**
+MIT · **[@cipher0x9](https://github.com/cipher0x9)**
