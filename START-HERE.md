@@ -18,7 +18,7 @@ open university/v17-UNIVERSITY.html
 
 Or download the zip first:
 
-→ https://github.com/cipher0x9/uc-lab-free-university/releases/download/v17.0-free/v17-UNIVERSITY.html.zip
+→ https://github.com/CYPHER0X9/uc-lab-free-university/releases/download/v17.0-free/v17-UNIVERSITY.html.zip
 
 **Themes:** Warm · Night · Cobalt · Forest · Aurora · Sunset  
 **Search** topics: SIP · CUBE · Teams · Webex · SBC · migrations · E911 · CC…
@@ -54,7 +54,7 @@ If you cannot explain LICC without notes, stay in fundamentals a bit longer.
 
 ## 4) Optional prompt labs 🗣️🤖🌿
 
-Unzip **[PROMPTS-THREE-PROJECTS.zip](https://github.com/cipher0x9/uc-lab-free-university/releases/download/v17.0-free/PROMPTS-THREE-PROJECTS.zip)** or browse `prompts/`:
+Unzip **[PROMPTS-THREE-PROJECTS.zip](https://github.com/CYPHER0X9/uc-lab-free-university/releases/download/v17.0-free/PROMPTS-THREE-PROJECTS.zip)** or browse `prompts/`:
 
 | Folder | Theme |
 |--------|--------|
@@ -70,8 +70,8 @@ Same free-share rules. Different domain.
 
 | | |
 |--|--|
-| Repo | https://github.com/cipher0x9/ai-lab-free-university |
-| Zip | https://github.com/cipher0x9/ai-lab-free-university/releases/download/v4.0-free/v4-PORTFOLIO.html.zip |
+| Repo | https://github.com/CYPHER0X9/ai-lab-free-university |
+| Zip | https://github.com/CYPHER0X9/ai-lab-free-university/releases/download/v4.0-free/v4-PORTFOLIO.html.zip |
 | Grammar | **RTMA** — Run · Trace · Metric · Artifact |
 
 ---
