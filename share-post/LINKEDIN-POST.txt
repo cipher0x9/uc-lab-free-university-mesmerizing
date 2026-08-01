@@ -1,73 +1,85 @@
 I have been in Cisco voice and collaboration for 10+ years.
 
-Certs. Trainers. Websites. Paid courses.
-Still — I kept feeling half complete.
+Certs. Courses. Trainers. Websites.
+I chased them all.
 
+But the real thing? Access.
+Real Contact Center lab time.
+Real gateway changes.
+Real SBC work and migrations.
+
+Too many people would not open the door.
+Too many courses taught product screens — not path, not proof, not the things that fall apart at 2 a.m. and you are the one who has to fix them.
+
+I felt half complete.
 Not because I had no knowledge.
-Because the path was broken.
+Because the system was never designed for someone who needed to learn the whole thing — multi-vendor, end-to-end, with evidence.
 
-Some people won’t give you lab access.
-Some don’t want to touch Contact Center.
-Some avoid gateway changes, SBC work, migrations, the hard edges.
-Training sells screens and certificates.
-Jobs still ask for “everything.”
-
-I got sick and tired of that loop.
-
-So I built something I wish someone had handed me years ago —
-and I’m sharing it freely.
-
-━━━━━━━━━━━━━━━━━━
+══════════════════════════
 
 🌿  UC Lab Free University
 
-A free multi-vendor UC & Contact Center campus.
+I built it for everyone who was ever told "you cannot touch that."
 
-Not another cert pack.
-A path + proof habits + multi-vendor braid.
+Not a cert dump.
+Not a demo.
+A full offline campus for Unified Communications & Contact Center.
 
-• Offline browser campus (~240 sections)
-• Unzip → open HTML → learn (no Git required)
-• Themes: Warm · Night · Cobalt · Forest · Aurora · Sunset
-• Proof grammar: LICC
-   L · Leg
-   I · ID
-   C · Counter
-   C · Capture
+━━━━  What it is  ━━━━
 
-Cisco · Teams · Webex · SBC · Contact Center
-Migrations · E911 · QoS · identity · evidence
+A single HTML file. No install. No login. No API keys.
+Download → unzip → open offline.
 
-━━━━━━━━━━━━━━━━━━
+•• ~240 curriculum sections
+•• 6 color themes (Warm · Night · Cobalt · Forest · Aurora · Sunset)
+•• Deep Cisco + Teams + WebEx + SBC + Contact Center trails
+•• Proof grammar: LICC
 
-🧠  Sibling pack — AI Lab Free University
+   🟢  L · Leg      — Which call leg failed?
+   🟡  I · ID       — Which correlation ID ties the chain?
+   🔵  C · Counter  — Which counter or KPI moved?
+   🟣  C · Capture  — What artifact proves it?
 
-When you’re ready to grow from voice into AI:
+LICC is not a buzzword.
+It is the habit I drilled into myself over a decade of late nights —
+and now it is baked into every section of this campus.
 
-• Aurora campus · 425 lessons
-• Proof grammar: RTMA — Run · Trace · Metric · Artifact
-• Same free-share rule · same safety bar
+━━━━  Inside the box  ━━━━
 
-━━━━━━━━━━━━━━━━━━
+Cisco voice · CUBE · Teams Phone · WebEx Calling · SBC · Contact Center
+Migrations · E911 · QoS · certificates · dual-run rollback · identity · evidence
 
-Why free?
+━━━━  Also included  ━━━━
 
-Because good learning should not depend on who will open a lab for you this month —
-or who will charge you again for fragmented training.
+🔹 Prompt labs — language mastery + AI bridge + remote-agency seeds
+🔹 Hermes wiring notes (for friends running an AI agent on Mac)
+🔹 Sibling cross-link to the AI Lab Free University (separate pack)
 
-If you’re early — start here.
-If you’re mid — fill the holes you were never taught.
-If you’re 10 years in and still feel unfinished — this is for you too.
+══════════════════════════
 
-I spent real time shaping this so people can carry it, open it offline, and use it.
+🧠  AI Lab Free University — sibling pack
 
-Educational · MIT · no hype · lab safely.
+Aurora campus · 425 lessons · proof grammar RTMA · same free-share rule.
+Download separately from the AI repo.
 
-I’m happy to share.
-If it helps even one engineer feel less alone in this craft — worth it.
+══════════════════════════
 
-Open it. Learn offline. Pass it to one more person.
+Why am I sharing this for free?
+
+Because I remember what it felt like to need a map and get sold a badge instead.
+Because good learning should not depend on whose lab you can beg your way into this month.
+Because I spent real nights building this — and if it helps even one engineer feel less alone, it was worth every minute.
+
+If you are early — start here.
+If you are mid — fill the gaps nobody taught.
+If you are 10 years deep and still hungry — steal the structure and make it your path.
+
+Educational · MIT license · no hype · lab safely.
+
+Open it.
+Learn offline.
+Pass it to one more person.
 
 Links in the first comment. 🌿🧠
 
-#UnifiedCommunications #Cisco #Collaboration #ContactCenter #VoiceEngineering #SBC #TeamsPhone #Webex #FreeLearning #Mentorship #OpenSource #CareerGrowth #LearningInPublic
+#UnifiedCommunications #Cisco #Collaboration #ContactCenter #VoiceEngineering #CUBE #SBC #TeamsPhone #Webex #Migrations #FreeLearning #Mentorship #OpenSource #CareerGrowth
