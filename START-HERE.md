@@ -1,87 +1,69 @@
 # 🌿 Start here — UC Lab Free University
 
-**Welcome.** This is a free multi-vendor UC & Contact Center campus — offline, browser-friendly, mentorship-first.
+Welcome. This is a **free** multi-vendor UC & Contact Center campus — offline, browser-based, built to be shared with kindness.
 
 | Want | Go |
 |------|-----|
-| **Download / clone (safe)** | **[HOW-TO-GET.md](./HOW-TO-GET.md)** |
+| **Download / open steps** | **[HOW-TO-GET.md](./HOW-TO-GET.md)** |
 | **Both free universities** | **[SIBLINGS.md](./SIBLINGS.md)** |
-| **All links hub** | https://linktr.ee/cyphermonkey |
+| **All links** | https://linktr.ee/cyphermonkey |
 
 ---
 
-## 1) Open the campus (0 installs) 🏛️
+## 1) Open the campus
+
+**Download:** [v17-UNIVERSITY.html.zip](https://github.com/cipher0x9/uc-lab-free-university/releases/download/v17.1-mobile/v17-UNIVERSITY.html.zip)
+
+Or from a clone:
 
 ```bash
 open university/v17-UNIVERSITY.html
 ```
 
-Or download the zip first:
+### Browser rules (important)
 
-→ https://github.com/cipher0x9/uc-lab-free-university/releases/download/v17.0-free/v17-UNIVERSITY.html.zip
-
-**Themes:** Warm · Night · Cobalt · Forest · Aurora · Sunset  
-**Search** topics: SIP · CUBE · Teams · Webex · SBC · migrations · E911 · CC…
-
----
-
-## 2) Learn the proof grammar cold 🔍
-
-**LICC** = **L**eg · **I**D · **C**ounter · **C**apture
-
-If you cannot explain LICC without notes, stay in fundamentals a bit longer.
-
-| Letter | Ask |
-|:--:|--|
-| L | Which leg of the call path failed? |
-| I | What ID correlates both sides? |
-| C | Which counter / KPI moved? |
-| C | What capture proves it? |
+- Use **Chrome, Safari, Edge, or Firefox** — the **full browser app**  
+- **Do not** rely on LinkedIn / Instagram / Telegram **in-app** browsers  
+- **Desktop** = smoothest  
+- **Phone** = OK after load; first open may take 10–30 seconds  
+- On iPhone: zip → **Files** → open HTML in Chrome/Safari  
 
 ---
 
-## 3) Study path (suggested) 🗺️
+## 2) Learn LICC cold
 
-1. **Call path thinking** — end-to-end before buttons  
-2. **Signaling vs media** — never confuse them  
-3. **Edge / SBC** — policy + interop + anchor  
-4. **Multi-vendor braid** — Cisco + Teams + Webex + CC  
-5. **Migrations** — dual-run, E911, rollback  
-6. **Evidence labs** — write LICC on every incident  
-7. **Future bridge** — open sibling **AI Lab** when ready  
+**LICC** = **L**eg · **I**D · **C**ounter · **C**apture  
+
+If you cannot explain LICC without notes, stay with fundamentals a little longer.
 
 ---
 
-## 4) Optional prompt labs 🗣️🤖🌿
+## 3) Suggested path
 
-Unzip **[PROMPTS-THREE-PROJECTS.zip](https://github.com/cipher0x9/uc-lab-free-university/releases/download/v17.0-free/PROMPTS-THREE-PROJECTS.zip)** or browse `prompts/`:
-
-| Folder | Theme |
-|--------|--------|
-| `01-languages-mastery` | Polyglot OS prompts |
-| `02-ai-ml-future-lab` | AI + Mac Mini seeds |
-| `03-agentic-nature-remote` | Nature-remote / agency life |
-
----
-
-## 5) Sibling AI campus 🧠
-
-Same free-share rules. Different domain.
-
-| | |
-|--|--|
-| Repo | https://github.com/cipher0x9/ai-lab-free-university |
-| Zip | https://github.com/cipher0x9/ai-lab-free-university/releases/download/v4.0-free/v4-PORTFOLIO.html.zip |
-| Grammar | **RTMA** — Run · Trace · Metric · Artifact |
+1. Call path thinking (end-to-end before buttons)  
+2. Signaling vs media  
+3. Edge / SBC  
+4. Multi-vendor braid (Cisco + Teams + Webex + CC)  
+5. Migrations · E911 · rollback  
+6. Evidence labs — write LICC on every incident  
+7. When ready — open sibling **AI Lab**  
 
 ---
 
-## 6) Safety ⚠️
+## 4) Optional extras
+
+- Prompt labs in `prompts/` or the **complete browser pack** zip  
+- `hermes/` = optional notes if you already run an AI study agent — **not required**  
+- Sibling AI: https://github.com/cipher0x9/ai-lab-free-university  
+
+---
+
+## 5) Safety
 
 Educational only · MIT · no warranty  
-No secrets / customer data / private topologies  
+No secrets / customer data  
 Lab safely · pin vendor docs for production  
 
 ---
 
-<p align="center"><em>Open. Learn. Prove. Share with one more engineer.</em></p>
+<p align="center"><em>Go steady. Keep proof. Share with one more engineer.</em></p>
