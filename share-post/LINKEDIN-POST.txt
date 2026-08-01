@@ -1,59 +1,82 @@
-I spent almost 10 years in Cisco voice.
+I spent almost 10 years in Cisco voice and collaboration.
 
-Certs. Courses. Labs. Late nights.
-Job posts that asked for “everything.”
-Training that taught product screens…
-but not the quiet things that actually save a call at 2 a.m.
+Certs. Labs. Screens. Migrations.
+Still, something was missing.
 
-And for a long time, I carried a quiet gap:
+Not another badge.
+A path.
 
-I didn’t need another badge.
-I needed mentorship.
-I needed multi-vendor clarity.
-I needed someone to say:
+━━━━━━━━━━━━━━━━━━
 
-“Here’s the path.
-Here’s the evidence.
-Here’s how you prove it —
-not just how you configure it.”
+What most training never gave me:
 
-Because real enterprise voice isn’t one logo.
+→ multi-vendor clarity (jobs never hire one logo)
+→ proof habits (not “it looked fine on my phone”)
+→ a map you can reopen when your brain is tired
+→ room to grow from voice into AI without starting over
 
-It’s CUCM and CUBE… and also Teams, Webex, Zoom, Contact Center platforms, SBCs, carriers, certificates, QoS, dual-run migrations, recording, emergency calling, identity, and the human on the other end of the line.
+I felt that gap as a learner.
+I still feel it when I teach.
 
-Access was uneven.
-Jobs wanted “senior” before anyone offered a map.
-Training was expensive, fragmented, and often single-vendor.
-I felt that. Deeply.
+So I built the free university pack I wish someone had handed me earlier.
 
-So I built something I wish I had years ago —
+━━━━━━━━━━━━━━━━━━
 
-🌿 UC Lab Free University
-• Offline browser campus (~240 sections)
-• Themes: Warm · Night · Cobalt · Forest · Aurora · Sunset
-• Proof grammar: LICC — Leg · ID · Counter · Capture
-• Prompt labs + multi-vendor braid energy
+🌿  UC Lab Free University
 
-And the sibling for AI learners:
+A full offline campus for Unified Communications & Contact Center.
 
-🧠 AI Lab Free University
-• Aurora Dream campus · 425 lessons · 1000+ links
-• Proof grammar: RTMA — Run · Trace · Metric · Artifact
-• Optional Python labs · no API keys to start
+• ~240 curriculum sections
+• browser-only · unzip → open → learn
+• themes: Warm · Night · Cobalt · Forest · Aurora · Sunset
+• proof grammar: LICC
+   L · Leg
+   I · ID
+   C · Counter
+   C · Capture
 
-No hype. No gatekeeping.
-Educational · MIT · free · lab safely.
+Not product tourism.
+Path + evidence + multi-vendor braid.
 
-If it helps even one person feel less alone in this craft —
-the late nights were worth it.
+Cisco · Teams · Webex · SBC · CC · migrations · E911 · QoS · identity
 
-I’m happy to share.
-I’m happy to contribute more.
-If you’re early, mid, or 10 years in and still hungry for real understanding — this is for you.
+━━━━━━━━━━━━━━━━━━
 
-Open. Learn. Share freely.
-If it helps you, pass it to one more engineer.
+🧠  Sibling pack — AI Lab Free University
 
-Links in the first comment.
+For the next chapter:
 
-#UnifiedCommunications #Cisco #Collaboration #ContactCenter #VoiceEngineering #SBC #TeamsPhone #Webex #CareerGrowth #Mentorship #ContinuousLearning #FreeLearning #OpenSource
+• Aurora campus · 425 lessons
+• proof grammar: RTMA
+   R · Run
+   T · Trace
+   M · Metric
+   A · Artifact
+
+Same free-share rule.
+Same safety bar.
+Different domain.
+
+━━━━━━━━━━━━━━━━━━
+
+Why share it free?
+
+Because good learning should not depend on who can pay for another fragmented course this month.
+
+If you’re early — start here.
+If you’re mid — fill the holes.
+If you’re 10 years in — steal the structure and make it yours.
+
+Educational · MIT · no hype · lab safely.
+
+This took real nights and real focus to shape.
+I’m happy to share it.
+I’m happy if it helps even one engineer feel less alone in this craft.
+
+Open it.
+Learn offline.
+Pass it to one more person.
+
+Links in the first comment. 🌿🧠
+
+#UnifiedCommunications #Cisco #Collaboration #ContactCenter #VoiceEngineering #SBC #TeamsPhone #Webex #FreeLearning #Mentorship #OpenSource #CareerGrowth #LearningInPublic
