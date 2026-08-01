@@ -3,107 +3,57 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>LinkedIn Post — UC Lab Free Share</title>
+<title>LinkedIn Post — UC Lab Free University · DRAFT READY</title>
 <style>
   :root {
-    --bg: #0f1419;
-    --card: #1a2332;
-    --ink: #f0f4f8;
-    --muted: #8b9cb3;
-    --gold: #e8a838;
-    --teal: #3db8a0;
-    --line: #2a3a4f;
-    --soft: #243044;
+    --bg: #0B1220; --card: #121a2b; --ink: #f0f4f8; --muted: #8b9cb3;
+    --gold: #e8a838; --teal: #0F9B8E; --line: #2a3a4f; --soft: #1a2438;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
     min-height: 100vh;
     font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
     background:
-      radial-gradient(ellipse 80% 50% at 20% 0%, rgba(232,168,56,.12), transparent),
-      radial-gradient(ellipse 60% 40% at 90% 100%, rgba(61,184,160,.1), transparent),
+      radial-gradient(ellipse 80% 50% at 20% 0%, rgba(15,155,142,.18), transparent),
+      radial-gradient(ellipse 60% 40% at 90% 100%, rgba(232,168,56,.10), transparent),
       var(--bg);
-    color: var(--ink);
-    line-height: 1.65;
-    padding: 32px 16px 64px;
+    color: var(--ink); line-height: 1.65; padding: 32px 16px 64px;
   }
-  .wrap { max-width: 680px; margin: 0 auto; }
-  .label {
-    font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase;
-    color: var(--gold); margin-bottom: 12px;
-  }
-  .card {
-    background: linear-gradient(165deg, var(--card), #151c28);
-    border: 1px solid var(--line);
-    border-radius: 20px;
-    padding: 28px 28px 24px;
-    box-shadow: 0 24px 60px rgba(0,0,0,.35);
-  }
-  .meta {
-    display: flex; align-items: center; gap: 12px; margin-bottom: 20px;
-    padding-bottom: 16px; border-bottom: 1px solid var(--line);
-  }
-  .avatar {
-    width: 48px; height: 48px; border-radius: 50%;
-    background: linear-gradient(135deg, var(--gold), var(--teal));
-    display: grid; place-items: center; font-weight: 900; color: #0f1419; font-size: 18px;
-  }
+  .wrap { max-width: 720px; margin: 0 auto; }
+  .label { font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+  .warn { background: rgba(232,168,56,.12); border: 1px solid rgba(232,168,56,.35); color: #f5d58a; border-radius: 12px; padding: 12px 14px; margin-bottom: 16px; font-size: 13px; font-weight: 700; }
+  .card { background: linear-gradient(165deg, var(--card), #0e1522); border: 1px solid var(--line); border-radius: 20px; padding: 28px; box-shadow: 0 24px 60px rgba(0,0,0,.35); }
+  .meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
+  .avatar { width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, var(--teal), var(--gold)); display: grid; place-items: center; font-weight: 900; color: #0B1220; font-size: 18px; }
   .meta b { display: block; font-size: 15px; }
   .meta span { font-size: 12px; color: var(--muted); }
   .post { font-size: 16px; white-space: pre-wrap; }
-  .post p { margin: 0 0 1em; }
-  .highlight {
-    border-left: 3px solid var(--teal);
-    padding: 10px 14px; margin: 16px 0;
-    background: rgba(61,184,160,.08); border-radius: 0 12px 12px 0;
-    color: #d4e8e4; font-style: italic;
-  }
-  .cta {
-    margin-top: 20px; padding: 16px;
-    background: var(--soft); border-radius: 14px;
-    border: 1px dashed var(--line); font-size: 14px; color: var(--muted);
-  }
+  .highlight { border-left: 3px solid var(--teal); padding: 10px 14px; margin: 16px 0; background: rgba(15,155,142,.10); border-radius: 0 12px 12px 0; color: #d4e8e4; font-style: italic; white-space: pre-wrap; }
+  .cta { margin-top: 20px; padding: 16px; background: var(--soft); border-radius: 14px; border: 1px dashed var(--line); font-size: 14px; color: var(--muted); }
   .tags { margin-top: 18px; font-size: 13px; color: var(--teal); line-height: 1.8; }
-  .actions {
-    margin-top: 24px; display: flex; flex-wrap: wrap; gap: 10px;
-  }
-  button, .btn {
-    border: 0; border-radius: 999px; padding: 12px 18px; font-weight: 800; font-size: 13px;
-    cursor: pointer; font-family: inherit;
-  }
-  #copyMain {
-    background: linear-gradient(135deg, var(--gold), #d4891a); color: #1a1208;
-  }
-  #copyComment {
-    background: transparent; color: var(--ink); border: 1px solid var(--line) !important;
-  }
-  .toast {
-    position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(20px);
-    background: var(--teal); color: #06221c; padding: 10px 18px; border-radius: 999px;
-    font-weight: 800; font-size: 13px; opacity: 0; transition: .25s; pointer-events: none;
-  }
+  .actions { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 10px; }
+  button { border: 0; border-radius: 999px; padding: 12px 18px; font-weight: 800; font-size: 13px; cursor: pointer; font-family: inherit; }
+  #copyMain { background: linear-gradient(135deg, var(--teal), #0a7a70); color: #fff; }
+  #copyComment { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+  .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(20px); background: var(--teal); color: #06221c; padding: 10px 18px; border-radius: 999px; font-weight: 800; font-size: 13px; opacity: 0; transition: .25s; pointer-events: none; }
   .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
-  .raw {
-    margin-top: 28px; background: #0a0e14; border: 1px solid var(--line);
-    border-radius: 16px; padding: 16px; font-family: ui-monospace, Menlo, monospace;
-    font-size: 12px; color: #b8c4d4; white-space: pre-wrap; max-height: 280px; overflow: auto;
-  }
+  .raw { margin-top: 12px; background: #0a0e14; border: 1px solid var(--line); border-radius: 16px; padding: 16px; font-family: ui-monospace, Menlo, monospace; font-size: 12px; color: #b8c4d4; white-space: pre-wrap; max-height: 320px; overflow: auto; }
   h2.sec { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin: 28px 0 10px; }
 </style>
 </head>
 <body>
   <div class="wrap">
-    <div class="label">Copy-paste ready · LinkedIn</div>
+    <div class="label">Copy-paste ready · LinkedIn · DRAFT ONLY</div>
+    <div class="warn">⚠️ DRAFT ONLY — do not hit Post until you say PROCEED. Main post + first comment with live GitHub links.</div>
     <div class="card">
       <div class="meta">
-        <div class="avatar">C</div>
+        <div class="avatar">🌿</div>
         <div>
-          <b>Your name · Voice / UC / Collaboration</b>
-          <span>Personal reflection · Free learning share</span>
+          <b>CYPHER0X9 · UC / Voice / Collaboration</b>
+          <span>Personal reflection · Free learning share · @cipher0x9</span>
         </div>
       </div>
-      <div class="post" id="preview">
-I spent almost 10 years in Cisco voice.
+      <div class="post" id="preview">I spent almost 10 years in Cisco voice.
 
 Certs. Courses. Labs. Late nights.
 Job posts that asked for “everything.”
@@ -121,39 +71,24 @@ Because real enterprise voice isn’t one logo.
 
 It’s Cisco… and also Teams, Webex, Zoom, contact center platforms, SBCs, carriers, certificates, QoS, dual-run migrations, recording, emergency calling, identity — and the human on the other end of the line.
 
-Access was uneven.
-Jobs wanted “senior” before anyone offered a path.
-Training was expensive, fragmented, and often single-vendor.
-I felt that. Deeply.
+So I built the free UC / Contact Center university pack I wish someone had handed me earlier.
 
-So I built something I wish I had years ago —
-a free UC / Contact Center learning pack I’m happy to share.
-
-No hype. No gatekeeping.
-Just structured understanding: call paths, failure labs, multi-vendor thinking, migrations, and evidence habits that hold up when production is on fire.
+🌿 UC Lab Free University · sibling 🧠 AI Lab Free University
+No hype. No gatekeeping. MIT · offline · free.
 
 If it helps even one person feel less alone in this craft —
 the late nights were worth it.
 
-I’m happy to share.
-I’m happy to contribute more.
-
-If you’re early, mid, or 10 years in and still hungry for real understanding — this is for you.
-
 Open. Learn. Share freely.
-If it helps you, pass it to one more engineer.
-
-🌿 UC Lab Free Share
 (Link in first comment)
       </div>
-      <div class="tags">#UnifiedCommunications #Cisco #Collaboration #ContactCenter #VoiceEngineering #SBC #TeamsPhone #Webex #CareerGrowth #Mentorship #ContinuousLearning #FreeLearning</div>
-      <div class="cta">💡 Tip: Post the main text → immediately add the first comment with your Drive/Dropbox/Git link to the free zip.</div>
+      <div class="tags">#UnifiedCommunications #Cisco #Collaboration #ContactCenter #VoiceEngineering #FreeLearning</div>
+      <div class="cta">💡 Flow: paste main → <b>Save as draft</b> on LinkedIn → after you publish, immediately drop first comment with the links.</div>
       <div class="actions">
         <button type="button" id="copyMain">📋 Copy main post</button>
-        <button type="button" id="copyComment" class="btn">📋 Copy first comment</button>
+        <button type="button" id="copyComment">📋 Copy first comment</button>
       </div>
     </div>
-
     <h2 class="sec">Main post (plain text)</h2>
     <div class="raw" id="mainRaw"></div>
     <h2 class="sec">First comment (plain text)</h2>
@@ -191,13 +126,21 @@ I felt that. Deeply.
 
 So I built something I wish I had years ago —
 
-a free UC / Contact Center university pack
-I can share with anyone who needs it.
+🌿 UC Lab Free University
+• Offline browser campus (~240 sections)
+• Themes: Warm · Night · Cobalt · Forest · Aurora · Sunset
+• Proof grammar: LICC — Leg · ID · Counter · Capture
+• Prompt labs + multi-vendor braid energy
 
-No hype.
-No gatekeeping.
-Just structured learning:
-call path thinking, failure labs, multi-vendor braid, migrations, evidence habits (Leg · ID · Counter · Capture), and room to grow into AI + voice futures.
+And the sibling for AI learners:
+
+🧠 AI Lab Free University
+• Aurora Dream campus · 425 lessons · 1000+ links
+• Proof grammar: RTMA — Run · Trace · Metric · Artifact
+• Optional Python labs · no API keys to start
+
+No hype. No gatekeeping.
+Educational · MIT · free · lab safely.
 
 If it helps even one person feel less alone in this craft —
 the late nights were worth it.
@@ -209,38 +152,30 @@ If you’re early, mid, or 10 years in and still hungry for real understanding �
 Open. Learn. Share freely.
 If it helps you, pass it to one more engineer.
 
-🌿 UC Lab Free Share
-(Link in comments / first comment)
+Links in the first comment.
 
-#UnifiedCommunications #Cisco #Collaboration #ContactCenter #VoiceEngineering #SBC #TeamsPhone #Webex #CareerGrowth #Mentorship #ContinuousLearning #FreeLearning`;
+#UnifiedCommunications #Cisco #Collaboration #ContactCenter #VoiceEngineering #SBC #TeamsPhone #Webex #CareerGrowth #Mentorship #ContinuousLearning #FreeLearning #OpenSource`;
+const comment = `Direct downloads (no Git):
 
-const comment = `📦 Free pack (browser-friendly):
+🌿 UC campus zip
+https://github.com/cipher0x9/uc-lab-free-university/releases/download/v17.0-free/v17-UNIVERSITY.html.zip
 
-Upload UC-LAB-FREE-SHARE/zips/v17-UNIVERSITY.html.zip to Drive/Dropbox/Git and paste your public link here.
+🧠 AI campus zip (Aurora Portfolio)
+https://github.com/cipher0x9/ai-lab-free-university/releases/download/v4.0-free/v4-PORTFOLIO.html.zip
 
-Or share the folder:
-UC-LAB-FREE-SHARE (v16 + v17 + prompt labs)
+Repos
+🌿 https://github.com/cipher0x9/uc-lab-free-university
+🧠 https://github.com/cipher0x9/ai-lab-free-university
 
-Includes multi-vendor UC/CC curriculum.
-Share freely for learning.
-Lab safely — pin vendor docs for production.`;
+Hub: https://linktr.ee/cyphermonkey
 
+Unzip → open the HTML → learn offline.`;
 document.getElementById("mainRaw").textContent = main;
 document.getElementById("commentRaw").textContent = comment;
-
-function toast(m){
-  const t = document.getElementById("toast");
-  t.textContent = m;
-  t.classList.add("show");
-  setTimeout(() => t.classList.remove("show"), 1600);
-}
+function toast(m){ const t=document.getElementById("toast"); t.textContent=m; t.classList.add("show"); setTimeout(()=>t.classList.remove("show"),1600); }
 async function copy(text, label){
-  try {
-    await navigator.clipboard.writeText(text);
-    toast(label + " copied ✓");
-  } catch (e) {
-    prompt("Copy manually:", text);
-  }
+  try { await navigator.clipboard.writeText(text); toast(label+" copied ✓"); }
+  catch(e) { prompt("Copy manually:", text); }
 }
 document.getElementById("copyMain").onclick = () => copy(main, "Main post");
 document.getElementById("copyComment").onclick = () => copy(comment, "First comment");
