@@ -1,81 +1,72 @@
-I spent almost 10 years in Cisco voice and collaboration.
+I have been in Cisco voice and collaboration for 10+ years.
 
-Certs. Labs. Screens. Migrations.
-Still, something was missing.
+Certs. Trainers. Websites. Paid courses.
+Still — I kept feeling half complete.
 
-Not another badge.
-A path.
+Not because I had no knowledge.
+Because the path was broken.
 
-━━━━━━━━━━━━━━━━━━
+Some people won’t give you lab access.
+Some don’t want to touch Contact Center.
+Some avoid gateway changes, SBC work, migrations, the hard edges.
+Training sells screens and certificates.
+Jobs still ask for “everything.”
 
-What most training never gave me:
+I got sick and tired of that loop.
 
-→ multi-vendor clarity (jobs never hire one logo)
-→ proof habits (not “it looked fine on my phone”)
-→ a map you can reopen when your brain is tired
-→ room to grow from voice into AI without starting over
-
-I felt that gap as a learner.
-I still feel it when I teach.
-
-So I built the free university pack I wish someone had handed me earlier.
+So I built something I wish someone had handed me years ago —
+and I’m sharing it freely.
 
 ━━━━━━━━━━━━━━━━━━
 
 🌿  UC Lab Free University
 
-A full offline campus for Unified Communications & Contact Center.
+A free multi-vendor UC & Contact Center campus.
 
-• ~240 curriculum sections
-• browser-only · unzip → open → learn
-• themes: Warm · Night · Cobalt · Forest · Aurora · Sunset
-• proof grammar: LICC
+Not another cert pack.
+A path + proof habits + multi-vendor braid.
+
+• Offline browser campus (~240 sections)
+• Unzip → open HTML → learn (no Git required)
+• Themes: Warm · Night · Cobalt · Forest · Aurora · Sunset
+• Proof grammar: LICC
    L · Leg
    I · ID
    C · Counter
    C · Capture
 
-Not product tourism.
-Path + evidence + multi-vendor braid.
-
-Cisco · Teams · Webex · SBC · CC · migrations · E911 · QoS · identity
+Cisco · Teams · Webex · SBC · Contact Center
+Migrations · E911 · QoS · identity · evidence
 
 ━━━━━━━━━━━━━━━━━━
 
 🧠  Sibling pack — AI Lab Free University
 
-For the next chapter:
+When you’re ready to grow from voice into AI:
 
 • Aurora campus · 425 lessons
-• proof grammar: RTMA
-   R · Run
-   T · Trace
-   M · Metric
-   A · Artifact
-
-Same free-share rule.
-Same safety bar.
-Different domain.
+• Proof grammar: RTMA — Run · Trace · Metric · Artifact
+• Same free-share rule · same safety bar
 
 ━━━━━━━━━━━━━━━━━━
 
-Why share it free?
+Why free?
 
-Because good learning should not depend on who can pay for another fragmented course this month.
+Because good learning should not depend on who will open a lab for you this month —
+or who will charge you again for fragmented training.
 
 If you’re early — start here.
-If you’re mid — fill the holes.
-If you’re 10 years in — steal the structure and make it yours.
+If you’re mid — fill the holes you were never taught.
+If you’re 10 years in and still feel unfinished — this is for you too.
+
+I spent real time shaping this so people can carry it, open it offline, and use it.
 
 Educational · MIT · no hype · lab safely.
 
-This took real nights and real focus to shape.
-I’m happy to share it.
-I’m happy if it helps even one engineer feel less alone in this craft.
+I’m happy to share.
+If it helps even one engineer feel less alone in this craft — worth it.
 
-Open it.
-Learn offline.
-Pass it to one more person.
+Open it. Learn offline. Pass it to one more person.
 
 Links in the first comment. 🌿🧠
 
