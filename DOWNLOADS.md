@@ -1,31 +1,42 @@
-# Downloads & clone (UC Lab Free University)
+# Downloads — UC Lab Free University
 
-**Linktree hub:** https://linktr.ee/cyphermonkey  
-**How-to (full):** [HOW-TO-GET.md](./HOW-TO-GET.md) · **Siblings:** [SIBLINGS.md](./SIBLINGS.md)
+**Latest public release:** `v17.1-mobile`  
+**Hub:** https://linktr.ee/cyphermonkey  
 
-Everything here is **free** for learning. Educational only — no warranty.
-
----
-
-## Recommended (almost everyone)
-
-| What | Link |
-|------|------|
-| **Main zip ⭐** | https://github.com/cipher0x9/uc-lab-free-university/releases/download/v17.0-free/v17-UNIVERSITY.html.zip |
-| Release page | https://github.com/cipher0x9/uc-lab-free-university/releases/tag/v17.0-free |
-| Unzipped HTML | [`university/v17-UNIVERSITY.html`](./university/v17-UNIVERSITY.html) |
-
-**Use:** download → unzip → open `v17-UNIVERSITY.html`
-
-### Prompt labs zip
-
-https://github.com/cipher0x9/uc-lab-free-university/releases/download/v17.0-free/PROMPTS-THREE-PROJECTS.zip
+Free for learning · Educational only · MIT · no warranty  
 
 ---
 
-## Clone / copy whole repo
+## Recommended ⭐
 
-### Git clone
+| What | Size (approx) | Link |
+|------|----------------|------|
+| **Campus zip** | **~624 KB** zip → ~3.7 MB HTML | https://github.com/cipher0x9/uc-lab-free-university/releases/download/v17.1-mobile/v17-UNIVERSITY.html.zip |
+| Release page | — | https://github.com/cipher0x9/uc-lab-free-university/releases/tag/v17.1-mobile |
+| HTML in repo | ~3.7 MB | [`university/v17-UNIVERSITY.html`](./university/v17-UNIVERSITY.html) |
+
+**Open:** download → unzip → open `v17-UNIVERSITY.html` in **Chrome / Safari / Edge / Firefox** (full browser app).
+
+### Optional complete pack (campus + prompt labs)
+
+| What | Size | Link |
+|------|------|------|
+| Complete browser pack | ~649 KB | https://github.com/cipher0x9/uc-lab-free-university/releases/download/v17.1-mobile/UC-LAB-COMPLETE-BROWSER-PACK.zip |
+
+---
+
+## Phone / desktop
+
+- **Desktop** = best full experience  
+- **Phone** = full Chrome or Safari only (not in-app browsers)  
+- First open on phone may take 10–30 seconds (full **240-section** curriculum)  
+- iPhone: zip → **Files** → open HTML in Chrome/Safari  
+
+Full steps: [HOW-TO-GET.md](./HOW-TO-GET.md) · [START-HERE.md](./START-HERE.md)
+
+---
+
+## Clone
 
 ```bash
 git clone https://github.com/cipher0x9/uc-lab-free-university.git
@@ -33,31 +44,23 @@ cd uc-lab-free-university
 open university/v17-UNIVERSITY.html
 ```
 
-### No Git (GitHub UI)
-
-Repo → green **Code** → **Download ZIP**.
-
-### Safe note
-
-Public free pack is **browser-friendly**.  
-Multi-hundred-MB personal archives (if any on your lab machine) are **not** the public default path — friends should use the Release zip above.
+Or: GitHub → **Code** → **Download ZIP**
 
 ---
 
-## Sibling AI pack downloads
+## Sibling AI Lab
 
 | What | Link |
 |------|------|
-| AI repo | https://github.com/cipher0x9/ai-lab-free-university |
-| AI main zip ⭐ | https://github.com/cipher0x9/ai-lab-free-university/releases/download/v4.0-free/v4-PORTFOLIO.html.zip |
-| AI how-to | https://github.com/cipher0x9/ai-lab-free-university/blob/main/HOW-TO-GET.md |
+| Repo | https://github.com/cipher0x9/ai-lab-free-university |
+| Campus zip (~107 KB) | https://github.com/cipher0x9/ai-lab-free-university/releases/download/v4.1-mobile/v4-PORTFOLIO.html.zip |
 
 ---
 
-## Support
+## What’s inside the campus
 
-- GitHub Issues (kind educational questions)  
-- Profile: https://github.com/cipher0x9  
-- Linktree: https://linktr.ee/cyphermonkey  
+- **240 full curriculum sections** (not a stub)  
+- **LICC** proof grammar · multi-vendor UC/CC  
+- Mobile menu drawer · safer boot (v17.1)  
 
 Lab safely. Share freely for learning.
