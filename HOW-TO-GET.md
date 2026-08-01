@@ -1,50 +1,50 @@
-# How to get this free pack (safe & simple)
+# How to get UC Lab Free University
 
-**No login required for the main download.**  
-**Educational only — MIT — no warranty.**  
-**Lab safely. Pin vendor docs for production.**
-
----
-
-## Pick one path (recommended first)
-
-| Path | Best for | Size feel | Needs Git? |
-|------|----------|-----------|------------|
-| **A · Release zip** ⭐ | Almost everyone | Small (~0.6 MB zip → ~3.7 MB HTML) | No |
-| **B · Code → Download ZIP** | Whole public folder | Small public tree | No |
-| **C · `git clone`** | Builders / offline full public pack | Small public tree | Yes |
-| **D · Linktree** | Single hub for all free packs | Routes to free packs | No |
+**No login required.**  
+**No API keys.**  
+**Educational only — MIT — no warranty.**
 
 ---
 
-## A) Download zip (easiest) ⭐
+## Recommended path ⭐
 
-1. Open:  
-   **https://github.com/cipher0x9/uc-lab-free-university/releases/tag/v17.0-free**
-2. Download **`v17-UNIVERSITY.html.zip`**
+1. Open the release:  
+   https://github.com/cipher0x9/uc-lab-free-university/releases/tag/v17.1-mobile  
+2. Download **`v17-UNIVERSITY.html.zip`**  
 3. Unzip  
-4. Open **`v17-UNIVERSITY.html`** in Chrome / Safari / Edge / Firefox  
+4. Open **`v17-UNIVERSITY.html`** in **Chrome / Safari / Edge / Firefox**
 
 Direct file:  
-https://github.com/cipher0x9/uc-lab-free-university/releases/download/v17.0-free/v17-UNIVERSITY.html.zip
+https://github.com/cipher0x9/uc-lab-free-university/releases/download/v17.1-mobile/v17-UNIVERSITY.html.zip
 
-### Optional prompt labs zip
+### Optional complete pack (campus + prompt labs)
 
-https://github.com/cipher0x9/uc-lab-free-university/releases/download/v17.0-free/PROMPTS-THREE-PROJECTS.zip
-
----
-
-## B) Download full repo as ZIP (no Git)
-
-1. Open: **https://github.com/cipher0x9/uc-lab-free-university**  
-2. Green **Code** → **Download ZIP**  
-3. Unzip → open `university/v17-UNIVERSITY.html`  
-
-Safe public educational tree only.
+https://github.com/cipher0x9/uc-lab-free-university/releases/download/v17.1-mobile/UC-LAB-COMPLETE-BROWSER-PACK.zip
 
 ---
 
-## C) Clone with Git
+## Phone & tablet
+
+| Step | Detail |
+|------|--------|
+| 1 | Open the download link in **Chrome or Safari full app** |
+| 2 | Download the **small campus zip** (not a multi-hundred-MB archive) |
+| 3 | Unzip in **Files** (iOS) or your Downloads folder (Android) |
+| 4 | Tap the `.html` file → open in Chrome/Safari |
+| 5 | Wait for first load (full **240-section** curriculum) |
+
+**If you only see “Opening / Loading…” for a long time:**  
+wait up to a minute on older phones, or open the same file on a laptop first. Avoid in-app browsers.
+
+---
+
+## Other paths
+
+### Whole repo ZIP (no Git)
+
+GitHub → green **Code** → **Download ZIP** → open `university/v17-UNIVERSITY.html`
+
+### Git clone
 
 ```bash
 git clone https://github.com/cipher0x9/uc-lab-free-university.git
@@ -52,77 +52,37 @@ cd uc-lab-free-university
 open university/v17-UNIVERSITY.html
 ```
 
-Update later:
+### Linktree hub
 
-```bash
-git pull
-```
+https://linktr.ee/cyphermonkey
 
 ---
 
-## D) Linktree
-
-**https://linktr.ee/cyphermonkey**
-
-Recommended buttons:
-
-1. UC Free University — Download (v17 zip)  
-2. UC Free University — GitHub  
-3. AI Free University — Download (v4 zip)  
-4. AI Free University — GitHub  
-
----
-
-## Sibling free pack (AI Lab)
+## Sibling — AI Lab Free University
 
 | | |
 |--|--|
 | Repo | https://github.com/cipher0x9/ai-lab-free-university |
-| Main zip | https://github.com/cipher0x9/ai-lab-free-university/releases/download/v4.0-free/v4-PORTFOLIO.html.zip |
-| How-to | https://github.com/cipher0x9/ai-lab-free-university/blob/main/HOW-TO-GET.md |
+| Campus zip | https://github.com/cipher0x9/ai-lab-free-university/releases/download/v4.1-mobile/v4-PORTFOLIO.html.zip |
 
 ---
 
-## About large / multi-hundred-MB files (honest)
+## Size honesty
 
-Some **local** study archives on a powerful Mac can be very large (hundreds of MB).  
-Those are **not** the public free default.
+| | Public free campus | Local power archives (optional on maintainer machine) |
+|--|-------------------|------------------------------------------------------|
+| Content | **Full 240 sections** | Huge recursive dumps |
+| Phone friendly | **Yes** | Usually **no** |
+| Default share | **Yes** | **No** |
 
-| | Public free share | Local optional power archive |
-|--|-------------------|------------------------------|
-| Example | `v17-UNIVERSITY.html` (~3.7 MB) | Heavy local transcend/full archives |
-| On GitHub free repo | **Yes** (this repo + Release) | **No by design** |
-| Browser-friendly | **Yes** | Often struggles / freezes |
-| What friends should use | **Release zip above** | Not required |
-
-**Why this is better for everyone**
-
-- Friends’ laptops open the free pack easily  
-- GitHub stays healthy (no accidental 600MB browser bombs in the default path)  
-- You stay safe: free share stays scrubbed, educational, secret-free  
-
-If you keep large files on your Mac Mini for personal study, that is fine — just do not make them the only download path for the world.
+We package the **real curriculum** so it opens. Bigger files are not automatically better lessons.
 
 ---
 
 ## Safety
 
-### For downloaders
 - Free educational MIT content  
-- No warranty  
-- Do not upload production dial plans / customer data to issues or forks  
+- Do not upload production dial plans or customer captures to issues  
+- Lab safely · pin vendor documentation for production  
 
-### For maintainer (you)
-- Public repo = educational free pack only  
-- No keys, no customer captures, no private topologies  
-- Large optional archives stay local / clearly optional  
-
----
-
-## Support
-
-- GitHub Issues (kind educational questions)  
-- Profile: https://github.com/cipher0x9  
-- Linktree: https://linktr.ee/cyphermonkey  
-
-Share freely for learning. Lab safely.
+Be kind. Learn offline. Share freely for learning.
