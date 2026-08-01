@@ -42,6 +42,8 @@ If it helps even one engineer feel less alone in this craft, it was worth the wo
 
 ---
 
+**Public sync:** [PUBLIC-SYNC.md](./PUBLIC-SYNC.md) · **All download links:** [DOWNLOADS.md](./DOWNLOADS.md)
+
 ## Get it in 60 seconds (no Git needed)
 
 ### ⭐ Download the campus zip
