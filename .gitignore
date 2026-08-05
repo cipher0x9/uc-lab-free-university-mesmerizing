@@ -10,3 +10,13 @@ university/v16-TRANSCEND.html
 university/full-archive-optional/
 *.html.gz
 !releases/*.zip
+
+# Next Level local-only (never publish secrets)
+.env
+.env.*
+*.pem
+*.key
+artifacts/
+.DS_Store
+**/customer-captures/
+**/private-dialplans/

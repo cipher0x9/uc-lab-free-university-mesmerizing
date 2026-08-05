@@ -17,7 +17,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Sections-240_full_curriculum-38BDF8?style=flat-square&labelColor=0B1220" alt="240"/>
+  <img src="https://img.shields.io/badge/Sections-272_full_curriculum-38BDF8?style=flat-square&labelColor=0B1220" alt="272"/>
   <img src="https://img.shields.io/badge/Proof-LICC_·_Leg_·_ID_·_Counter_·_Capture-F59E0B?style=flat-square&labelColor=0B1220" alt="LICC"/>
   <img src="https://img.shields.io/badge/Open_in-Chrome_·_Safari_·_Edge_·_Firefox-22C55E?style=flat-square&labelColor=0B1220" alt="Browsers"/>
   <img src="https://img.shields.io/badge/Mobile-Full_browser_OK-A78BFA?style=flat-square&labelColor=0B1220" alt="Mobile"/>
