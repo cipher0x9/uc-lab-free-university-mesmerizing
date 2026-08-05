@@ -15,3 +15,28 @@
 13. Free education funnel aligned with this pack.
 14. Collaboration protocol when hiring humans temporarily.
 15. 90-day launch plan with agent RACI.
+
+---
+
+## NEXT LEVEL ADDITIVE LAYER · 2026-08-05
+
+## Next Level one-person agency
+
+6. Productize a "dual-run readiness review" offer with clear scope boundaries.
+7. Client education one-pager: THE CALL MUST ALWAYS CONNECT in business English.
+8. Pricing ethics: never sell fear; sell proof habits.
+9. Template SOW: educational assessment vs production change (separate).
+10. Portfolio artifact list using redacted LICC packs.
+11. Referral partnership model with multi-vendor specialists.
+12. Shutdown checklist so agency work cannot leak customer captures into public GitHub.
+
+---
+
+## PASS 2 · agency depth (additive)
+
+13. Offer: “AI-assisted ops readiness review” — scope = process + safety, not live bot deploy without gates.
+14. Observability starter pack product: KPI tree workshop (half-day) with LICC homework.
+15. Security add-on: secrets hygiene + recording consent education one-pager (not legal advice).
+16. API automation retainer: dry-run inventory of admin APIs; deliver correlation-ID logging standard.
+17. Universal ICP: students’ mentors, career-changers, SMB support teams, enterprise architects — same spine.
+18. Futuristic briefing deck outline from FUTURE-OF-UC.md (2026→2030) with speculation labels.

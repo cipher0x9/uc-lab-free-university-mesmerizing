@@ -64,3 +64,24 @@ Or: GitHub → **Code** → **Download ZIP**
 - Mobile menu drawer · safer boot (v17.1)  
 
 Lab safely. Share freely for learning.
+
+---
+
+## Next Level download notes (additive · 2026-08-05)
+
+| Asset | Path / URL | Notes |
+|-------|------------|-------|
+| Main campus HTML | `university/v17-UNIVERSITY.html` | Next Level sections added in place |
+| Release zip | GitHub Release `v17.0-free` asset (re-pack locally after transform) | Still unzip → open HTML |
+| Prompt labs | `prompts/` + `releases/PROMPTS-THREE-PROJECTS.zip` | Three projects expanded |
+| Sibling AI | https://github.com/cipher0x9/ai-lab-free-university | RTMA grammar |
+
+### Verify offline
+1. Turn on airplane mode  
+2. Open the HTML  
+3. Search `THE CALL MUST ALWAYS CONNECT`  
+4. Confirm themes still switch without network  
+
+### Size honesty
+Public free pack stays browser-friendly. Huge private archives on your lab machine are optional and not required for friends.
+

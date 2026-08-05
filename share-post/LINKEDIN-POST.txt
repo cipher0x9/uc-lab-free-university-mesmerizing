@@ -1,0 +1,57 @@
+I spent almost 10 years in Cisco voice.
+
+Certs. Courses. Labs. Late nights.
+Job posts that asked for “everything.”
+Training that taught product screens…
+but not the quiet things that actually save a call at 2 a.m.
+
+I didn’t need another badge.
+I needed mentorship.
+I needed multi-vendor clarity.
+I needed someone to say:
+
+“Here’s the path.
+Here’s the evidence.
+Here’s how you prove it —
+not just how you configure it.”
+
+So I built a free UC / Contact Center university pack
+I can share with anyone who needs it.
+
+🌿 UC Lab Free University
+• Offline browser campus (~240 sections)
+• Themes: Warm · Night · Cobalt · Forest · Aurora · Sunset
+• Proof grammar: LICC — Leg · ID · Counter · Capture
+• Prompt labs + multi-vendor braid energy
+
+And the sibling for AI learners:
+
+🧠 AI Lab Free University
+• Aurora Dream campus · 425 lessons · 1000+ links
+• Proof grammar: RTMA — Run · Trace · Metric · Artifact
+• Optional Python labs · no API keys to start
+
+No hype. No gatekeeping.
+Educational · MIT · free · lab safely.
+
+If it helps even one person feel less alone in this craft —
+the late nights were worth it.
+
+Links in the first comment.
+
+#UnifiedCommunications #Cisco #Collaboration #ContactCenter #VoiceEngineering #AI #OpenSource #FreeLearning #Mentorship #LearningInPublic
+
+---
+
+## NEXT LEVEL ADDITIVE LAYER · 2026-08-05
+
+---
+NEXT LEVEL add-on paragraph (optional edit before post):
+
+We made the free campus denser:
+• THE CALL MUST ALWAYS CONNECT as the spine
+• Migration factory: on-prem → cloud calling → CCaaS
+• SIP ladders · QoS · CUBE bouncer · ICM brain mnemonics
+• LICC proof labs for lonely 2 a.m. study sessions
+
+Still offline. Still free. Still MIT.

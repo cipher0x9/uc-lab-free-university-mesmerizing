@@ -278,3 +278,52 @@
 13. Anki-ready 100 cards from this track (audio/grammar/tech/culture tags).
 14. Weekly exam: reading + comprehension + spoken monologue rubric.
 15. Teach-back: I teach one Arabic concept in English; grade accuracy.
+
+---
+
+## NEXT LEVEL ADDITIVE LAYER · 2026-08-05
+
+## NEXT LEVEL · cross-language UC mastery blocks (additive)
+
+For **each** language track above, run these additional blocks when ready:
+
+### NL-A · Spine & proof
+1. Translate and explain: THE CALL MUST ALWAYS CONNECT  
+2. LICC pocket card in this language + English gloss  
+3. 90-second teach-back of SIP Rockstar  
+
+### NL-B · Migration talk
+4. Present CUCM → cloud calling dual-run plan in this language (executive audience)  
+5. Translate 10 migration risk terms (FOC, hairpin, rollback, hypercare, E911…)  
+
+### NL-C · SEV bridge
+6. Live-roleplay: first 15 minutes of mass no-dial-tone SEV with calm updates  
+7. Write customer-safe status message (no jargon abuse)  
+
+### NL-D · Spaced
+8. Anki deck 40 cards: protocol + soft skills + emergency  
+9. Review schedule 1h/24h/7d/30d/90d exported as checklist  
+10. Record once weekly; score intelligibility 1–5  
+
+### NL-E · Career
+11. Multi-vendor interview intro (60–90s) in this language  
+12. Portfolio story: proof habit that saved a call path
+
+---
+
+## PASS 2 · cross-language depth block (additive · 2026-08-05)
+
+Use after any language section (NL-* style):
+
+### NL-F · AI-assisted UC ops
+13. Describe agent-assist failing open vs failing closed (human path continues).  
+14. Translate a redacted post-call AI summary template (no PII fields).  
+
+### NL-G · Observability
+15. Flashcards: ASR · NER · SL · abandon · MOS · jitter · API error budget.  
+16. Oral: map one SEV symptom to Counter + Capture only.  
+
+### NL-H · Security + APIs
+17. Explain least privilege for UC admin in plain language.  
+18. Dry-run vs apply: teach the difference with a provision story.  
+19. Multi-vendor braid sentence (7 platform names) for interview intro.
