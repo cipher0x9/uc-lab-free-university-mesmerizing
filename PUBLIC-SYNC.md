@@ -1,7 +1,9 @@
-# Public sync stamp
+# Public sync
 
-**Last full public sync:** 2026-08-01 06:07 UTC  
 **Campus:** v17.1-mobile · 240 sections · mobile drawer + safe boot  
-**Release:** https://github.com/cipher0x9/uc-lab-free-university/releases/tag/v17.1-mobile  
+**Curriculum packs:** 23 deep markdown modules  
+**Last god-mode polish:** 2026-08-06  
+**License:** MIT (see LICENSE + NOTICE.md)  
+**FAQ:** docs/FAQ.md  
 
-This file exists so visitors can see the pack was refreshed on GitHub.
+Verify offline: open `university/v17-UNIVERSITY.html` after clone.

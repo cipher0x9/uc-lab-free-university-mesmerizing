@@ -17,7 +17,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Sections-272_full_curriculum-38BDF8?style=flat-square&labelColor=0B1220" alt="272"/>
+  <img src="https://img.shields.io/badge/Sections-240_full_curriculum-38BDF8?style=flat-square&labelColor=0B1220" alt="240"/>
   <img src="https://img.shields.io/badge/Proof-LICC_·_Leg_·_ID_·_Counter_·_Capture-F59E0B?style=flat-square&labelColor=0B1220" alt="LICC"/>
   <img src="https://img.shields.io/badge/Open_in-Chrome_·_Safari_·_Edge_·_Firefox-22C55E?style=flat-square&labelColor=0B1220" alt="Browsers"/>
   <img src="https://img.shields.io/badge/Mobile-Full_browser_OK-A78BFA?style=flat-square&labelColor=0B1220" alt="Mobile"/>
@@ -127,7 +127,7 @@ Same free-share spirit. Different domain (local + cloud AI, agents, evals, **RTM
 - Repo: https://github.com/cipher0x9/ai-lab-free-university  
 - Zip: https://github.com/cipher0x9/ai-lab-free-university/releases/download/v4.1-mobile/v4-PORTFOLIO.html.zip  
 
-See **[SIBLINGS.md](./SIBLINGS.md)**.
+Also: 🕉️ [Ardham Shastra](https://github.com/cipher0x9/ardham-shastra) · See **[SIBLINGS.md](./SIBLINGS.md)**.
 
 ---
 
@@ -138,7 +138,7 @@ See **[SIBLINGS.md](./SIBLINGS.md)**.
 - Lab safely · pin official vendor docs before production changes  
 - Be kind to learners — including yourself  
 
-**[HOW-TO-GET.md](./HOW-TO-GET.md)** · **[START-HERE.md](./START-HERE.md)** · **[SECURITY.md](./SECURITY.md)** · **[BRAND.md](./BRAND.md)**
+**[HOW-TO-GET.md](./HOW-TO-GET.md)** · **[START-HERE.md](./START-HERE.md)** · **[docs/FAQ.md](./docs/FAQ.md)** · **[CHANGELOG.md](./CHANGELOG.md)** · **[SECURITY.md](./SECURITY.md)** · **[BRAND.md](./BRAND.md)**
 
 ---
 

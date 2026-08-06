@@ -67,3 +67,10 @@ Lab safely · pin vendor docs for production
 ---
 
 <p align="center"><em>Go steady. Keep proof. Share with one more engineer.</em></p>
+
+## Also
+
+- [docs/FAQ.md](./docs/FAQ.md)
+- [curriculum/README.md](./curriculum/README.md)
+- [SIBLINGS.md](./SIBLINGS.md)
+- [CHANGELOG.md](./CHANGELOG.md)

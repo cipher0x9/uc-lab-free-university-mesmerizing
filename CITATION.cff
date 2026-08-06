@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: If you use this free university campus, please cite it.
+title: "UC Lab Free University"
+authors:
+  - name: "CYPHER0X9"
+    alias: cipher0x9
+repository-code: "https://github.com/cipher0x9/uc-lab-free-university"
+url: "https://github.com/cipher0x9/uc-lab-free-university"
+license: MIT
+date-released: "2026-08-01"
+abstract: >
+  Free offline multi-vendor Unified Communications and Contact Center university campus with LICC proof grammar.
+keywords:
+  - education
+  - free-learning
+  - offline

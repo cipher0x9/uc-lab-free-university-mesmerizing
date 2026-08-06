@@ -1,28 +1,61 @@
-# Unified Communications & Contact Center Curriculum Index
+# UC Lab Free University — Curriculum Index
 
-Welcome to the **CYPHER0X9 Free University Campus - UC & CC Engineering Curriculum**. This directory contains comprehensive, production-grade technical guides, architectural deep dives, and operational playbooks covering modern Enterprise Unified Communications, Voice Engineering, and Contact Center technologies.
+**CYPHER0X9 · cipher0x9/uc-lab-free-university · MIT · offline-first**  
+**Proof grammar:** LICC — Leg · ID · Counter · Capture  
+**Campus HTML:** `../university/v17-UNIVERSITY.html` (240 sections)
 
----
+Deep technical packs that sit beside the browser campus. Open any file in this folder — all links are **relative** (GitHub-safe).
 
-## Curriculum Modules Index
+## Complete pack inventory (23 packs)
 
-* [**CCaaS-2026-DEEP.md**](file:///Users/cypher0x9/Documents/01_🎓_UC_AI_FREE_UNIVERSITY_CAMPUS/_github-publish/curriculum/CCaaS-2026-DEEP.md) — Comprehensive technical architecture deep dive on modern CCaaS platforms (Webex Contact Center, Amazon Connect, Genesys Cloud, Five9, NICE CXone), WebRTC desktops, CCAI/voicebots, agent assist, on-prem to cloud migration, and vendor comparison.
-* [**CCX-CONTACT-CENTER-EXPRESS.md**](file:///Users/cypher0x9/Documents/01_🎓_UC_AI_FREE_UNIVERSITY_CAMPUS/_github-publish/curriculum/CCX-CONTACT-CENTER-EXPRESS.md) — Cisco Unified Contact Center Express (UCCX) script development, CAD/Finesse integration, prompt management, and IVR workflow optimization.
-* [**CUCM-DEEP-DIVE.md**](file:///Users/cypher0x9/Documents/01_🎓_UC_AI_FREE_UNIVERSITY_CAMPUS/_github-publish/curriculum/CUCM-DEEP-DIVE.md) — Deep dive into Cisco Unified Communications Manager (CUCM) cluster architecture, database replication, SDL trace analysis, call processing, and registration workflows.
-* [**DIAL-PLAN-ARCHITECTURE.md**](file:///Users/cypher0x9/Documents/01_🎓_UC_AI_FREE_UNIVERSITY_CAMPUS/_github-publish/curriculum/DIAL-PLAN-ARCHITECTURE.md) — Enterprise dial plan design strategies, route patterns, translation patterns, calling search spaces (CSS), partitions, and E.164 globalization.
-* [**E911-AND-EMERGENCY-SERVICES.md**](file:///Users/cypher0x9/Documents/01_🎓_UC_AI_FREE_UNIVERSITY_CAMPUS/_github-publish/curriculum/E911-AND-EMERGENCY-SERVICES.md) — Emergency calling architecture, E911 regulatory compliance (Kari's Law & RAY BAUM'S Act), Cisco Emergency Responder (CER), and dynamic location tracking.
-* [**QOS-AND-NETWORK-READINESS.md**](file:///Users/cypher0x9/Documents/01_🎓_UC_AI_FREE_UNIVERSITY_CAMPUS/_github-publish/curriculum/QOS-AND-NETWORK-READINESS.md) — Quality of Service (QoS) frameworks, DSCP markings, DiffServ model, WAN bandwidth planning, and real-time voice/video traffic prioritization.
-* [**SIP-AND-SBC-MASTERY.md**](file:///Users/cypher0x9/Documents/01_🎓_UC_AI_FREE_UNIVERSITY_CAMPUS/_github-publish/curriculum/SIP-AND-SBC-MASTERY.md) — Session Initiation Protocol (SIP) messaging, SDP offer/answer model, call flows, and Session Border Controller (SBC) configuration & security.
-* [**UC-CAREER-PATH-2026.md**](file:///Users/cypher0x9/Documents/01_🎓_UC_AI_FREE_UNIVERSITY_CAMPUS/_github-publish/curriculum/UC-CAREER-PATH-2026.md) — Strategic career roadmap for Unified Communications and Contact Center engineers transitioning to cloud, AI, and DevOps paradigms in 2026.
-* [**UC-INTERVIEW-GRIND.md**](file:///Users/cypher0x9/Documents/01_🎓_UC_AI_FREE_UNIVERSITY_CAMPUS/_github-publish/curriculum/UC-INTERVIEW-GRIND.md) — High-yield technical interview preparation guide covering core UC concepts, troubleshooting scenarios, and system design questions.
-* [**UC-SECURITY-HARDENING.md**](file:///Users/cypher0x9/Documents/01_🎓_UC_AI_FREE_UNIVERSITY_CAMPUS/_github-publish/curriculum/UC-SECURITY-HARDENING.md) — Comprehensive security guide covering TLS/SRTP encryption, certificate management, toll fraud prevention, and SBC firewall policies.
-* [**UC-TROUBLESHOOTING-PLAYBOOK.md**](file:///Users/cypher0x9/Documents/01_🎓_UC_AI_FREE_UNIVERSITY_CAMPUS/_github-publish/curriculum/UC-TROUBLESHOOTING-PLAYBOOK.md) — Practical field guide for diagnosing voice quality issues, one-way audio, dropped calls, SIP registration errors, and packet captures.
-* [**UCCE-ICM-ARCHITECTURE.md**](file:///Users/cypher0x9/Documents/01_🎓_UC_AI_FREE_UNIVERSITY_CAMPUS/_github-publish/curriculum/UCCE-ICM-ARCHITECTURE.md) — Cisco Unified Contact Center Enterprise (UCCE) Intelligent Contact Management (ICM) router/logger architecture, CVP scripting, and peripheral gateways.
-* [**UNIFIED-MESSAGING-AND-COLLABORATION.md**](file:///Users/cypher0x9/Documents/01_🎓_UC_AI_FREE_UNIVERSITY_CAMPUS/_github-publish/curriculum/UNIFIED-MESSAGING-AND-COLLABORATION.md) — Unified messaging systems, Cisco Unity Connection (CUC), voicemail integration, SIP MWI, and cross-platform collaboration integrations.
-* [**WEBEX-AND-CLOUD-MIGRATION.md**](file:///Users/cypher0x9/Documents/01_🎓_UC_AI_FREE_UNIVERSITY_CAMPUS/_github-publish/curriculum/WEBEX-AND-CLOUD-MIGRATION.md) — Migration frameworks and architectural guidance for transitioning on-premise Cisco workloads to Webex Calling and Webex Suite.
+| Pack | Focus |
+|------|--------|
+| [`CCX-CONTACT-CENTER-EXPRESS.md`](./CCX-CONTACT-CENTER-EXPRESS.md) | See pack title & LICC drills |
+| [`CCaaS-2026-DEEP.md`](./CCaaS-2026-DEEP.md) | See pack title & LICC drills |
+| [`CUBE-DIAL-PEER-LAB.md`](./CUBE-DIAL-PEER-LAB.md) | See pack title & LICC drills |
+| [`CUCM-DEEP-DIVE.md`](./CUCM-DEEP-DIVE.md) | See pack title & LICC drills |
+| [`DIAL-PLAN-ARCHITECTURE.md`](./DIAL-PLAN-ARCHITECTURE.md) | See pack title & LICC drills |
+| [`E911-AND-EMERGENCY-SERVICES.md`](./E911-AND-EMERGENCY-SERVICES.md) | See pack title & LICC drills |
+| [`EXPRESSWAY-MRA-AND-COLLAB-EDGE.md`](./EXPRESSWAY-MRA-AND-COLLAB-EDGE.md) | See pack title & LICC drills |
+| [`HOME-LAB-AND-PACKET-PROOF.md`](./HOME-LAB-AND-PACKET-PROOF.md) | See pack title & LICC drills |
+| [`LICC-PROOF-WORKBOOK.md`](./LICC-PROOF-WORKBOOK.md) | See pack title & LICC drills |
+| [`MEDIA-CODECS-AND-TRANSCODING.md`](./MEDIA-CODECS-AND-TRANSCODING.md) | See pack title & LICC drills |
+| [`MULTI-VENDOR-INTEROP-MATRIX.md`](./MULTI-VENDOR-INTEROP-MATRIX.md) | See pack title & LICC drills |
+| [`PRESENCE-IM-AND-COLLAB-CLIENTS.md`](./PRESENCE-IM-AND-COLLAB-CLIENTS.md) | See pack title & LICC drills |
+| [`QOS-AND-NETWORK-READINESS.md`](./QOS-AND-NETWORK-READINESS.md) | See pack title & LICC drills |
+| [`RECORDING-WFO-AND-COMPLIANCE.md`](./RECORDING-WFO-AND-COMPLIANCE.md) | See pack title & LICC drills |
+| [`SIP-AND-SBC-MASTERY.md`](./SIP-AND-SBC-MASTERY.md) | See pack title & LICC drills |
+| [`TEAMS-PHONE-AND-DIRECT-ROUTING.md`](./TEAMS-PHONE-AND-DIRECT-ROUTING.md) | See pack title & LICC drills |
+| [`UC-CAREER-PATH-2026.md`](./UC-CAREER-PATH-2026.md) | See pack title & LICC drills |
+| [`UC-INTERVIEW-GRIND.md`](./UC-INTERVIEW-GRIND.md) | See pack title & LICC drills |
+| [`UC-SECURITY-HARDENING.md`](./UC-SECURITY-HARDENING.md) | See pack title & LICC drills |
+| [`UC-TROUBLESHOOTING-PLAYBOOK.md`](./UC-TROUBLESHOOTING-PLAYBOOK.md) | See pack title & LICC drills |
+| [`UCCE-ICM-ARCHITECTURE.md`](./UCCE-ICM-ARCHITECTURE.md) | See pack title & LICC drills |
+| [`UNIFIED-MESSAGING-AND-COLLABORATION.md`](./UNIFIED-MESSAGING-AND-COLLABORATION.md) | See pack title & LICC drills |
+| [`WEBEX-AND-CLOUD-MIGRATION.md`](./WEBEX-AND-CLOUD-MIGRATION.md) | See pack title & LICC drills |
 
----
+## Suggested learning paths
 
-> **Maintainer:** CYPHER0X9  
-> **License:** MIT License  
-> **Repository:** `cipher0x9/uc-lab-free-university`
+| Path | Order |
+|------|--------|
+| **Voice foundations** | `SIP-AND-SBC-MASTERY.md` → `MEDIA-CODECS-AND-TRANSCODING.md` → `QOS-AND-NETWORK-READINESS.md` → `LICC-PROOF-WORKBOOK.md` |
+| **Cisco enterprise** | `CUCM-DEEP-DIVE.md` → `DIAL-PLAN-ARCHITECTURE.md` → `CUBE-DIAL-PEER-LAB.md` → `EXPRESSWAY-MRA-AND-COLLAB-EDGE.md` |
+| **Contact center** | `CCX-CONTACT-CENTER-EXPRESS.md` → `UCCE-ICM-ARCHITECTURE.md` → `CCaaS-2026-DEEP.md` → `RECORDING-WFO-AND-COMPLIANCE.md` |
+| **Multi-vendor / career** | `MULTI-VENDOR-INTEROP-MATRIX.md` → `TEAMS-PHONE-AND-DIRECT-ROUTING.md` → `WEBEX-AND-CLOUD-MIGRATION.md` → `UC-INTERVIEW-GRIND.md` → `UC-CAREER-PATH-2026.md` |
+| **Safety & ops** | `E911-AND-EMERGENCY-SERVICES.md` → `UC-SECURITY-HARDENING.md` → `UC-TROUBLESHOOTING-PLAYBOOK.md` → `HOME-LAB-AND-PACKET-PROOF.md` |
+
+## How to use
+
+1. Open the HTML campus for breadth  
+2. Use these packs for depth + interviews  
+3. Fill a LICC ticket on every practice incident  
+4. Pin official vendor docs before production changes  
+
+## Siblings
+
+- 🧠 [AI Lab Free University](https://github.com/cipher0x9/ai-lab-free-university)  
+- 🕉️ [Ardham Shastra](https://github.com/cipher0x9/ardham-shastra)  
+
+FAQ: [../docs/FAQ.md](../docs/FAQ.md)
+
+> Maintainer: CYPHER0X9 · Educational only · MIT · no warranty
