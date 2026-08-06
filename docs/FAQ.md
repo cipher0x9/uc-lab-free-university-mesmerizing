@@ -31,7 +31,7 @@ Real jobs rarely hire one logo forever. Learn the call path so you can survive d
 ## Sibling campuses?
 
 - 🧠 [AI Lab Free University](https://github.com/cipher0x9/ai-lab-free-university)
-- 🕉️ [Ardham Shastra](https://github.com/cipher0x9/ardham-shastra)
+- 🎓 [Ardham Shastra](https://github.com/cipher0x9/ardham-shastra)
 
 ## Can I use this at work / school?
 

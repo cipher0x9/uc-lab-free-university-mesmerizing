@@ -2,7 +2,7 @@
 
 Same author · same safety bar · three free campuses · one hub.
 
-| | 🌿 **UC Lab** | 🧠 **AI Lab** | 🕉️ **Ardham Shastra** |
+| | 🌿 **UC Lab** | 🧠 **AI Lab** | 🎓 **Ardham Shastra** |
 |--|--|--|--|
 | **Who** | Voice / UC / Contact Center | AI learners & builders | Mastery-method / learning science |
 | **Repo** | [uc-lab-free-university](https://github.com/cipher0x9/uc-lab-free-university) | [ai-lab-free-university](https://github.com/cipher0x9/ai-lab-free-university) | [ardham-shastra](https://github.com/cipher0x9/ardham-shastra) |

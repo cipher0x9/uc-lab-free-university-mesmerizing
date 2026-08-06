@@ -59,7 +59,7 @@ Or: GitHub → **Code** → **Download ZIP**
 
 ## What’s inside the campus
 
-- **240 full curriculum sections** (not a stub)  
+- **252 full curriculum sections** (not a stub)  
 - **LICC** proof grammar · multi-vendor UC/CC  
 - Mobile menu drawer · safer boot (v17.1)  
 
