@@ -19,7 +19,7 @@ So I built a free UC / Contact Center university pack
 I can share with anyone who needs it.
 
 🌿 UC Lab Free University
-• Offline browser campus (~240 sections)
+• Offline browser campus (~252 sections)
 • Themes: Warm · Night · Cobalt · Forest · Aurora · Sunset
 • Proof grammar: LICC — Leg · ID · Counter · Capture
 • Prompt labs + multi-vendor braid energy
