@@ -9,17 +9,17 @@
 ## Recommended path ⭐
 
 1. Open the release:  
-   https://github.com/cipher0x9/uc-lab-free-university/releases/tag/v17.1-mobile  
+   https://github.com/cipher0x9/uc-lab-free-university/releases/tag/v20.2-resources  
 2. Download **`v17-UNIVERSITY.html.zip`**  
 3. Unzip  
 4. Open **`v17-UNIVERSITY.html`** in **Chrome / Safari / Edge / Firefox**
 
 Direct file:  
-https://github.com/cipher0x9/uc-lab-free-university/releases/download/v17.1-mobile/v17-UNIVERSITY.html.zip
+https://github.com/cipher0x9/uc-lab-free-university/releases/download/v20.2-resources/v17-UNIVERSITY.html.zip
 
 ### Optional complete pack (campus + prompt labs)
 
-https://github.com/cipher0x9/uc-lab-free-university/releases/download/v17.1-mobile/UC-LAB-COMPLETE-BROWSER-PACK.zip
+https://github.com/cipher0x9/uc-lab-free-university/releases/download/v20.2-resources/UC-LAB-COMPLETE-BROWSER-PACK.zip
 
 ---
 
@@ -31,7 +31,7 @@ https://github.com/cipher0x9/uc-lab-free-university/releases/download/v17.1-mobi
 | 2 | Download the **small campus zip** (not a multi-hundred-MB archive) |
 | 3 | Unzip in **Files** (iOS) or your Downloads folder (Android) |
 | 4 | Tap the `.html` file → open in Chrome/Safari |
-| 5 | Wait for first load (full **240-section** curriculum) |
+| 5 | Wait for first load (full **632-section** curriculum) |
 
 **If you only see “Opening / Loading…” for a long time:**  
 wait up to a minute on older phones, or open the same file on a laptop first. Avoid in-app browsers.
@@ -71,7 +71,7 @@ https://linktr.ee/cyphermonkey
 
 | | Public free campus | Local power archives (optional on maintainer machine) |
 |--|-------------------|------------------------------------------------------|
-| Content | **Full 631 sections** (v20.1-UI) | Huge recursive dumps |
+| Content | **Full 632 sections** (20.2-RESOURCES) | Huge recursive dumps |
 | Phone friendly | **Yes** | Usually **no** |
 | Default share | **Yes** | **No** |
 
