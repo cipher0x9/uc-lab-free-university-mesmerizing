@@ -20,3 +20,7 @@ artifacts/
 .DS_Store
 **/customer-captures/
 **/private-dialplans/
+
+# URL check cache (regenerable)
+tools/.uc_resources_urlcache.json
+*.urlcache.json

@@ -1,6 +1,14 @@
 # Changelog
 
-## [2026-08-06] — Wave E: resources + public polish (local → pending push)
+## [2026-08-07] — Ship `v20.2-resources` · 20.2-RESOURCES · 632 sections
+
+- Public GitHub `main` + release `v20.2-resources` now carry the full Wave C/D/E campus (was stuck on remote v17.2 / 252)
+- Flagship `university/v17-UNIVERSITY.html` → **20.2-RESOURCES** · **632 sections** · ~15 MB · offline one-file
+- Official Resources drawer (verified vendor/RFC docs) + public docs/badges/download links synced
+- Release assets: `v17-UNIVERSITY.html.zip` + `UC-LAB-COMPLETE-BROWSER-PACK.zip`
+- Safety: 0 double-comma holes · 0 CDN · no secrets · MIT
+
+## [2026-08-06] — Wave E: resources + public polish (shipped)
 
 - **Official Resources drawer**: chapter hubs (13 `hub-*` sections) and matching curriculum groups now show a curated card of real, verified official docs (Cisco, Microsoft Learn, AWS, Google Cloud, Twilio, IETF/RFC-Editor, W3C, IANA, FCC)
 - New `window.UC_RESOURCES` registry (63 unique verified URLs, deduped, reused across sections — inlined in the flagship HTML so the "one file, offline" promise holds; source also kept at `university/resources-registry.js` for maintainers)
@@ -9,7 +17,7 @@
 - Docs synced: DOWNLOADS.md/HOW-TO-GET.md stale 252-section figures corrected to **631 / v20.1-UI / ~15 MB**; README/START-HERE updated to mention the Resources drawer
 - Verified: 0 holes, 0 CDN, all 631 sections open cleanly under Playwright with zero JS errors, mobile 390px has zero horizontal scroll, reduced-motion respected
 
-## [2026-08-06] — v20.1-UI (local → pending push)
+## [2026-08-06] — v20.1-UI (shipped)
 
 - **631 sections** campus (public badges were stale at 252/240)
 - Wave C content: 13 chapter hubs, 8 inline SVG flows, 4 LICC banks (80 Qs), migration enrichments

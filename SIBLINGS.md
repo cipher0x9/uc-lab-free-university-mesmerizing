@@ -12,7 +12,7 @@ Same author · same safety bar · three free campuses · one hub.
 
 **Campus zips**
 
-- UC: https://github.com/cipher0x9/uc-lab-free-university/releases/download/v17.1-mobile/v17-UNIVERSITY.html.zip  
+- UC: https://github.com/cipher0x9/uc-lab-free-university/releases/download/v20.2-resources/v17-UNIVERSITY.html.zip  
 - AI: https://github.com/cipher0x9/ai-lab-free-university/releases/download/v4.1-mobile/v4-PORTFOLIO.html.zip  
 - Ardham: clone/download repo → open HTML (release optional)
 

@@ -10,14 +10,14 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/cipher0x9/uc-lab-free-university/releases/download/v17.2-mobile/v17-UNIVERSITY.html.zip"><img src="https://img.shields.io/badge/⬇_Download-Campus_zip-0F9B8E?style=for-the-badge&labelColor=0B1220" alt="Download"/></a>
+  <a href="https://github.com/cipher0x9/uc-lab-free-university/releases/download/v20.2-resources/v17-UNIVERSITY.html.zip"><img src="https://img.shields.io/badge/⬇_Download-Campus_zip-0F9B8E?style=for-the-badge&labelColor=0B1220" alt="Download"/></a>
   <a href="https://github.com/cipher0x9/ai-lab-free-university"><img src="https://img.shields.io/badge/🧠_Sibling-AI_Lab_Free-6366F1?style=for-the-badge&labelColor=0B1220" alt="AI Lab"/></a>
   <a href="https://linktr.ee/cyphermonkey"><img src="https://img.shields.io/badge/🔗_Hub-Linktree-E8820C?style=for-the-badge&labelColor=0B1220" alt="Linktree"/></a>
   <a href="./LICENSE"><img src="https://img.shields.io/badge/License-MIT-159947?style=for-the-badge&labelColor=0B1220" alt="MIT"/></a>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Sections-631_full_curriculum-38BDF8?style=flat-square&labelColor=0B1220" alt="631"/>
+  <img src="https://img.shields.io/badge/Sections-632_full_curriculum-38BDF8?style=flat-square&labelColor=0B1220" alt="632"/>
   <img src="https://img.shields.io/badge/Proof-LICC_·_Leg_·_ID_·_Counter_·_Capture-F59E0B?style=flat-square&labelColor=0B1220" alt="LICC"/>
   <img src="https://img.shields.io/badge/Open_in-Chrome_·_Safari_·_Edge_·_Firefox-22C55E?style=flat-square&labelColor=0B1220" alt="Browsers"/>
   <img src="https://img.shields.io/badge/Mobile-Full_browser_OK-A78BFA?style=flat-square&labelColor=0B1220" alt="Mobile"/>
@@ -48,7 +48,7 @@ If it helps even one engineer feel less alone in this craft, it was worth the wo
 
 ### ⭐ Download the campus zip
 
-**→ [v17-UNIVERSITY.html.zip](https://github.com/cipher0x9/uc-lab-free-university/releases/download/v17.2-mobile/v17-UNIVERSITY.html.zip)**
+**→ [v17-UNIVERSITY.html.zip](https://github.com/cipher0x9/uc-lab-free-university/releases/download/v20.2-resources/v17-UNIVERSITY.html.zip)**
 
 1. Download the zip  
 2. Unzip  
@@ -57,7 +57,7 @@ If it helps even one engineer feel less alone in this craft, it was worth the wo
 **Works offline. No account. No install. No API keys.**
 
 Optional (campus + prompt labs):  
-**[UC-LAB-COMPLETE-BROWSER-PACK.zip](https://github.com/cipher0x9/uc-lab-free-university/releases/download/v17.2-mobile/UC-LAB-COMPLETE-BROWSER-PACK.zip)**
+**[UC-LAB-COMPLETE-BROWSER-PACK.zip](https://github.com/cipher0x9/uc-lab-free-university/releases/download/v20.2-resources/UC-LAB-COMPLETE-BROWSER-PACK.zip)**
 
 ### How to open (please read once)
 
@@ -76,7 +76,7 @@ Optional (campus + prompt labs):
 
 | | |
 |--|--|
-| **Campus** | `university/v17-UNIVERSITY.html` — **631 sections**, full multi-vendor curriculum |
+| **Campus** | `university/v17-UNIVERSITY.html` — **632 sections**, full multi-vendor curriculum |
 | **Themes** | Warm · Night · Cobalt · Forest · Aurora · Sunset |
 | **Proof grammar** | **LICC** — Leg · ID · Counter · Capture |
 | **Mobile** | Menu drawer · safer boot · clearer loading tips (v17.1) |
@@ -102,12 +102,12 @@ Inside: Cisco voice · CUBE · Teams · Webex · SBC · Contact Center · migrat
 
 | Pack | About | Use when |
 |------|--------|----------|
-| **Campus zip (~0.6 MB)** ⭐ | Full **631-section** HTML (~15 MB unzipped) | **Everyone** — phone + desktop |
+| **Campus zip (~0.6 MB)** ⭐ | Full **632-section** HTML (~15 MB unzipped) | **Everyone** — phone + desktop |
 | **Complete browser pack** | Campus + prompt labs | You want prompts too |
 | Huge “godmode / infinite” archives | Recursive bulk, hard on phones | **Not** the public default |
 
 **We did not delete the free curriculum to make a small zip.**  
-The public file is the real 631-section campus (v20.1-UI), packaged so friends’ phones and laptops can actually open it.
+The public file is the real 632-section campus (20.2-RESOURCES), packaged so friends’ phones and laptops can actually open it.
 
 ---
 
