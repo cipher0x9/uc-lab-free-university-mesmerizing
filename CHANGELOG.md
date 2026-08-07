@@ -1,5 +1,12 @@
 # Changelog
 
+## [2026-08-07] — Enterprise Voice briefing deck (PPTX) on main + release
+
+- Added `downloads/Enterprise-Voice-with-Cisco-Technologies-CC-Cloud-Migration.pptx` — **62-slide** UC technical briefing: Enterprise Voice with Cisco · Technologies, Contact Center & Cloud Migration
+- Generic educational deck (the field guide many teams wished vendor training had shipped years ago)
+- Wired into README / DOWNLOADS / START-HERE / PUBLIC-SYNC · release asset on `v20.2-resources`
+- Safety: no secrets in deck XML · MIT educational share
+
 ## [2026-08-07] — Ship `v20.2-resources` · 20.2-RESOURCES · 632 sections
 
 - Public GitHub `main` + release `v20.2-resources` now carry the full Wave C/D/E campus (was stuck on remote v17.2 / 252)

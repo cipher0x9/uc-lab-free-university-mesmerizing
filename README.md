@@ -77,6 +77,7 @@ Optional (campus + prompt labs):
 | | |
 |--|--|
 | **Campus** | `university/v17-UNIVERSITY.html` — **632 sections**, full multi-vendor curriculum |
+| **Briefing deck** | `downloads/Enterprise-Voice-with-Cisco-Technologies-CC-Cloud-Migration.pptx` — **62-slide** Enterprise Voice / CC / Cloud Migration technical briefing |
 | **Themes** | Warm · Night · Cobalt · Forest · Aurora · Sunset |
 | **Proof grammar** | **LICC** — Leg · ID · Counter · Capture |
 | **Mobile** | Menu drawer · safer boot · clearer loading tips (v17.1) |
@@ -117,6 +118,8 @@ The public file is the real 632-section campus (20.2-RESOURCES), packaged so fri
 git clone https://github.com/cipher0x9/uc-lab-free-university.git
 cd uc-lab-free-university
 open university/v17-UNIVERSITY.html
+# optional: open the 62-slide briefing deck
+open downloads/Enterprise-Voice-with-Cisco-Technologies-CC-Cloud-Migration.pptx
 ```
 
 ---
