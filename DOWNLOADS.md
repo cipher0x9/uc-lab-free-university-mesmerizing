@@ -12,9 +12,11 @@ Free for learning · Educational only · MIT · no warranty
 
 | What | Size (approx) | Link |
 |------|----------------|------|
-| **Campus zip** | **~624 KB** zip → ~15 MB HTML (repo latest) | https://github.com/cipher0x9/uc-lab-free-university/releases/download/v20.2-resources/v17-UNIVERSITY.html.zip |
+| **Campus zip** | ~1.3 MB zip → ~15 MB HTML | https://github.com/cipher0x9/uc-lab-free-university/releases/download/v20.2-resources/v17-UNIVERSITY.html.zip |
+| **Enterprise Voice deck (PPTX)** | ~5 MB · 62 slides | https://github.com/cipher0x9/uc-lab-free-university/releases/download/v20.2-resources/Enterprise-Voice-with-Cisco-Technologies-CC-Cloud-Migration.pptx |
 | Release page | — | https://github.com/cipher0x9/uc-lab-free-university/releases/tag/v20.2-resources |
 | HTML in repo | ~15 MB | [`university/v17-UNIVERSITY.html`](./university/v17-UNIVERSITY.html) |
+| PPTX in repo | ~5 MB | [`downloads/Enterprise-Voice-with-Cisco-Technologies-CC-Cloud-Migration.pptx`](./downloads/Enterprise-Voice-with-Cisco-Technologies-CC-Cloud-Migration.pptx) |
 
 **Open:** download → unzip → open `v17-UNIVERSITY.html` in **Chrome / Safari / Edge / Firefox** (full browser app).
 

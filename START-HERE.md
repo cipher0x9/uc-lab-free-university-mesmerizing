@@ -15,6 +15,8 @@ Welcome. This is a **free** multi-vendor UC & Contact Center campus — offline,
 **Latest local build:** `20.2-RESOURCES` · **632 sections** · open `university/v17-UNIVERSITY.html`
 
 
+**Briefing deck (PPTX, 62 slides):** [`downloads/Enterprise-Voice-with-Cisco-Technologies-CC-Cloud-Migration.pptx`](./downloads/Enterprise-Voice-with-Cisco-Technologies-CC-Cloud-Migration.pptx)  
+
 **Download:** [v17-UNIVERSITY.html.zip](https://github.com/cipher0x9/uc-lab-free-university/releases/download/v20.2-resources/v17-UNIVERSITY.html.zip)
 
 Or from a clone:
