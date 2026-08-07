@@ -14,7 +14,7 @@ Free for learning · Educational only · MIT · no warranty
 |------|----------------|------|
 | **Campus zip** | **~624 KB** zip → ~15 MB HTML (repo latest) | https://github.com/cipher0x9/uc-lab-free-university/releases/download/v17.1-mobile/v17-UNIVERSITY.html.zip |
 | Release page | — | https://github.com/cipher0x9/uc-lab-free-university/releases/tag/v17.1-mobile |
-| HTML in repo | ~3.7 MB | [`university/v17-UNIVERSITY.html`](./university/v17-UNIVERSITY.html) |
+| HTML in repo | ~15 MB | [`university/v17-UNIVERSITY.html`](./university/v17-UNIVERSITY.html) |
 
 **Open:** download → unzip → open `v17-UNIVERSITY.html` in **Chrome / Safari / Edge / Firefox** (full browser app).
 
@@ -60,9 +60,10 @@ Or: GitHub → **Code** → **Download ZIP**
 
 ## What’s inside the campus
 
-- **252 full curriculum sections** (not a stub)  
-- **LICC** proof grammar · multi-vendor UC/CC  
-- Mobile menu drawer · safer boot (v17.1)  
+- **631 full curriculum sections** (v20.1-UI, not a stub)
+- **LICC** proof grammar · multi-vendor UC/CC
+- Mobile menu drawer · safer boot (v17.1)
+- **Official Resources** drawer on chapter hubs — curated, verified links to real Cisco/Microsoft/AWS/Google/Twilio/IETF docs (offline-optional, campus still boots with zero network)
 
 Lab safely. Share freely for learning.
 

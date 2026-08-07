@@ -80,6 +80,7 @@ Optional (campus + prompt labs):
 | **Themes** | Warm · Night · Cobalt · Forest · Aurora · Sunset |
 | **Proof grammar** | **LICC** — Leg · ID · Counter · Capture |
 | **Mobile** | Menu drawer · safer boot · clearer loading tips (v17.1) |
+| **Resources** | Official Resources drawer on chapter hubs — curated, verified Cisco/Microsoft/AWS/Google/Twilio/IETF doc links |
 | **Prompt labs** | Languages · AI bridge seeds · nature-remote / agency prompts |
 | **Hermes notes** | Optional study-coach wiring sketches (not required to learn) |
 | **Sibling** | 🧠 [AI Lab Free University](https://github.com/cipher0x9/ai-lab-free-university) |

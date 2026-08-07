@@ -1,5 +1,14 @@
 # Changelog
 
+## [2026-08-06] — Wave E: resources + public polish (local → pending push)
+
+- **Official Resources drawer**: chapter hubs (13 `hub-*` sections) and matching curriculum groups now show a curated card of real, verified official docs (Cisco, Microsoft Learn, AWS, Google Cloud, Twilio, IETF/RFC-Editor, W3C, IANA, FCC)
+- New `window.UC_RESOURCES` registry (63 unique verified URLs, deduped, reused across sections — inlined in the flagship HTML so the "one file, offline" promise holds; source also kept at `university/resources-registry.js` for maintainers)
+- Every URL was fetched and confirmed live before inclusion — no invented links, no fake `example.com` placeholders
+- Static outbound `http(s)` href count in the HTML shell stays at **4** (github/linktr) — resource links render dynamically per-section, so the campus still boots with zero network calls
+- Docs synced: DOWNLOADS.md/HOW-TO-GET.md stale 252-section figures corrected to **631 / v20.1-UI / ~15 MB**; README/START-HERE updated to mention the Resources drawer
+- Verified: 0 holes, 0 CDN, all 631 sections open cleanly under Playwright with zero JS errors, mobile 390px has zero horizontal scroll, reduced-motion respected
+
 ## [2026-08-06] — v20.1-UI (local → pending push)
 
 - **631 sections** campus (public badges were stale at 252/240)

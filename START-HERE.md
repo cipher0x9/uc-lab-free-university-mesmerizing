@@ -49,7 +49,8 @@ If you cannot explain LICC without notes, stay with fundamentals a little longer
 4. Multi-vendor braid (Cisco + Teams + Webex + CC)  
 5. Migrations · E911 · rollback  
 6. Evidence labs — write LICC on every incident  
-7. When ready — open sibling **AI Lab**  
+7. Chapter hubs now show an **Official Resources** drawer — curated, verified links to Cisco/Microsoft/AWS/Google/Twilio/IETF docs  
+8. When ready — open sibling **AI Lab**  
 
 ---
 

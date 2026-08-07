@@ -71,7 +71,7 @@ https://linktr.ee/cyphermonkey
 
 | | Public free campus | Local power archives (optional on maintainer machine) |
 |--|-------------------|------------------------------------------------------|
-| Content | **Full 252 sections** | Huge recursive dumps |
+| Content | **Full 631 sections** (v20.1-UI) | Huge recursive dumps |
 | Phone friendly | **Yes** | Usually **no** |
 | Default share | **Yes** | **No** |
 
