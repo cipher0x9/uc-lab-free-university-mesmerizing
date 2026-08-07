@@ -12,6 +12,9 @@ Welcome. This is a **free** multi-vendor UC & Contact Center campus — offline,
 
 ## 1) Open the campus
 
+**Latest local build:** `v20.1-UI` · **631 sections** · open `university/v17-UNIVERSITY.html`
+
+
 **Download:** [v17-UNIVERSITY.html.zip](https://github.com/cipher0x9/uc-lab-free-university/releases/download/v17.1-mobile/v17-UNIVERSITY.html.zip)
 
 Or from a clone:

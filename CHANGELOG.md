@@ -1,5 +1,13 @@
 # Changelog
 
+## [2026-08-06] — v20.1-UI (local → pending push)
+
+- **631 sections** campus (public badges were stale at 252/240)
+- Wave C content: 13 chapter hubs, 8 inline SVG flows, 4 LICC banks (80 Qs), migration enrichments
+- Wave D UI: hash deep-links, scroll-margin, chapter rail, lively CSS + reduced-motion, self-heal boot, a11y menus
+- Verified: 0 holes, 0 CDN, Playwright boot clean, `#hub-cucm` deep-link OK
+- Docs badges/counts synced; release zip refresh scheduled post-push
+
 All notable public improvements to **UC Lab Free University** are recorded here.
 
 ## [2026-08-06] — God-mode public polish

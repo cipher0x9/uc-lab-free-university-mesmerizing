@@ -1,6 +1,7 @@
 # Downloads — UC Lab Free University
 
-**Latest public release:** `v17.1-mobile`  
+**Latest public release tag (may lag):** `v17.1-mobile` / `v17.2-mobile`  
+**Latest campus in repo (clone):** `v20.1-UI` · **631 sections** · ~15 MB HTML  
 **Hub:** https://linktr.ee/cyphermonkey  
 
 Free for learning · Educational only · MIT · no warranty  
@@ -11,7 +12,7 @@ Free for learning · Educational only · MIT · no warranty
 
 | What | Size (approx) | Link |
 |------|----------------|------|
-| **Campus zip** | **~624 KB** zip → ~3.7 MB HTML | https://github.com/cipher0x9/uc-lab-free-university/releases/download/v17.1-mobile/v17-UNIVERSITY.html.zip |
+| **Campus zip** | **~624 KB** zip → ~15 MB HTML (repo latest) | https://github.com/cipher0x9/uc-lab-free-university/releases/download/v17.1-mobile/v17-UNIVERSITY.html.zip |
 | Release page | — | https://github.com/cipher0x9/uc-lab-free-university/releases/tag/v17.1-mobile |
 | HTML in repo | ~3.7 MB | [`university/v17-UNIVERSITY.html`](./university/v17-UNIVERSITY.html) |
 
@@ -29,7 +30,7 @@ Free for learning · Educational only · MIT · no warranty
 
 - **Desktop** = best full experience  
 - **Phone** = full Chrome or Safari only (not in-app browsers)  
-- First open on phone may take 10–30 seconds (full **240-section** curriculum)  
+- First open on phone may take 10–30 seconds (full **631-section** curriculum)  
 - iPhone: zip → **Files** → open HTML in Chrome/Safari  
 
 Full steps: [HOW-TO-GET.md](./HOW-TO-GET.md) · [START-HERE.md](./START-HERE.md)

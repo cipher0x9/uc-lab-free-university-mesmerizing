@@ -17,7 +17,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Sections-252_full_curriculum-38BDF8?style=flat-square&labelColor=0B1220" alt="252"/>
+  <img src="https://img.shields.io/badge/Sections-631_full_curriculum-38BDF8?style=flat-square&labelColor=0B1220" alt="631"/>
   <img src="https://img.shields.io/badge/Proof-LICC_·_Leg_·_ID_·_Counter_·_Capture-F59E0B?style=flat-square&labelColor=0B1220" alt="LICC"/>
   <img src="https://img.shields.io/badge/Open_in-Chrome_·_Safari_·_Edge_·_Firefox-22C55E?style=flat-square&labelColor=0B1220" alt="Browsers"/>
   <img src="https://img.shields.io/badge/Mobile-Full_browser_OK-A78BFA?style=flat-square&labelColor=0B1220" alt="Mobile"/>
@@ -76,7 +76,7 @@ Optional (campus + prompt labs):
 
 | | |
 |--|--|
-| **Campus** | `university/v17-UNIVERSITY.html` — **252 sections**, full multi-vendor curriculum |
+| **Campus** | `university/v17-UNIVERSITY.html` — **631 sections**, full multi-vendor curriculum |
 | **Themes** | Warm · Night · Cobalt · Forest · Aurora · Sunset |
 | **Proof grammar** | **LICC** — Leg · ID · Counter · Capture |
 | **Mobile** | Menu drawer · safer boot · clearer loading tips (v17.1) |
@@ -101,12 +101,12 @@ Inside: Cisco voice · CUBE · Teams · Webex · SBC · Contact Center · migrat
 
 | Pack | About | Use when |
 |------|--------|----------|
-| **Campus zip (~0.6 MB)** ⭐ | Full **240-section** HTML (~3.7 MB unzipped) | **Everyone** — phone + desktop |
+| **Campus zip (~0.6 MB)** ⭐ | Full **631-section** HTML (~15 MB unzipped) | **Everyone** — phone + desktop |
 | **Complete browser pack** | Campus + prompt labs | You want prompts too |
 | Huge “godmode / infinite” archives | Recursive bulk, hard on phones | **Not** the public default |
 
 **We did not delete the free curriculum to make a small zip.**  
-The public file is the real 240-section campus, packaged so friends’ phones and laptops can actually open it.
+The public file is the real 631-section campus (v20.1-UI), packaged so friends’ phones and laptops can actually open it.
 
 ---
 
