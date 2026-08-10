@@ -12,7 +12,7 @@ Free for learning · Educational only · MIT · no warranty
 
 | What | Size (approx) | Link |
 |------|----------------|------|
-| **Campus zip** | ~1.3 MB zip → ~15 MB HTML | https://github.com/cipher0x9/uc-lab-free-university/releases/download/v20.2-resources/v17-UNIVERSITY.html.zip |
+| **Campus zip** | ~1.4 MB zip → ~15 MB HTML | https://github.com/cipher0x9/uc-lab-free-university/releases/download/v20.2-resources/v17-UNIVERSITY.html.zip |
 | **Enterprise Voice deck (PPTX)** | ~5 MB · 62 slides | https://github.com/cipher0x9/uc-lab-free-university/releases/download/v20.2-resources/Enterprise-Voice-with-Cisco-Technologies-CC-Cloud-Migration.pptx |
 | Release page | — | https://github.com/cipher0x9/uc-lab-free-university/releases/tag/v20.2-resources |
 | HTML in repo | ~15 MB | [`university/v17-UNIVERSITY.html`](./university/v17-UNIVERSITY.html) |
@@ -20,11 +20,18 @@ Free for learning · Educational only · MIT · no warranty
 
 **Open:** download → unzip → open `v17-UNIVERSITY.html` in **Chrome / Safari / Edge / Firefox** (full browser app).
 
+## PDF / export (honest note)
+
+- There is **no separate PDF textbook** on purpose — the campus is the book.
+- Inside the campus UI: use the **Export / Download menu** (Print / Export PDF) to save study packs — no install, works offline.
+- Any section can also be saved via your browser's **Print → Save as PDF**.
+- Prefer slides? The [62-slide Enterprise Voice / CC / Cloud Migration PPTX](https://github.com/cipher0x9/uc-lab-free-university/releases/download/v20.2-resources/Enterprise-Voice-with-Cisco-Technologies-CC-Cloud-Migration.pptx) is the slide-format companion.
+
 ### Optional complete pack (campus + prompt labs)
 
 | What | Size | Link |
 |------|------|------|
-| Complete browser pack | ~649 KB | https://github.com/cipher0x9/uc-lab-free-university/releases/download/v20.2-resources/UC-LAB-COMPLETE-BROWSER-PACK.zip |
+| Complete browser pack | ~1.4 MB | https://github.com/cipher0x9/uc-lab-free-university/releases/download/v20.2-resources/UC-LAB-COMPLETE-BROWSER-PACK.zip |
 
 ---
 
@@ -56,7 +63,7 @@ Or: GitHub → **Code** → **Download ZIP**
 | What | Link |
 |------|------|
 | Repo | https://github.com/cipher0x9/ai-lab-free-university |
-| Campus zip (~107 KB) | https://github.com/cipher0x9/ai-lab-free-university/releases/download/v4.1-mobile/v4-PORTFOLIO.html.zip |
+| Campus zip (~560 KB) | https://github.com/cipher0x9/ai-lab-free-university/releases/download/v4.2-mobile/v4-PORTFOLIO.html.zip |
 
 ---
 
@@ -76,7 +83,7 @@ Lab safely. Share freely for learning.
 | Asset | Path / URL | Notes |
 |-------|------------|-------|
 | Main campus HTML | `university/v17-UNIVERSITY.html` | Next Level sections added in place |
-| Release zip | GitHub Release `v17.0-free` asset (re-pack locally after transform) | Still unzip → open HTML |
+| Release zip | GitHub Release `v20.2-resources` asset (re-pack locally after transform) | Still unzip → open HTML |
 | Prompt labs | `prompts/` + `releases/PROMPTS-THREE-PROJECTS.zip` | Three projects expanded |
 | Sibling AI | https://github.com/cipher0x9/ai-lab-free-university | RTMA grammar |
 
