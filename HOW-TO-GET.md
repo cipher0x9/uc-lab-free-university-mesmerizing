@@ -63,7 +63,7 @@ https://linktr.ee/cyphermonkey
 | | |
 |--|--|
 | Repo | https://github.com/cipher0x9/ai-lab-free-university |
-| Campus zip | https://github.com/cipher0x9/ai-lab-free-university/releases/download/v4.1-mobile/v4-PORTFOLIO.html.zip |
+| Campus zip | https://github.com/cipher0x9/ai-lab-free-university/releases/download/v4.2-mobile/v4-PORTFOLIO.html.zip |
 
 ---
 

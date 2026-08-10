@@ -2,7 +2,7 @@
 
 **CYPHER0X9 · cipher0x9/uc-lab-free-university · MIT · offline-first**  
 **Proof grammar:** LICC — Leg · ID · Counter · Capture  
-**Campus HTML:** `../university/v17-UNIVERSITY.html` (252 sections)
+**Campus HTML:** `../university/v17-UNIVERSITY.html` (**632 sections** · `v20.2-resources`)
 
 Deep technical packs that sit beside the browser campus. Open any file in this folder — all links are **relative** (GitHub-safe).
 

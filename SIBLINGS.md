@@ -7,14 +7,15 @@ Same author · same safety bar · three free campuses · one hub.
 | **Who** | Voice / UC / Contact Center | AI learners & builders | Mastery-method / learning science |
 | **Repo** | [uc-lab-free-university](https://github.com/cipher0x9/uc-lab-free-university) | [ai-lab-free-university](https://github.com/cipher0x9/ai-lab-free-university) | [ardham-shastra](https://github.com/cipher0x9/ardham-shastra) |
 | **Open** | `v17-UNIVERSITY.html` | `v4-PORTFOLIO.html` | `v1-ARDHAM-SHASTRA.html` |
+| **Latest tag** | `v20.2-resources` · 632 sections | `v4.2-mobile` · 431 lessons | `v5-mastery` |
 | **Proof** | **LICC** Leg·ID·Counter·Capture | **RTMA** Run·Trace·Metric·Artifact | RTMA + LICC habits + Śikṣā loop |
 | **Browser** | Chrome · Safari · Edge · Firefox | Same | Same |
 
 **Campus zips**
 
 - UC: https://github.com/cipher0x9/uc-lab-free-university/releases/download/v20.2-resources/v17-UNIVERSITY.html.zip  
-- AI: https://github.com/cipher0x9/ai-lab-free-university/releases/download/v4.1-mobile/v4-PORTFOLIO.html.zip  
-- Ardham: clone/download repo → open HTML (release optional)
+- AI: https://github.com/cipher0x9/ai-lab-free-university/releases/download/v4.2-mobile/v4-PORTFOLIO.html.zip  
+- Ardham: https://github.com/cipher0x9/ardham-shastra/releases/download/v5-mastery/v1-ARDHAM-SHASTRA.html.zip  
 
 Hub: https://linktr.ee/cyphermonkey
 

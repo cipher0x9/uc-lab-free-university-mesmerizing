@@ -103,7 +103,7 @@ Inside: Cisco voice · CUBE · Teams · Webex · SBC · Contact Center · migrat
 
 | Pack | About | Use when |
 |------|--------|----------|
-| **Campus zip (~0.6 MB)** ⭐ | Full **632-section** HTML (~15 MB unzipped) | **Everyone** — phone + desktop |
+| **Campus zip (~1.4 MB)** ⭐ | Full **632-section** HTML (~15 MB unzipped) | **Everyone** — phone + desktop |
 | **Complete browser pack** | Campus + prompt labs | You want prompts too |
 | Huge “godmode / infinite” archives | Recursive bulk, hard on phones | **Not** the public default |
 
@@ -129,7 +129,7 @@ open downloads/Enterprise-Voice-with-Cisco-Technologies-CC-Cloud-Migration.pptx
 Same free-share spirit. Different domain (local + cloud AI, agents, evals, **RTMA** proof grammar).
 
 - Repo: https://github.com/cipher0x9/ai-lab-free-university  
-- Zip: https://github.com/cipher0x9/ai-lab-free-university/releases/download/v4.1-mobile/v4-PORTFOLIO.html.zip  
+- Zip: https://github.com/cipher0x9/ai-lab-free-university/releases/download/v4.2-mobile/v4-PORTFOLIO.html.zip  
 
 Also: 🎓 [Ardham Shastra](https://github.com/cipher0x9/ardham-shastra) · See **[SIBLINGS.md](./SIBLINGS.md)**.
 

@@ -19,17 +19,22 @@ So I built a free UC / Contact Center university pack
 I can share with anyone who needs it.
 
 🌿 UC Lab Free University
-• Offline browser campus (~252 sections)
-• Themes: Warm · Night · Cobalt · Forest · Aurora · Sunset
+• Offline browser campus · 632 sections · v20.2-resources
+• Official Resources drawer + Enterprise Voice PPTX briefing deck
 • Proof grammar: LICC — Leg · ID · Counter · Capture
 • Prompt labs + multi-vendor braid energy
 
-And the sibling for AI learners:
+And the siblings:
 
 🧠 AI Lab Free University
-• Aurora Dream campus · 425 lessons · 1000+ links
+• Aurora Dream campus · 431 lessons · v4.2-mobile
+• Export center (HTML/PDF/Markdown/JSON/CSV)
 • Proof grammar: RTMA — Run · Trace · Metric · Artifact
 • Optional Python labs · no API keys to start
+
+🎓 Ardham Shastra
+• Mastery-method campus · v5-mastery
+• Śikṣā loop · Pāṇini · Nyāya · spaced practice
 
 No hype. No gatekeeping.
 Educational · MIT · free · lab safely.

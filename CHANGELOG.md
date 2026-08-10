@@ -1,5 +1,18 @@
 # Changelog
 
+## [2026-08-10] — Stranger-path size honesty + share-post refresh
+
+- Zip sizes re-measured against live `v20.2-resources` release assets: campus zip **~1.4 MB** (README said ~0.6 MB), complete browser pack **~1.4 MB** (was ~649 KB), AI sibling zip **~560 KB** (was ~107 KB)
+- DOWNLOADS.md gained an honest **PDF / export** note (in-campus Export / Download menu · Print / Export PDF · browser Print→PDF · PPTX companion)
+- `share-post/LINKEDIN-FIRST-COMMENT.txt` stale `v17.0-free` / `v4.0-free` URLs updated to `v20.2-resources` / `v4.2-mobile`
+- No curriculum cut — docs/metadata only
+
+## [2026-08-10] — Public sibling + FAQ sync
+
+- Sibling download matrix aligned to latest AI (`v4.2-mobile`) and Ardham (`v5-mastery`) zips
+- FAQ updated: **632 sections**, phone load guidance, PPTX briefing deck, Print→PDF path, Official Resources drawer
+- No curriculum cut — docs/metadata only
+
 ## [2026-08-07] — Enterprise Voice briefing deck (PPTX) on main + release
 
 - Added `downloads/Enterprise-Voice-with-Cisco-Technologies-CC-Cloud-Migration.pptx` — **62-slide** UC technical briefing: Enterprise Voice with Cisco · Technologies, Contact Center & Cloud Migration
