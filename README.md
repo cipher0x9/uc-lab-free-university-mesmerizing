@@ -23,6 +23,20 @@
   <img src="https://img.shields.io/badge/Mobile-Full_browser_OK-A78BFA?style=flat-square&labelColor=0B1220" alt="Mobile"/>
 </p>
 
+<p align="center">
+  <img src="./docs/assets/preview.png" alt="UC Lab Free University - warm campus with mission control dashboard" width="100%"/>
+</p>
+
+---
+
+## ✨ Latest build — v20.2 mesmerizing edition
+
+- **Mission Control dashboard** — study-momentum donut, curriculum-map bars, and the Study Loop diagram (Learn → Drill → Lab → Teach, LICC at the core)
+- **7 visual themes** with a swatch gallery — Warm · Night · Cobalt · Forest · Aurora · Sunset · Paper
+- **Export center** — section HTML · full app · Markdown · progress JSON · question-bank CSV · PDF print
+- **Command palette** ⌘K · live search · study badges · font scale · density · mobile-friendly
+- One heavy single file: `university/v17-UNIVERSITY.html` — 632 full sections · offline-first · zero CDN
+
 ---
 
 ## Why this exists
