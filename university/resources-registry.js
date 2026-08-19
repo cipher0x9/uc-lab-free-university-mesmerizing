@@ -117,7 +117,7 @@
     { title: "Twilio Studio Docs", url: "https://www.twilio.com/docs/studio", vendor: "Twilio", why: "Visual IVR/flow builder used in CC migrations" }
   ];
   var CAMPUS = [
-    { title: "UC Lab Free University — GitHub Repo", url: "https://github.com/cipher0x9/uc-lab-free-university", vendor: "GitHub", why: "Source repo for this campus — issues, releases, downloads" }
+    { title: "UC Lab Free University — GitHub Repo", url: "https://github.com/cipher0x9/uc-lab-free-university-mesmerizing", vendor: "GitHub", why: "Source repo for this campus — issues, releases, downloads" }
   ];
 
   // ---- Group defaults: shared across every section in a curriculum group --

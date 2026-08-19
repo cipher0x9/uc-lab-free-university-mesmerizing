@@ -250,7 +250,7 @@ Symptom → path map → IDs (Call-ID / ContactId / Session)
 | Brand | [BRAND.md](./BRAND.md) |
 | AI bridge prompts | `prompts/02-ai-ml-future-lab/` |
 | Hermes automation notes | `hermes/` |
-| Sibling AI university | https://github.com/cipher0x9/ai-lab-free-university |
+| Sibling AI university | https://github.com/cipher0x9/ai-lab-free-university-mesmerizing |
 
 ---
 

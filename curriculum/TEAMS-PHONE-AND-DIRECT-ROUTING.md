@@ -159,7 +159,7 @@ For each: write **Leg · ID · Counter · Capture** before you change config.
 
 Voice AI agents that sit on Teams or CCaaS still obey the spine: if STT/LLM freezes, **the call path must still connect or fail soft**. Measure STT/LLM/TTS legs with **RTMA** while you measure SIP legs with **LICC**.
 
-Sibling: [AI Lab Free University](https://github.com/cipher0x9/ai-lab-free-university)
+Sibling: [AI Lab Free University](https://github.com/cipher0x9/ai-lab-free-university-mesmerizing)
 
 ---
 

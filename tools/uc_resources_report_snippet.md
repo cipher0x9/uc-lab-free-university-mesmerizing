@@ -38,7 +38,7 @@
 - ✅ [200] [JSON Schema](https://json-schema.org/)
 - ✅ [200] [Wireshark Documentation](https://www.wireshark.org/docs/)
 - ✅ [200] [Wireshark Wiki](https://wiki.wireshark.org/)
-- ✅ [200] [UC Lab Free University (GitHub)](https://github.com/cipher0x9/uc-lab-free-university)
+- ✅ [200] [UC Lab Free University (GitHub)](https://github.com/cipher0x9/uc-lab-free-university-mesmerizing)
 - ✅ [200] [Campus Linktree](https://linktr.ee/cyphermonkey)
 
 ## hub:hub-cucm
@@ -103,7 +103,7 @@
 - ✅ [200] [Cisco DevNet](https://developer.cisco.com/)
 - ✅ [200] [Webex Help Center](https://help.webex.com/)
 - ✅ [200B] [Cisco Support Central](https://www.cisco.com/c/en/us/support/index.html)
-- ✅ [200] [UC Lab Free University (GitHub)](https://github.com/cipher0x9/uc-lab-free-university)
+- ✅ [200] [UC Lab Free University (GitHub)](https://github.com/cipher0x9/uc-lab-free-university-mesmerizing)
 
 ## hub:hub-pcce
 - ✅ [200B] [PCCE — Support Home](https://www.cisco.com/c/en/us/support/customer-collaboration/packaged-contact-center-enterprise/tsd-products-support-series-home.html)
@@ -115,7 +115,7 @@
 - ✅ [200B] [Cisco Unified Communications — Docs & Support](https://www.cisco.com/c/en/us/support/unified-communications/index.html)
 - ✅ [200] [Cisco DevNet](https://developer.cisco.com/)
 - ✅ [200B] [Cisco Support Central](https://www.cisco.com/c/en/us/support/index.html)
-- ✅ [200] [UC Lab Free University (GitHub)](https://github.com/cipher0x9/uc-lab-free-university)
+- ✅ [200] [UC Lab Free University (GitHub)](https://github.com/cipher0x9/uc-lab-free-university-mesmerizing)
 
 ## hub:hub-webex-cc
 - ✅ [200] [Webex Help Center](https://help.webex.com/)
@@ -125,7 +125,7 @@
 - ✅ [200B] [Cisco Support Central](https://www.cisco.com/c/en/us/support/index.html)
 - ✅ [200B] [Cisco Unified Communications — Docs & Support](https://www.cisco.com/c/en/us/support/unified-communications/index.html)
 - ✅ [200B] [Salesforce Developers](https://developer.salesforce.com/docs)
-- ✅ [200] [UC Lab Free University (GitHub)](https://github.com/cipher0x9/uc-lab-free-university)
+- ✅ [200] [UC Lab Free University (GitHub)](https://github.com/cipher0x9/uc-lab-free-university-mesmerizing)
 
 ## hub:hub-amazon-connect
 - ✅ [200] [Amazon Connect Documentation](https://docs.aws.amazon.com/connect/)
@@ -185,7 +185,7 @@
 - ✅ [200] [RingCentral Developers](https://developers.ringcentral.com/)
 - ✅ [200] [AWS Well-Architected Framework](https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html)
 - ✅ [200B] [Cisco Support Central](https://www.cisco.com/c/en/us/support/index.html)
-- ✅ [200] [UC Lab Free University (GitHub)](https://github.com/cipher0x9/uc-lab-free-university)
+- ✅ [200] [UC Lab Free University (GitHub)](https://github.com/cipher0x9/uc-lab-free-university-mesmerizing)
 
 ## hub:hub-sev-troubleshoot
 - ✅ [200] [Webex Status](https://status.webex.com/)
@@ -198,7 +198,7 @@
 - ✅ [200] [8x8 Status](https://status.8x8.com/)
 - ✅ [200] [MS Teams — Monitor & Improve Call Quality](https://learn.microsoft.com/en-us/microsoftteams/monitor-call-quality-qos)
 - ✅ [200B] [Cisco Support Central](https://www.cisco.com/c/en/us/support/index.html)
-- ✅ [200] [UC Lab Free University (GitHub)](https://github.com/cipher0x9/uc-lab-free-university)
+- ✅ [200] [UC Lab Free University (GitHub)](https://github.com/cipher0x9/uc-lab-free-university-mesmerizing)
 
 ## hub:hub-interview
 - ✅ [200B] [Cisco Unified Communications — Docs & Support](https://www.cisco.com/c/en/us/support/unified-communications/index.html)
@@ -208,7 +208,7 @@
 - ✅ [200] [Genesys Cloud Developer Center](https://developer.genesys.cloud/)
 - ✅ [200] [Twilio Docs](https://www.twilio.com/docs)
 - ✅ [200] [RFC 3261 — SIP](https://www.rfc-editor.org/rfc/rfc3261)
-- ✅ [200] [UC Lab Free University (GitHub)](https://github.com/cipher0x9/uc-lab-free-university)
+- ✅ [200] [UC Lab Free University (GitHub)](https://github.com/cipher0x9/uc-lab-free-university-mesmerizing)
 - ✅ [200] [Campus Linktree](https://linktr.ee/cyphermonkey)
 
 ## topic:cucm
@@ -438,7 +438,7 @@
 - ✅ [200] [Microsoft Teams Documentation](https://learn.microsoft.com/en-us/microsoftteams/)
 
 ## topic:interview
-- ✅ [200] [UC Lab Free University (GitHub)](https://github.com/cipher0x9/uc-lab-free-university)
+- ✅ [200] [UC Lab Free University (GitHub)](https://github.com/cipher0x9/uc-lab-free-university-mesmerizing)
 - ✅ [200] [Campus Linktree](https://linktr.ee/cyphermonkey)
 
 ## topic:sev2
@@ -507,7 +507,7 @@
 - ✅ [200] [Google Cloud Status](https://status.cloud.google.com/)
 
 ## group:Campus
-- ✅ [200] [UC Lab Free University (GitHub)](https://github.com/cipher0x9/uc-lab-free-university)
+- ✅ [200] [UC Lab Free University (GitHub)](https://github.com/cipher0x9/uc-lab-free-university-mesmerizing)
 - ✅ [200] [Campus Linktree](https://linktr.ee/cyphermonkey)
 - ✅ [200B] [Cisco Support Central](https://www.cisco.com/c/en/us/support/index.html)
 
@@ -562,12 +562,12 @@
 - ✅ [200B] [Cisco Unified Communications — Docs & Support](https://www.cisco.com/c/en/us/support/unified-communications/index.html)
 - ✅ [200] [AWS Well-Architected Framework](https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html)
 - ✅ [200] [Microsoft Teams Documentation](https://learn.microsoft.com/en-us/microsoftteams/)
-- ✅ [200] [UC Lab Free University (GitHub)](https://github.com/cipher0x9/uc-lab-free-university)
+- ✅ [200] [UC Lab Free University (GitHub)](https://github.com/cipher0x9/uc-lab-free-university-mesmerizing)
 
 ## group:Architect Dojo
 - ✅ [200B] [Cisco Unified Communications — Docs & Support](https://www.cisco.com/c/en/us/support/unified-communications/index.html)
 - ✅ [200] [RFC 3261 — SIP](https://www.rfc-editor.org/rfc/rfc3261)
-- ✅ [200] [UC Lab Free University (GitHub)](https://github.com/cipher0x9/uc-lab-free-university)
+- ✅ [200] [UC Lab Free University (GitHub)](https://github.com/cipher0x9/uc-lab-free-university-mesmerizing)
 
 ## group:CCaaS APIs & Platforms
 - ✅ [200] [Webex for Developers](https://developer.webex.com/docs)
@@ -590,12 +590,12 @@
 - ✅ [200] [Google Cloud Documentation](https://cloud.google.com/docs)
 
 ## group:Mastery Practicums
-- ✅ [200] [UC Lab Free University (GitHub)](https://github.com/cipher0x9/uc-lab-free-university)
+- ✅ [200] [UC Lab Free University (GitHub)](https://github.com/cipher0x9/uc-lab-free-university-mesmerizing)
 - ✅ [200] [RFC Editor](https://www.rfc-editor.org/)
 - ✅ [200B] [Cisco Support Central](https://www.cisco.com/c/en/us/support/index.html)
 
 ## group:Mastery Methodologies
-- ✅ [200] [UC Lab Free University (GitHub)](https://github.com/cipher0x9/uc-lab-free-university)
+- ✅ [200] [UC Lab Free University (GitHub)](https://github.com/cipher0x9/uc-lab-free-university-mesmerizing)
 - ✅ [200] [RFC Editor](https://www.rfc-editor.org/)
 - ✅ [200B] [Cisco Support Central](https://www.cisco.com/c/en/us/support/index.html)
 
@@ -623,12 +623,12 @@
 - ✅ [200] [Twilio Status](https://status.twilio.com/)
 
 ## group:Bonus 50s
-- ✅ [200] [UC Lab Free University (GitHub)](https://github.com/cipher0x9/uc-lab-free-university)
+- ✅ [200] [UC Lab Free University (GitHub)](https://github.com/cipher0x9/uc-lab-free-university-mesmerizing)
 - ✅ [200] [Campus Linktree](https://linktr.ee/cyphermonkey)
 - ✅ [200B] [Cisco Support Central](https://www.cisco.com/c/en/us/support/index.html)
 
 ## group:Trading Systems
-- ✅ [200] [UC Lab Free University (GitHub)](https://github.com/cipher0x9/uc-lab-free-university)
+- ✅ [200] [UC Lab Free University (GitHub)](https://github.com/cipher0x9/uc-lab-free-university-mesmerizing)
 - ✅ [200] [Campus Linktree](https://linktr.ee/cyphermonkey)
 
 ## group:AI & Future
@@ -637,12 +637,12 @@
 - ✅ [200] [AWS Documentation](https://docs.aws.amazon.com/)
 
 ## group:Library
-- ✅ [200] [UC Lab Free University (GitHub)](https://github.com/cipher0x9/uc-lab-free-university)
+- ✅ [200] [UC Lab Free University (GitHub)](https://github.com/cipher0x9/uc-lab-free-university-mesmerizing)
 - ✅ [200] [Campus Linktree](https://linktr.ee/cyphermonkey)
 - ✅ [200] [RFC Editor](https://www.rfc-editor.org/)
 
 ## group:Evidence Library
-- ✅ [200] [UC Lab Free University (GitHub)](https://github.com/cipher0x9/uc-lab-free-university)
+- ✅ [200] [UC Lab Free University (GitHub)](https://github.com/cipher0x9/uc-lab-free-university-mesmerizing)
 - ✅ [200] [RFC Editor](https://www.rfc-editor.org/)
 - ✅ [200] [IETF Datatracker](https://datatracker.ietf.org/)
 

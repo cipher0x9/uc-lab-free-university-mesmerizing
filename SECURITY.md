@@ -24,8 +24,8 @@ If you find a security issue in this learning pack, open a private security advi
 | | |
 |--|--|
 | Profile | https://github.com/cipher0x9 |
-| This repo | https://github.com/cipher0x9/uc-lab-free-university |
-| Sibling AI | https://github.com/cipher0x9/ai-lab-free-university |
+| This repo | https://github.com/cipher0x9/uc-lab-free-university-mesmerizing |
+| Sibling AI | https://github.com/cipher0x9/ai-lab-free-university-mesmerizing |
 | Hub | https://linktr.ee/cyphermonkey |
 
 ---

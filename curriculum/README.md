@@ -1,6 +1,6 @@
 # UC Lab Free University — Curriculum Index
 
-**CYPHER0X9 · cipher0x9/uc-lab-free-university · MIT · offline-first**  
+**CYPHER0X9 · cipher0x9/uc-lab-free-university-mesmerizing · MIT · offline-first**  
 **Proof grammar:** LICC — Leg · ID · Counter · Capture  
 **Campus HTML:** `../university/v17-UNIVERSITY.html` (**632 sections** · `v20.2-resources`)
 
@@ -53,7 +53,7 @@ Deep technical packs that sit beside the browser campus. Open any file in this f
 
 ## Siblings
 
-- 🧠 [AI Lab Free University](https://github.com/cipher0x9/ai-lab-free-university)  
+- 🧠 [AI Lab Free University](https://github.com/cipher0x9/ai-lab-free-university-mesmerizing)  
 - 🎓 [Ardham Shastra](https://github.com/cipher0x9/ardham-shastra)  
 
 FAQ: [../docs/FAQ.md](../docs/FAQ.md)

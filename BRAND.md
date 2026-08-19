@@ -13,14 +13,14 @@
 | Pack | URL |
 |------|-----|
 | Profile | https://github.com/cipher0x9 |
-| 🌿 UC Lab Free University | https://github.com/cipher0x9/uc-lab-free-university |
-| 🧠 AI Lab Free University | https://github.com/cipher0x9/ai-lab-free-university |
+| 🌿 UC Lab Free University | https://github.com/cipher0x9/uc-lab-free-university-mesmerizing |
+| 🧠 AI Lab Free University | https://github.com/cipher0x9/ai-lab-free-university-mesmerizing |
 
 ## Main downloads
 | Pack | Zip |
 |------|-----|
-| UC | https://github.com/cipher0x9/uc-lab-free-university/releases/download/v20.2-resources/v17-UNIVERSITY.html.zip |
-| AI | https://github.com/cipher0x9/ai-lab-free-university/releases/download/v4.2-mobile/v4-PORTFOLIO.html.zip |
+| UC | https://github.com/cipher0x9/uc-lab-free-university-mesmerizing/releases/download/v20.2-resources/v17-UNIVERSITY.html.zip |
+| AI | https://github.com/cipher0x9/ai-lab-free-university-mesmerizing/releases/download/v4.2-mobile/v4-PORTFOLIO.html.zip |
 
 ## Hub
 https://linktr.ee/cyphermonkey

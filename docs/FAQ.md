@@ -8,7 +8,7 @@ A free, offline browser campus for **Unified Communications and Contact Center**
 
 ## How do I open it?
 
-1. Download [v17-UNIVERSITY.html.zip](https://github.com/cipher0x9/uc-lab-free-university/releases/download/v20.2-resources/v17-UNIVERSITY.html.zip)
+1. Download [v17-UNIVERSITY.html.zip](https://github.com/cipher0x9/uc-lab-free-university-mesmerizing/releases/download/v20.2-resources/v17-UNIVERSITY.html.zip)
 2. Unzip
 3. Open `v17-UNIVERSITY.html` in **Chrome, Safari, Edge, or Firefox** (full browser app — not LinkedIn/Telegram in-app browsers)
 
@@ -23,7 +23,7 @@ Yes, in a full browser. First load can take 10–30 seconds for the full **632-s
 There is no separate multi-hundred-page PDF book on purpose. The campus is a single offline HTML university.
 
 - **Primary:** open the HTML campus
-- **Briefing deck:** [62-slide PPTX](https://github.com/cipher0x9/uc-lab-free-university/releases/download/v20.2-resources/Enterprise-Voice-with-Cisco-Technologies-CC-Cloud-Migration.pptx) (Enterprise Voice · CC · Cloud Migration)
+- **Briefing deck:** [62-slide PPTX](https://github.com/cipher0x9/uc-lab-free-university-mesmerizing/releases/download/v20.2-resources/Enterprise-Voice-with-Cisco-Technologies-CC-Cloud-Migration.pptx) (Enterprise Voice · CC · Cloud Migration)
 - **Print/PDF a page:** use your browser **Print → Save as PDF** on any section
 - **Official vendor docs:** use the in-campus **Official Resources** drawer (verified links; campus still boots offline)
 
@@ -41,7 +41,7 @@ Real jobs rarely hire one logo forever. Learn the call path so you can survive d
 
 ## Sibling campuses?
 
-- 🧠 [AI Lab Free University](https://github.com/cipher0x9/ai-lab-free-university) · zip: [v4.2-mobile](https://github.com/cipher0x9/ai-lab-free-university/releases/download/v4.2-mobile/v4-PORTFOLIO.html.zip)
+- 🧠 [AI Lab Free University](https://github.com/cipher0x9/ai-lab-free-university-mesmerizing) · zip: [v4.2-mobile](https://github.com/cipher0x9/ai-lab-free-university-mesmerizing/releases/download/v4.2-mobile/v4-PORTFOLIO.html.zip)
 - 🎓 [Ardham Shastra](https://github.com/cipher0x9/ardham-shastra) · zip: [v5-mastery](https://github.com/cipher0x9/ardham-shastra/releases/download/v5-mastery/v1-ARDHAM-SHASTRA.html.zip)
 
 ## Can I use this at work / school?

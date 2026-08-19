@@ -96,7 +96,7 @@ PORTALS = [
     ['JSON Schema', 'https://json-schema.org/'],
     ['Wireshark Documentation', 'https://www.wireshark.org/docs/'],
     ['Wireshark Wiki', 'https://wiki.wireshark.org/'],
-    ['UC Lab Free University (GitHub)', 'https://github.com/cipher0x9/uc-lab-free-university'],
+    ['UC Lab Free University (GitHub)', 'https://github.com/cipher0x9/uc-lab-free-university-mesmerizing'],
     ['Campus Linktree', 'https://linktr.ee/cyphermonkey'],
 ]
 
@@ -153,7 +153,7 @@ HUBS['hub-icm-ucce'] = [
     ['Cisco DevNet', 'https://developer.cisco.com/'],
     ['Webex Help Center', 'https://help.webex.com/'],
     ['Cisco Support Central', CSUPPORT],
-    ['UC Lab Free University (GitHub)', 'https://github.com/cipher0x9/uc-lab-free-university'],
+    ['UC Lab Free University (GitHub)', 'https://github.com/cipher0x9/uc-lab-free-university-mesmerizing'],
 ]
 HUBS['hub-pcce'] = [
     ['PCCE — Support Home', f'{CCC}/packaged-contact-center-enterprise{TS}'],
@@ -165,7 +165,7 @@ HUBS['hub-pcce'] = [
     ['Cisco Unified Communications — Docs & Support', CVOICE],
     ['Cisco DevNet', 'https://developer.cisco.com/'],
     ['Cisco Support Central', CSUPPORT],
-    ['UC Lab Free University (GitHub)', 'https://github.com/cipher0x9/uc-lab-free-university'],
+    ['UC Lab Free University (GitHub)', 'https://github.com/cipher0x9/uc-lab-free-university-mesmerizing'],
 ]
 HUBS['hub-webex-cc'] = [
     ['Webex Help Center', 'https://help.webex.com/'],
@@ -175,7 +175,7 @@ HUBS['hub-webex-cc'] = [
     ['Cisco Support Central', CSUPPORT],
     ['Cisco Unified Communications — Docs & Support', CVOICE],
     ['Salesforce Developers', 'https://developer.salesforce.com/docs'],
-    ['UC Lab Free University (GitHub)', 'https://github.com/cipher0x9/uc-lab-free-university'],
+    ['UC Lab Free University (GitHub)', 'https://github.com/cipher0x9/uc-lab-free-university-mesmerizing'],
 ]
 HUBS['hub-amazon-connect'] = [
     ['Amazon Connect Documentation', AWSD + '/connect/'],
@@ -229,7 +229,7 @@ HUBS['hub-migrations'] = [
     ['RingCentral Developers', 'https://developers.ringcentral.com/'],
     ['AWS Well-Architected Framework', AWSD + '/wellarchitected/latest/framework/welcome.html'],
     ['Cisco Support Central', CSUPPORT],
-    ['UC Lab Free University (GitHub)', 'https://github.com/cipher0x9/uc-lab-free-university'],
+    ['UC Lab Free University (GitHub)', 'https://github.com/cipher0x9/uc-lab-free-university-mesmerizing'],
 ]
 HUBS['hub-sev-troubleshoot'] = [
     ['Webex Status', 'https://status.webex.com/'],
@@ -242,7 +242,7 @@ HUBS['hub-sev-troubleshoot'] = [
     ['8x8 Status', 'https://status.8x8.com/'],
     ['MS Teams — Monitor & Improve Call Quality', LEARN + '/microsoftteams/monitor-call-quality-qos'],
     ['Cisco Support Central', CSUPPORT],
-    ['UC Lab Free University (GitHub)', 'https://github.com/cipher0x9/uc-lab-free-university'],
+    ['UC Lab Free University (GitHub)', 'https://github.com/cipher0x9/uc-lab-free-university-mesmerizing'],
 ]
 HUBS['hub-interview'] = [
     ['Cisco Unified Communications — Docs & Support', CVOICE],
@@ -252,7 +252,7 @@ HUBS['hub-interview'] = [
     ['Genesys Cloud Developer Center', 'https://developer.genesys.cloud/'],
     ['Twilio Docs', 'https://www.twilio.com/docs'],
     rfc(3261, 'SIP'),
-    ['UC Lab Free University (GitHub)', 'https://github.com/cipher0x9/uc-lab-free-university'],
+    ['UC Lab Free University (GitHub)', 'https://github.com/cipher0x9/uc-lab-free-university-mesmerizing'],
     ['Campus Linktree', 'https://linktr.ee/cyphermonkey'],
 ]
 
@@ -415,7 +415,7 @@ TOPICS = {
         ['Microsoft Teams Documentation', LEARN + '/microsoftteams/'],
     ],
     'interview': [
-        ['UC Lab Free University (GitHub)', 'https://github.com/cipher0x9/uc-lab-free-university'],
+        ['UC Lab Free University (GitHub)', 'https://github.com/cipher0x9/uc-lab-free-university-mesmerizing'],
         ['Campus Linktree', 'https://linktr.ee/cyphermonkey'],
     ],
     'sev2': [
@@ -472,7 +472,7 @@ TOPICS = {
 }
 
 # ------------------------------------------------------------------ GROUPS --
-GH = ['UC Lab Free University (GitHub)', 'https://github.com/cipher0x9/uc-lab-free-university']
+GH = ['UC Lab Free University (GitHub)', 'https://github.com/cipher0x9/uc-lab-free-university-mesmerizing']
 LT = ['Campus Linktree', 'https://linktr.ee/cyphermonkey']
 
 GROUPS = {
@@ -915,7 +915,7 @@ FALLBACK = [
     ['Cisco Support Central', CSUPPORT],
     ['Cisco Unified Communications — Docs & Support', CVOICE],
     rfc(3261, 'SIP'),
-    ['UC Lab Free University (GitHub)', 'https://github.com/cipher0x9/uc-lab-free-university'],
+    ['UC Lab Free University (GitHub)', 'https://github.com/cipher0x9/uc-lab-free-university-mesmerizing'],
 ]
 
 def inject(cache):

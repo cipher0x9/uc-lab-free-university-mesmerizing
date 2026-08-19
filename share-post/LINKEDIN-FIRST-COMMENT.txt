@@ -1,17 +1,17 @@
 Direct downloads (no Git):
 
 🌿 UC campus zip
-https://github.com/cipher0x9/uc-lab-free-university/releases/download/v20.2-resources/v17-UNIVERSITY.html.zip
+https://github.com/cipher0x9/uc-lab-free-university-mesmerizing/releases/download/v20.2-resources/v17-UNIVERSITY.html.zip
 
 🧠 AI campus zip (Aurora Portfolio)
-https://github.com/cipher0x9/ai-lab-free-university/releases/download/v4.2-mobile/v4-PORTFOLIO.html.zip
+https://github.com/cipher0x9/ai-lab-free-university-mesmerizing/releases/download/v4.2-mobile/v4-PORTFOLIO.html.zip
 
 🎓 Ardham Shastra campus zip
 https://github.com/cipher0x9/ardham-shastra/releases/download/v5-mastery/v1-ARDHAM-SHASTRA.html.zip
 
 Repos
-🌿 https://github.com/cipher0x9/uc-lab-free-university
-🧠 https://github.com/cipher0x9/ai-lab-free-university
+🌿 https://github.com/cipher0x9/uc-lab-free-university-mesmerizing
+🧠 https://github.com/cipher0x9/ai-lab-free-university-mesmerizing
 🎓 https://github.com/cipher0x9/ardham-shastra
 
 Hub: https://linktr.ee/cyphermonkey
@@ -26,16 +26,16 @@ Unzip → open the HTML → learn offline.
 Next Level first-comment links (verify before posting):
 
 🌿 UC Lab Free University
-https://github.com/cipher0x9/uc-lab-free-university
+https://github.com/cipher0x9/uc-lab-free-university-mesmerizing
 
 ⬇ Main zip
-https://github.com/cipher0x9/uc-lab-free-university/releases/download/v20.2-resources/v17-UNIVERSITY.html.zip
+https://github.com/cipher0x9/uc-lab-free-university-mesmerizing/releases/download/v20.2-resources/v17-UNIVERSITY.html.zip
 
 🧠 AI sibling
-https://github.com/cipher0x9/ai-lab-free-university
+https://github.com/cipher0x9/ai-lab-free-university-mesmerizing
 
 ⬇ AI zip
-https://github.com/cipher0x9/ai-lab-free-university/releases/download/v4.2-mobile/v4-PORTFOLIO.html.zip
+https://github.com/cipher0x9/ai-lab-free-university-mesmerizing/releases/download/v4.2-mobile/v4-PORTFOLIO.html.zip
 
 🎓 Ardham
 https://github.com/cipher0x9/ardham-shastra

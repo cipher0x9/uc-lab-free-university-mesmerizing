@@ -9,17 +9,17 @@
 ## Recommended path ⭐
 
 1. Open the release:  
-   https://github.com/cipher0x9/uc-lab-free-university/releases/tag/v20.2-resources  
+   https://github.com/cipher0x9/uc-lab-free-university-mesmerizing/releases/tag/v20.2-resources  
 2. Download **`v17-UNIVERSITY.html.zip`**  
 3. Unzip  
 4. Open **`v17-UNIVERSITY.html`** in **Chrome / Safari / Edge / Firefox**
 
 Direct file:  
-https://github.com/cipher0x9/uc-lab-free-university/releases/download/v20.2-resources/v17-UNIVERSITY.html.zip
+https://github.com/cipher0x9/uc-lab-free-university-mesmerizing/releases/download/v20.2-resources/v17-UNIVERSITY.html.zip
 
 ### Optional complete pack (campus + prompt labs)
 
-https://github.com/cipher0x9/uc-lab-free-university/releases/download/v20.2-resources/UC-LAB-COMPLETE-BROWSER-PACK.zip
+https://github.com/cipher0x9/uc-lab-free-university-mesmerizing/releases/download/v20.2-resources/UC-LAB-COMPLETE-BROWSER-PACK.zip
 
 ---
 
@@ -47,7 +47,7 @@ GitHub → green **Code** → **Download ZIP** → open `university/v17-UNIVERSI
 ### Git clone
 
 ```bash
-git clone https://github.com/cipher0x9/uc-lab-free-university.git
+git clone https://github.com/cipher0x9/uc-lab-free-university-mesmerizing.git
 cd uc-lab-free-university
 open university/v17-UNIVERSITY.html
 ```
@@ -62,8 +62,8 @@ https://linktr.ee/cyphermonkey
 
 | | |
 |--|--|
-| Repo | https://github.com/cipher0x9/ai-lab-free-university |
-| Campus zip | https://github.com/cipher0x9/ai-lab-free-university/releases/download/v4.2-mobile/v4-PORTFOLIO.html.zip |
+| Repo | https://github.com/cipher0x9/ai-lab-free-university-mesmerizing |
+| Campus zip | https://github.com/cipher0x9/ai-lab-free-university-mesmerizing/releases/download/v4.2-mobile/v4-PORTFOLIO.html.zip |
 
 ---
 
