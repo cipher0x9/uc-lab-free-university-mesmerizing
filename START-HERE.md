@@ -17,7 +17,7 @@ Welcome. This is a **free** multi-vendor UC & Contact Center campus — offline,
 
 **Briefing deck (PPTX, 62 slides):** [`downloads/Enterprise-Voice-with-Cisco-Technologies-CC-Cloud-Migration.pptx`](./downloads/Enterprise-Voice-with-Cisco-Technologies-CC-Cloud-Migration.pptx)  
 
-**Download:** [v17-UNIVERSITY.html.zip](https://github.com/cipher0x9/uc-lab-free-university/releases/download/v20.2-resources/v17-UNIVERSITY.html.zip)
+**Download:** [v17-UNIVERSITY.html.zip](https://github.com/cipher0x9/uc-lab-free-university-mesmerizing/releases/download/v20.2-resources/v17-UNIVERSITY.html.zip)
 
 Or from a clone:
 
@@ -59,7 +59,7 @@ If you cannot explain LICC without notes, stay with fundamentals a little longer
 ## 4) Optional extras
 
 - Prompt labs in `prompts/` or the **complete browser pack** zip  
-- Sibling AI: https://github.com/cipher0x9/ai-lab-free-university  
+- Sibling AI: https://github.com/cipher0x9/ai-lab-free-university-mesmerizing  
 
 ---
 

@@ -12,9 +12,9 @@ Free for learning · Educational only · MIT · no warranty
 
 | What | Size (approx) | Link |
 |------|----------------|------|
-| **Campus zip** | ~1.4 MB zip → ~15 MB HTML | https://github.com/cipher0x9/uc-lab-free-university/releases/download/v20.2-resources/v17-UNIVERSITY.html.zip |
-| **Enterprise Voice deck (PPTX)** | ~5 MB · 62 slides | https://github.com/cipher0x9/uc-lab-free-university/releases/download/v20.2-resources/Enterprise-Voice-with-Cisco-Technologies-CC-Cloud-Migration.pptx |
-| Release page | — | https://github.com/cipher0x9/uc-lab-free-university/releases/tag/v20.2-resources |
+| **Campus zip** | ~1.4 MB zip → ~15 MB HTML | https://github.com/cipher0x9/uc-lab-free-university-mesmerizing/releases/download/v20.2-resources/v17-UNIVERSITY.html.zip |
+| **Enterprise Voice deck (PPTX)** | ~5 MB · 62 slides | https://github.com/cipher0x9/uc-lab-free-university-mesmerizing/releases/download/v20.2-resources/Enterprise-Voice-with-Cisco-Technologies-CC-Cloud-Migration.pptx |
+| Release page | — | https://github.com/cipher0x9/uc-lab-free-university-mesmerizing/releases/tag/v20.2-resources |
 | HTML in repo | ~15 MB | [`university/v17-UNIVERSITY.html`](./university/v17-UNIVERSITY.html) |
 | PPTX in repo | ~5 MB | [`downloads/Enterprise-Voice-with-Cisco-Technologies-CC-Cloud-Migration.pptx`](./downloads/Enterprise-Voice-with-Cisco-Technologies-CC-Cloud-Migration.pptx) |
 
@@ -25,13 +25,13 @@ Free for learning · Educational only · MIT · no warranty
 - There is **no separate PDF textbook** on purpose — the campus is the book.
 - Inside the campus UI: use the **Export / Download menu** (Print / Export PDF) to save study packs — no install, works offline.
 - Any section can also be saved via your browser's **Print → Save as PDF**.
-- Prefer slides? The [62-slide Enterprise Voice / CC / Cloud Migration PPTX](https://github.com/cipher0x9/uc-lab-free-university/releases/download/v20.2-resources/Enterprise-Voice-with-Cisco-Technologies-CC-Cloud-Migration.pptx) is the slide-format companion.
+- Prefer slides? The [62-slide Enterprise Voice / CC / Cloud Migration PPTX](https://github.com/cipher0x9/uc-lab-free-university-mesmerizing/releases/download/v20.2-resources/Enterprise-Voice-with-Cisco-Technologies-CC-Cloud-Migration.pptx) is the slide-format companion.
 
 ### Optional complete pack (campus + prompt labs)
 
 | What | Size | Link |
 |------|------|------|
-| Complete browser pack | ~1.4 MB | https://github.com/cipher0x9/uc-lab-free-university/releases/download/v20.2-resources/UC-LAB-COMPLETE-BROWSER-PACK.zip |
+| Complete browser pack | ~1.4 MB | https://github.com/cipher0x9/uc-lab-free-university-mesmerizing/releases/download/v20.2-resources/UC-LAB-COMPLETE-BROWSER-PACK.zip |
 
 ---
 
@@ -49,7 +49,7 @@ Full steps: [HOW-TO-GET.md](./HOW-TO-GET.md) · [START-HERE.md](./START-HERE.md)
 ## Clone
 
 ```bash
-git clone https://github.com/cipher0x9/uc-lab-free-university.git
+git clone https://github.com/cipher0x9/uc-lab-free-university-mesmerizing.git
 cd uc-lab-free-university
 open university/v17-UNIVERSITY.html
 ```
@@ -62,8 +62,8 @@ Or: GitHub → **Code** → **Download ZIP**
 
 | What | Link |
 |------|------|
-| Repo | https://github.com/cipher0x9/ai-lab-free-university |
-| Campus zip (~560 KB) | https://github.com/cipher0x9/ai-lab-free-university/releases/download/v4.2-mobile/v4-PORTFOLIO.html.zip |
+| Repo | https://github.com/cipher0x9/ai-lab-free-university-mesmerizing |
+| Campus zip (~560 KB) | https://github.com/cipher0x9/ai-lab-free-university-mesmerizing/releases/download/v4.2-mobile/v4-PORTFOLIO.html.zip |
 
 ---
 
@@ -85,7 +85,7 @@ Lab safely. Share freely for learning.
 | Main campus HTML | `university/v17-UNIVERSITY.html` | Next Level sections added in place |
 | Release zip | GitHub Release `v20.2-resources` asset (re-pack locally after transform) | Still unzip → open HTML |
 | Prompt labs | `prompts/` + `releases/PROMPTS-THREE-PROJECTS.zip` | Three projects expanded |
-| Sibling AI | https://github.com/cipher0x9/ai-lab-free-university | RTMA grammar |
+| Sibling AI | https://github.com/cipher0x9/ai-lab-free-university-mesmerizing | RTMA grammar |
 
 ### Verify offline
 1. Turn on airplane mode  
