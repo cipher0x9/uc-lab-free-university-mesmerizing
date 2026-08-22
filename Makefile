@@ -12,6 +12,7 @@ verify:
 
 orient:
 	python3 tools/inject_reader_orient.py
+	python3 tools/inject_section_visuals.py
 	python3 tools/verify_campus.py
 
 qbank-dry:

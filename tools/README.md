@@ -56,8 +56,14 @@ First-run nest map, Start-here rail, hub flow SVGs, and compact sidebar live in
 
 ```bash
 python3 tools/inject_reader_orient.py
+python3 tools/inject_section_visuals.py
 make verify
 ```
+
+Per-section flows, icons, and honest port/protocol chips are generated at
+render time from `tools/uc_section_visuals.py` (shared lexicon) and
+`tools/section_visual_pack.inc.html`. Every section gets chrome; no section
+body is rewritten.
 
 ## Historical / optional
 

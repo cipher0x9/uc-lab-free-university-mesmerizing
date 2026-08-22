@@ -45,6 +45,7 @@ from uc_campus import (  # noqa: E402
     shell_href_allowed,
     shell_http_hrefs,
 )
+from uc_section_visuals import coverage as visual_coverage  # noqa: E402
 
 
 def check_js_syntax(scripts: list[str]) -> list[str]:
@@ -193,6 +194,21 @@ def main() -> int:
         lines.extend(f"       {item}" for item in js_errors[:8])
     else:
         lines.append(f"PASS  JS syntax ({len(extract_scripts(text))} inline scripts, node --check)")
+
+    vis = visual_coverage(sections)
+    pack_ok = "UC SECTION VISUAL PACK" in text and "ucSecVisual" in text
+    lines.append(
+        f"visuals  flow={vis['with_flow']} icon={vis['with_icon']} "
+        f"chip={vis['with_chip']} port={vis['with_port']} / {vis['sections']}"
+    )
+    if not pack_ok:
+        failed = True
+        lines.append("FAIL  per-section visual pack is missing from the flagship")
+    elif vis["with_flow"] < len(sections) or vis["with_icon"] < len(sections) or vis["with_chip"] < len(sections):
+        failed = True
+        lines.append("FAIL  some sections lack visual chrome (flow/icon/chip)")
+    else:
+        lines.append("PASS  every section classifies to icon + flow + chips")
 
     lines.append("RESULT  " + ("FAIL" if failed else "PASS"))
     print("\n".join(lines))
