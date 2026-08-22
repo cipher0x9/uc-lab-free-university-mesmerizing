@@ -12,6 +12,8 @@ Welcome. This is a **free** multi-vendor UC & Contact Center campus — offline,
 
 ## 1) Open the campus
 
+Inside the HTML: use the sidebar **Start here** rail (13 chapter hubs). Home opens with a nest map, call-path diagram, LICC study loop, and a first-hour walk. The 632 sections sit under those hubs — do not start by scrolling the full list.
+
 **Latest local build:** `20.2-RESOURCES` · **632 sections** · open `university/v17-UNIVERSITY.html`
 
 

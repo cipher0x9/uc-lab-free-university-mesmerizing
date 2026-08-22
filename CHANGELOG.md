@@ -1,5 +1,14 @@
 # Changelog
 
+## [2026-08-22] — First-run orientation + hub diagrams (no curriculum rewrite)
+
+- Flagship **632 → 632** sections; bodies untouched
+- Size **15,293,747 → 15,314,309 bytes** (+20,562). Inline SVG/JS chrome only — no CDN, no remote images
+- Home now leads with nest map, multi-vendor call path, LICC study loop, and a first-hour walk (existing section IDs). Historical home build-log is still there, folded under “Original campus notes”
+- Sidebar: **Start here** rail (Home · LICC · 13 hubs), group icons for every stack, compact groups by default
+- Chapter-hub chrome: flow SVG + “you are in a hub” nest line (fills the 5 hubs that had no diagram: PCCE, Amazon Connect, Expressway, SEV, Interview)
+- Verify PASS (`python3 tools/verify_campus.py`)
+
 ## [2026-08-22] — Maintainer verify path + generator safety (no curriculum rewrite)
 
 - Flagship on disk remains **20.2-RESOURCES · 632 unique sections · 0 holes · 0 CDN loads** (before = after)

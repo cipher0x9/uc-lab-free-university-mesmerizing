@@ -3,10 +3,15 @@
 help:
 	@echo "UC Lab Free University — maintainer targets"
 	@echo "  make verify         verify the flagship offline campus"
+	@echo "  make orient         splice reader chrome, then verify"
 	@echo "  make qbank-dry      dry-run the practice-bank generator"
 	@echo "  make supernova-dry  dry-run every supernova pack"
 
 verify:
+	python3 tools/verify_campus.py
+
+orient:
+	python3 tools/inject_reader_orient.py
 	python3 tools/verify_campus.py
 
 qbank-dry:

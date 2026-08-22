@@ -48,6 +48,17 @@ python3 uc_supernova_gen.py mastery
 
 Shared parse / STATS helpers live in `tools/uc_campus.py`.
 
+## Reader orientation chrome (no curriculum rewrite)
+
+First-run nest map, Start-here rail, hub flow SVGs, and compact sidebar live in
+`tools/reader_orient_pack.inc.html`. They are spliced into the flagship **after**
+`window.SECTIONS` (render-time chrome). Re-apply without touching section bodies:
+
+```bash
+python3 tools/inject_reader_orient.py
+make verify
+```
+
 ## Historical / optional
 
 | Script | Role |
