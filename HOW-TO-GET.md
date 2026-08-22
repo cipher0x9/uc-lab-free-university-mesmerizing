@@ -48,7 +48,7 @@ GitHub → green **Code** → **Download ZIP** → open `university/v17-UNIVERSI
 
 ```bash
 git clone https://github.com/cipher0x9/uc-lab-free-university-mesmerizing.git
-cd uc-lab-free-university
+cd uc-lab-free-university-mesmerizing
 open university/v17-UNIVERSITY.html
 ```
 

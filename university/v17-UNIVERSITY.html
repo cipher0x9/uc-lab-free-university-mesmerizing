@@ -2268,5 +2268,495 @@ window.SECTIONS = [{"id": "home", "num": "000", "group": "Campus", "title": "✨
 })();
 </script>
 
+<!-- ===== UC READER ORIENTATION PACK ===== -->
+<style>
+.uc-start-rail{margin:0 0 12px;padding:10px 8px 8px;border:1px solid var(--border);border-radius:14px;background:color-mix(in srgb,var(--card) 88%,var(--peach))}
+.uc-start-rail h4{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 6px 8px;font-weight:800}
+.uc-start-rail .uc-start-btns{display:flex;flex-direction:column;gap:3px}
+.uc-start-rail .nav-i{padding:7px 8px;border-radius:10px}
+.uc-start-rail .uc-nav-tools{display:flex;gap:6px;margin:8px 6px 0}
+.uc-start-rail .uc-nav-tools button{flex:1;border:1px solid var(--border);background:var(--card);border-radius:999px;padding:5px 8px;font-size:10px;font-weight:800;color:var(--ink);cursor:pointer}
+.uc-hello{display:flex;gap:10px;align-items:flex-start;margin:0 0 12px;padding:12px 14px;border:1px solid var(--border);border-left:4px solid var(--amber);border-radius:14px;background:var(--card);box-shadow:var(--shadow)}
+.uc-hello p{margin:0;font-size:.92rem}
+.uc-hello button{margin-left:auto;border:1px solid var(--border);background:var(--bg);border-radius:999px;padding:6px 10px;font-weight:800;font-size:11px;cursor:pointer;color:var(--ink);white-space:nowrap}
+.uc-orient{margin:0 0 14px}
+.uc-orient .uc-orient-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:10px}
+.uc-orient .uc-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:14px;box-shadow:var(--shadow)}
+.uc-orient .uc-card h3{font-family:var(--display);color:var(--amber);font-size:1rem;margin:0 0 8px}
+.uc-orient svg{width:100%;height:auto;display:block}
+.uc-orient .uc-path{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.uc-orient .uc-path button,.uc-hub-chrome .uc-path button{border:1px solid var(--border);background:var(--bg);border-radius:999px;padding:6px 10px;font-size:11px;font-weight:800;cursor:pointer;color:var(--ink)}
+.uc-orient .uc-path button:hover,.uc-hub-chrome .uc-path button:hover{border-color:var(--amber)}
+.uc-orient .muted,.uc-hub-chrome .muted{color:var(--muted);font-size:.78rem}
+.uc-licc{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:8px}
+@media(max-width:700px){.uc-licc{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.uc-licc b{display:block;font-family:var(--display);font-size:1.15rem;color:var(--amber)}
+.uc-licc span{display:block;font-size:.72rem;color:var(--muted);font-weight:700;margin-top:2px}
+.uc-licc i{display:block;font-style:normal;font-size:.78rem;margin-top:4px}
+.uc-archive{margin:16px 0 8px;border:1px dashed var(--border);border-radius:14px;padding:8px 12px;background:color-mix(in srgb,var(--bg) 70%,var(--card))}
+.uc-archive>summary{cursor:pointer;font-weight:800;color:var(--muted);font-size:.85rem;padding:6px 0}
+.uc-hub-chrome{margin:0 0 14px;padding:12px 14px;border:1px solid var(--border);border-radius:16px;background:var(--card);box-shadow:var(--shadow)}
+.uc-hub-chrome h3{font-family:var(--display);color:var(--amber);font-size:.98rem;margin:0 0 6px}
+.uc-nest{font-size:.8rem;font-weight:700;color:var(--muted);margin:0 0 8px}
+.uc-nest b{color:var(--ink)}
+@media(prefers-reduced-motion:reduce){
+  .uc-hello,.uc-orient .uc-card,.uc-hub-chrome{transition:none}
+}
+</style>
+<script>
+(function(){
+  "use strict";
+  var START = [
+    ["home","🏠","Home"],
+    ["method","🔬","LICC method"],
+    ["hub-sip","📡","SIP hub"],
+    ["hub-cucm","☎️","CUCM hub"],
+    ["hub-cube-sbc","🛡️","CUBE / SBC"],
+    ["hub-qos","🎚️","QoS hub"],
+    ["hub-e911-redsky","🚨","E911 hub"],
+    ["hub-expressway","🌐","Expressway"],
+    ["hub-icm-ucce","🏢","ICM / UCCE"],
+    ["hub-pcce","📦","PCCE hub"],
+    ["hub-webex-cc","☁️","Webex CC"],
+    ["hub-amazon-connect","🟧","Amazon Connect"],
+    ["hub-migrations","🚀","Migrations"],
+    ["hub-sev-troubleshoot","🔥","SEV hub"],
+    ["hub-interview","💬","Interview hub"]
+  ];
+  var ICONS = {
+    "Campus":"🌿","Products":"☎️","Foundations":"📐","Tricky SEVs":"🔥","Bonus 50s":"✨",
+    "Network Core":"🌐","AI & Future":"🤖","Library":"📚","Architect Core":"🏛️",
+    "Evidence Library":"🧾","Architect Dojo":"🥋","Trading Systems":"📈",
+    "Google CC & APIs":"🔶","Cloud Migrations":"☁️","Mastery Methodologies":"🎓",
+    "CCaaS APIs & Platforms":"🎧","More Vendors":"🧩","Protocol Expert":"📜",
+    "Security Deep":"🔒","Observability Deep":"📡","Network Deep":"🕸️",
+    "Tricky SEVs v17":"🚨","Practice Bank":"📝","Practice Banks":"🧠",
+    "Vendor Deep-Dives":"🏢","Architecture + Mastery":"🗺️","Mastery Practicums":"🧪"
+  };
+  var HUB_STEPS = {
+    "hub-cucm": ["Phone A","CUCM","CSS / RP","Trunk","Phone B / PSTN"],
+    "hub-cube-sbc": ["ITSP / PSTN","CUBE / SBC","Dial-peer","CUCM","Endpoint"],
+    "hub-sip": ["INVITE","100 / 180","200 OK","ACK","RTP both ways"],
+    "hub-icm-ucce": ["Ingress","CVP / VRU","ICM script","Queue","Agent"],
+    "hub-pcce": ["Ingress","CVP","PCCE router","CUCM / PG","Finesse agent"],
+    "hub-webex-cc": ["Channel","Flow","Queue","Agent desktop","Recording"],
+    "hub-amazon-connect": ["Contact","Contact flow","Queue","Agent","CTR proof"],
+    "hub-e911-redsky": ["User / LIS","ERL / ELIN","Routing","PSAP","Notify on-site"],
+    "hub-qos": ["Mark DSCP","Trust boundary","EF / AF queue","Measure","Prove MOS"],
+    "hub-expressway": ["Client","Expressway-E","Expressway-C","CUCM","Media"],
+    "hub-migrations": ["Discover","Design","Pilot","Cutover","Hypercare"],
+    "hub-sev-troubleshoot": ["Scope","LICC","One change","Prove","Prevent"],
+    "hub-interview": ["Path","Failure","Evidence","Decision","Teach-back"]
+  };
+
+  function el(html){
+    var d=document.createElement("div");
+    d.innerHTML=html;
+    return d.firstElementChild;
+  }
+  function go(id){ if(window.openSection) window.openSection(id); }
+  function on(root, sel, fn){
+    if(!root) return;
+    root.addEventListener("click", function(e){
+      var t=e.target.closest(sel);
+      if(!t) return;
+      fn(t, e);
+    });
+  }
+
+  function flowSvg(aria, steps){
+    var n=steps.length, w=840, h=118, gap=14, pad=16;
+    var bw=Math.floor((w-pad*2-gap*(n-1))/n);
+    var parts=['<svg class="uc-flow" viewBox="0 0 '+w+' '+h+'" role="img" aria-label="'+aria+'">',
+      '<rect width="'+w+'" height="'+h+'" rx="16" fill="currentColor" opacity=".04"/>'];
+    for(var i=0;i<n;i++){
+      var x=pad+i*(bw+gap);
+      parts.push('<rect x="'+x+'" y="34" width="'+bw+'" height="50" rx="12" fill="var(--card)" stroke="var(--amber)" stroke-width="2"/>');
+      parts.push('<text x="'+(x+bw/2)+'" y="64" text-anchor="middle" fill="var(--ink)" font-size="12" font-weight="800">'+steps[i]+'</text>');
+      if(i<n-1){
+        var ax=x+bw+2;
+        parts.push('<path d="M'+ax+' 59h'+(gap-6)+'" stroke="var(--gold)" stroke-width="3" fill="none"/>');
+        parts.push('<path d="m'+(ax+gap-10)+' 54 6 5-6 5" fill="none" stroke="var(--gold)" stroke-width="3"/>');
+      }
+    }
+    parts.push("</svg>");
+    return parts.join("");
+  }
+
+  function nestSvg(){
+    return '<svg viewBox="0 0 840 168" role="img" aria-label="How the campus nests: Home, groups, hubs, then 632 sections">'+
+      '<rect width="840" height="168" rx="16" fill="currentColor" opacity=".04"/>'+
+      '<rect x="20" y="58" width="150" height="52" rx="12" fill="var(--card)" stroke="var(--amber)" stroke-width="2"/><text x="95" y="82" text-anchor="middle" fill="var(--ink)" font-size="12" font-weight="800">Campus Home</text><text x="95" y="98" text-anchor="middle" fill="var(--muted)" font-size="10">Mission Control</text>'+
+      '<path d="M170 84h46" stroke="var(--gold)" stroke-width="3"/><path d="m208 79 8 5-8 5" fill="none" stroke="var(--gold)" stroke-width="3"/>'+
+      '<rect x="220" y="58" width="150" height="52" rx="12" fill="var(--card)" stroke="var(--teal)" stroke-width="2"/><text x="295" y="82" text-anchor="middle" fill="var(--ink)" font-size="12" font-weight="800">27 groups</text><text x="295" y="98" text-anchor="middle" fill="var(--muted)" font-size="10">sidebar accordions</text>'+
+      '<path d="M370 84h46" stroke="var(--gold)" stroke-width="3"/><path d="m408 79 8 5-8 5" fill="none" stroke="var(--gold)" stroke-width="3"/>'+
+      '<rect x="420" y="58" width="170" height="52" rx="12" fill="var(--card)" stroke="var(--blue)" stroke-width="2"/><text x="505" y="82" text-anchor="middle" fill="var(--ink)" font-size="12" font-weight="800">13 chapter hubs</text><text x="505" y="98" text-anchor="middle" fill="var(--muted)" font-size="10">start-here landings</text>'+
+      '<path d="M590 84h46" stroke="var(--gold)" stroke-width="3"/><path d="m628 79 8 5-8 5" fill="none" stroke="var(--gold)" stroke-width="3"/>'+
+      '<rect x="640" y="58" width="180" height="52" rx="12" fill="var(--card)" stroke="var(--purple)" stroke-width="2"/><text x="730" y="82" text-anchor="middle" fill="var(--ink)" font-size="12" font-weight="800">632 sections</text><text x="730" y="98" text-anchor="middle" fill="var(--muted)" font-size="10">tabs · labs · banks</text>'+
+      '<text x="20" y="32" fill="var(--amber)" font-size="12" font-weight="800">Reader path — do not wander the full list first</text>'+
+      '<text x="20" y="148" fill="var(--muted)" font-size="11">A hub is a map. Child sections are the deep notes. LICC is the proof grammar on every hop.</text>'+
+      "</svg>";
+  }
+
+  function vendorSvg(){
+    return '<svg viewBox="0 0 840 190" role="img" aria-label="Multi-vendor UC and Contact Center path: endpoint, call control, SBC, PSTN, and contact center">'+
+      '<rect width="840" height="190" rx="16" fill="currentColor" opacity=".04"/>'+
+      '<text x="20" y="28" fill="var(--amber)" font-size="12" font-weight="800">The call path (any logo)</text>'+
+      '<rect x="20" y="48" width="120" height="44" rx="10" fill="var(--card)" stroke="var(--amber)" stroke-width="2"/><text x="80" y="75" text-anchor="middle" fill="var(--ink)" font-size="11" font-weight="800">Endpoint</text>'+
+      '<rect x="180" y="48" width="200" height="44" rx="10" fill="var(--card)" stroke="var(--blue)" stroke-width="2"/><text x="280" y="75" text-anchor="middle" fill="var(--ink)" font-size="11" font-weight="800">UC control</text>'+
+      '<rect x="420" y="48" width="160" height="44" rx="10" fill="var(--card)" stroke="var(--teal)" stroke-width="2"/><text x="500" y="75" text-anchor="middle" fill="var(--ink)" font-size="11" font-weight="800">SBC / CUBE</text>'+
+      '<rect x="620" y="48" width="200" height="44" rx="10" fill="var(--card)" stroke="var(--gold)" stroke-width="2"/><text x="720" y="75" text-anchor="middle" fill="var(--ink)" font-size="11" font-weight="800">PSTN / ITSP</text>'+
+      '<path d="M140 70h40M380 70h40M580 70h40" stroke="var(--gold)" stroke-width="3"/>'+
+      '<rect x="180" y="118" width="200" height="44" rx="10" fill="var(--card)" stroke="var(--purple)" stroke-width="2"/><text x="280" y="145" text-anchor="middle" fill="var(--ink)" font-size="11" font-weight="800">Contact Center</text>'+
+      '<path d="M280 92v26" stroke="var(--purple)" stroke-width="3"/>'+
+      '<text x="20" y="178" fill="var(--muted)" font-size="11">CUCM · Teams · Webex  ·  UCCE / PCCE · WxCC · Connect · Genesys  ·  signaling ≠ media</text>'+
+      "</svg>";
+  }
+
+  function studySvg(){
+    return '<svg viewBox="0 0 840 132" role="img" aria-label="Study loop: Learn, Drill, Lab, Teach with LICC at the center">'+
+      '<rect width="840" height="132" rx="16" fill="currentColor" opacity=".04"/>'+
+      '<rect x="24" y="36" width="150" height="60" rx="12" fill="var(--card)" stroke="var(--gold)" stroke-width="2"/><text x="99" y="62" text-anchor="middle" fill="var(--ink)" font-size="13" font-weight="800">Learn</text><text x="99" y="80" text-anchor="middle" fill="var(--muted)" font-size="10">hub + overview</text>'+
+      '<rect x="214" y="36" width="150" height="60" rx="12" fill="var(--card)" stroke="var(--amber)" stroke-width="2"/><text x="289" y="62" text-anchor="middle" fill="var(--ink)" font-size="13" font-weight="800">Drill</text><text x="289" y="80" text-anchor="middle" fill="var(--muted)" font-size="10">practice banks</text>'+
+      '<rect x="404" y="36" width="150" height="60" rx="12" fill="var(--card)" stroke="var(--teal)" stroke-width="2"/><text x="479" y="62" text-anchor="middle" fill="var(--ink)" font-size="13" font-weight="800">Lab</text><text x="479" y="80" text-anchor="middle" fill="var(--muted)" font-size="10">SEV + packet proof</text>'+
+      '<rect x="594" y="36" width="150" height="60" rx="12" fill="var(--card)" stroke="var(--blue)" stroke-width="2"/><text x="669" y="62" text-anchor="middle" fill="var(--ink)" font-size="13" font-weight="800">Teach</text><text x="669" y="80" text-anchor="middle" fill="var(--muted)" font-size="10">interview hub</text>'+
+      '<circle cx="790" cy="66" r="26" fill="var(--amber)"/><text x="790" y="71" text-anchor="middle" fill="#fff" font-size="12" font-weight="800">LICC</text>'+
+      "</svg>";
+  }
+
+  function buildOrient(){
+    return el('<div class="uc-orient" id="ucOrient">'+
+      '<div class="eyebrow">Start here · first hour</div>'+
+      '<div class="uc-orient-grid">'+
+        '<div class="uc-card"><h3>1. How this campus nests</h3>'+nestSvg()+
+          '<p class="muted" style="margin-top:8px">Sidebar groups are the library stacks. The 13 hubs are the chapter doors. Open a hub before diving the 632 sections.</p></div>'+
+        '<div class="uc-card"><h3>2. The call path</h3>'+vendorSvg()+
+          '<p class="muted" style="margin-top:8px">Jobs braid vendors. Follow the path, then name the logo. Signaling success is not two-way audio.</p></div>'+
+        '<div class="uc-card"><h3>3. How to study</h3>'+studySvg()+
+          '<div class="uc-licc">'+
+            '<div><b>L</b><span>Leg</span><i>Which hop failed?</i></div>'+
+            '<div><b>I</b><span>ID</span><i>Which Call-ID joins it?</i></div>'+
+            '<div><b>C</b><span>Counter</span><i>What moved?</i></div>'+
+            '<div><b>C</b><span>Capture</span><i>What artifact proves it?</i></div>'+
+          '</div></div>'+
+        '<div class="uc-card"><h3>4. First-hour walk</h3>'+
+          '<p class="muted">Existing sections only — a stranger path through doors that already exist.</p>'+
+          '<div class="uc-path">'+
+            '<button type="button" data-go="method">1. LICC method</button>'+
+            '<button type="button" data-go="hub-sip">2. SIP hub</button>'+
+            '<button type="button" data-go="hub-cucm">3. CUCM hub</button>'+
+            '<button type="button" data-go="hub-cube-sbc">4. CUBE / SBC</button>'+
+            '<button type="button" data-go="hub-qos">5. QoS hub</button>'+
+            '<button type="button" data-go="hub-interview">6. Interview hub</button>'+
+          '</div></div>'+
+      '</div></div>');
+  }
+
+  function organizeHome(body){
+    if(!body || body.querySelector("#ucOrient")) return;
+    var mc=body.querySelector(".uc-mc");
+    var orient=buildOrient();
+    body.insertBefore(orient, body.firstChild);
+    if(mc) body.insertBefore(mc, orient.nextSibling);
+    var kids=[];
+    Array.prototype.forEach.call(body.children, function(n){
+      if(n.id==="ucOrient" || (n.classList && n.classList.contains("uc-mc"))) return;
+      kids.push(n);
+    });
+    if(!kids.length) return;
+    var det=document.createElement("details");
+    det.className="uc-archive";
+    det.innerHTML="<summary>Original campus notes (kept — historical build log, not the starting path)</summary>";
+    var box=document.createElement("div");
+    kids.forEach(function(n){ box.appendChild(n); });
+    det.appendChild(box);
+    body.appendChild(det);
+    on(orient, "[data-go]", function(btn){ go(btn.getAttribute("data-go")); });
+  }
+
+  function decorateHub(s, body){
+    if(!body || !s || body.querySelector("#ucHubChrome")) return;
+    var id=s.id||"";
+    if(id.indexOf("hub-")!==0 && id!=="method") return;
+    var steps=HUB_STEPS[id] || (id==="method" ? ["Leg","ID","Counter","Capture","Falsifier"] : null);
+    var chrome=document.createElement("div");
+    chrome.id="ucHubChrome";
+    chrome.className="uc-hub-chrome";
+    var nest='<p class="uc-nest">You are in a <b>chapter hub</b> · group <b>'+(s.group||"")+'</b> · child sections live in the sidebar under this group.</p>';
+    if(id==="method") nest='<p class="uc-nest"><b>LICC</b> is the campus proof grammar. Use it on every later section.</p>';
+    var svg = steps ? flowSvg(s.title+" path", steps) : "";
+    chrome.innerHTML="<h3>"+(id==="method"?"Hold this picture":"Chapter map")+"</h3>"+nest+svg;
+    body.insertBefore(chrome, body.firstChild);
+  }
+
+  function decorateHello(main){
+    if(!main || localStorage.getItem("uc_orient_seen")==="1" || main.querySelector("#ucHello")) return;
+    var bar=el('<div class="uc-hello" id="ucHello"><p><b>New here?</b> Use the sidebar <b>Start here</b> rail (13 hubs). Home now opens with a nest map, call path, and first-hour walk. The 632 sections stay — they sit under those hubs.</p><button type="button" id="ucHelloOk">Got it</button></div>');
+    var host=main.querySelector(".sec-container")||main;
+    host.insertBefore(bar, host.firstChild);
+    bar.querySelector("#ucHelloOk").addEventListener("click", function(){
+      try{ localStorage.setItem("uc_orient_seen","1"); }catch(e){}
+      bar.remove();
+    });
+  }
+
+  function compactPref(){
+    try{ return localStorage.getItem("uc_nav_compact")!=="0"; }catch(e){ return true; }
+  }
+  function setCompact(on){
+    try{ localStorage.setItem("uc_nav_compact", on?"1":"0"); }catch(e){}
+    applyCompact();
+  }
+  function applyCompact(){
+    var side=document.getElementById("side");
+    if(!side) return;
+    var on=compactPref();
+    var wraps=side.querySelectorAll(".nav-g-accordion");
+    for(var i=0;i<wraps.length;i++){
+      var title=wraps[i].querySelector(".nav-g-title");
+      var keep=title && /campus/i.test(title.textContent||"");
+      var hasActive=wraps[i].querySelector(".nav-i.active");
+      if(on && !keep && !hasActive) wraps[i].classList.add("collapsed");
+      if(!on) wraps[i].classList.remove("collapsed");
+    }
+    var btn=side.querySelector("#ucNavCompact");
+    if(btn) btn.textContent = on ? "Show all groups" : "Compact groups";
+  }
+
+  function decorateNav(){
+    var side=document.getElementById("side");
+    if(!side || !side.querySelector(".nav-home-wrap") || side.querySelector(".uc-start-rail")) return;
+    var rail=document.createElement("div");
+    rail.className="uc-start-rail";
+    var btns=START.map(function(row){
+      return '<button type="button" class="nav-i" data-id="'+row[0]+'"><span class="n">'+row[1]+'</span><span class="t">'+row[2]+'</span></button>';
+    }).join("");
+    rail.innerHTML='<h4>Start here</h4><div class="uc-start-btns">'+btns+'</div>'+
+      '<div class="uc-nav-tools"><button type="button" id="ucNavCompact">Show all groups</button></div>';
+    var homeWrap=side.querySelector(".nav-home-wrap");
+    homeWrap.parentNode.insertBefore(rail, homeWrap.nextSibling);
+    var compactBtn=rail.querySelector("#ucNavCompact");
+    if(compactBtn) compactBtn.addEventListener("click", function(){ setCompact(!compactPref()); });
+    var titles=side.querySelectorAll(".nav-g-title");
+    for(var i=0;i<titles.length;i++){
+      var name=(titles[i].textContent||"").trim();
+      var icon=titles[i].parentNode.querySelector(".nav-g-icon");
+      if(icon && ICONS[name]) icon.textContent=ICONS[name];
+    }
+    applyCompact();
+  }
+
+  function afterOpen(s){
+    var main=document.getElementById("main");
+    var body=main ? main.querySelector(".sec-body") : null;
+    decorateNav();
+    applyCompact();
+    decorateHello(main);
+    if(!s||!body) return;
+    if(s.id==="home") organizeHome(body);
+    if(s.id==="method" || (s.id||"").indexOf("hub-")===0) decorateHub(s, body);
+  }
+
+  if(window.ucAfterOpen && !window.__ucOrientWrapped){
+    window.__ucOrientWrapped=true;
+    var orig=window.ucAfterOpen;
+    window.ucAfterOpen=function(s){
+      try{ orig(s); }catch(e){}
+      try{ afterOpen(s); }catch(e){}
+    };
+  } else if(!window.ucAfterOpen){
+    window.ucAfterOpen=afterOpen;
+    window.__ucOrientWrapped=true;
+  }
+
+  setTimeout(function(){
+    decorateNav();
+    applyCompact();
+    var main=document.getElementById("main");
+    var body=main && main.querySelector(".sec-body");
+    if(body && window.getCurrentSectionId && window.getCurrentSectionId()==="home"){
+      afterOpen({id:"home", group:"Campus", title:"Campus Home"});
+    }
+  }, 80);
+})();
+</script>
+<!-- ===== /UC READER ORIENTATION PACK ===== -->
+<!-- ===== UC SECTION VISUAL PACK ===== -->
+<style>
+.uc-sv{margin:0 0 14px;padding:12px 14px;border:1px solid var(--border);border-radius:16px;background:var(--card);box-shadow:var(--shadow)}
+.uc-sv-top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px}
+.uc-sv-top h3{font-family:var(--display);color:var(--amber);font-size:.92rem;margin:0}
+.uc-sv-icons{display:flex;gap:6px;flex-wrap:wrap}
+.uc-sv-ic{width:28px;height:28px;border-radius:8px;border:1px solid var(--border);background:color-mix(in srgb,var(--peach) 35%,var(--card));display:flex;align-items:center;justify-content:center}
+.uc-sv-ic svg{width:18px;height:18px}
+.uc-sv svg.uc-sv-flow{width:100%;height:auto;display:block}
+.uc-sv-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.uc-sv-chips b{display:inline-block;padding:4px 8px;border-radius:999px;border:1px solid var(--border);font-size:10px;letter-spacing:.02em;color:var(--ink);background:color-mix(in srgb,var(--bg) 70%,var(--card))}
+.uc-sv-chips b.uc-port{border-color:color-mix(in srgb,var(--teal) 45%,var(--border));color:var(--teal)}
+.uc-sv-note{margin:6px 0 0;font-size:.72rem;color:var(--muted);font-weight:700}
+@media(prefers-reduced-motion:reduce){.uc-sv{transition:none}}
+</style>
+<script>
+(function(){
+  "use strict";
+  var LEX = {"rules":[{"k":["5061","sips","sip tls"],"ports":["5061/tcp SIP-TLS"],"protos":["SIP","TLS"],"flow":["UA","TLS edge","Peer UA"],"icon":"lock"},{"k":["sip","invite","dialog","cseq","via ","record-route","options "],"ports":["5060/udp-tcp SIP"],"protos":["SIP"],"flow":["UAC","Proxy / B2BUA","UAS"],"icon":"sip"},{"k":["srtp","srtp"],"ports":[],"protos":["SRTP"],"flow":["Offer SRTP","Key / suite","Two-way media"],"icon":"lock"},{"k":["rtp","rtcp","jitter","mos","one-way","one way","ssrc"],"ports":["16384–32767/udp RTP"],"protos":["RTP","RTCP"],"flow":["Endpoint A","Media path","Endpoint B"],"icon":"wave"},{"k":["webrtc","ice","stun","turn","dtls"],"ports":["3478/udp STUN","5349/tcp TURN-TLS"],"protos":["WebRTC","ICE","DTLS-SRTP"],"flow":["Browser","STUN/TURN","Media peer"],"icon":"ice"},{"k":["sccp","skinny"],"ports":["2000/tcp SCCP"],"protos":["SCCP"],"flow":["Phone","CUCM","Media resource"],"icon":"phone"},{"k":["mgcp"],"ports":["2427/udp MGCP","2727/udp CA"],"protos":["MGCP"],"flow":["Call agent","Gateway","FXS / analog"],"icon":"legacy"},{"k":["h.323","h323","q.931"],"ports":["1720/tcp H.323"],"protos":["H.323"],"flow":["Terminal","Gatekeeper","Gateway"],"icon":"legacy"},{"k":["t.38","t38","fax"],"ports":["5060/udp SIP"],"protos":["T.38","SIP"],"flow":["Fax endpoint","Gateway","T.38 peer"],"icon":"fax"},{"k":["https","oauth","webhook","rest","api","graphql"],"ports":["443/tcp HTTPS"],"protos":["HTTPS","TLS"],"flow":["Client","API / IdP","Resource"],"icon":"cloud"},{"k":["tftp"],"ports":["69/udp TFTP"],"protos":["TFTP"],"flow":["Phone","TFTP","Config / firmware"],"icon":"box"},{"k":["dns","srv","naptr","nxdomain"],"ports":["53/udp-tcp DNS"],"protos":["DNS","SRV"],"flow":["Client","DNS SRV","Target host"],"icon":"net"},{"k":["ntp","time sync","clock skew","clock drift"],"ports":["123/udp NTP"],"protos":["NTP"],"flow":["Node","NTP source","Log / cert time"],"icon":"clock"},{"k":["ldap","ldaps","active directory","dirsync"],"ports":["389/tcp LDAP","636/tcp LDAPS"],"protos":["LDAP"],"flow":["UC node","Directory","Identity"],"icon":"id"},{"k":["dhcp","option 150","option 66"],"ports":["67/68/udp DHCP"],"protos":["DHCP"],"flow":["Phone","DHCP","TFTP / CUCM"],"icon":"net"},{"k":["ssh","cli "],"ports":["22/tcp SSH"],"protos":["SSH"],"flow":["Operator","Edge CLI","Change proof"],"icon":"lock"},{"k":["snmp"],"ports":["161/udp SNMP"],"protos":["SNMP"],"flow":["NMS","Agent","Trap / poll"],"icon":"chart"},{"k":["syslog"],"ports":["514/udp syslog"],"protos":["syslog"],"flow":["Device","Syslog","SIEM"],"icon":"chart"},{"k":["cti","jtapi","tsp"],"ports":["2748/tcp CTI"],"protos":["CTI"],"flow":["Desktop","CTI manager","Call control"],"icon":"agent"},{"k":["expressway","mra","collab-edge","traversal"],"ports":["8443/tcp MRA","5061/tcp SIP-TLS"],"protos":["MRA","TLS"],"flow":["Client","Exp-E → Exp-C","CUCM"],"icon":"edge"},{"k":["cube","sbc","b2bua","session border"],"ports":["5060/5061 SIP","16384–32767/udp RTP"],"protos":["SIP","RTP"],"flow":["ITSP","CUBE / SBC","Call control"],"icon":"shield"},{"k":["cucm","callmanager","unified communications manager"],"ports":["5060/5061 SIP","2000/tcp SCCP","69/udp TFTP"],"protos":["SIP","SCCP"],"flow":["Phone","CUCM","Trunk / MR"],"icon":"phone"},{"k":["teams","direct routing","cqd"],"ports":["443/tcp Teams","3478–3481/udp STUN","50000–50059/udp media"],"protos":["HTTPS","STUN","SRTP"],"flow":["Teams client","Phone System","SBC / PSTN"],"icon":"cloud"},{"k":["webex calling","webex app","control hub","wxcc","webex cc","webex contact"],"ports":["443/tcp Webex"],"protos":["HTTPS","SIP","SRTP"],"flow":["App / LGW","Webex cloud","PSTN / agent"],"icon":"cloud"},{"k":["amazon connect","connect ","contact flow","ctr"],"ports":["443/tcp HTTPS"],"protos":["HTTPS","WebRTC"],"flow":["Contact","Flow / queue","Agent"],"icon":"agent"},{"k":["genesys","architect flow","purecloud"],"ports":["443/tcp HTTPS"],"protos":["HTTPS"],"flow":["Entry","Architect","Queue / agent"],"icon":"agent"},{"k":["nice","cxone","five9"],"ports":["443/tcp HTTPS","5060/5061 SIP"],"protos":["HTTPS","SIP"],"flow":["Entry","ACD / script","Agent"],"icon":"agent"},{"k":["twilio","taskrouter","flex"],"ports":["443/tcp HTTPS","5060/5061 SIP"],"protos":["HTTPS","SIP"],"flow":["Webhook","TaskRouter","Flex agent"],"icon":"cloud"},{"k":["zoom"],"ports":["443/tcp Zoom","8801–8810/udp media"],"protos":["HTTPS","SRTP"],"flow":["Client","Zoom Phone","BYOC / PSTN"],"icon":"cloud"},{"k":["avaya","session manager","communication manager"],"ports":["5060/5061 SIP"],"protos":["SIP"],"flow":["Endpoint","SM / CM","Trunk"],"icon":"phone"},{"k":["asterisk","freepbx","pjsip"],"ports":["5060/5061 SIP","10000–20000/udp RTP"],"protos":["PJSIP","RTP"],"flow":["Endpoint","Asterisk","Trunk"],"icon":"phone"},{"k":["ringcentral","8x8","mitel"],"ports":["443/tcp HTTPS","5060/5061 SIP"],"protos":["HTTPS","SIP"],"flow":["User","Cloud UC","PSTN"],"icon":"cloud"},{"k":["ucce","icm","pcce","cvp","finesse"],"ports":["443/tcp Finesse","5060 SIP"],"protos":["SIP","HTTPS"],"flow":["Ingress / CVP","ICM script","Agent"],"icon":"agent"},{"k":["e911","redsky","psap","elin","erl","lis","nomadic","emergency"],"ports":["5060/5061 SIP"],"protos":["SIP","LIS"],"flow":["User / LIS","ELIN route","PSAP"],"icon":"alert"},{"k":["qos","dscp","ef ","af41","jitter","dscp"],"ports":[],"protos":["DSCP EF 46","AF41","CS3"],"flow":["Mark","Trust boundary","Queue / prove"],"icon":"chart"},{"k":["wifi","wmm","roam","ssid"],"ports":[],"protos":["WMM","DSCP"],"flow":["Handset","AP / WLC","Wired UC"],"icon":"net"},{"k":["sd-wan","sdwan","sase"],"ports":[],"protos":["DSCP","IPsec"],"flow":["Site","SD-WAN edge","Cloud / DC"],"icon":"net"},{"k":["pri","isdn","fxs","fxo","analog","pimg"],"ports":[],"protos":["PRI / Q.931","FXS/FXO"],"flow":["Analog / PRI","Gateway","SIP UC"],"icon":"legacy"},{"k":["recording","siprec","wfo","qm","compliance"],"ports":["5060 SIP","443/tcp API"],"protos":["SIPREC","SRTP"],"flow":["Media fork","Recorder","Retrieve"],"icon":"rec"},{"k":["sso","saml","oauth","idp","mfa"],"ports":["443/tcp HTTPS"],"protos":["SAML / OIDC"],"flow":["User","IdP","UC app"],"icon":"id"},{"k":["cert","pkix","tls","mtls"],"ports":["443/tcp","5061/tcp"],"protos":["TLS"],"flow":["Trust store","Handshake","Secure hop"],"icon":"lock"},{"k":["dial plan","css","partition","route pattern","translation"],"ports":["5060 SIP"],"protos":["SIP"],"flow":["Digits in","CSS / RP","Egress"],"icon":"route"},{"k":["queue","agent","ivr","skill","acd","contact center","ccaas"],"ports":["443/tcp"],"protos":["SIP","HTTPS"],"flow":["Ingress","IVR / queue","Agent"],"icon":"agent"},{"k":["migration","cutover","hypercare","porting","dual-run"],"ports":[],"protos":["SIP","LICC"],"flow":["Discover","Pilot","Cutover"],"icon":"truck"},{"k":["licc","falsifier","capture","counter"],"ports":[],"protos":["LICC"],"flow":["Leg","ID + Counter","Capture"],"icon":"proof"},{"k":["interview","teach-back","whiteboard"],"ports":[],"protos":["LICC"],"flow":["Path","Failure","Proof"],"icon":"talk"},{"k":["ai ","llm","dialogflow","agent assist","ml "],"ports":["443/tcp HTTPS"],"protos":["HTTPS"],"flow":["Audio / text","Model","Agent / bot"],"icon":"ai"}],"groupFlow":{"Campus":["Open hub","Study a path","Write LICC"],"Products":["Register / login","Route the call","Prove media"],"Foundations":["Layer below","This layer","Layer above"],"Tricky SEVs":["Symptom","LICC packet","Recover"],"Tricky SEVs v17":["Scope blast","Correlate","Contain"],"Bonus 50s":["Pick a tip","Place on path","Prove it"],"Network Core":["Address / mark","Forward","Measure"],"AI & Future":["Signal / text","Model","Human escape"],"Library":["Find the atom","Drill","Teach back"],"Architect Core":["Requirement","Boundary","ADR"],"Evidence Library":["Claim","Source","Falsifier"],"Architect Dojo":["Draw","Defend","Score"],"Trading Systems":["Open line","Record","Surveillance"],"Google CC & APIs":["Session","Fulfillment","Handoff"],"Cloud Migrations":["Discover","Pilot","Cutover"],"Mastery Methodologies":["Model","Rehearse","Evidence"],"CCaaS APIs & Platforms":["Auth","Event / API","Agent path"],"More Vendors":["Identity","Route","Media"],"Protocol Expert":["Transaction","Dialog","Media"],"Security Deep":["Detect","Contain","Prove"],"Observability Deep":["Probe","SLO","Alert"],"Network Deep":["Access","WAN / QoS","UC edge"],"Practice Bank":["Read fact","Answer","LICC"],"Practice Banks":["Fact","Variant","Defend"],"Vendor Deep-Dives":["Control","Media","Evidence"],"Architecture + Mastery":["Quality attr.","Flow","Failure"],"Mastery Practicums":["Model","Inject","Prove"]},"groupIcon":{"Campus":"campus","Products":"phone","Foundations":"layers","Tricky SEVs":"alert","Tricky SEVs v17":"alert","Bonus 50s":"star","Network Core":"net","AI & Future":"ai","Library":"book","Architect Core":"arch","Evidence Library":"proof","Architect Dojo":"talk","Trading Systems":"rec","Google CC & APIs":"cloud","Cloud Migrations":"truck","Mastery Methodologies":"proof","CCaaS APIs & Platforms":"agent","More Vendors":"phone","Protocol Expert":"sip","Security Deep":"lock","Observability Deep":"chart","Network Deep":"net","Practice Bank":"bank","Practice Banks":"bank","Vendor Deep-Dives":"phone","Architecture + Mastery":"arch","Mastery Practicums":"lab"},"idHints":[["hub-sip",["sip"]],["hub-cucm",["cucm"]],["hub-cube",["cube","sbc"]],["hub-qos",["qos"]],["hub-e911",["e911"]],["hub-expressway",["expressway","mra"]],["hub-icm",["ucce","icm"]],["hub-pcce",["pcce"]],["hub-webex",["webex cc"]],["hub-amazon",["amazon connect"]],["hub-migrations",["migration"]],["hub-sev",["licc"]],["hub-interview",["interview"]],["prod-cucm",["cucm"]],["prod-cube",["cube"]],["prod-teams",["teams"]],["prod-webex",["webex calling"]],["prod-connect",["amazon connect"]],["prod-genesys",["genesys"]],["prod-expressway",["expressway"]],["prod-zoom",["zoom"]],["qb-sip",["sip"]],["qb-qos",["qos"]],["qb-cucm",["cucm"]],["qb-cube",["cube"]],["qb-rtp",["rtp"]],["mp-signaling",["sip"]],["mp-media",["rtp"]],["mp-edge",["sbc"]],["mp-network",["qos"]],["mp-security",["tls"]],["mp-contact",["queue"]],["mp-cloud",["https"]],["mp-migration",["migration"]],["mp-routing",["dial plan"]],["mp-operations",["licc"]],["vd-teams",["teams"]],["vd-webex",["webex calling"]],["vd-twilio",["twilio"]],["vd-genesys",["genesys"]],["vd-nice",["nice"]],["vd-five9",["five9"]],["vd-avaya",["avaya"]],["vd-zoom",["zoom"]],["vd-ringcentral",["ringcentral"]],["vd-8x8",["8x8"]],["vd-mitel",["mitel"]],["vd-asterisk",["asterisk"]],["proto-sip",["sip"]],["proto-rtp",["rtp"]],["proto-ice",["ice"]],["cm-webex",["webex calling"]],["cm-teams",["teams"]],["cm-zoom",["zoom"]],["cm-cube",["cube"]],["cm-aws",["https"]],["found-0",["dhcp"]],["net-osi",["qos"]],["method",["licc"]]]};
+  if(!LEX) return;
+
+  var ICONS = {
+    campus: '<rect x="3" y="8" width="14" height="9" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 8 L10 3 L17 8" fill="none" stroke="currentColor" stroke-width="1.6"/>',
+    phone: '<rect x="6" y="2" width="8" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="10" cy="15" r="1" fill="currentColor"/>',
+    sip: '<path d="M3 10h14M7 6l-4 4 4 4M13 6l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6"/>',
+    wave: '<path d="M2 11c2-4 4 4 6 0s4 4 6 0 4 4 6 0" fill="none" stroke="currentColor" stroke-width="1.6"/>',
+    lock: '<rect x="5" y="9" width="10" height="8" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7 9V7a3 3 0 016 0v2" fill="none" stroke="currentColor" stroke-width="1.6"/>',
+    shield: '<path d="M10 2l7 3v5c0 4.2-3.2 7-7 8-3.8-1-7-3.8-7-8V5z" fill="none" stroke="currentColor" stroke-width="1.6"/>',
+    cloud: '<path d="M6 14h9a3 3 0 000-6 4 4 0 00-7.5-1A3.5 3.5 0 006 14z" fill="none" stroke="currentColor" stroke-width="1.6"/>',
+    ice: '<path d="M10 2v16M4 6l12 8M16 6L4 14" fill="none" stroke="currentColor" stroke-width="1.5"/>',
+    edge: '<circle cx="5" cy="10" r="2.2" fill="none" stroke="currentColor"/><circle cx="15" cy="10" r="2.2" fill="none" stroke="currentColor"/><path d="M7 10h6" stroke="currentColor" stroke-width="1.6"/>',
+    agent: '<circle cx="10" cy="6" r="2.4" fill="none" stroke="currentColor"/><path d="M4 16c1.2-3 4-4.5 6-4.5S14.8 13 16 16" fill="none" stroke="currentColor" stroke-width="1.6"/>',
+    alert: '<path d="M10 3l8 14H2z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10 8v5" stroke="currentColor" stroke-width="1.6"/>',
+    chart: '<path d="M3 16V4M3 16h14" stroke="currentColor" stroke-width="1.6"/><path d="M6 12l3-4 3 2 4-6" fill="none" stroke="currentColor" stroke-width="1.6"/>',
+    clock: '<circle cx="10" cy="10" r="7" fill="none" stroke="currentColor"/><path d="M10 6v4l3 2" fill="none" stroke="currentColor" stroke-width="1.6"/>',
+    id: '<circle cx="10" cy="7" r="2.2" fill="none" stroke="currentColor"/><rect x="4" y="11" width="12" height="6" rx="1.5" fill="none" stroke="currentColor"/>',
+    net: '<circle cx="10" cy="10" r="3" fill="none" stroke="currentColor"/><path d="M10 2v5M10 13v5M2 10h5M13 10h5" stroke="currentColor"/>',
+    box: '<rect x="3" y="6" width="14" height="10" rx="1.5" fill="none" stroke="currentColor"/><path d="M3 9h14" stroke="currentColor"/>',
+    fax: '<rect x="3" y="5" width="14" height="10" rx="1.5" fill="none" stroke="currentColor"/><path d="M6 15v2h8v-2" stroke="currentColor"/>',
+    rec: '<circle cx="10" cy="10" r="4" fill="none" stroke="currentColor"/><circle cx="10" cy="10" r="1.6" fill="currentColor"/>',
+    route: '<path d="M4 15c4-10 8 0 12-8" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="4" cy="15" r="1.4" fill="currentColor"/><circle cx="16" cy="7" r="1.4" fill="currentColor"/>',
+    truck: '<path d="M2 12h10V7H2zM12 9h4l2 3v3h-6" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="6" cy="15" r="1.3" fill="currentColor"/><circle cx="15" cy="15" r="1.3" fill="currentColor"/>',
+    proof: '<path d="M5 3h8l3 3v11H5z" fill="none" stroke="currentColor"/><path d="M7 10h6M7 13h4" stroke="currentColor"/>',
+    talk: '<path d="M4 5h12v8H8l-4 3z" fill="none" stroke="currentColor"/>',
+    layers: '<path d="M10 3l8 4-8 4-8-4zM4 11l6 3 6-3M4 14l6 3 6-3" fill="none" stroke="currentColor"/>',
+    star: '<path d="M10 2l2 6h6l-5 4 2 6-5-3.5L5 18l2-6-5-4h6z" fill="none" stroke="currentColor"/>',
+    book: '<path d="M4 4h5v13H4zM11 4h5v13h-5z" fill="none" stroke="currentColor"/>',
+    arch: '<path d="M3 16h14M5 16V8l5-4 5 4v8" fill="none" stroke="currentColor"/>',
+    bank: '<rect x="4" y="6" width="12" height="10" rx="1.5" fill="none" stroke="currentColor"/><path d="M7 10h6M7 13h4" stroke="currentColor"/>',
+    lab: '<path d="M8 3h4v6l4 7H4l4-7z" fill="none" stroke="currentColor"/>',
+    ai: '<rect x="5" y="6" width="10" height="8" rx="2" fill="none" stroke="currentColor"/><path d="M8 4v2M12 4v2M8 14v2M12 14v2" stroke="currentColor"/>',
+    legacy: '<rect x="3" y="8" width="14" height="7" rx="1" fill="none" stroke="currentColor"/><path d="M6 8V6h8v2" stroke="currentColor"/>'
+  };
+
+  function iconSvg(name){
+    return '<span class="uc-sv-ic" title="'+name+'"><svg viewBox="0 0 20 20" aria-hidden="true">'+
+      (ICONS[name]||ICONS.campus)+"</svg></span>";
+  }
+  function esc(s){
+    return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;");
+  }
+  function hasKw(hay, k){
+    if(/[\s./]/.test(k) || /\d/.test(k)) return hay.indexOf(k)>=0;
+    return new RegExp("(?:^|[^a-z0-9])"+k.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+"(?:[^a-z0-9]|$)").test(hay);
+  }
+  function hayOf(s){
+    var body = (s.body && String(s.body).slice(0,1600)) || "";
+    var h = [s.id||"", s.title||"", s.sub||"", s.group||"", body].join(" ").toLowerCase();
+    var hints = LEX.idHints || [];
+    for(var i=0;i<hints.length;i++){
+      if((s.id||"").indexOf(hints[i][0])===0 || (s.id||"").indexOf(hints[i][0])>=0){
+        h += " " + hints[i][1].join(" ");
+      }
+    }
+    return h;
+  }
+  function classify(s){
+    var hay = hayOf(s);
+    var head = [s.id||"", s.title||"", s.sub||"", s.group||""].join(" ").toLowerCase();
+    var hints = LEX.idHints || [];
+    for(var h=0;h<hints.length;h++){
+      if((s.id||"").indexOf(hints[h][0])>=0) head += " " + hints[h][1].join(" ");
+    }
+    var ports=[], protos=[], icons=[], flow=null, headFlow=null;
+    var rules = LEX.rules || [];
+    for(var i=0;i<rules.length;i++){
+      var r=rules[i], onHead=false, onAll=false;
+      for(var j=0;j<r.k.length;j++){
+        if(hasKw(head, r.k[j])) onHead=true;
+        if(hasKw(hay, r.k[j])) onAll=true;
+      }
+      if(!onAll && !onHead) continue;
+      (r.ports||[]).forEach(function(p){ if(ports.indexOf(p)<0) ports.push(p); });
+      (r.protos||[]).forEach(function(p){ if(protos.indexOf(p)<0) protos.push(p); });
+      if(r.icon && icons.indexOf(r.icon)<0) icons.push(r.icon);
+      if(onHead && !headFlow && r.flow) headFlow=r.flow.slice();
+    }
+    flow = headFlow || (LEX.groupFlow[s.group]||["Actor","Function","Next hop"]).slice();
+    var gicon = LEX.groupIcon[s.group] || "campus";
+    if(icons.indexOf(gicon)<0) icons.unshift(gicon);
+    if(icons.indexOf("proof")<0) icons.push("proof");
+    var chips=[];
+    protos.concat(ports).forEach(function(c){ if(chips.indexOf(c)<0) chips.push(c); });
+    if(!chips.length) chips=["LICC","path proof"];
+    return {icons:icons.slice(0,6), flow:flow.slice(0,5), chips:chips.slice(0,8)};
+  }
+  function flowSvg(steps){
+    var n=steps.length, w=840, h=92, gap=12, pad=14;
+    var bw=Math.floor((w-pad*2-gap*(n-1))/n);
+    var out=['<svg class="uc-sv-flow" viewBox="0 0 '+w+' '+h+'" role="img" aria-label="Section flow: '+esc(steps.join(" to "))+'">',
+      '<rect width="'+w+'" height="'+h+'" rx="14" fill="currentColor" opacity=".04"/>'];
+    for(var i=0;i<n;i++){
+      var x=pad+i*(bw+gap);
+      out.push('<rect x="'+x+'" y="22" width="'+bw+'" height="48" rx="11" fill="var(--card)" stroke="var(--amber)" stroke-width="2"/>');
+      out.push('<text x="'+(x+bw/2)+'" y="51" text-anchor="middle" fill="var(--ink)" font-size="12" font-weight="800">'+esc(steps[i])+'</text>');
+      if(i<n-1){
+        out.push('<path d="M'+(x+bw+1)+' 46h'+(gap-4)+'" stroke="var(--gold)" stroke-width="3" fill="none"/>');
+      }
+    }
+    out.push("</svg>");
+    return out.join("");
+  }
+  function render(s){
+    var spec=classify(s);
+    var chips=spec.chips.map(function(c){
+      var port=/^[0-9]/.test(c);
+      return '<b class="'+(port?"uc-port":"")+'">'+esc(c)+"</b>";
+    }).join("");
+    var note = spec.chips.some(function(c){return /^[0-9]/.test(c);})
+      ? "Ports/protocols taken from this section’s topic — well-known UC/CC marks only."
+      : "No stable port for this topic — structural path only (no invented numbers).";
+    var box=document.createElement("div");
+    box.id="ucSecVisual";
+    box.className="uc-sv";
+    box.setAttribute("data-sec", s.id||"");
+    box.innerHTML='<div class="uc-sv-top"><h3>Section picture</h3><div class="uc-sv-icons">'+
+      spec.icons.map(iconSvg).join("")+"</div></div>"+flowSvg(spec.flow)+
+      '<div class="uc-sv-chips">'+chips+"</div><p class=\"uc-sv-note\">"+note+"</p>";
+    return box;
+  }
+  function place(body, node){
+    var after = body.querySelector("#ucHubChrome") || body.querySelector("#ucOrient") || body.querySelector(".uc-mc");
+    if(after) after.parentNode.insertBefore(node, after.nextSibling);
+    else body.insertBefore(node, body.firstChild);
+  }
+  function paint(s){
+    var main=document.getElementById("main");
+    var body=main && main.querySelector(".sec-body");
+    if(!s || !body) return;
+    var old=body.querySelector("#ucSecVisual");
+    if(old) old.remove();
+    place(body, render(s));
+  }
+  window.ucSectionVisual = {classify:classify, paint:paint};
+
+  if(window.ucAfterOpen && !window.__ucSecVisWrapped){
+    window.__ucSecVisWrapped=true;
+    var orig=window.ucAfterOpen;
+    window.ucAfterOpen=function(s){
+      try{ orig(s); }catch(e){}
+      try{ paint(s); }catch(e){}
+    };
+  } else if(!window.ucAfterOpen){
+    window.ucAfterOpen=paint;
+    window.__ucSecVisWrapped=true;
+  }
+  setTimeout(function(){
+    if(window.getCurrentSectionId && window.SECTIONS){
+      var id=window.getCurrentSectionId();
+      for(var i=0;i<window.SECTIONS.length;i++){
+        if(window.SECTIONS[i].id===id){ paint(window.SECTIONS[i]); break; }
+      }
+    }
+  }, 120);
+})();
+</script>
+<!-- ===== /UC SECTION VISUAL PACK ===== -->
 </body>
 </html>

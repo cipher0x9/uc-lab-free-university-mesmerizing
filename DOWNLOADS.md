@@ -50,7 +50,7 @@ Full steps: [HOW-TO-GET.md](./HOW-TO-GET.md) · [START-HERE.md](./START-HERE.md)
 
 ```bash
 git clone https://github.com/cipher0x9/uc-lab-free-university-mesmerizing.git
-cd uc-lab-free-university
+cd uc-lab-free-university-mesmerizing
 open university/v17-UNIVERSITY.html
 ```
 
