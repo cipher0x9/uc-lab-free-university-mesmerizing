@@ -7,12 +7,17 @@ import argparse
 import html
 import json
 import re
+import sys
 from dataclasses import dataclass
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parent
-FLAGSHIP = ROOT / "university" / "v17-UNIVERSITY.html"
+TOOLS = ROOT / "tools"
+if str(TOOLS) not in sys.path:
+    sys.path.insert(0, str(TOOLS))
+
+from uc_campus import FLAGSHIP, assert_not_thinned, locate_sections, update_stats  # noqa: E402
 
 
 @dataclass(frozen=True)
@@ -235,31 +240,10 @@ def mastery_specs() -> list[SectionSpec]:
 PACK_BUILDERS = {"vendor": vendor_specs, "migration": migration_specs, "sev": sev_specs, "mastery": mastery_specs}
 
 
-def locate(text: str) -> tuple[int, list[dict[str, object]]]:
-    match = re.search(r"window\.SECTIONS\s*=\s*", text)
-    if not match:
-        raise RuntimeError("window.SECTIONS not found")
-    start = text.find("[", match.end())
-    end = text.find("\n];", start)
-    if start < 0 or end < 0:
-        raise RuntimeError("SECTIONS array boundary not found")
-    parsed = json.loads(text[start : end + 2])
-    if not isinstance(parsed, list) or any(not isinstance(x, dict) for x in parsed):
-        raise RuntimeError("SECTIONS must be a dense object list")
-    return end, parsed
-
-
-def update_stats(text: str, count: int) -> str:
-    updated, matches = re.subn(r'(window\.STATS\s*=\s*\{[^;]*?"sections"\s*:\s*)\d+', rf"\g<1>{count}", text, count=1, flags=re.S)
-    if matches != 1:
-        raise RuntimeError("STATS section count update failed")
-    return updated
-
-
 def inject(pack: str, path: Path, dry_run: bool) -> tuple[int, int, int]:
     original = path.read_text(encoding="utf-8")
     working = original.replace(".supernova-section .tab-pane{display:block;", ".supernova-section .tab-pane{")
-    end, existing = locate(working)
+    _, end, existing = locate_sections(working)
     existing_ids = {str(x.get("id", "")) for x in existing}
     specs = PACK_BUILDERS[pack]()
     duplicates = [spec.section_id for spec in specs if sum(1 for item in specs if item.section_id == spec.section_id) > 1]
@@ -275,9 +259,10 @@ def inject(pack: str, path: Path, dry_run: bool) -> tuple[int, int, int]:
         payload = ",\n" + ",\n".join(json.dumps(section, ensure_ascii=False, separators=(",", ":")) for section in additions)
     updated = working[:end] + payload + working[end:]
     updated = update_stats(updated, len(existing) + len(additions))
-    _, parsed = locate(updated)
+    _, _, parsed = locate_sections(updated)
     if len(parsed) != len(existing) + len(additions) or any(not x for x in parsed):
         raise RuntimeError("post-injection parse or density gate failed")
+    assert_not_thinned(len(existing), len(parsed))
     if not dry_run and updated != original:
         path.write_text(updated, encoding="utf-8")
     return len(additions), len(updated.encode("utf-8")) - len(original.encode("utf-8")), len(parsed)

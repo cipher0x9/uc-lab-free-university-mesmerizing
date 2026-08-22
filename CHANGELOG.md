@@ -1,5 +1,31 @@
 # Changelog
 
+## [2026-08-22] — Visual chrome on all 632 sections (no curriculum rewrite)
+
+- Shared generator (`tools/uc_section_visuals.py` + `tools/section_visual_pack.inc.html`) stamps every section at render time: icon strip + 3-hop flow + protocol/port chips
+- Ports/protocols are well-known UC/CC marks implied by that section (SIP 5060/5061, RTP 16384–32767, SCCP 2000, MGCP 2427, HTTPS 443, STUN 3478, Teams media, etc.). No invented numbers — structural flow when there is no honest port
+- **632 / 632** sections get icon + flow + chips (521 also get a real port mark)
+- Flagship **15,314,309 → 15,336,011 bytes** (+21,702). Section bodies untouched. 632 → 632
+- Verify PASS
+
+## [2026-08-22] — First-run orientation + hub diagrams (no curriculum rewrite)
+
+- Flagship **632 → 632** sections; bodies untouched
+- Size **15,293,747 → 15,314,309 bytes** (+20,562). Inline SVG/JS chrome only — no CDN, no remote images
+- Home now leads with nest map, multi-vendor call path, LICC study loop, and a first-hour walk (existing section IDs). Historical home build-log is still there, folded under “Original campus notes”
+- Sidebar: **Start here** rail (Home · LICC · 13 hubs), group icons for every stack, compact groups by default
+- Chapter-hub chrome: flow SVG + “you are in a hub” nest line (fills the 5 hubs that had no diagram: PCCE, Amazon Connect, Expressway, SEV, Interview)
+- Verify PASS (`python3 tools/verify_campus.py`)
+
+## [2026-08-22] — Maintainer verify path + generator safety (no curriculum rewrite)
+
+- Flagship on disk remains **20.2-RESOURCES · 632 unique sections · 0 holes · 0 CDN loads** (before = after)
+- New portable verify command: `python3 tools/verify_campus.py` / `make verify` — section floor, unique IDs, STATS match, no `,,` holes, no CDN/font/script/image loads, no tracking/network APIs, `node --check` on every inline script
+- Shared `tools/uc_campus.py` so generators and verify parse SECTIONS the same way; generators refuse to shrink below 632
+- Retired laptop-absolute `/Users/cypher0x9/...` paths in maintainer scripts; `apply_614_expansion.py` now refuses to regress the 632 campus
+- Docs: clone directory name, Paper theme in the “what you get” list, regenerate/verify instructions in README / START-HERE / CONTRIBUTING
+- Left alone: LICENSE, 632 section bodies, curriculum markdown packs, prompts, hermes, share-post, release zips
+
 ## [2026-08-10] — Stranger-path size honesty + share-post refresh
 
 - Zip sizes re-measured against live `v20.2-resources` release assets: campus zip **~1.4 MB** (README said ~0.6 MB), complete browser pack **~1.4 MB** (was ~649 KB), AI sibling zip **~560 KB** (was ~107 KB)

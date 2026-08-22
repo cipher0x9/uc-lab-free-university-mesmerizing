@@ -92,7 +92,7 @@ Optional (campus + prompt labs):
 |--|--|
 | **Campus** | `university/v17-UNIVERSITY.html` — **632 sections**, full multi-vendor curriculum |
 | **Briefing deck** | `downloads/Enterprise-Voice-with-Cisco-Technologies-CC-Cloud-Migration.pptx` — **62-slide** Enterprise Voice / CC / Cloud Migration technical briefing |
-| **Themes** | Warm · Night · Cobalt · Forest · Aurora · Sunset |
+| **Themes** | Warm · Night · Cobalt · Forest · Aurora · Sunset · Paper |
 | **Proof grammar** | **LICC** — Leg · ID · Counter · Capture |
 | **Mobile** | Menu drawer · safer boot · clearer loading tips (v17.1) |
 | **Resources** | Official Resources drawer on chapter hubs — curated, verified Cisco/Microsoft/AWS/Google/Twilio/IETF doc links |
@@ -130,11 +130,27 @@ The public file is the real 632-section campus (20.2-RESOURCES), packaged so fri
 
 ```bash
 git clone https://github.com/cipher0x9/uc-lab-free-university-mesmerizing.git
-cd uc-lab-free-university
+cd uc-lab-free-university-mesmerizing
 open university/v17-UNIVERSITY.html
 # optional: open the 62-slide briefing deck
 open downloads/Enterprise-Voice-with-Cisco-Technologies-CC-Cloud-Migration.pptx
 ```
+
+### Verify / regenerate (builders)
+
+The campus is one file. Do not rewrite the 632 sections by hand.
+
+```bash
+make verify
+# same command:
+python3 tools/verify_campus.py
+
+# additive generators (idempotent; refuse to thin below 632)
+python3 uc_qbank_gen.py --dry-run
+python3 uc_supernova_gen.py vendor --dry-run
+```
+
+See [tools/README.md](./tools/README.md) for the full maintainer path.
 
 ---
 

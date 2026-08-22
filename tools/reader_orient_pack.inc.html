@@ -1,0 +1,313 @@
+<!-- ===== UC READER ORIENTATION PACK ===== -->
+<style>
+.uc-start-rail{margin:0 0 12px;padding:10px 8px 8px;border:1px solid var(--border);border-radius:14px;background:color-mix(in srgb,var(--card) 88%,var(--peach))}
+.uc-start-rail h4{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 6px 8px;font-weight:800}
+.uc-start-rail .uc-start-btns{display:flex;flex-direction:column;gap:3px}
+.uc-start-rail .nav-i{padding:7px 8px;border-radius:10px}
+.uc-start-rail .uc-nav-tools{display:flex;gap:6px;margin:8px 6px 0}
+.uc-start-rail .uc-nav-tools button{flex:1;border:1px solid var(--border);background:var(--card);border-radius:999px;padding:5px 8px;font-size:10px;font-weight:800;color:var(--ink);cursor:pointer}
+.uc-hello{display:flex;gap:10px;align-items:flex-start;margin:0 0 12px;padding:12px 14px;border:1px solid var(--border);border-left:4px solid var(--amber);border-radius:14px;background:var(--card);box-shadow:var(--shadow)}
+.uc-hello p{margin:0;font-size:.92rem}
+.uc-hello button{margin-left:auto;border:1px solid var(--border);background:var(--bg);border-radius:999px;padding:6px 10px;font-weight:800;font-size:11px;cursor:pointer;color:var(--ink);white-space:nowrap}
+.uc-orient{margin:0 0 14px}
+.uc-orient .uc-orient-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:10px}
+.uc-orient .uc-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:14px;box-shadow:var(--shadow)}
+.uc-orient .uc-card h3{font-family:var(--display);color:var(--amber);font-size:1rem;margin:0 0 8px}
+.uc-orient svg{width:100%;height:auto;display:block}
+.uc-orient .uc-path{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.uc-orient .uc-path button,.uc-hub-chrome .uc-path button{border:1px solid var(--border);background:var(--bg);border-radius:999px;padding:6px 10px;font-size:11px;font-weight:800;cursor:pointer;color:var(--ink)}
+.uc-orient .uc-path button:hover,.uc-hub-chrome .uc-path button:hover{border-color:var(--amber)}
+.uc-orient .muted,.uc-hub-chrome .muted{color:var(--muted);font-size:.78rem}
+.uc-licc{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:8px}
+@media(max-width:700px){.uc-licc{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.uc-licc b{display:block;font-family:var(--display);font-size:1.15rem;color:var(--amber)}
+.uc-licc span{display:block;font-size:.72rem;color:var(--muted);font-weight:700;margin-top:2px}
+.uc-licc i{display:block;font-style:normal;font-size:.78rem;margin-top:4px}
+.uc-archive{margin:16px 0 8px;border:1px dashed var(--border);border-radius:14px;padding:8px 12px;background:color-mix(in srgb,var(--bg) 70%,var(--card))}
+.uc-archive>summary{cursor:pointer;font-weight:800;color:var(--muted);font-size:.85rem;padding:6px 0}
+.uc-hub-chrome{margin:0 0 14px;padding:12px 14px;border:1px solid var(--border);border-radius:16px;background:var(--card);box-shadow:var(--shadow)}
+.uc-hub-chrome h3{font-family:var(--display);color:var(--amber);font-size:.98rem;margin:0 0 6px}
+.uc-nest{font-size:.8rem;font-weight:700;color:var(--muted);margin:0 0 8px}
+.uc-nest b{color:var(--ink)}
+@media(prefers-reduced-motion:reduce){
+  .uc-hello,.uc-orient .uc-card,.uc-hub-chrome{transition:none}
+}
+</style>
+<script>
+(function(){
+  "use strict";
+  var START = [
+    ["home","🏠","Home"],
+    ["method","🔬","LICC method"],
+    ["hub-sip","📡","SIP hub"],
+    ["hub-cucm","☎️","CUCM hub"],
+    ["hub-cube-sbc","🛡️","CUBE / SBC"],
+    ["hub-qos","🎚️","QoS hub"],
+    ["hub-e911-redsky","🚨","E911 hub"],
+    ["hub-expressway","🌐","Expressway"],
+    ["hub-icm-ucce","🏢","ICM / UCCE"],
+    ["hub-pcce","📦","PCCE hub"],
+    ["hub-webex-cc","☁️","Webex CC"],
+    ["hub-amazon-connect","🟧","Amazon Connect"],
+    ["hub-migrations","🚀","Migrations"],
+    ["hub-sev-troubleshoot","🔥","SEV hub"],
+    ["hub-interview","💬","Interview hub"]
+  ];
+  var ICONS = {
+    "Campus":"🌿","Products":"☎️","Foundations":"📐","Tricky SEVs":"🔥","Bonus 50s":"✨",
+    "Network Core":"🌐","AI & Future":"🤖","Library":"📚","Architect Core":"🏛️",
+    "Evidence Library":"🧾","Architect Dojo":"🥋","Trading Systems":"📈",
+    "Google CC & APIs":"🔶","Cloud Migrations":"☁️","Mastery Methodologies":"🎓",
+    "CCaaS APIs & Platforms":"🎧","More Vendors":"🧩","Protocol Expert":"📜",
+    "Security Deep":"🔒","Observability Deep":"📡","Network Deep":"🕸️",
+    "Tricky SEVs v17":"🚨","Practice Bank":"📝","Practice Banks":"🧠",
+    "Vendor Deep-Dives":"🏢","Architecture + Mastery":"🗺️","Mastery Practicums":"🧪"
+  };
+  var HUB_STEPS = {
+    "hub-cucm": ["Phone A","CUCM","CSS / RP","Trunk","Phone B / PSTN"],
+    "hub-cube-sbc": ["ITSP / PSTN","CUBE / SBC","Dial-peer","CUCM","Endpoint"],
+    "hub-sip": ["INVITE","100 / 180","200 OK","ACK","RTP both ways"],
+    "hub-icm-ucce": ["Ingress","CVP / VRU","ICM script","Queue","Agent"],
+    "hub-pcce": ["Ingress","CVP","PCCE router","CUCM / PG","Finesse agent"],
+    "hub-webex-cc": ["Channel","Flow","Queue","Agent desktop","Recording"],
+    "hub-amazon-connect": ["Contact","Contact flow","Queue","Agent","CTR proof"],
+    "hub-e911-redsky": ["User / LIS","ERL / ELIN","Routing","PSAP","Notify on-site"],
+    "hub-qos": ["Mark DSCP","Trust boundary","EF / AF queue","Measure","Prove MOS"],
+    "hub-expressway": ["Client","Expressway-E","Expressway-C","CUCM","Media"],
+    "hub-migrations": ["Discover","Design","Pilot","Cutover","Hypercare"],
+    "hub-sev-troubleshoot": ["Scope","LICC","One change","Prove","Prevent"],
+    "hub-interview": ["Path","Failure","Evidence","Decision","Teach-back"]
+  };
+
+  function el(html){
+    var d=document.createElement("div");
+    d.innerHTML=html;
+    return d.firstElementChild;
+  }
+  function go(id){ if(window.openSection) window.openSection(id); }
+  function on(root, sel, fn){
+    if(!root) return;
+    root.addEventListener("click", function(e){
+      var t=e.target.closest(sel);
+      if(!t) return;
+      fn(t, e);
+    });
+  }
+
+  function flowSvg(aria, steps){
+    var n=steps.length, w=840, h=118, gap=14, pad=16;
+    var bw=Math.floor((w-pad*2-gap*(n-1))/n);
+    var parts=['<svg class="uc-flow" viewBox="0 0 '+w+' '+h+'" role="img" aria-label="'+aria+'">',
+      '<rect width="'+w+'" height="'+h+'" rx="16" fill="currentColor" opacity=".04"/>'];
+    for(var i=0;i<n;i++){
+      var x=pad+i*(bw+gap);
+      parts.push('<rect x="'+x+'" y="34" width="'+bw+'" height="50" rx="12" fill="var(--card)" stroke="var(--amber)" stroke-width="2"/>');
+      parts.push('<text x="'+(x+bw/2)+'" y="64" text-anchor="middle" fill="var(--ink)" font-size="12" font-weight="800">'+steps[i]+'</text>');
+      if(i<n-1){
+        var ax=x+bw+2;
+        parts.push('<path d="M'+ax+' 59h'+(gap-6)+'" stroke="var(--gold)" stroke-width="3" fill="none"/>');
+        parts.push('<path d="m'+(ax+gap-10)+' 54 6 5-6 5" fill="none" stroke="var(--gold)" stroke-width="3"/>');
+      }
+    }
+    parts.push("</svg>");
+    return parts.join("");
+  }
+
+  function nestSvg(){
+    return '<svg viewBox="0 0 840 168" role="img" aria-label="How the campus nests: Home, groups, hubs, then 632 sections">'+
+      '<rect width="840" height="168" rx="16" fill="currentColor" opacity=".04"/>'+
+      '<rect x="20" y="58" width="150" height="52" rx="12" fill="var(--card)" stroke="var(--amber)" stroke-width="2"/><text x="95" y="82" text-anchor="middle" fill="var(--ink)" font-size="12" font-weight="800">Campus Home</text><text x="95" y="98" text-anchor="middle" fill="var(--muted)" font-size="10">Mission Control</text>'+
+      '<path d="M170 84h46" stroke="var(--gold)" stroke-width="3"/><path d="m208 79 8 5-8 5" fill="none" stroke="var(--gold)" stroke-width="3"/>'+
+      '<rect x="220" y="58" width="150" height="52" rx="12" fill="var(--card)" stroke="var(--teal)" stroke-width="2"/><text x="295" y="82" text-anchor="middle" fill="var(--ink)" font-size="12" font-weight="800">27 groups</text><text x="295" y="98" text-anchor="middle" fill="var(--muted)" font-size="10">sidebar accordions</text>'+
+      '<path d="M370 84h46" stroke="var(--gold)" stroke-width="3"/><path d="m408 79 8 5-8 5" fill="none" stroke="var(--gold)" stroke-width="3"/>'+
+      '<rect x="420" y="58" width="170" height="52" rx="12" fill="var(--card)" stroke="var(--blue)" stroke-width="2"/><text x="505" y="82" text-anchor="middle" fill="var(--ink)" font-size="12" font-weight="800">13 chapter hubs</text><text x="505" y="98" text-anchor="middle" fill="var(--muted)" font-size="10">start-here landings</text>'+
+      '<path d="M590 84h46" stroke="var(--gold)" stroke-width="3"/><path d="m628 79 8 5-8 5" fill="none" stroke="var(--gold)" stroke-width="3"/>'+
+      '<rect x="640" y="58" width="180" height="52" rx="12" fill="var(--card)" stroke="var(--purple)" stroke-width="2"/><text x="730" y="82" text-anchor="middle" fill="var(--ink)" font-size="12" font-weight="800">632 sections</text><text x="730" y="98" text-anchor="middle" fill="var(--muted)" font-size="10">tabs · labs · banks</text>'+
+      '<text x="20" y="32" fill="var(--amber)" font-size="12" font-weight="800">Reader path — do not wander the full list first</text>'+
+      '<text x="20" y="148" fill="var(--muted)" font-size="11">A hub is a map. Child sections are the deep notes. LICC is the proof grammar on every hop.</text>'+
+      "</svg>";
+  }
+
+  function vendorSvg(){
+    return '<svg viewBox="0 0 840 190" role="img" aria-label="Multi-vendor UC and Contact Center path: endpoint, call control, SBC, PSTN, and contact center">'+
+      '<rect width="840" height="190" rx="16" fill="currentColor" opacity=".04"/>'+
+      '<text x="20" y="28" fill="var(--amber)" font-size="12" font-weight="800">The call path (any logo)</text>'+
+      '<rect x="20" y="48" width="120" height="44" rx="10" fill="var(--card)" stroke="var(--amber)" stroke-width="2"/><text x="80" y="75" text-anchor="middle" fill="var(--ink)" font-size="11" font-weight="800">Endpoint</text>'+
+      '<rect x="180" y="48" width="200" height="44" rx="10" fill="var(--card)" stroke="var(--blue)" stroke-width="2"/><text x="280" y="75" text-anchor="middle" fill="var(--ink)" font-size="11" font-weight="800">UC control</text>'+
+      '<rect x="420" y="48" width="160" height="44" rx="10" fill="var(--card)" stroke="var(--teal)" stroke-width="2"/><text x="500" y="75" text-anchor="middle" fill="var(--ink)" font-size="11" font-weight="800">SBC / CUBE</text>'+
+      '<rect x="620" y="48" width="200" height="44" rx="10" fill="var(--card)" stroke="var(--gold)" stroke-width="2"/><text x="720" y="75" text-anchor="middle" fill="var(--ink)" font-size="11" font-weight="800">PSTN / ITSP</text>'+
+      '<path d="M140 70h40M380 70h40M580 70h40" stroke="var(--gold)" stroke-width="3"/>'+
+      '<rect x="180" y="118" width="200" height="44" rx="10" fill="var(--card)" stroke="var(--purple)" stroke-width="2"/><text x="280" y="145" text-anchor="middle" fill="var(--ink)" font-size="11" font-weight="800">Contact Center</text>'+
+      '<path d="M280 92v26" stroke="var(--purple)" stroke-width="3"/>'+
+      '<text x="20" y="178" fill="var(--muted)" font-size="11">CUCM · Teams · Webex  ·  UCCE / PCCE · WxCC · Connect · Genesys  ·  signaling ≠ media</text>'+
+      "</svg>";
+  }
+
+  function studySvg(){
+    return '<svg viewBox="0 0 840 132" role="img" aria-label="Study loop: Learn, Drill, Lab, Teach with LICC at the center">'+
+      '<rect width="840" height="132" rx="16" fill="currentColor" opacity=".04"/>'+
+      '<rect x="24" y="36" width="150" height="60" rx="12" fill="var(--card)" stroke="var(--gold)" stroke-width="2"/><text x="99" y="62" text-anchor="middle" fill="var(--ink)" font-size="13" font-weight="800">Learn</text><text x="99" y="80" text-anchor="middle" fill="var(--muted)" font-size="10">hub + overview</text>'+
+      '<rect x="214" y="36" width="150" height="60" rx="12" fill="var(--card)" stroke="var(--amber)" stroke-width="2"/><text x="289" y="62" text-anchor="middle" fill="var(--ink)" font-size="13" font-weight="800">Drill</text><text x="289" y="80" text-anchor="middle" fill="var(--muted)" font-size="10">practice banks</text>'+
+      '<rect x="404" y="36" width="150" height="60" rx="12" fill="var(--card)" stroke="var(--teal)" stroke-width="2"/><text x="479" y="62" text-anchor="middle" fill="var(--ink)" font-size="13" font-weight="800">Lab</text><text x="479" y="80" text-anchor="middle" fill="var(--muted)" font-size="10">SEV + packet proof</text>'+
+      '<rect x="594" y="36" width="150" height="60" rx="12" fill="var(--card)" stroke="var(--blue)" stroke-width="2"/><text x="669" y="62" text-anchor="middle" fill="var(--ink)" font-size="13" font-weight="800">Teach</text><text x="669" y="80" text-anchor="middle" fill="var(--muted)" font-size="10">interview hub</text>'+
+      '<circle cx="790" cy="66" r="26" fill="var(--amber)"/><text x="790" y="71" text-anchor="middle" fill="#fff" font-size="12" font-weight="800">LICC</text>'+
+      "</svg>";
+  }
+
+  function buildOrient(){
+    return el('<div class="uc-orient" id="ucOrient">'+
+      '<div class="eyebrow">Start here · first hour</div>'+
+      '<div class="uc-orient-grid">'+
+        '<div class="uc-card"><h3>1. How this campus nests</h3>'+nestSvg()+
+          '<p class="muted" style="margin-top:8px">Sidebar groups are the library stacks. The 13 hubs are the chapter doors. Open a hub before diving the 632 sections.</p></div>'+
+        '<div class="uc-card"><h3>2. The call path</h3>'+vendorSvg()+
+          '<p class="muted" style="margin-top:8px">Jobs braid vendors. Follow the path, then name the logo. Signaling success is not two-way audio.</p></div>'+
+        '<div class="uc-card"><h3>3. How to study</h3>'+studySvg()+
+          '<div class="uc-licc">'+
+            '<div><b>L</b><span>Leg</span><i>Which hop failed?</i></div>'+
+            '<div><b>I</b><span>ID</span><i>Which Call-ID joins it?</i></div>'+
+            '<div><b>C</b><span>Counter</span><i>What moved?</i></div>'+
+            '<div><b>C</b><span>Capture</span><i>What artifact proves it?</i></div>'+
+          '</div></div>'+
+        '<div class="uc-card"><h3>4. First-hour walk</h3>'+
+          '<p class="muted">Existing sections only — a stranger path through doors that already exist.</p>'+
+          '<div class="uc-path">'+
+            '<button type="button" data-go="method">1. LICC method</button>'+
+            '<button type="button" data-go="hub-sip">2. SIP hub</button>'+
+            '<button type="button" data-go="hub-cucm">3. CUCM hub</button>'+
+            '<button type="button" data-go="hub-cube-sbc">4. CUBE / SBC</button>'+
+            '<button type="button" data-go="hub-qos">5. QoS hub</button>'+
+            '<button type="button" data-go="hub-interview">6. Interview hub</button>'+
+          '</div></div>'+
+      '</div></div>');
+  }
+
+  function organizeHome(body){
+    if(!body || body.querySelector("#ucOrient")) return;
+    var mc=body.querySelector(".uc-mc");
+    var orient=buildOrient();
+    body.insertBefore(orient, body.firstChild);
+    if(mc) body.insertBefore(mc, orient.nextSibling);
+    var kids=[];
+    Array.prototype.forEach.call(body.children, function(n){
+      if(n.id==="ucOrient" || (n.classList && n.classList.contains("uc-mc"))) return;
+      kids.push(n);
+    });
+    if(!kids.length) return;
+    var det=document.createElement("details");
+    det.className="uc-archive";
+    det.innerHTML="<summary>Original campus notes (kept — historical build log, not the starting path)</summary>";
+    var box=document.createElement("div");
+    kids.forEach(function(n){ box.appendChild(n); });
+    det.appendChild(box);
+    body.appendChild(det);
+    on(orient, "[data-go]", function(btn){ go(btn.getAttribute("data-go")); });
+  }
+
+  function decorateHub(s, body){
+    if(!body || !s || body.querySelector("#ucHubChrome")) return;
+    var id=s.id||"";
+    if(id.indexOf("hub-")!==0 && id!=="method") return;
+    var steps=HUB_STEPS[id] || (id==="method" ? ["Leg","ID","Counter","Capture","Falsifier"] : null);
+    var chrome=document.createElement("div");
+    chrome.id="ucHubChrome";
+    chrome.className="uc-hub-chrome";
+    var nest='<p class="uc-nest">You are in a <b>chapter hub</b> · group <b>'+(s.group||"")+'</b> · child sections live in the sidebar under this group.</p>';
+    if(id==="method") nest='<p class="uc-nest"><b>LICC</b> is the campus proof grammar. Use it on every later section.</p>';
+    var svg = steps ? flowSvg(s.title+" path", steps) : "";
+    chrome.innerHTML="<h3>"+(id==="method"?"Hold this picture":"Chapter map")+"</h3>"+nest+svg;
+    body.insertBefore(chrome, body.firstChild);
+  }
+
+  function decorateHello(main){
+    if(!main || localStorage.getItem("uc_orient_seen")==="1" || main.querySelector("#ucHello")) return;
+    var bar=el('<div class="uc-hello" id="ucHello"><p><b>New here?</b> Use the sidebar <b>Start here</b> rail (13 hubs). Home now opens with a nest map, call path, and first-hour walk. The 632 sections stay — they sit under those hubs.</p><button type="button" id="ucHelloOk">Got it</button></div>');
+    var host=main.querySelector(".sec-container")||main;
+    host.insertBefore(bar, host.firstChild);
+    bar.querySelector("#ucHelloOk").addEventListener("click", function(){
+      try{ localStorage.setItem("uc_orient_seen","1"); }catch(e){}
+      bar.remove();
+    });
+  }
+
+  function compactPref(){
+    try{ return localStorage.getItem("uc_nav_compact")!=="0"; }catch(e){ return true; }
+  }
+  function setCompact(on){
+    try{ localStorage.setItem("uc_nav_compact", on?"1":"0"); }catch(e){}
+    applyCompact();
+  }
+  function applyCompact(){
+    var side=document.getElementById("side");
+    if(!side) return;
+    var on=compactPref();
+    var wraps=side.querySelectorAll(".nav-g-accordion");
+    for(var i=0;i<wraps.length;i++){
+      var title=wraps[i].querySelector(".nav-g-title");
+      var keep=title && /campus/i.test(title.textContent||"");
+      var hasActive=wraps[i].querySelector(".nav-i.active");
+      if(on && !keep && !hasActive) wraps[i].classList.add("collapsed");
+      if(!on) wraps[i].classList.remove("collapsed");
+    }
+    var btn=side.querySelector("#ucNavCompact");
+    if(btn) btn.textContent = on ? "Show all groups" : "Compact groups";
+  }
+
+  function decorateNav(){
+    var side=document.getElementById("side");
+    if(!side || !side.querySelector(".nav-home-wrap") || side.querySelector(".uc-start-rail")) return;
+    var rail=document.createElement("div");
+    rail.className="uc-start-rail";
+    var btns=START.map(function(row){
+      return '<button type="button" class="nav-i" data-id="'+row[0]+'"><span class="n">'+row[1]+'</span><span class="t">'+row[2]+'</span></button>';
+    }).join("");
+    rail.innerHTML='<h4>Start here</h4><div class="uc-start-btns">'+btns+'</div>'+
+      '<div class="uc-nav-tools"><button type="button" id="ucNavCompact">Show all groups</button></div>';
+    var homeWrap=side.querySelector(".nav-home-wrap");
+    homeWrap.parentNode.insertBefore(rail, homeWrap.nextSibling);
+    var compactBtn=rail.querySelector("#ucNavCompact");
+    if(compactBtn) compactBtn.addEventListener("click", function(){ setCompact(!compactPref()); });
+    var titles=side.querySelectorAll(".nav-g-title");
+    for(var i=0;i<titles.length;i++){
+      var name=(titles[i].textContent||"").trim();
+      var icon=titles[i].parentNode.querySelector(".nav-g-icon");
+      if(icon && ICONS[name]) icon.textContent=ICONS[name];
+    }
+    applyCompact();
+  }
+
+  function afterOpen(s){
+    var main=document.getElementById("main");
+    var body=main ? main.querySelector(".sec-body") : null;
+    decorateNav();
+    applyCompact();
+    decorateHello(main);
+    if(!s||!body) return;
+    if(s.id==="home") organizeHome(body);
+    if(s.id==="method" || (s.id||"").indexOf("hub-")===0) decorateHub(s, body);
+  }
+
+  if(window.ucAfterOpen && !window.__ucOrientWrapped){
+    window.__ucOrientWrapped=true;
+    var orig=window.ucAfterOpen;
+    window.ucAfterOpen=function(s){
+      try{ orig(s); }catch(e){}
+      try{ afterOpen(s); }catch(e){}
+    };
+  } else if(!window.ucAfterOpen){
+    window.ucAfterOpen=afterOpen;
+    window.__ucOrientWrapped=true;
+  }
+
+  setTimeout(function(){
+    decorateNav();
+    applyCompact();
+    var main=document.getElementById("main");
+    var body=main && main.querySelector(".sec-body");
+    if(body && window.getCurrentSectionId && window.getCurrentSectionId()==="home"){
+      afterOpen({id:"home", group:"Campus", title:"Campus Home"});
+    }
+  }, 80);
+})();
+</script>
+<!-- ===== /UC READER ORIENTATION PACK ===== -->

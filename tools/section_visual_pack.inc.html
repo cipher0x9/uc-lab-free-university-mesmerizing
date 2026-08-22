@@ -1,0 +1,177 @@
+<!-- ===== UC SECTION VISUAL PACK ===== -->
+<style>
+.uc-sv{margin:0 0 14px;padding:12px 14px;border:1px solid var(--border);border-radius:16px;background:var(--card);box-shadow:var(--shadow)}
+.uc-sv-top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px}
+.uc-sv-top h3{font-family:var(--display);color:var(--amber);font-size:.92rem;margin:0}
+.uc-sv-icons{display:flex;gap:6px;flex-wrap:wrap}
+.uc-sv-ic{width:28px;height:28px;border-radius:8px;border:1px solid var(--border);background:color-mix(in srgb,var(--peach) 35%,var(--card));display:flex;align-items:center;justify-content:center}
+.uc-sv-ic svg{width:18px;height:18px}
+.uc-sv svg.uc-sv-flow{width:100%;height:auto;display:block}
+.uc-sv-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.uc-sv-chips b{display:inline-block;padding:4px 8px;border-radius:999px;border:1px solid var(--border);font-size:10px;letter-spacing:.02em;color:var(--ink);background:color-mix(in srgb,var(--bg) 70%,var(--card))}
+.uc-sv-chips b.uc-port{border-color:color-mix(in srgb,var(--teal) 45%,var(--border));color:var(--teal)}
+.uc-sv-note{margin:6px 0 0;font-size:.72rem;color:var(--muted);font-weight:700}
+@media(prefers-reduced-motion:reduce){.uc-sv{transition:none}}
+</style>
+<script>
+(function(){
+  "use strict";
+  var LEX = window.__UC_SECTION_VISUAL_LEXICON__;
+  if(!LEX) return;
+
+  var ICONS = {
+    campus: '<rect x="3" y="8" width="14" height="9" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 8 L10 3 L17 8" fill="none" stroke="currentColor" stroke-width="1.6"/>',
+    phone: '<rect x="6" y="2" width="8" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="10" cy="15" r="1" fill="currentColor"/>',
+    sip: '<path d="M3 10h14M7 6l-4 4 4 4M13 6l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6"/>',
+    wave: '<path d="M2 11c2-4 4 4 6 0s4 4 6 0 4 4 6 0" fill="none" stroke="currentColor" stroke-width="1.6"/>',
+    lock: '<rect x="5" y="9" width="10" height="8" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7 9V7a3 3 0 016 0v2" fill="none" stroke="currentColor" stroke-width="1.6"/>',
+    shield: '<path d="M10 2l7 3v5c0 4.2-3.2 7-7 8-3.8-1-7-3.8-7-8V5z" fill="none" stroke="currentColor" stroke-width="1.6"/>',
+    cloud: '<path d="M6 14h9a3 3 0 000-6 4 4 0 00-7.5-1A3.5 3.5 0 006 14z" fill="none" stroke="currentColor" stroke-width="1.6"/>',
+    ice: '<path d="M10 2v16M4 6l12 8M16 6L4 14" fill="none" stroke="currentColor" stroke-width="1.5"/>',
+    edge: '<circle cx="5" cy="10" r="2.2" fill="none" stroke="currentColor"/><circle cx="15" cy="10" r="2.2" fill="none" stroke="currentColor"/><path d="M7 10h6" stroke="currentColor" stroke-width="1.6"/>',
+    agent: '<circle cx="10" cy="6" r="2.4" fill="none" stroke="currentColor"/><path d="M4 16c1.2-3 4-4.5 6-4.5S14.8 13 16 16" fill="none" stroke="currentColor" stroke-width="1.6"/>',
+    alert: '<path d="M10 3l8 14H2z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10 8v5" stroke="currentColor" stroke-width="1.6"/>',
+    chart: '<path d="M3 16V4M3 16h14" stroke="currentColor" stroke-width="1.6"/><path d="M6 12l3-4 3 2 4-6" fill="none" stroke="currentColor" stroke-width="1.6"/>',
+    clock: '<circle cx="10" cy="10" r="7" fill="none" stroke="currentColor"/><path d="M10 6v4l3 2" fill="none" stroke="currentColor" stroke-width="1.6"/>',
+    id: '<circle cx="10" cy="7" r="2.2" fill="none" stroke="currentColor"/><rect x="4" y="11" width="12" height="6" rx="1.5" fill="none" stroke="currentColor"/>',
+    net: '<circle cx="10" cy="10" r="3" fill="none" stroke="currentColor"/><path d="M10 2v5M10 13v5M2 10h5M13 10h5" stroke="currentColor"/>',
+    box: '<rect x="3" y="6" width="14" height="10" rx="1.5" fill="none" stroke="currentColor"/><path d="M3 9h14" stroke="currentColor"/>',
+    fax: '<rect x="3" y="5" width="14" height="10" rx="1.5" fill="none" stroke="currentColor"/><path d="M6 15v2h8v-2" stroke="currentColor"/>',
+    rec: '<circle cx="10" cy="10" r="4" fill="none" stroke="currentColor"/><circle cx="10" cy="10" r="1.6" fill="currentColor"/>',
+    route: '<path d="M4 15c4-10 8 0 12-8" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="4" cy="15" r="1.4" fill="currentColor"/><circle cx="16" cy="7" r="1.4" fill="currentColor"/>',
+    truck: '<path d="M2 12h10V7H2zM12 9h4l2 3v3h-6" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="6" cy="15" r="1.3" fill="currentColor"/><circle cx="15" cy="15" r="1.3" fill="currentColor"/>',
+    proof: '<path d="M5 3h8l3 3v11H5z" fill="none" stroke="currentColor"/><path d="M7 10h6M7 13h4" stroke="currentColor"/>',
+    talk: '<path d="M4 5h12v8H8l-4 3z" fill="none" stroke="currentColor"/>',
+    layers: '<path d="M10 3l8 4-8 4-8-4zM4 11l6 3 6-3M4 14l6 3 6-3" fill="none" stroke="currentColor"/>',
+    star: '<path d="M10 2l2 6h6l-5 4 2 6-5-3.5L5 18l2-6-5-4h6z" fill="none" stroke="currentColor"/>',
+    book: '<path d="M4 4h5v13H4zM11 4h5v13h-5z" fill="none" stroke="currentColor"/>',
+    arch: '<path d="M3 16h14M5 16V8l5-4 5 4v8" fill="none" stroke="currentColor"/>',
+    bank: '<rect x="4" y="6" width="12" height="10" rx="1.5" fill="none" stroke="currentColor"/><path d="M7 10h6M7 13h4" stroke="currentColor"/>',
+    lab: '<path d="M8 3h4v6l4 7H4l4-7z" fill="none" stroke="currentColor"/>',
+    ai: '<rect x="5" y="6" width="10" height="8" rx="2" fill="none" stroke="currentColor"/><path d="M8 4v2M12 4v2M8 14v2M12 14v2" stroke="currentColor"/>',
+    legacy: '<rect x="3" y="8" width="14" height="7" rx="1" fill="none" stroke="currentColor"/><path d="M6 8V6h8v2" stroke="currentColor"/>'
+  };
+
+  function iconSvg(name){
+    return '<span class="uc-sv-ic" title="'+name+'"><svg viewBox="0 0 20 20" aria-hidden="true">'+
+      (ICONS[name]||ICONS.campus)+"</svg></span>";
+  }
+  function esc(s){
+    return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;");
+  }
+  function hasKw(hay, k){
+    if(/[\s./]/.test(k) || /\d/.test(k)) return hay.indexOf(k)>=0;
+    return new RegExp("(?:^|[^a-z0-9])"+k.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+"(?:[^a-z0-9]|$)").test(hay);
+  }
+  function hayOf(s){
+    var body = (s.body && String(s.body).slice(0,1600)) || "";
+    var h = [s.id||"", s.title||"", s.sub||"", s.group||"", body].join(" ").toLowerCase();
+    var hints = LEX.idHints || [];
+    for(var i=0;i<hints.length;i++){
+      if((s.id||"").indexOf(hints[i][0])===0 || (s.id||"").indexOf(hints[i][0])>=0){
+        h += " " + hints[i][1].join(" ");
+      }
+    }
+    return h;
+  }
+  function classify(s){
+    var hay = hayOf(s);
+    var head = [s.id||"", s.title||"", s.sub||"", s.group||""].join(" ").toLowerCase();
+    var hints = LEX.idHints || [];
+    for(var h=0;h<hints.length;h++){
+      if((s.id||"").indexOf(hints[h][0])>=0) head += " " + hints[h][1].join(" ");
+    }
+    var ports=[], protos=[], icons=[], flow=null, headFlow=null;
+    var rules = LEX.rules || [];
+    for(var i=0;i<rules.length;i++){
+      var r=rules[i], onHead=false, onAll=false;
+      for(var j=0;j<r.k.length;j++){
+        if(hasKw(head, r.k[j])) onHead=true;
+        if(hasKw(hay, r.k[j])) onAll=true;
+      }
+      if(!onAll && !onHead) continue;
+      (r.ports||[]).forEach(function(p){ if(ports.indexOf(p)<0) ports.push(p); });
+      (r.protos||[]).forEach(function(p){ if(protos.indexOf(p)<0) protos.push(p); });
+      if(r.icon && icons.indexOf(r.icon)<0) icons.push(r.icon);
+      if(onHead && !headFlow && r.flow) headFlow=r.flow.slice();
+    }
+    flow = headFlow || (LEX.groupFlow[s.group]||["Actor","Function","Next hop"]).slice();
+    var gicon = LEX.groupIcon[s.group] || "campus";
+    if(icons.indexOf(gicon)<0) icons.unshift(gicon);
+    if(icons.indexOf("proof")<0) icons.push("proof");
+    var chips=[];
+    protos.concat(ports).forEach(function(c){ if(chips.indexOf(c)<0) chips.push(c); });
+    if(!chips.length) chips=["LICC","path proof"];
+    return {icons:icons.slice(0,6), flow:flow.slice(0,5), chips:chips.slice(0,8)};
+  }
+  function flowSvg(steps){
+    var n=steps.length, w=840, h=92, gap=12, pad=14;
+    var bw=Math.floor((w-pad*2-gap*(n-1))/n);
+    var out=['<svg class="uc-sv-flow" viewBox="0 0 '+w+' '+h+'" role="img" aria-label="Section flow: '+esc(steps.join(" to "))+'">',
+      '<rect width="'+w+'" height="'+h+'" rx="14" fill="currentColor" opacity=".04"/>'];
+    for(var i=0;i<n;i++){
+      var x=pad+i*(bw+gap);
+      out.push('<rect x="'+x+'" y="22" width="'+bw+'" height="48" rx="11" fill="var(--card)" stroke="var(--amber)" stroke-width="2"/>');
+      out.push('<text x="'+(x+bw/2)+'" y="51" text-anchor="middle" fill="var(--ink)" font-size="12" font-weight="800">'+esc(steps[i])+'</text>');
+      if(i<n-1){
+        out.push('<path d="M'+(x+bw+1)+' 46h'+(gap-4)+'" stroke="var(--gold)" stroke-width="3" fill="none"/>');
+      }
+    }
+    out.push("</svg>");
+    return out.join("");
+  }
+  function render(s){
+    var spec=classify(s);
+    var chips=spec.chips.map(function(c){
+      var port=/^[0-9]/.test(c);
+      return '<b class="'+(port?"uc-port":"")+'">'+esc(c)+"</b>";
+    }).join("");
+    var note = spec.chips.some(function(c){return /^[0-9]/.test(c);})
+      ? "Ports/protocols taken from this section’s topic — well-known UC/CC marks only."
+      : "No stable port for this topic — structural path only (no invented numbers).";
+    var box=document.createElement("div");
+    box.id="ucSecVisual";
+    box.className="uc-sv";
+    box.setAttribute("data-sec", s.id||"");
+    box.innerHTML='<div class="uc-sv-top"><h3>Section picture</h3><div class="uc-sv-icons">'+
+      spec.icons.map(iconSvg).join("")+"</div></div>"+flowSvg(spec.flow)+
+      '<div class="uc-sv-chips">'+chips+"</div><p class=\"uc-sv-note\">"+note+"</p>";
+    return box;
+  }
+  function place(body, node){
+    var after = body.querySelector("#ucHubChrome") || body.querySelector("#ucOrient") || body.querySelector(".uc-mc");
+    if(after) after.parentNode.insertBefore(node, after.nextSibling);
+    else body.insertBefore(node, body.firstChild);
+  }
+  function paint(s){
+    var main=document.getElementById("main");
+    var body=main && main.querySelector(".sec-body");
+    if(!s || !body) return;
+    var old=body.querySelector("#ucSecVisual");
+    if(old) old.remove();
+    place(body, render(s));
+  }
+  window.ucSectionVisual = {classify:classify, paint:paint};
+
+  if(window.ucAfterOpen && !window.__ucSecVisWrapped){
+    window.__ucSecVisWrapped=true;
+    var orig=window.ucAfterOpen;
+    window.ucAfterOpen=function(s){
+      try{ orig(s); }catch(e){}
+      try{ paint(s); }catch(e){}
+    };
+  } else if(!window.ucAfterOpen){
+    window.ucAfterOpen=paint;
+    window.__ucSecVisWrapped=true;
+  }
+  setTimeout(function(){
+    if(window.getCurrentSectionId && window.SECTIONS){
+      var id=window.getCurrentSectionId();
+      for(var i=0;i<window.SECTIONS.length;i++){
+        if(window.SECTIONS[i].id===id){ paint(window.SECTIONS[i]); break; }
+      }
+    }
+  }, 120);
+})();
+</script>
+<!-- ===== /UC SECTION VISUAL PACK ===== -->
