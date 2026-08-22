@@ -11,13 +11,23 @@ from __future__ import annotations
 import argparse
 import html
 import json
-import re
+import sys
 from dataclasses import dataclass
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parent
-DEFAULT_HTML = ROOT / "university" / "v17-UNIVERSITY.html"
+TOOLS = ROOT / "tools"
+if str(TOOLS) not in sys.path:
+    sys.path.insert(0, str(TOOLS))
+
+from uc_campus import (  # noqa: E402
+    FLAGSHIP as DEFAULT_HTML,
+    assert_not_thinned,
+    locate_sections,
+    section_spans,
+    update_stats,
+)
 
 
 @dataclass(frozen=True)
@@ -200,54 +210,13 @@ def build_section(topic: Topic, ordinal: int) -> dict[str, str]:
     return {"id": topic.section_id, "num": f"QB{ordinal:02d}", "group": "Practice Banks", "title": f"🧠 {topic.title} — 400Q", "sub": "80 facts · 5 reasoning variants · proof-first", "body": body}
 
 
-def locate_array(text: str) -> tuple[int, int, list[dict[str, object]]]:
-    match = re.search(r"window\.SECTIONS\s*=\s*", text)
-    if not match:
-        raise RuntimeError("window.SECTIONS assignment not found")
-    start = text.find("[", match.end())
-    end = text.find("\n];", start)
-    if start < 0 or end < 0:
-        raise RuntimeError("SECTIONS array boundary not found")
-    # ``end`` points at the newline in ``\n];``; include the following ``]``.
-    sections = json.loads(text[start : end + 2])
-    if not isinstance(sections, list) or any(not isinstance(x, dict) for x in sections):
-        raise RuntimeError("SECTIONS is not a dense object array")
-    return start, end, sections
-
-
-def section_spans(text: str, start: int, end: int) -> list[tuple[int, int, dict[str, object]]]:
-    """Return exact raw object spans without reserializing the full array."""
-    decoder = json.JSONDecoder()
-    spans: list[tuple[int, int, dict[str, object]]] = []
-    cursor = start + 1
-    while cursor < end:
-        while cursor < end and text[cursor] in " \t\r\n,":
-            cursor += 1
-        if cursor >= end:
-            break
-        value, finish = decoder.raw_decode(text, cursor)
-        if not isinstance(value, dict):
-            raise RuntimeError("non-object found in SECTIONS")
-        spans.append((cursor, finish, value))
-        cursor = finish
-    return spans
-
-
-def update_stats(text: str, section_count: int) -> str:
-    pattern = r'(window\.STATS\s*=\s*\{[^;]*?"sections"\s*:\s*)\d+'
-    updated, count = re.subn(pattern, rf"\g<1>{section_count}", text, count=1, flags=re.S)
-    if count != 1:
-        raise RuntimeError("window.STATS.sections was not updated exactly once")
-    return updated
-
-
 def inject(path: Path, dry_run: bool = False) -> tuple[int, int, int]:
     original = path.read_text(encoding="utf-8")
     # Early Wave-1 output accidentally forced every tab pane visible. Remove
     # only that scoped declaration so the campus' existing ``wireTabs``
     # controller can hide/show panes normally.
     working = original.replace(".qbank-supernova .tab-pane{display:block;", ".qbank-supernova .tab-pane{")
-    start, end, existing = locate_array(working)
+    start, end, existing = locate_sections(working)
     # The legacy campus already had a 120-question ``qb-webex`` section. Keep
     # every byte of its body and append the new 400-question deep forge inside
     # that same stable ID instead of creating a duplicate navigation key.
@@ -266,10 +235,11 @@ def inject(path: Path, dry_run: bool = False) -> tuple[int, int, int]:
     for object_start, object_end, replacement in reversed(replacements):
         working = working[:object_start] + replacement + working[object_end:]
 
-    _, end, existing = locate_array(working)
+    _, end, existing = locate_sections(working)
     existing_ids = {str(section.get("id", "")) for section in existing}
     additions = [build_section(topic, i) for i, topic in enumerate(TOPICS, 1) if topic.section_id not in existing_ids]
     if not additions:
+        assert_not_thinned(len(existing), len(existing))
         reconciled = update_stats(working, len(existing))
         if reconciled != original and not dry_run:
             path.write_text(reconciled, encoding="utf-8")
@@ -278,9 +248,10 @@ def inject(path: Path, dry_run: bool = False) -> tuple[int, int, int]:
     updated = working[:end] + payload + working[end:]
     updated = update_stats(updated, len(existing) + len(additions))
     # Parse the exact post-injection array before replacing the flagship.
-    _, _, parsed = locate_array(updated)
+    _, _, parsed = locate_sections(updated)
     if len(parsed) != len(existing) + len(additions) or any(not x for x in parsed):
         raise RuntimeError("post-injection density check failed")
+    assert_not_thinned(len(existing), len(parsed))
     if not dry_run:
         path.write_text(updated, encoding="utf-8")
     return len(additions), len(updated.encode("utf-8")) - len(original.encode("utf-8")), len(parsed)

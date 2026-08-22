@@ -22,3 +22,15 @@ Free for learning. Be kind.
 7. No production secrets.  
 8. For large HTML changes, note before/after section counts.  
 
+## Verify before you open a campus PR
+
+```bash
+python3 tools/verify_campus.py
+# or
+make verify
+```
+
+The flagship must stay a **632+** unique-section offline file (`university/v17-UNIVERSITY.html`).
+Generators (`uc_qbank_gen.py`, `uc_supernova_gen.py`) are idempotent and refuse to thin the campus.
+See [tools/README.md](./tools/README.md).  
+

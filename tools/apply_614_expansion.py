@@ -1,11 +1,16 @@
 #!/usr/bin/env python3
-"""Re-apply the 12-section expert expansion (IDs 603-614) to v17-UNIVERSITY.html."""
-import json, re
+"""Historical 12-section expander (IDs 603-614). Do not run on the 632 campus.
+
+The public flagship already contains these sections. This script is kept as
+the original Wave-19.1 source. It refuses to write if the campus is already
+at or above the 632-section floor, or if the 12 IDs are already present.
+"""
+import json, re, sys
 from pathlib import Path
 
-ROOT = Path('/Users/cypher0x9/Documents/01_🎓_UC_AI_FREE_UNIVERSITY_CAMPUS/_github-publish')
+ROOT = Path(__file__).resolve().parent.parent
 HTML = ROOT / 'university' / 'v17-UNIVERSITY.html'
-REPORT = Path('/Users/cypher0x9/Desktop/uc-w5-kimi-content-report.md')
+REPORT = Path(__file__).resolve().parent / 'apply_614_expansion.log'
 
 def now():
     from datetime import datetime, timezone
@@ -218,6 +223,8 @@ new_sections.append({"id":"sev-dsp-exhaustion","num":"614","group":"Tricky SEVs 
 
 def main():
     print('Reading HTML...')
+    if not HTML.is_file():
+        raise SystemExit(f'flagship not found: {HTML}')
     text = HTML.read_text(encoding='utf-8')
     match = re.search(r'window\.SECTIONS\s*=\s*(\[.*?\]);', text, re.DOTALL)
     if not match:
@@ -225,6 +232,14 @@ def main():
     arr_text = match.group(1)
     sections = json.loads(arr_text)
     print(f'Loaded {len(sections)} sections')
+    existing_ids = {s.get('id') for s in sections if isinstance(s, dict)}
+    planned_ids = {s['id'] for s in new_sections}
+    if planned_ids <= existing_ids:
+        print('REFUSE  those 12 expert IDs are already in the flagship. Leaving campus untouched.')
+        return
+    if len(sections) >= 632:
+        print(f'REFUSE  campus already has {len(sections)} sections (floor 632). Historical 614 expander will not write.')
+        sys.exit(2)
 
     sections.extend(new_sections)
     print(f'New count: {len(sections)}')

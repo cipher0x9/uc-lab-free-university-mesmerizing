@@ -51,3 +51,5 @@ MIT licensed for learning and reuse. Do not paste secrets. Do not treat it as a 
 ## How do I contribute?
 
 See [CONTRIBUTING.md](../CONTRIBUTING.md). Prefer small, evidence-backed curriculum improvements and broken-link fixes.
+
+Maintainers: run `python3 tools/verify_campus.py` (or `make verify`) after any campus HTML change. Do not thin the 632-section file. How to regenerate: [tools/README.md](../tools/README.md).

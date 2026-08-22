@@ -9,7 +9,7 @@ import json, sys
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 
-ROOT = Path('/Users/cypher0x9/Documents/01_🎓_UC_AI_FREE_UNIVERSITY_CAMPUS/_github-publish')
+ROOT = Path(__file__).resolve().parent.parent
 CACHE = ROOT / 'tools/.uc_resources_urlcache.json'
 
 def main():

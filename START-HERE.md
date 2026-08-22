@@ -22,8 +22,12 @@ Welcome. This is a **free** multi-vendor UC & Contact Center campus — offline,
 Or from a clone:
 
 ```bash
+git clone https://github.com/cipher0x9/uc-lab-free-university-mesmerizing.git
+cd uc-lab-free-university-mesmerizing
 open university/v17-UNIVERSITY.html
 ```
+
+Builders: `python3 tools/verify_campus.py` (or `make verify`) checks section count, unique IDs, no CDN/asset leaks, no double-comma holes, and JS syntax. Generators are additive only — see [tools/README.md](./tools/README.md). Do not rewrite the 632 sections.
 
 ### Browser rules (important)
 

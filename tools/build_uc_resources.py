@@ -16,7 +16,7 @@ import json, re, subprocess, sys, time
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
-ROOT = Path('/Users/cypher0x9/Documents/01_🎓_UC_AI_FREE_UNIVERSITY_CAMPUS/_github-publish')
+ROOT = Path(__file__).resolve().parent.parent
 HTML = ROOT / 'university/v17-UNIVERSITY.html'
 CACHE = ROOT / 'tools/.uc_resources_urlcache.json'
 SNIPPET = ROOT / 'tools/uc_resources_report_snippet.md'

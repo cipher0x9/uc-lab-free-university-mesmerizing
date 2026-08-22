@@ -1,5 +1,14 @@
 # Changelog
 
+## [2026-08-22] — Maintainer verify path + generator safety (no curriculum rewrite)
+
+- Flagship on disk remains **20.2-RESOURCES · 632 unique sections · 0 holes · 0 CDN loads** (before = after)
+- New portable verify command: `python3 tools/verify_campus.py` / `make verify` — section floor, unique IDs, STATS match, no `,,` holes, no CDN/font/script/image loads, no tracking/network APIs, `node --check` on every inline script
+- Shared `tools/uc_campus.py` so generators and verify parse SECTIONS the same way; generators refuse to shrink below 632
+- Retired laptop-absolute `/Users/cypher0x9/...` paths in maintainer scripts; `apply_614_expansion.py` now refuses to regress the 632 campus
+- Docs: clone directory name, Paper theme in the “what you get” list, regenerate/verify instructions in README / START-HERE / CONTRIBUTING
+- Left alone: LICENSE, 632 section bodies, curriculum markdown packs, prompts, hermes, share-post, release zips
+
 ## [2026-08-10] — Stranger-path size honesty + share-post refresh
 
 - Zip sizes re-measured against live `v20.2-resources` release assets: campus zip **~1.4 MB** (README said ~0.6 MB), complete browser pack **~1.4 MB** (was ~649 KB), AI sibling zip **~560 KB** (was ~107 KB)

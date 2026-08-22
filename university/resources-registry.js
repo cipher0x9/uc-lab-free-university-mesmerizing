@@ -3,8 +3,7 @@
  * ---------------------------------------------------------------------------
  * Curated, real, official/primary-source reference links only. No invented
  * URLs. Every entry below was fetched and verified to resolve (HTTP 200 or a
- * clean redirect to a live page) during Wave E (see
- * ../reports/UC-V20-WAVE-E-COPILOT.md for the verification log).
+ * clean redirect to a live page) during Wave E.
  *
  * Design:
  *  - window.UC_RESOURCES.bySection[id]  -> array of links specific to a
@@ -14,10 +13,10 @@
  *  - window.UC_RESOURCES.registry       -> flat de-duplicated master list
  *    (for the Resources Index section / audits).
  *
- * This file is loaded as a plain <script> before the closing </body> tag of
- * university/v17-UNIVERSITY.html. It has no dependencies and never blocks
- * offline boot: if this file is missing, the campus still loads normally
- * (the resources card in the UI simply won't render).
+ * Maintainer source for the Official Resources drawer. The flagship file
+ * university/v17-UNIVERSITY.html ships with window.UC_RESOURCES inlined so
+ * the one-file campus stays offline. This sibling file is not loaded by
+ * the flagship at boot. Rebuild via tools/build_uc_resources.py.
  * ---------------------------------------------------------------------------
  */
 (function () {

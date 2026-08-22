@@ -10,4 +10,5 @@
 **FAQ:** docs/FAQ.md  
 
 Verify offline: open `university/v17-UNIVERSITY.html` after clone or unzip.  
-Open the deck in PowerPoint / Keynote / Google Slides.
+Open the deck in PowerPoint / Keynote / Google Slides.  
+Builders: `python3 tools/verify_campus.py` (section floor 632 · unique IDs · no CDN loads · JS syntax).
