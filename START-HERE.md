@@ -5,6 +5,7 @@ Welcome. This is a **free** multi-vendor UC & Contact Center campus — offline,
 | Want | Go |
 |------|-----|
 | **Download / open steps** | **[HOW-TO-GET.md](./HOW-TO-GET.md)** |
+| **Field cards** | **[learn/index.html](./learn/index.html)** — SIP ladders, dial plan, E911, CUBE, QoS, migration, flash cards, PDFs |
 | **Both free universities** | **[SIBLINGS.md](./SIBLINGS.md)** |
 | **All links** | https://linktr.ee/cyphermonkey |
 

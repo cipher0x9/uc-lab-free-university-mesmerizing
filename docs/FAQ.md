@@ -24,6 +24,7 @@ There is no separate multi-hundred-page PDF book on purpose. The campus is a sin
 
 - **Primary:** open the HTML campus
 - **Briefing deck:** [62-slide PPTX](https://github.com/cipher0x9/uc-lab-free-university-mesmerizing/releases/download/v20.2-resources/Enterprise-Voice-with-Cisco-Technologies-CC-Cloud-Migration.pptx) (Enterprise Voice · CC · Cloud Migration)
+- **One-subject cheat sheets:** [learn/pdf/index.html](../learn/pdf/index.html) (SIP, SDP, dial plan, E911, CUBE, QoS, migration)
 - **Print/PDF a page:** use your browser **Print → Save as PDF** on any section
 - **Official vendor docs:** use the in-campus **Official Resources** drawer (verified links; campus still boots offline)
 

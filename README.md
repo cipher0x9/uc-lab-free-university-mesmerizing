@@ -108,6 +108,24 @@ Inside: Cisco voice · CUBE · Teams · Webex · SBC · Contact Center · migrat
 
 ---
 
+## Field cards
+
+Short offline pages for the call flows and design checks people get paged for. Open `learn/index.html` in any browser. No network, no install.
+
+| | |
+|--|--|
+| **Hub** | [learn/index.html](./learn/index.html) |
+| **SIP / SDP** | [Registration through codecs](./learn/sip/index.html) — ladders as SVG |
+| **Dial plan** | [Partitions, CSS, route plan](./learn/dial-plan/cucm.html) |
+| **E911** | [Kari's Law, RAY BAUM'S Act, ELIN](./learn/e911/design.html) |
+| **SBC** | [CUBE topology, media, TLS/SRTP](./learn/sbc/cube.html) |
+| **QoS** | [DSCP marks and RFC 4594](./learn/qos/dscp.html) |
+| **Migration** | [CUCM to Webex Calling phases](./learn/migration/cucm-to-webex.html) |
+| **Flash cards** | [88 self-scored cards](./learn/flashcards.html) — progress stays in the browser |
+| **Cheat sheets** | [Printable PDFs](./learn/pdf/index.html) |
+
+---
+
 ## About file size (honest)
 
 | Pack | About | Use when |
