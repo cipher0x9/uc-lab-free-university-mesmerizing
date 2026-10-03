@@ -17,10 +17,6 @@
 Direct file:  
 https://github.com/cipher0x9/uc-lab-free-university-mesmerizing/releases/download/v20.2-resources/v17-UNIVERSITY.html.zip
 
-### Optional complete pack (campus + prompt labs)
-
-https://github.com/cipher0x9/uc-lab-free-university-mesmerizing/releases/download/v20.2-resources/UC-LAB-COMPLETE-BROWSER-PACK.zip
-
 ---
 
 ## Phone & tablet
@@ -63,7 +59,7 @@ https://linktr.ee/cyphermonkey
 | | |
 |--|--|
 | Repo | https://github.com/cipher0x9/ai-lab-free-university-mesmerizing |
-| Campus zip | https://github.com/cipher0x9/ai-lab-free-university-mesmerizing/releases/download/v4.2-mobile/v4-PORTFOLIO.html.zip |
+| Campus zip | https://github.com/cipher0x9/ai-lab-free-university-mesmerizing/raw/main/zips/v2-UNIVERSITY.html.zip |
 
 ---
 

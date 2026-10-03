@@ -29,8 +29,6 @@ cd uc-lab-free-university-mesmerizing
 open university/v17-UNIVERSITY.html
 ```
 
-Builders: `python3 tools/verify_campus.py` (or `make verify`) checks section count, unique IDs, no CDN/asset leaks, no double-comma holes, and JS syntax. Generators are additive only — see [tools/README.md](./tools/README.md). Do not rewrite the 632 sections.
-
 ### Browser rules (important)
 
 - Use **Chrome, Safari, Edge, or Firefox** — the **full browser app**  
@@ -64,7 +62,6 @@ If you cannot explain LICC without notes, stay with fundamentals a little longer
 
 ## 4) Optional extras
 
-- Prompt labs in `prompts/` or the **complete browser pack** zip  
 - Sibling AI: https://github.com/cipher0x9/ai-lab-free-university-mesmerizing  
 
 ---
@@ -82,6 +79,4 @@ Lab safely · pin vendor docs for production
 ## Also
 
 - [docs/FAQ.md](./docs/FAQ.md)
-- [curriculum/README.md](./curriculum/README.md)
 - [SIBLINGS.md](./SIBLINGS.md)
-- [CHANGELOG.md](./CHANGELOG.md)

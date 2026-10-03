@@ -56,7 +56,7 @@ If it helps even one engineer feel less alone in this craft, it was worth the wo
 
 ---
 
-**Public sync:** [PUBLIC-SYNC.md](./PUBLIC-SYNC.md) · **All download links:** [DOWNLOADS.md](./DOWNLOADS.md)
+**All download links:** [DOWNLOADS.md](./DOWNLOADS.md)
 
 ## Get it in 60 seconds (no Git needed)
 
@@ -69,9 +69,6 @@ If it helps even one engineer feel less alone in this craft, it was worth the wo
 3. Open **`v17-UNIVERSITY.html`** in **Chrome, Safari, Edge, or Firefox**
 
 **Works offline. No account. No install. No API keys.**
-
-Optional (campus + prompt labs):  
-**[UC-LAB-COMPLETE-BROWSER-PACK.zip](https://github.com/cipher0x9/uc-lab-free-university-mesmerizing/releases/download/v20.2-resources/UC-LAB-COMPLETE-BROWSER-PACK.zip)**
 
 ### How to open (please read once)
 
@@ -96,7 +93,6 @@ Optional (campus + prompt labs):
 | **Proof grammar** | **LICC** — Leg · ID · Counter · Capture |
 | **Mobile** | Menu drawer · safer boot · clearer loading tips (v17.1) |
 | **Resources** | Official Resources drawer on chapter hubs — curated, verified Cisco/Microsoft/AWS/Google/Twilio/IETF doc links |
-| **Prompt labs** | Languages · AI bridge seeds · nature-remote / agency prompts |
 | **Sibling** | 🧠 [AI Lab Free University](https://github.com/cipher0x9/ai-lab-free-university-mesmerizing) |
 
 ### LICC (learn this cold)
@@ -117,7 +113,6 @@ Inside: Cisco voice · CUBE · Teams · Webex · SBC · Contact Center · migrat
 | Pack | About | Use when |
 |------|--------|----------|
 | **Campus zip (~1.4 MB)** ⭐ | Full **632-section** HTML (~15 MB unzipped) | **Everyone** — phone + desktop |
-| **Complete browser pack** | Campus + prompt labs | You want prompts too |
 | Huge “godmode / infinite” archives | Recursive bulk, hard on phones | **Not** the public default |
 
 **We did not delete the free curriculum to make a small zip.**  
@@ -135,22 +130,6 @@ open university/v17-UNIVERSITY.html
 open downloads/Enterprise-Voice-with-Cisco-Technologies-CC-Cloud-Migration.pptx
 ```
 
-### Verify / regenerate (builders)
-
-The campus is one file. Do not rewrite the 632 sections by hand.
-
-```bash
-make verify
-# same command:
-python3 tools/verify_campus.py
-
-# additive generators (idempotent; refuse to thin below 632)
-python3 uc_qbank_gen.py --dry-run
-python3 uc_supernova_gen.py vendor --dry-run
-```
-
-See [tools/README.md](./tools/README.md) for the full maintainer path.
-
 ---
 
 ## Sibling pack — AI Lab Free University
@@ -158,7 +137,7 @@ See [tools/README.md](./tools/README.md) for the full maintainer path.
 Same free-share spirit. Different domain (local + cloud AI, agents, evals, **RTMA** proof grammar).
 
 - Repo: https://github.com/cipher0x9/ai-lab-free-university-mesmerizing  
-- Zip: https://github.com/cipher0x9/ai-lab-free-university-mesmerizing/releases/download/v4.2-mobile/v4-PORTFOLIO.html.zip  
+- Zip: https://github.com/cipher0x9/ai-lab-free-university-mesmerizing/raw/main/zips/v2-UNIVERSITY.html.zip  
 
 Also: 🎓 [Ardham Shastra](https://github.com/cipher0x9/ardham-shastra) · See **[SIBLINGS.md](./SIBLINGS.md)**.
 
@@ -171,7 +150,7 @@ Also: 🎓 [Ardham Shastra](https://github.com/cipher0x9/ardham-shastra) · See 
 - Lab safely · pin official vendor docs before production changes  
 - Be kind to learners — including yourself  
 
-**[HOW-TO-GET.md](./HOW-TO-GET.md)** · **[START-HERE.md](./START-HERE.md)** · **[docs/FAQ.md](./docs/FAQ.md)** · **[CHANGELOG.md](./CHANGELOG.md)** · **[SECURITY.md](./SECURITY.md)** · **[BRAND.md](./BRAND.md)**
+**[HOW-TO-GET.md](./HOW-TO-GET.md)** · **[START-HERE.md](./START-HERE.md)** · **[docs/FAQ.md](./docs/FAQ.md)** · **[SIBLINGS.md](./SIBLINGS.md)**
 
 ---
 

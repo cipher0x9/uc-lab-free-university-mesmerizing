@@ -27,12 +27,6 @@ Free for learning · Educational only · MIT · no warranty
 - Any section can also be saved via your browser's **Print → Save as PDF**.
 - Prefer slides? The [62-slide Enterprise Voice / CC / Cloud Migration PPTX](https://github.com/cipher0x9/uc-lab-free-university-mesmerizing/releases/download/v20.2-resources/Enterprise-Voice-with-Cisco-Technologies-CC-Cloud-Migration.pptx) is the slide-format companion.
 
-### Optional complete pack (campus + prompt labs)
-
-| What | Size | Link |
-|------|------|------|
-| Complete browser pack | ~1.4 MB | https://github.com/cipher0x9/uc-lab-free-university-mesmerizing/releases/download/v20.2-resources/UC-LAB-COMPLETE-BROWSER-PACK.zip |
-
 ---
 
 ## Phone / desktop
@@ -63,7 +57,7 @@ Or: GitHub → **Code** → **Download ZIP**
 | What | Link |
 |------|------|
 | Repo | https://github.com/cipher0x9/ai-lab-free-university-mesmerizing |
-| Campus zip (~560 KB) | https://github.com/cipher0x9/ai-lab-free-university-mesmerizing/releases/download/v4.2-mobile/v4-PORTFOLIO.html.zip |
+| Campus zip (v2, ~60 KB) | https://github.com/cipher0x9/ai-lab-free-university-mesmerizing/raw/main/zips/v2-UNIVERSITY.html.zip |
 
 ---
 
@@ -84,7 +78,6 @@ Lab safely. Share freely for learning.
 |-------|------------|-------|
 | Main campus HTML | `university/v17-UNIVERSITY.html` | Next Level sections added in place |
 | Release zip | GitHub Release `v20.2-resources` asset (re-pack locally after transform) | Still unzip → open HTML |
-| Prompt labs | `prompts/` + `releases/PROMPTS-THREE-PROJECTS.zip` | Three projects expanded |
 | Sibling AI | https://github.com/cipher0x9/ai-lab-free-university-mesmerizing | RTMA grammar |
 
 ### Verify offline

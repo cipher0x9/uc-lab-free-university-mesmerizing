@@ -41,7 +41,7 @@ Real jobs rarely hire one logo forever. Learn the call path so you can survive d
 
 ## Sibling campuses?
 
-- 🧠 [AI Lab Free University](https://github.com/cipher0x9/ai-lab-free-university-mesmerizing) · zip: [v4.2-mobile](https://github.com/cipher0x9/ai-lab-free-university-mesmerizing/releases/download/v4.2-mobile/v4-PORTFOLIO.html.zip)
+- 🧠 [AI Lab Free University](https://github.com/cipher0x9/ai-lab-free-university-mesmerizing) · zip: [v2 campus](https://github.com/cipher0x9/ai-lab-free-university-mesmerizing/raw/main/zips/v2-UNIVERSITY.html.zip)
 - 🎓 [Ardham Shastra](https://github.com/cipher0x9/ardham-shastra) · zip: [v5-mastery](https://github.com/cipher0x9/ardham-shastra/releases/download/v5-mastery/v1-ARDHAM-SHASTRA.html.zip)
 
 ## Can I use this at work / school?
@@ -50,6 +50,4 @@ MIT licensed for learning and reuse. Do not paste secrets. Do not treat it as a 
 
 ## How do I contribute?
 
-See [CONTRIBUTING.md](../CONTRIBUTING.md). Prefer small, evidence-backed curriculum improvements and broken-link fixes.
-
-Maintainers: run `python3 tools/verify_campus.py` (or `make verify`) after any campus HTML change. Do not thin the 632-section file. How to regenerate: [tools/README.md](../tools/README.md).
+Open an issue on GitHub. Prefer small, evidence-backed curriculum improvements and broken-link fixes.
