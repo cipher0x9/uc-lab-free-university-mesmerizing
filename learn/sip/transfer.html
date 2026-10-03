@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Transfer · UC Lab</title>
+<style>
+
+:root {
+  --ink: #1a2332;
+  --muted: #3a495c;
+  --teal: #0e5f59;
+  --teal-d: #084843;
+  --line: #d3e0db;
+  --card: #fffdfb;
+  --peach: #fde7e1;
+  --mint: #dff3ee;
+  --lav: #e6e7f7;
+  --sand: #fff3dc;
+  --focus: #0e5f59;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  font: 18px/1.6 "Segoe UI", "Avenir Next", "Trebuchet MS", sans-serif;
+  background:
+    radial-gradient(900px 420px at 0% -10%, #fde7e1 0%, transparent 55%),
+    radial-gradient(800px 480px at 100% 0%, #e6e7f7 0%, transparent 52%),
+    linear-gradient(180deg, #f6f2ec 0%, #e6f4f0 100%);
+  min-height: 100vh;
+}
+.skip { position: absolute; left: -999px; top: 8px; background: #fff; padding: 8px 12px; z-index: 20; }
+.skip:focus { left: 12px; }
+.top {
+  display: flex; flex-wrap: wrap; gap: 10px 16px;
+  align-items: center; justify-content: space-between;
+  padding: 12px 18px;
+  background: rgba(246, 242, 236, 0.94);
+  border-bottom: 1px solid var(--line);
+}
+.brand { color: var(--ink); text-decoration: none; font-weight: 750; display: flex; gap: 8px; align-items: center; }
+.brand i {
+  width: 16px; height: 16px; border-radius: 50%; display: inline-block;
+  background: linear-gradient(140deg, #7dcec4, #0e5f59 55%, #e7b2a6);
+}
+.brand small { font-weight: 700; color: var(--teal-d); letter-spacing: .06em; font-size: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 4px; }
+nav a {
+  color: var(--teal-d); text-decoration: none; font-size: 15px;
+  padding: 5px 9px; border-radius: 999px;
+}
+nav a:hover, nav a[aria-current="page"] { background: var(--mint); }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+main { max-width: 920px; margin: 0 auto; padding: 28px 18px 48px; }
+h1, h2, h3 { line-height: 1.25; }
+h1 { font-family: Georgia, "Iowan Old Style", Palatino, serif; font-size: clamp(2rem, 4vw, 2.75rem); margin: 0 0 10px; }
+h2 { font-family: Georgia, Palatino, serif; font-size: 1.5rem; margin: 1.5em 0 .4em; }
+h3 { font-size: 1.05rem; margin: 0 0 .35em; }
+.kicker { color: var(--teal-d); font-weight: 800; letter-spacing: .08em; text-transform: uppercase; font-size: 13px; margin: 0 0 8px; }
+.lede { font-size: 1.16rem; }
+p { margin: .65em 0; }
+a { color: var(--teal-d); }
+.diagram-scroll, .callout, pre, .table-scroll, .catalog a, .paper {
+  background: var(--card);
+}
+.diagram-scroll {
+  overflow-x: auto; border-radius: 18px; border: 1px solid var(--line);
+  box-shadow: 0 12px 32px rgba(26, 35, 50, .06); margin: 14px 0 6px;
+}
+.diagram-scroll img { display: block; width: 100%; height: auto; }
+.diagram-scroll.wide img { min-width: 760px; }
+.diagram-scroll.mid img { min-width: 560px; }
+.diagram-scroll.slim { max-width: 520px; margin-left: auto; margin-right: auto; }
+.diagram-scroll.slim img { min-width: 0; }
+figcaption, .hint { color: var(--muted); font-size: 15px; }
+.callout { border-radius: 16px; padding: 14px 16px; margin: 14px 0; border: 1px solid var(--line); }
+.callout.mint { background: #e5f6f2; }
+.callout.peach { background: #fde8e3; }
+.callout.lav { background: #eceefe; }
+.callout.sand { background: #fff6e4; }
+.callout p:last-child, .callout ul:last-child { margin-bottom: 0; }
+ol.steps, ul { padding-left: 1.2em; }
+ol.steps li, ul li { margin: .4em 0; }
+code, pre { font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+pre {
+  padding: 14px 16px; overflow-x: auto; border-radius: 14px;
+  border: 1px solid var(--line); line-height: 1.45; font-size: .86rem;
+}
+.table-scroll { overflow-x: auto; border-radius: 14px; border: 1px solid var(--line); margin: 12px 0; }
+table { width: 100%; border-collapse: collapse; font-size: 16px; background: var(--card); }
+th, td { text-align: left; padding: 10px 12px; vertical-align: top; border-bottom: 1px solid var(--line); }
+th { background: #e5f4f0; font-size: 14px; }
+tr:last-child td { border-bottom: 0; }
+.catalog { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; }
+.catalog a {
+  display: block; text-decoration: none; color: inherit;
+  border: 1px solid var(--line); border-radius: 16px; padding: 14px 14px 12px;
+  min-height: 104px; box-shadow: 0 8px 22px rgba(26, 35, 50, .04);
+}
+.catalog a:hover { border-color: #8fc8bf; }
+.catalog strong { display: block; font-size: 1.05rem; }
+.catalog span { display: block; color: var(--muted); font-size: 15px; margin-top: 4px; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+footer.site { max-width: 920px; margin: 0 auto; padding: 8px 18px 42px; color: var(--muted); font-size: 14.5px; }
+@media (max-width: 720px) {
+  .grid2 { grid-template-columns: 1fr; }
+  body { font-size: 17px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body.sheet { background: #efeae4; }
+body.sheet main { max-width: 820px; }
+body.sheet .paper {
+  border: 1px solid var(--line); border-radius: 18px; padding: 22px 22px 28px;
+  box-shadow: 0 10px 28px rgba(26, 35, 50, .05);
+}
+body.sheet h1 { font-size: 1.7rem; }
+body.sheet h2 { font-size: 1.15rem; margin: 1em 0 .3em; }
+body.sheet .cols { columns: 2; column-gap: 22px; }
+body.sheet .cols section { break-inside: avoid; }
+@media (max-width: 700px) { body.sheet .cols { columns: 1; } }
+@media print {
+  body, body.sheet { background: white; }
+  .top, .skip, .noprint, footer.site { display: none !important; }
+  main { max-width: none; padding: 0; }
+  body.sheet .paper { border: 0; box-shadow: none; padding: 0; }
+  a { color: inherit; text-decoration: none; }
+  .callout, pre, th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+@page { size: letter; margin: 0.5in; }
+
+
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a><header class="top"><a class="brand" href="../index.html"><i aria-hidden="true"></i> UC Lab <small>FIELD CARDS</small></a><nav><a href="../index.html">Hub</a><a href="../sip/index.html" aria-current="page">SIP</a><a href="../dial-plan/cucm.html">Dial plan</a><a href="../e911/design.html">E911</a><a href="../sbc/cube.html">SBC</a><a href="../qos/dscp.html">QoS</a><a href="../migration/cucm-to-webex.html">Migration</a><a href="../flashcards.html">Cards</a><a href="../pdf/index.html">PDFs</a></nav></header>
+<main id="main">
+<p class="kicker">SIP · RFC 3515 · RFC 5589</p><h1>Transfer</h1><p class="lede">Transfer asks one party to call someone else. Blind transfer names a URI. Attended transfer names an existing consult dialog with Replaces.</p><figure><div class="diagram-scroll wide" tabindex="0"><img src="../svg/sip-transfer-blind.svg" alt="Blind transfer ladder: REFER, 202 Accepted, NOTIFY, INVITE to the target, 200 OK, NOTIFY of success, BYE."></div><figcaption>Blind transfer. The transferor names the target and does not talk to the target first.</figcaption></figure><p class="hint">On a phone, swipe a wide ladder sideways. The steps below repeat the same sequence.</p><h2>Blind transfer</h2><ol class="steps"><li><strong>REFER</strong> — Transferor to Transferee. Refer-To: sip:carol@example.com</li><li><strong>202 Accepted</strong> — Transferee to Transferor. REFER taken, not completed</li><li><strong>NOTIFY</strong> — Transferee to Transferor. sipfrag: SIP/2.0 100 Trying</li><li><strong>INVITE</strong> — Transferee to Target. Transferee calls the target</li><li><strong>180 Ringing</strong> — Target to Transferee. Target is alerting</li><li><strong>200 OK</strong> — Target to Transferee. Target answered</li><li><strong>ACK</strong> — Transferee to Target. New dialog is up</li><li><strong>NOTIFY</strong> — Transferee to Transferor. sipfrag: SIP/2.0 200 OK</li><li><strong>BYE</strong> — Transferor to Transferee. Original dialog can drop</li><li><strong>200 OK</strong> — Transferee to Transferor. Transferor is out of the call</li></ol><figure><div class="diagram-scroll wide" tabindex="0"><img src="../svg/sip-transfer-attended.svg" alt="Attended transfer ladder: REFER with Replaces, INVITE to the target, BYE on the consult leg, NOTIFY 200."></div><figcaption>Attended transfer. A consult call already exists. Replaces tells the target which dialog to swap out.</figcaption></figure><p class="hint">On a phone, swipe a wide ladder sideways. The steps below repeat the same sequence.</p><h2>Attended transfer</h2><ol class="steps"><li><strong>REFER</strong> — Transferor to Transferee. Refer-To includes Replaces</li><li><strong>202 Accepted</strong> — Transferee to Transferor. Request accepted</li><li><strong>INVITE</strong> — Transferee to Target. Replaces the consult dialog</li><li><strong>200 OK</strong> — Target to Transferee. Target accepts the replacement</li><li><strong>ACK</strong> — Transferee to Target. Transferee and target connected</li><li><strong>BYE</strong> — Target to Transferor. Consult leg with transferor ends</li><li><strong>200 OK</strong> — Transferor to Target. Consult dialog cleared</li><li><strong>NOTIFY</strong> — Transferee to Transferor. sipfrag: SIP/2.0 200 OK</li><li><strong>BYE</strong> — Transferor to Transferee. Original leg can clear</li><li><strong>200 OK</strong> — Transferee to Transferor. One dialog remains</li></ol>
+<h2>REFER is not the result</h2>
+<p><strong>202 Accepted</strong> means the transferee accepted the REFER request. It does not mean the target answered. Progress arrives in <strong>NOTIFY</strong> requests. The body is <code>message/sipfrag</code>, a slice of a SIP status line such as <code>SIP/2.0 180 Ringing</code> or <code>SIP/2.0 200 OK</code>. Each NOTIFY is itself answered with a 200 OK; those answers are omitted from the drawing so the story stays readable.</p>
+<p>RFC 3515 defines REFER and the implicit subscription that carries those NOTIFYs. RFC 4488 defines <code>Refer-Sub: false</code> for the case where the sender wants to suppress that subscription. RFC 5589 describes how to use these tools for call transfer.</p>
+<h2>Blind versus attended</h2>
+<p>A <strong>blind</strong> transfer puts a target URI in <code>Refer-To</code> and does not identify an existing dialog. The transferee sends a fresh INVITE to that URI. In the lab, that URI is <code>sip:carol@example.com</code>, reached at fictional number 555-0102.</p>
+<p>An <strong>attended</strong> (consultative) transfer happens after the transferor has already called the target. The transferee is usually on hold. <code>Refer-To</code> carries a <code>Replaces</code> parameter that names the consult dialog: its Call-ID, to-tag, and from-tag (RFC 3891). The transferee's INVITE includes <code>Replaces</code>. If the target accepts, the consult dialog is replaced by the new one, and a BYE clears the leg that is no longer needed.</p>
+<p>Which side sends the final BYE can vary by implementation. The outcome you should be able to prove is simpler: one dialog remains, between transferee and target, and the transferor is no longer on either leg.</p>
+<aside class="callout mint"><h3>Remember</h3><p>Read NOTIFY to learn whether the transfer worked. A 202 alone is only permission to try.</p></aside><aside class="callout peach"><h3>Common mistakes</h3><ul><li>Tearing down the original call as soon as 202 arrives, before the target has answered a blind transfer.</li><li>Calling a transfer attended when Refer-To has no Replaces dialog.</li><li>Ignoring a NOTIFY that carries 486 or 487 and leaving the original caller on hold forever.</li></ul></aside><section class="sources"><h2>Sources</h2><ul><li>RFC 3515, the SIP REFER method</li><li>RFC 3891, the Replaces header</li><li>RFC 4488, suppressing the implicit REFER subscription</li><li>RFC 5589, SIP call control, transfer</li></ul></section>
+</main>
+<footer class="site">UC Lab Free University · Educational notes for study · MIT license · Confirm the cited RFC or the current vendor guide before you change a live system. This is not legal advice.</footer>
+</body>
+</html>

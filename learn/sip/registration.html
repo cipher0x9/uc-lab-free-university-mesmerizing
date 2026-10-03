@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Registration · UC Lab</title>
+<style>
+
+:root {
+  --ink: #1a2332;
+  --muted: #3a495c;
+  --teal: #0e5f59;
+  --teal-d: #084843;
+  --line: #d3e0db;
+  --card: #fffdfb;
+  --peach: #fde7e1;
+  --mint: #dff3ee;
+  --lav: #e6e7f7;
+  --sand: #fff3dc;
+  --focus: #0e5f59;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  font: 18px/1.6 "Segoe UI", "Avenir Next", "Trebuchet MS", sans-serif;
+  background:
+    radial-gradient(900px 420px at 0% -10%, #fde7e1 0%, transparent 55%),
+    radial-gradient(800px 480px at 100% 0%, #e6e7f7 0%, transparent 52%),
+    linear-gradient(180deg, #f6f2ec 0%, #e6f4f0 100%);
+  min-height: 100vh;
+}
+.skip { position: absolute; left: -999px; top: 8px; background: #fff; padding: 8px 12px; z-index: 20; }
+.skip:focus { left: 12px; }
+.top {
+  display: flex; flex-wrap: wrap; gap: 10px 16px;
+  align-items: center; justify-content: space-between;
+  padding: 12px 18px;
+  background: rgba(246, 242, 236, 0.94);
+  border-bottom: 1px solid var(--line);
+}
+.brand { color: var(--ink); text-decoration: none; font-weight: 750; display: flex; gap: 8px; align-items: center; }
+.brand i {
+  width: 16px; height: 16px; border-radius: 50%; display: inline-block;
+  background: linear-gradient(140deg, #7dcec4, #0e5f59 55%, #e7b2a6);
+}
+.brand small { font-weight: 700; color: var(--teal-d); letter-spacing: .06em; font-size: 12px; }
+nav { display: flex; flex-wrap: wrap; gap: 4px; }
+nav a {
+  color: var(--teal-d); text-decoration: none; font-size: 15px;
+  padding: 5px 9px; border-radius: 999px;
+}
+nav a:hover, nav a[aria-current="page"] { background: var(--mint); }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+main { max-width: 920px; margin: 0 auto; padding: 28px 18px 48px; }
+h1, h2, h3 { line-height: 1.25; }
+h1 { font-family: Georgia, "Iowan Old Style", Palatino, serif; font-size: clamp(2rem, 4vw, 2.75rem); margin: 0 0 10px; }
+h2 { font-family: Georgia, Palatino, serif; font-size: 1.5rem; margin: 1.5em 0 .4em; }
+h3 { font-size: 1.05rem; margin: 0 0 .35em; }
+.kicker { color: var(--teal-d); font-weight: 800; letter-spacing: .08em; text-transform: uppercase; font-size: 13px; margin: 0 0 8px; }
+.lede { font-size: 1.16rem; }
+p { margin: .65em 0; }
+a { color: var(--teal-d); }
+.diagram-scroll, .callout, pre, .table-scroll, .catalog a, .paper {
+  background: var(--card);
+}
+.diagram-scroll {
+  overflow-x: auto; border-radius: 18px; border: 1px solid var(--line);
+  box-shadow: 0 12px 32px rgba(26, 35, 50, .06); margin: 14px 0 6px;
+}
+.diagram-scroll img { display: block; width: 100%; height: auto; }
+.diagram-scroll.wide img { min-width: 760px; }
+.diagram-scroll.mid img { min-width: 560px; }
+.diagram-scroll.slim { max-width: 520px; margin-left: auto; margin-right: auto; }
+.diagram-scroll.slim img { min-width: 0; }
+figcaption, .hint { color: var(--muted); font-size: 15px; }
+.callout { border-radius: 16px; padding: 14px 16px; margin: 14px 0; border: 1px solid var(--line); }
+.callout.mint { background: #e5f6f2; }
+.callout.peach { background: #fde8e3; }
+.callout.lav { background: #eceefe; }
+.callout.sand { background: #fff6e4; }
+.callout p:last-child, .callout ul:last-child { margin-bottom: 0; }
+ol.steps, ul { padding-left: 1.2em; }
+ol.steps li, ul li { margin: .4em 0; }
+code, pre { font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+pre {
+  padding: 14px 16px; overflow-x: auto; border-radius: 14px;
+  border: 1px solid var(--line); line-height: 1.45; font-size: .86rem;
+}
+.table-scroll { overflow-x: auto; border-radius: 14px; border: 1px solid var(--line); margin: 12px 0; }
+table { width: 100%; border-collapse: collapse; font-size: 16px; background: var(--card); }
+th, td { text-align: left; padding: 10px 12px; vertical-align: top; border-bottom: 1px solid var(--line); }
+th { background: #e5f4f0; font-size: 14px; }
+tr:last-child td { border-bottom: 0; }
+.catalog { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; }
+.catalog a {
+  display: block; text-decoration: none; color: inherit;
+  border: 1px solid var(--line); border-radius: 16px; padding: 14px 14px 12px;
+  min-height: 104px; box-shadow: 0 8px 22px rgba(26, 35, 50, .04);
+}
+.catalog a:hover { border-color: #8fc8bf; }
+.catalog strong { display: block; font-size: 1.05rem; }
+.catalog span { display: block; color: var(--muted); font-size: 15px; margin-top: 4px; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+footer.site { max-width: 920px; margin: 0 auto; padding: 8px 18px 42px; color: var(--muted); font-size: 14.5px; }
+@media (max-width: 720px) {
+  .grid2 { grid-template-columns: 1fr; }
+  body { font-size: 17px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body.sheet { background: #efeae4; }
+body.sheet main { max-width: 820px; }
+body.sheet .paper {
+  border: 1px solid var(--line); border-radius: 18px; padding: 22px 22px 28px;
+  box-shadow: 0 10px 28px rgba(26, 35, 50, .05);
+}
+body.sheet h1 { font-size: 1.7rem; }
+body.sheet h2 { font-size: 1.15rem; margin: 1em 0 .3em; }
+body.sheet .cols { columns: 2; column-gap: 22px; }
+body.sheet .cols section { break-inside: avoid; }
+@media (max-width: 700px) { body.sheet .cols { columns: 1; } }
+@media print {
+  body, body.sheet { background: white; }
+  .top, .skip, .noprint, footer.site { display: none !important; }
+  main { max-width: none; padding: 0; }
+  body.sheet .paper { border: 0; box-shadow: none; padding: 0; }
+  a { color: inherit; text-decoration: none; }
+  .callout, pre, th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+@page { size: letter; margin: 0.5in; }
+
+
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a><header class="top"><a class="brand" href="../index.html"><i aria-hidden="true"></i> UC Lab <small>FIELD CARDS</small></a><nav><a href="../index.html">Hub</a><a href="../sip/index.html" aria-current="page">SIP</a><a href="../dial-plan/cucm.html">Dial plan</a><a href="../e911/design.html">E911</a><a href="../sbc/cube.html">SBC</a><a href="../qos/dscp.html">QoS</a><a href="../migration/cucm-to-webex.html">Migration</a><a href="../flashcards.html">Cards</a><a href="../pdf/index.html">PDFs</a></nav></header>
+<main id="main">
+<p class="kicker">SIP · RFC 3261</p><h1>Registration</h1><p class="lede">A phone registers to publish where it is. The registrar stores a binding from an address-of-record to a Contact URI. Registration is not a phone call, and it does not by itself reserve media.</p><figure><div class="diagram-scroll mid" tabindex="0"><img src="../svg/sip-registration.svg" alt="Ladder: phone sends REGISTER, registrar returns 401 with a digest challenge, phone sends REGISTER with Authorization, registrar returns 200 OK."></div><figcaption>Open the SVG beside this page if you want the drawing on its own.</figcaption></figure><p class="hint">On a phone, swipe a wide ladder sideways. The steps below repeat the same sequence.</p><h2>Sequence</h2><ol class="steps"><li><strong>REGISTER</strong> — Phone (UAC) to Registrar. Request-URI is the domain</li><li><strong>401 Unauthorized</strong> — Registrar to Phone (UAC). WWW-Authenticate: Digest</li><li><strong>REGISTER</strong> — Phone (UAC) to Registrar. Authorization: Digest response</li><li><strong>200 OK</strong> — Registrar to Phone (UAC). Binding stored, Expires set</li></ol>
+<h2>What the messages mean</h2>
+<p>The Request-URI of a REGISTER is the registrar's domain, such as <code>sip:example.com</code>. The To header is the address-of-record being registered, such as <code>sip:alice@example.com</code>. The Contact is the device URI the registrar should use later, such as <code>sip:alice@192.0.2.10:5060</code>. From and To are often the same on a REGISTER. They are not the same idea.</p>
+<p>The first REGISTER usually has no credentials. The registrar answers <strong>401 Unauthorized</strong> with <code>WWW-Authenticate</code> containing the digest realm and nonce. The phone answers with a second REGISTER that carries <code>Authorization</code>. A <strong>200 OK</strong> lists the bindings the registrar stored and the Expires value that applies.</p>
+<p>A proxy in front of the registrar is a different challenge. A proxy uses <strong>407 Proxy Authentication Required</strong> and <code>Proxy-Authenticate</code> / <code>Proxy-Authorization</code>. Do not treat 401 and 407 as interchangeable.</p>
+<h2>Bindings</h2>
+<ul>
+<li><code>Expires: 0</code> on a Contact removes that binding.</li>
+<li><code>Contact: *</code> with <code>Expires: 0</code> removes all bindings for the address-of-record (RFC 3261).</li>
+<li>The Call-ID and CSeq still identify the REGISTER transaction. CSeq increases when the phone retries after 401.</li>
+<li>If the phone is behind NAT, the Contact it writes may be an address the registrar cannot reach. The reachable address is a separate problem from the digest challenge.</li>
+</ul>
+<aside class="callout mint"><h3>Remember</h3><p>401 means the registrar challenged the user. 200 means a binding exists until it expires or the phone removes it. Neither message sets up audio.</p></aside><aside class="callout peach"><h3>Common mistakes</h3><ul><li>Putting the user's address-of-record in the Request-URI instead of the registrar domain.</li><li>Sending the second REGISTER with the same CSeq.</li><li>Expecting a 407 from the registrar itself.</li><li>Treating a registered phone as reachable for media. Registration publishes a signaling Contact.</li></ul></aside><section class="sources"><h2>Sources</h2><ul><li>RFC 3261, section 10 (registrations) and section 22 (digest authentication)</li><li>Example addresses: sip:alice@example.com, 192.0.2.10</li></ul></section>
+</main>
+<footer class="site">UC Lab Free University · Educational notes for study · MIT license · Confirm the cited RFC or the current vendor guide before you change a live system. This is not legal advice.</footer>
+</body>
+</html>
