@@ -1,3 +1,46 @@
+# UC Lab Free University
+
+**A free offline campus for voice, and a map of the protocols that carry the call.**
+
+One repository holds two ways to learn Unified Communications and Contact Center. The campus is the full curriculum: 632 sections, multi-vendor, open in any full browser, shared for learning. The Visual Atlas draws that world as 19 technology families, with call-flow ladders, matrices, a timeline, a glossary, and drills. Both open as files. No server. No CDN. No account.
+
+![UC Visual Atlas world map](visual-atlas/evidence/index.png)
+
+## [Open the Visual Atlas](visual-atlas/index.html)
+
+## What you can open
+
+- **Campus** — `university/v17-UNIVERSITY.html`, 632 full sections, v20.2, offline-first, zero CDN
+- **Visual Atlas** — 19 families, flows, matrices, timeline, glossary, drills, offline, zero CDN
+- **Briefing deck** — 62-slide Enterprise Voice / Contact Center / Cloud Migration deck
+- **Proof grammar** — LICC: Leg, ID, Counter, Capture
+
+## How to open
+
+Download the campus zip, or clone the repository. No server is required.
+
+1. Open the campus: `university/v17-UNIVERSITY.html` (from the zip, the file is `v17-UNIVERSITY.html`) in Chrome, Safari, Edge, or Firefox.
+2. Open the atlas: `visual-atlas/index.html` in the same browser.
+
+```bash
+git clone https://github.com/cipher0x9/uc-lab-free-university-mesmerizing.git
+cd uc-lab-free-university-mesmerizing
+open university/v17-UNIVERSITY.html
+open visual-atlas/index.html
+```
+
+Campus zip, if you do not want git: [v17-UNIVERSITY.html.zip](https://github.com/cipher0x9/uc-lab-free-university-mesmerizing/releases/download/v20.2-resources/v17-UNIVERSITY.html.zip)
+
+## Facts and sources
+
+Atlas claims are listed in [visual-atlas/SOURCES.md](visual-atlas/SOURCES.md). The port and regulation facts added in pass 2 were checked on 2026-10-03.
+
+## Licence
+
+Educational only. [MIT](./LICENSE). No warranty.
+
+---
+
 <p align="center">
   <img src="https://img.shields.io/badge/🌿_UC_Lab-Free_University-0F9B8E?style=for-the-badge&labelColor=0B1220" alt="UC Lab Free University"/>
 </p>
@@ -128,6 +171,7 @@ The public file is the real 632-section campus (20.2-RESOURCES), packaged so fri
 git clone https://github.com/cipher0x9/uc-lab-free-university-mesmerizing.git
 cd uc-lab-free-university-mesmerizing
 open university/v17-UNIVERSITY.html
+open visual-atlas/index.html
 # optional: open the 62-slide briefing deck
 open downloads/Enterprise-Voice-with-Cisco-Technologies-CC-Cloud-Migration.pptx
 ```
