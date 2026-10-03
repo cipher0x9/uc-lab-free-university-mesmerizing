@@ -9,6 +9,8 @@
   Multi-vendor · path + proof · open in any full browser · share freely for learning
 </p>
 
+Voice-technology atlas: <a href="visual-atlas/index.html">visual-atlas/index.html</a>
+
 <p align="center">
   <a href="https://github.com/cipher0x9/uc-lab-free-university-mesmerizing/releases/download/v20.2-resources/v17-UNIVERSITY.html.zip"><img src="https://img.shields.io/badge/⬇_Download-Campus_zip-0F9B8E?style=for-the-badge&labelColor=0B1220" alt="Download"/></a>
   <a href="https://github.com/cipher0x9/ai-lab-free-university-mesmerizing"><img src="https://img.shields.io/badge/🧠_Sibling-AI_Lab_Free-6366F1?style=for-the-badge&labelColor=0B1220" alt="AI Lab"/></a>

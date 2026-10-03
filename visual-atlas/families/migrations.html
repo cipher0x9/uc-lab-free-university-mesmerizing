@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Migrations — UC Visual Atlas</title>
+<link rel="stylesheet" href="../assets/atlas.css">
+<style>
+@media (prefers-reduced-motion: reduce) { .packet { display: none; } }
+@media print { .flow-controls, .tools { display: none; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <div>
+    <h1>Migrations</h1>
+    <p>UC Visual Atlas · offline · synthetic addresses from RFC 5737 only</p>
+  </div>
+  <div class="tools">
+    <nav class="crumbs" aria-label="Atlas">
+      <a href="../index.html">Map</a>
+      <a href="../timeline.html">Timeline</a>
+      <a href="../glossary.html">Glossary</a>
+      <a href="../drills.html">Drills</a>
+      <a href="../matrices.html">Matrices</a>
+    </nav>
+    <button type="button" id="theme-toggle">Dark theme</button>
+  </div>
+</header>
+<main id="main">
+<p class="lede">Move one failure domain at a time. A TDM trunk becomes a SIP trunk. A CUCM site can keep its phones while PSTN shifts to a Webex Calling Local Gateway, or the phones can move later. A contact center can send one queue to CCaaS before the rest. Skype for Business telephony moves to Teams Phone by user, not by unplugging the estate. This page is a cutover sequence, not a vendor quote.</p>
+<h2>Call flows</h2>
+
+<section class="flow-panel" aria-label="Phased cutover">
+  <h3>Phased cutover</h3>
+  <div class="flow-controls">
+    <button type="button" data-act="prev">Prev</button>
+    <button type="button" class="primary" data-act="next">Next</button>
+    <button type="button" data-act="play">Play</button>
+    <button type="button" data-act="reset">Reset</button>
+    <span class="flow-status mono" aria-live="polite"></span>
+  </div>
+  <p class="step-caption" aria-live="polite"></p>
+  <div class="ladder"><svg class="ladder-svg"></svg></div>
+  <p>Keyboard: focus this panel, then Left, Right, Space, Home.</p>
+  <div class="transcript"><strong>Transcript</strong><ol></ol></div>
+  <script>
+  (function () {
+    var panel = document.currentScript.closest(".flow-panel");
+    panel._flow = {"title": "Phased cutover", "parties": ["Pilot users", "New path", "Old path", "Everyone else"], "steps": [{"from": 0, "to": 1, "label": "Pilot only", "caption": "One number range uses the new SIP trunk, Local Gateway, or cloud queue.", "color": "#2563eb"}, {"from": 0, "to": 1, "label": "Prove signaling", "caption": "Collect one full ladder: INVITE through BYE, plus RTP both ways.", "color": "#15803d"}, {"from": 0, "to": 1, "label": "Prove failure cases", "caption": "Busy, no answer, transfer, 911, and caller ID. Fix these before the next range.", "color": "#7c3aed"}, {"from": 3, "to": 2, "label": "Remain on the old path", "caption": "Everyone outside the pilot is unchanged.", "color": "#2563eb"}, {"from": 3, "to": 1, "label": "Next range", "caption": "Move the next site or queue only after the pilot ladders are clean.", "color": "#15803d"}, {"from": 2, "to": 2, "label": "Decommission", "caption": "Remove the TDM trunk, old SBC, or old platform after the last range has a rollback plan.", "color": "#7c3aed"}]};
+  })();
+  </script>
+</section>
+
+<h2>Architecture</h2>
+<section class="arch"><h3>Two paths during the pilot</h3><svg viewBox="0 0 808 294" role="img" aria-label="Two paths during the pilot"><title>Two paths during the pilot</title><rect x="16" y="16" width="160" height="72" rx="14" fill="#ffedd5" stroke="#b45309" stroke-width="4"/><text x="26" y="46" fill="#1a2332" font-size="14" font-weight="700">Users</text><text x="26" y="66" fill="#1a2332" font-size="11">pilot first</text><rect x="224" y="16" width="160" height="72" rx="14" fill="#ffe4dc" stroke="#ff7a59" stroke-width="4"/><text x="234" y="46" fill="#1a2332" font-size="14" font-weight="700">New SBC</text><text x="234" y="66" fill="#1a2332" font-size="11">SIP or cloud</text><rect x="432" y="16" width="160" height="72" rx="14" fill="#e0f2fe" stroke="#0369a1" stroke-width="4"/><text x="442" y="46" fill="#1a2332" font-size="14" font-weight="700">Old trunk</text><text x="442" y="66" fill="#1a2332" font-size="11">TDM or old UC</text><rect x="640" y="16" width="160" height="72" rx="14" fill="#fde68a" stroke="#e8a317" stroke-width="4"/><text x="650" y="46" fill="#1a2332" font-size="14" font-weight="700">PSTN</text><text x="650" y="66" fill="#1a2332" font-size="11">same numbers</text><line x1="176" y1="118" x2="224" y2="118" stroke="#2563eb" stroke-width="3"/><text x="200.0" y="112" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">pilot SIP 5061</text><line x1="176" y1="154" x2="432" y2="154" stroke="#2563eb" stroke-width="3"/><text x="304.0" y="148" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">everyone else, unchanged</text><line x1="384" y1="190" x2="640" y2="190" stroke="#2563eb" stroke-width="3"/><text x="512.0" y="184" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">new carrier or Local Gateway</text><line x1="592" y1="226" x2="640" y2="226" stroke="#2563eb" stroke-width="3"/><text x="616.0" y="220" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">old PRI until the last range</text></svg></section>
+<section class="tree"><h3>Failure tree</h3><details><summary>Pilot works and the second site has no inbound</summary><p><strong>Checks.</strong> Where the carrier points the DID.</p><p class="cause"><strong>Likely cause.</strong> The numbers were forwarded in the PBX and never moved at the carrier.</p><p><strong>Fix.</strong> Move the numbers at the carrier when you move the site. Keep one test DID.</p></details><details><summary>911 was not in the pilot</summary><p><strong>Checks.</strong> A 911 test from a pilot phone, in the lab window the carrier allows.</p><p class="cause"><strong>Likely cause.</strong> The new path has no location records.</p><p><strong>Fix.</strong> Do not expand the pilot until 911 has a dispatchable location.</p></details><details><summary>Rollback has no trunk</summary><p><strong>Checks.</strong> The old trunk is still in service and the route can prefer it.</p><p class="cause"><strong>Likely cause.</strong> The old trunk was turned down on day one.</p><p><strong>Fix.</strong> Leave the old path until the new path has survived a business day.</p></details></section>
+<section><h3>Four moves, same shape</h3><div class="wrap-x"><table class="matrix"><thead><tr><th>Move</th><th>Pilot</th><th>Leave until last</th></tr></thead><tbody><tr><td>TDM to SIP</td><td>one PRI group or DID range</td><td>the other trunks</td></tr><tr><td>CUCM to Webex Calling</td><td>one site or one number block via Local Gateway</td><td>the rest of the cluster</td></tr><tr><td>On-prem CC to CCaaS</td><td>one queue</td><td>the other queues</td></tr><tr><td>Skype for Business to Teams Phone</td><td>one user cohort</td><td>users still on the old registrar</td></tr></tbody></table></div></section>
+<section><h3>Flip cards</h3><div class="cards"><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">Pilot</span><span class="face back">A range you can reverse.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">Ladder as proof</span><span class="face back">INVITE through BYE, and RTP both ways, saved from the pilot.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">911 in the pilot</span><span class="face back">Location and direct dial before you add users.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">Local Gateway</span><span class="face back">One way to keep a carrier while users move to Webex Calling.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">Direct Routing</span><span class="face back">One way to keep a carrier while users move to Teams Phone.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">Decommission last</span><span class="face back">The old trunk is the rollback.</span></span></button></div></section>
+<section class="sources"><h3>Sources</h3><ul><li><a href="https://help.webex.com/">Webex Calling Local Gateway docs</a></li><li><a href="https://learn.microsoft.com/en-us/microsoftteams/pstn-connectivity">Microsoft Teams PSTN</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc3261">RFC 3261</a></li></ul></section>
+</main>
+<footer class="site">Ordinary https anchors are for reading later. This page does not load remote code, fonts, or images.</footer>
+<script src="../assets/atlas.js"></script>
+</body>
+</html>

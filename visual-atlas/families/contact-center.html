@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact center / CCaaS — UC Visual Atlas</title>
+<link rel="stylesheet" href="../assets/atlas.css">
+<style>
+@media (prefers-reduced-motion: reduce) { .packet { display: none; } }
+@media print { .flow-controls, .tools { display: none; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <div>
+    <h1>Contact center / CCaaS</h1>
+    <p>UC Visual Atlas · offline · synthetic addresses from RFC 5737 only</p>
+  </div>
+  <div class="tools">
+    <nav class="crumbs" aria-label="Atlas">
+      <a href="../index.html">Map</a>
+      <a href="../timeline.html">Timeline</a>
+      <a href="../glossary.html">Glossary</a>
+      <a href="../drills.html">Drills</a>
+      <a href="../matrices.html">Matrices</a>
+    </nav>
+    <button type="button" id="theme-toggle">Dark theme</button>
+  </div>
+</header>
+<main id="main">
+<p class="lede">A contact center answers, plays treatment, queues, and delivers the call to an agent. ACD chooses the agent. IVR collects digits or speech. CTI updates the desktop. WFO records and evaluates. Cisco UCCX, UCCE, and Packaged CCE are on-prem families. Webex Contact Center, Genesys Cloud, NICE CXone, Five9, Amazon Connect, and Talkdesk are cloud families. This page compares deployment class only.</p>
+<h2>Call flows</h2>
+
+<section class="flow-panel" aria-label="Call into queue, then an agent">
+  <h3>Call into queue, then an agent</h3>
+  <div class="flow-controls">
+    <button type="button" data-act="prev">Prev</button>
+    <button type="button" class="primary" data-act="next">Next</button>
+    <button type="button" data-act="play">Play</button>
+    <button type="button" data-act="reset">Reset</button>
+    <span class="flow-status mono" aria-live="polite"></span>
+  </div>
+  <p class="step-caption" aria-live="polite"></p>
+  <div class="ladder"><svg class="ladder-svg"></svg></div>
+  <p>Keyboard: focus this panel, then Left, Right, Space, Home.</p>
+  <div class="transcript"><strong>Transcript</strong><ol></ol></div>
+  <script>
+  (function () {
+    var panel = document.currentScript.closest(".flow-panel");
+    panel._flow = {"title": "Call into queue, then an agent", "parties": ["Caller", "Contact center", "Queue treatment", "Agent"], "steps": [{"from": 0, "to": 1, "label": "INVITE", "caption": "The caller reaches the published number. The platform is a B2BUA or a carrier handoff.", "color": "#2563eb"}, {"from": 1, "to": 0, "label": "200 OK or 183", "caption": "IVR answers or sends early media. Prompts play from the platform.", "color": "#15803d"}, {"from": 0, "to": 1, "label": "Digits or speech", "caption": "The caller chooses a route. RFC 4733 or the platform's own recognizer may carry digits.", "color": "#7c3aed"}, {"from": 1, "to": 2, "label": "Enqueue", "caption": "No agent is free. The caller hears queue treatment. This is still one call, not a new PSTN call.", "color": "#2563eb"}, {"from": 2, "to": 3, "label": "Offer to agent", "caption": "ACD selects an agent who is ready and permitted for that queue.", "color": "#2563eb"}, {"from": 3, "to": 1, "label": "Answer", "caption": "The agent endpoint answers.", "color": "#15803d"}, {"from": 0, "to": 3, "label": "RTP", "caption": "The caller and the agent are connected. The platform may stay in the media path.", "color": "#c2410c"}]};
+  })();
+  </script>
+</section>
+
+<h2>Architecture</h2>
+<section class="arch"><h3>Contact-center path</h3><svg viewBox="0 0 808 258" role="img" aria-label="Contact-center path"><title>Contact-center path</title><rect x="16" y="16" width="160" height="72" rx="14" fill="#ecfccb" stroke="#7bc142" stroke-width="4"/><text x="26" y="46" fill="#1a2332" font-size="14" font-weight="700">Caller</text><text x="26" y="66" fill="#1a2332" font-size="11">PSTN or UC</text><rect x="224" y="16" width="160" height="72" rx="14" fill="#d9f99d" stroke="#4d7c0f" stroke-width="4"/><text x="234" y="46" fill="#1a2332" font-size="14" font-weight="700">IVR / ACD</text><text x="234" y="66" fill="#1a2332" font-size="11">platform</text><rect x="432" y="16" width="160" height="72" rx="14" fill="#fde68a" stroke="#e8a317" stroke-width="4"/><text x="442" y="46" fill="#1a2332" font-size="14" font-weight="700">CTI</text><text x="442" y="66" fill="#1a2332" font-size="11">desktop</text><rect x="640" y="16" width="160" height="72" rx="14" fill="#bbf7d0" stroke="#166534" stroke-width="4"/><text x="650" y="46" fill="#1a2332" font-size="14" font-weight="700">Agent</text><text x="650" y="66" fill="#1a2332" font-size="11">endpoint</text><line x1="176" y1="118" x2="224" y2="118" stroke="#2563eb" stroke-width="3"/><text x="200.0" y="112" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">SIP 5060/5061 or carrier trunk</text><line x1="384" y1="154" x2="432" y2="154" stroke="#7bc142" stroke-width="3"/><text x="408.0" y="148" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">CTI (Cisco CTI TCP 2748 when the desktop is CUCM CTI)</text><line x1="384" y1="190" x2="640" y2="190" stroke="#166534" stroke-width="3"/><text x="512.0" y="184" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">SIP or WebRTC to the agent; RTP for speech</text></svg></section>
+<section class="tree"><h3>Failure tree</h3><details><summary>Callers sit in queue while agents look idle</summary><p><strong>Checks.</strong> Agent state, skill, and whether the endpoint is registered.</p><p class="cause"><strong>Likely cause.</strong> The agent is not in the ready state the ACD requires, or the skill does not include this queue.</p><p><strong>Fix.</strong> Compare one agent&#x27;s state with the queue&#x27;s skill rule before you add trunks.</p></details><details><summary>IVR answers, transfer to agent is silent</summary><p><strong>Checks.</strong> Is media re-invited when the agent is connected?</p><p class="cause"><strong>Likely cause.</strong> The platform connected signaling and left RTP on the IVR port.</p><p><strong>Fix.</strong> Capture both legs. The second SDP answer should name the agent or the anchor.</p></details><details><summary>Desktop does not pop</summary><p><strong>Checks.</strong> CTI session from the desktop to the platform.</p><p class="cause"><strong>Likely cause.</strong> The call is delivered and the CTI association is down.</p><p><strong>Fix.</strong> Restore CTI. The voice path can be healthy while the screen pop is not.</p></details></section>
+<section><h3>Contact-center deployment class (checked 2026-10-03)</h3><div class="wrap-x"><table class="matrix"><thead><tr><th>Product</th><th>Deployment</th><th>ACD / IVR</th><th>WFO detail</th></tr></thead><tbody><tr><td>Cisco UCCX</td><td>on-prem</td><td>yes</td><td>not stated</td></tr><tr><td>Cisco UCCE / PCCE</td><td>on-prem</td><td>yes</td><td>not stated</td></tr><tr><td>Webex Contact Center</td><td>cloud</td><td>yes</td><td>not stated</td></tr><tr><td>Genesys Cloud</td><td>cloud</td><td>yes</td><td>not stated</td></tr><tr><td>NICE CXone</td><td>cloud</td><td>yes</td><td>not stated</td></tr><tr><td>Five9</td><td>cloud</td><td>yes</td><td>not stated</td></tr><tr><td>Amazon Connect</td><td>cloud</td><td>yes</td><td>not stated</td></tr><tr><td>Talkdesk</td><td>cloud</td><td>yes</td><td>not stated</td></tr></tbody></table></div></section>
+<section><h3>Flip cards</h3><div class="cards"><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">ACD</span><span class="face back">Automatic call distribution. Picks an agent by the rules you configured.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">IVR</span><span class="face back">Interactive voice response. Plays prompts and collects input before an agent.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">Queue</span><span class="face back">Holds the caller, with treatment, until an agent can take the call.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">CTI</span><span class="face back">Computer telephony integration. Tells the desktop which call arrived.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">CCaaS</span><span class="face back">Contact center as a service. The platform is operated by the vendor in their cloud.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">UCCX vs UCCE</span><span class="face back">Both are Cisco on-prem contact centers. UCCE is the enterprise family. This atlas does not compare license names.</span></span></button></div></section>
+<section class="sources"><h3>Sources</h3><ul><li><a href="https://www.cisco.com/c/en/us/products/contact-center/index.html">Cisco Contact Center</a></li><li><a href="https://help.webex.com/">Webex Contact Center</a></li><li><a href="https://www.genesys.com/">Genesys</a></li><li><a href="https://www.nice.com/">NICE</a></li><li><a href="https://www.five9.com/">Five9</a></li><li><a href="https://aws.amazon.com/connect/">Amazon Connect</a></li><li><a href="https://www.talkdesk.com/">Talkdesk</a></li></ul></section>
+</main>
+<footer class="site">Ordinary https anchors are for reading later. This page does not load remote code, fonts, or images.</footer>
+<script src="../assets/atlas.js"></script>
+</body>
+</html>

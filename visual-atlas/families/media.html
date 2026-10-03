@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Media — UC Visual Atlas</title>
+<link rel="stylesheet" href="../assets/atlas.css">
+<style>
+@media (prefers-reduced-motion: reduce) { .packet { display: none; } }
+@media print { .flow-controls, .tools { display: none; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <div>
+    <h1>Media</h1>
+    <p>UC Visual Atlas · offline · synthetic addresses from RFC 5737 only</p>
+  </div>
+  <div class="tools">
+    <nav class="crumbs" aria-label="Atlas">
+      <a href="../index.html">Map</a>
+      <a href="../timeline.html">Timeline</a>
+      <a href="../glossary.html">Glossary</a>
+      <a href="../drills.html">Drills</a>
+      <a href="../matrices.html">Matrices</a>
+    </nav>
+    <button type="button" id="theme-toggle">Dark theme</button>
+  </div>
+</header>
+<main id="main">
+<p class="lede">RTP (RFC 3550) carries the speech. RTCP reports quality. SRTP (RFC 3711) encrypts RTP. RTCP-mux (RFC 5761) puts RTCP on the RTP port. DTMF prefers RFC 4733 telephone-events over in-band tones or SIP INFO. G.711 is 64 kbit/s at 8 kHz. G.729 is 8 kbit/s. G.722 is wideband at 16 kHz sampling. Opus is RFC 6716.</p>
+<h2>Call flows</h2>
+
+<section class="flow-panel" aria-label="RTP after the SIP answer">
+  <h3>RTP after the SIP answer</h3>
+  <div class="flow-controls">
+    <button type="button" data-act="prev">Prev</button>
+    <button type="button" class="primary" data-act="next">Next</button>
+    <button type="button" data-act="play">Play</button>
+    <button type="button" data-act="reset">Reset</button>
+    <span class="flow-status mono" aria-live="polite"></span>
+  </div>
+  <p class="step-caption" aria-live="polite"></p>
+  <div class="ladder"><svg class="ladder-svg"></svg></div>
+  <p>Keyboard: focus this panel, then Left, Right, Space, Home.</p>
+  <div class="transcript"><strong>Transcript</strong><ol></ol></div>
+  <script>
+  (function () {
+    var panel = document.currentScript.closest(".flow-panel");
+    panel._flow = {"title": "RTP after the SIP answer", "parties": ["Alice 192.0.2.10", "Bob 203.0.113.20"], "steps": [{"from": 0, "to": 1, "label": "INVITE (SDP offer)", "caption": "Offer lists codecs and the address where Alice will receive RTP.", "color": "#2563eb"}, {"from": 1, "to": 0, "label": "200 OK (SDP answer)", "caption": "Answer picks one codec and Bob's receive address.", "color": "#15803d"}, {"from": 0, "to": 1, "label": "ACK", "caption": "Dialog confirmed.", "color": "#2563eb"}, {"from": 0, "to": 1, "label": "RTP", "caption": "Speech packets. A 20 ms G.711 packet holds 160 bytes of payload (8000 × 0.02).", "color": "#c2410c"}, {"from": 1, "to": 0, "label": "RTP", "caption": "The reverse stream. It is a separate RTP session in the other direction.", "color": "#c2410c"}, {"from": 0, "to": 1, "label": "RTCP", "caption": "Receiver reports. With RTCP-mux (RFC 5761) this shares the RTP port.", "color": "#7c3aed"}]};
+  })();
+  </script>
+</section>
+
+<h2>Architecture</h2>
+<section class="arch"><h3>Media wires</h3><svg viewBox="0 0 720 222" role="img" aria-label="Media wires"><title>Media wires</title><rect x="16" y="16" width="160" height="72" rx="14" fill="#cffafe" stroke="#0891b2" stroke-width="4"/><text x="26" y="46" fill="#1a2332" font-size="14" font-weight="700">Alice</text><text x="26" y="66" fill="#1a2332" font-size="11">192.0.2.10</text><rect x="224" y="16" width="160" height="72" rx="14" fill="#a5f3fc" stroke="#0e7490" stroke-width="4"/><text x="234" y="46" fill="#1a2332" font-size="14" font-weight="700">SRTP</text><text x="234" y="66" fill="#1a2332" font-size="11">optional</text><rect x="432" y="16" width="160" height="72" rx="14" fill="#cffafe" stroke="#0891b2" stroke-width="4"/><text x="442" y="46" fill="#1a2332" font-size="14" font-weight="700">Bob</text><text x="442" y="66" fill="#1a2332" font-size="11">203.0.113.20</text><line x1="176" y1="118" x2="224" y2="118" stroke="#0891b2" stroke-width="3"/><text x="200.0" y="112" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">RTP UDP  RFC 3550  (Cisco phone default 16384–32767)</text><line x1="384" y1="154" x2="432" y2="154" stroke="#0891b2" stroke-width="3"/><text x="408.0" y="148" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">SRTP RFC 3711  ·  RTCP or RTCP-mux RFC 5761</text></svg></section>
+<section class="tree"><h3>Failure tree</h3><details><summary>Audio chops every few seconds</summary><p><strong>Checks.</strong> Jitter, loss, and whether the jitter buffer is growing. RTCP or RTCP XR (RFC 3611) if present.</p><p class="cause"><strong>Likely cause.</strong> Loss or delay variation. Not a signaling failure if the ladder is clean.</p><p><strong>Fix.</strong> Fix the path. PLC hides short loss and does not repair a congested queue.</p></details><details><summary>Digits fail in IVR, voice is fine</summary><p><strong>Checks.</strong> Is DTMF RFC 4733, in-band, or SIP INFO?</p><p class="cause"><strong>Likely cause.</strong> The IVR expects telephone-events and the trunk is sending in-band tones, or the reverse.</p><p><strong>Fix.</strong> Match one method on both ends. Do not leave two methods on and hope.</p></details><details><summary>Fax or modem dies on a compressed codec</summary><p><strong>Checks.</strong> Was the call G.711, or G.729/Opus?</p><p class="cause"><strong>Likely cause.</strong> Low-bitrate speech codecs destroy modem tones.</p><p><strong>Fix.</strong> Use G.711 pass-through or T.38 for fax. See the fax page.</p></details></section>
+<section><h3>Codecs with published rates (no MOS scores)</h3><div class="wrap-x"><table class="matrix"><thead><tr><th>Codec</th><th>Sample rate</th><th>Bit rate</th><th>Source</th></tr></thead><tbody><tr><td>G.711 µ-law / A-law</td><td>8 kHz</td><td>64 kbit/s</td><td>ITU-T G.711</td></tr><tr><td>G.729</td><td>8 kHz</td><td>8 kbit/s</td><td>ITU-T G.729</td></tr><tr><td>G.722</td><td>16 kHz</td><td>64, 56, or 48 kbit/s</td><td>ITU-T G.722</td></tr><tr><td>iLBC</td><td>8 kHz</td><td>15.2 kbit/s (20 ms) or 13.33 kbit/s (30 ms)</td><td>RFC 3951</td></tr><tr><td>Opus</td><td>up to 48 kHz</td><td>variable</td><td>RFC 6716; RTP payload RFC 7587</td></tr><tr><td>AMR / AMR-WB</td><td>8 kHz / 16 kHz</td><td>mode set in the payload</td><td>RFC 4867</td></tr><tr><td>EVS</td><td>wideband family</td><td>not listed here</td><td>3GPP TS 26.441</td></tr></tbody></table></div></section>
+<section><h3>Flip cards</h3><div class="cards"><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">RTP</span><span class="face back">RFC 3550. Sequence numbers, timestamps, and payload. RFC 3551 assigns static payload types such as PCMU 0 and PCMA 8.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">SRTP</span><span class="face back">RFC 3711. Encrypts RTP and authenticates the packet. It does not choose the key by itself.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">RFC 4733</span><span class="face back">Named telephone events for DTMF. Obsoletes RFC 2833. Prefer this over in-band tones on IP.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">In-band DTMF</span><span class="face back">Tones inside the audio. Compressed codecs distort them.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">KPML</span><span class="face back">RFC 4730. Key press markup in SIP. A third DTMF method, not the same as RFC 4733.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">Jitter buffer</span><span class="face back">Holds packets to absorb delay variation, then plays them out. Too deep adds delay; too shallow drops audio.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">ptime</span><span class="face back">Packetization time in SDP. 20 ms of G.711 is 160 payload bytes.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">RTCP-mux</span><span class="face back">RFC 5761. RTCP on the same port as RTP. Required by typical WebRTC stacks.</span></span></button></div></section>
+<section class="sources"><h3>Sources</h3><ul><li><a href="https://www.rfc-editor.org/rfc/rfc3550">RFC 3550 RTP</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc3551">RFC 3551 RTP profile</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc3711">RFC 3711 SRTP</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc5761">RFC 5761 RTCP-mux</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc3611">RFC 3611 RTCP XR</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc4733">RFC 4733 DTMF</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc4730">RFC 4730 KPML</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc6716">RFC 6716 Opus</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc7587">RFC 7587 Opus RTP</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc4867">RFC 4867 AMR</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc3951">RFC 3951 iLBC</a></li><li><a href="https://www.itu.int/rec/T-REC-G.711">ITU-T G.711</a></li><li><a href="https://www.itu.int/rec/T-REC-G.729">ITU-T G.729</a></li><li><a href="https://www.itu.int/rec/T-REC-G.722">ITU-T G.722</a></li><li><a href="https://www.3gpp.org/dynareport/26441.htm">3GPP TS 26.441 EVS</a></li></ul></section>
+</main>
+<footer class="site">Ordinary https anchors are for reading later. This page does not load remote code, fonts, or images.</footer>
+<script src="../assets/atlas.js"></script>
+</body>
+</html>

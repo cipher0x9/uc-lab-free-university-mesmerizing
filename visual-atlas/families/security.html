@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Security — UC Visual Atlas</title>
+<link rel="stylesheet" href="../assets/atlas.css">
+<style>
+@media (prefers-reduced-motion: reduce) { .packet { display: none; } }
+@media print { .flow-controls, .tools { display: none; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <div>
+    <h1>Security</h1>
+    <p>UC Visual Atlas · offline · synthetic addresses from RFC 5737 only</p>
+  </div>
+  <div class="tools">
+    <nav class="crumbs" aria-label="Atlas">
+      <a href="../index.html">Map</a>
+      <a href="../timeline.html">Timeline</a>
+      <a href="../glossary.html">Glossary</a>
+      <a href="../drills.html">Drills</a>
+      <a href="../matrices.html">Matrices</a>
+    </nav>
+    <button type="button" id="theme-toggle">Dark theme</button>
+  </div>
+</header>
+<main id="main">
+<p class="lede">SIP over TLS uses port 5061 (RFC 3261). SRTP (RFC 3711) protects media. SDES (RFC 4568) puts the key in SDP. DTLS-SRTP (RFC 5764) exchanges the key in DTLS and is what WebRTC uses. RFC 5630 explains why a SIPS URI is not, by itself, a promise that every hop is encrypted. Toll fraud is unsolicited calling placed through an open trunk. Scanning is unsolicited SIP probing. Controls are authentication, TLS, a closed dial plan, and not exposing UDP 5060 to the Internet.</p>
+<h2>Call flows</h2>
+
+<section class="flow-panel" aria-label="A locked trunk versus an open one">
+  <h3>A locked trunk versus an open one</h3>
+  <div class="flow-controls">
+    <button type="button" data-act="prev">Prev</button>
+    <button type="button" class="primary" data-act="next">Next</button>
+    <button type="button" data-act="play">Play</button>
+    <button type="button" data-act="reset">Reset</button>
+    <span class="flow-status mono" aria-live="polite"></span>
+  </div>
+  <p class="step-caption" aria-live="polite"></p>
+  <div class="ladder"><svg class="ladder-svg"></svg></div>
+  <p>Keyboard: focus this panel, then Left, Right, Space, Home.</p>
+  <div class="transcript"><strong>Transcript</strong><ol></ol></div>
+  <script>
+  (function () {
+    var panel = document.currentScript.closest(".flow-panel");
+    panel._flow = {"title": "A locked trunk versus an open one", "parties": ["Untrusted host", "SBC", "CUCM", "PSTN"], "steps": [{"from": 0, "to": 1, "label": "SIP OPTIONS to 5060", "caption": "Unsolicited probing. A response proves a listener. Do not leave 5060 open toward the Internet.", "color": "#2563eb"}, {"from": 1, "to": 1, "label": "Drop", "caption": "The SBC ignores sources that are not the carrier or the enterprise.", "color": "#7c3aed"}, {"from": 2, "to": 1, "label": "INVITE on TLS 5061", "caption": "A real call uses TLS and a trunk that requires authentication.", "color": "#15803d"}, {"from": 1, "to": 3, "label": "INVITE if policy allows", "caption": "Class of restriction still decides whether this caller may reach the PSTN.", "color": "#15803d"}, {"from": 2, "to": 3, "label": "SRTP", "caption": "Media keys via SDES or DTLS-SRTP. The keying choice must match on both ends.", "color": "#c2410c"}]};
+  })();
+  </script>
+</section>
+
+<h2>Architecture</h2>
+<section class="arch"><h3>Locked edge</h3><svg viewBox="0 0 808 258" role="img" aria-label="Locked edge"><title>Locked edge</title><rect x="16" y="16" width="160" height="72" rx="14" fill="#fee2e2" stroke="#b91c1c" stroke-width="4"/><text x="26" y="46" fill="#1a2332" font-size="14" font-weight="700">Internet</text><text x="26" y="66" fill="#1a2332" font-size="11">untrusted</text><rect x="224" y="16" width="160" height="72" rx="14" fill="#ffe4dc" stroke="#ff7a59" stroke-width="4"/><text x="234" y="46" fill="#1a2332" font-size="14" font-weight="700">SBC</text><text x="234" y="66" fill="#1a2332" font-size="11">policy</text><rect x="432" y="16" width="160" height="72" rx="14" fill="#fde68a" stroke="#e8a317" stroke-width="4"/><text x="442" y="46" fill="#1a2332" font-size="14" font-weight="700">CUCM</text><text x="442" y="66" fill="#1a2332" font-size="11">dial plan</text><rect x="640" y="16" width="160" height="72" rx="14" fill="#e0f2fe" stroke="#0369a1" stroke-width="4"/><text x="650" y="46" fill="#1a2332" font-size="14" font-weight="700">PSTN</text><text x="650" y="66" fill="#1a2332" font-size="11">paid trunks</text><line x1="176" y1="118" x2="224" y2="118" stroke="#b91c1c" stroke-width="3"/><text x="200.0" y="112" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">block unexpected SIP 5060</text><line x1="384" y1="154" x2="432" y2="154" stroke="#2563eb" stroke-width="3"/><text x="408.0" y="148" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">SIP TLS 5061</text><line x1="592" y1="190" x2="640" y2="190" stroke="#2563eb" stroke-width="3"/><text x="616.0" y="184" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">authenticated trunk only</text></svg></section>
+<section class="tree"><h3>Failure tree</h3><details><summary>International calls at 03:00 that nobody placed</summary><p><strong>Checks.</strong> CDR source, dial-peer or route pattern, and whether 5060 is reachable from outside.</p><p class="cause"><strong>Likely cause.</strong> An open SIP listener or a class of service that permits premium destinations.</p><p><strong>Fix.</strong> Close the listener, require credentials, and deny premium routes for phones that should not place them.</p></details><details><summary>SRTP fails with 488</summary><p><strong>Checks.</strong> The keying method in SDP: crypto (SDES) or a DTLS fingerprint.</p><p class="cause"><strong>Likely cause.</strong> One side offers SDES and the other offers only DTLS-SRTP.</p><p><strong>Fix.</strong> Pick one keying method per trunk.</p></details><details><summary>SIPS on the URI, cleartext on a hop</summary><p><strong>Checks.</strong> TLS on every connection, not only the scheme.</p><p class="cause"><strong>Likely cause.</strong> RFC 5630: the SIPS scheme does not magically encrypt a hop that was configured as UDP.</p><p><strong>Fix.</strong> Configure TLS on the trunk. Then check the capture.</p></details></section>
+<section><h3>Keying choices</h3><div class="wrap-x"><table class="matrix"><thead><tr><th></th><th>SDES</th><th>DTLS-SRTP</th><th>Hop-by-hop TLS</th></tr></thead><tbody><tr><td>Protects</td><td>SRTP keys in SDP</td><td>SRTP keys via DTLS</td><td>SIP signaling</td></tr><tr><td>Spec</td><td>RFC 4568</td><td>RFC 5764</td><td>SIP TLS port 5061</td></tr><tr><td>Typical use</td><td>SIP trunks</td><td>WebRTC</td><td>Every untrusted SIP hop</td></tr><tr><td>Enough by itself</td><td>no — SDP must also be protected</td><td>no — signaling is separate</td><td>no — media still needs SRTP</td></tr></tbody></table></div></section>
+<section><h3>Flip cards</h3><div class="cards"><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">5061</span><span class="face back">SIP over TLS. RFC 3261.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">SRTP</span><span class="face back">RFC 3711. Encrypted RTP.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">SDES</span><span class="face back">RFC 4568. a=crypto in SDP. Protect the SIP hop or the key is visible.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">DTLS-SRTP</span><span class="face back">RFC 5764. WebRTC keying.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">SIPS</span><span class="face back">RFC 5630. Read it before you treat the URI scheme as proof.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">Toll fraud control</span><span class="face back">Authenticate trunks. Restrict destinations. Do not publish UDP 5060.</span></span></button></div></section>
+<section class="sources"><h3>Sources</h3><ul><li><a href="https://www.rfc-editor.org/rfc/rfc3261">RFC 3261</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc3711">RFC 3711</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc4568">RFC 4568 SDES</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc5764">RFC 5764 DTLS-SRTP</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc5630">RFC 5630 SIPS</a></li></ul></section>
+</main>
+<footer class="site">Ordinary https anchors are for reading later. This page does not load remote code, fonts, or images.</footer>
+<script src="../assets/atlas.js"></script>
+</body>
+</html>

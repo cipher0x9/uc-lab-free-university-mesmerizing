@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Emergency (E911) — UC Visual Atlas</title>
+<link rel="stylesheet" href="../assets/atlas.css">
+<style>
+@media (prefers-reduced-motion: reduce) { .packet { display: none; } }
+@media print { .flow-controls, .tools { display: none; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <div>
+    <h1>Emergency (E911)</h1>
+    <p>UC Visual Atlas · offline · synthetic addresses from RFC 5737 only</p>
+  </div>
+  <div class="tools">
+    <nav class="crumbs" aria-label="Atlas">
+      <a href="../index.html">Map</a>
+      <a href="../timeline.html">Timeline</a>
+      <a href="../glossary.html">Glossary</a>
+      <a href="../drills.html">Drills</a>
+      <a href="../matrices.html">Matrices</a>
+    </nav>
+    <button type="button" id="theme-toggle">Dark theme</button>
+  </div>
+</header>
+<main id="main">
+<p class="lede">Kari&#x27;s Law (Public Law 115-127) requires multi-line telephone systems to allow a caller to dial 911 without a prefix and to notify a central place on site when a 911 call is made. RAY BAUM&#x27;S Act section 506 requires a dispatchable location. PIDF-LO (RFC 4119, updated by RFC 5139 and RFC 5491) is the presence document for location. RFC 6442 carries a location reference or value in SIP. ELIN is a Cisco term for an emergency location identification number. 47 CFR Part 9 holds the FCC 911 rules; paragraph text was not re-fetched from ecfr.gov in this run, so no subsection is quoted.</p>
+<h2>Call flows</h2>
+
+<section class="flow-panel" aria-label="E911 call with location">
+  <h3>E911 call with location</h3>
+  <div class="flow-controls">
+    <button type="button" data-act="prev">Prev</button>
+    <button type="button" class="primary" data-act="next">Next</button>
+    <button type="button" data-act="play">Play</button>
+    <button type="button" data-act="reset">Reset</button>
+    <span class="flow-status mono" aria-live="polite"></span>
+  </div>
+  <p class="step-caption" aria-live="polite"></p>
+  <div class="ladder"><svg class="ladder-svg"></svg></div>
+  <p>Keyboard: focus this panel, then Left, Right, Space, Home.</p>
+  <div class="transcript"><strong>Transcript</strong><ol></ol></div>
+  <script>
+  (function () {
+    var panel = document.currentScript.closest(".flow-panel");
+    panel._flow = {"title": "E911 call with location", "parties": ["Phone", "CUCM", "SBC", "Emergency network"], "steps": [{"from": 0, "to": 1, "label": "INVITE 911", "caption": "Direct 911. Kari's Law: no trunk prefix in front of 911.", "color": "#2563eb"}, {"from": 1, "to": 2, "label": "INVITE + Geolocation", "caption": "RFC 6442. The INVITE points at a PIDF-LO (RFC 4119) or carries it. The example site is a lab label, not a real address.", "color": "#2563eb"}, {"from": 1, "to": 1, "label": "On-site notification", "caption": "A parallel notify to the site contacts. This is the Kari's Law notification, not the call to the PSAP.", "color": "#7c3aed"}, {"from": 2, "to": 3, "label": "INVITE toward emergency services", "caption": "The SBC hands the call and the location to the emergency network. NENA i3 is the NG9-1-1 architecture name; the STA revision was not re-fetched.", "color": "#2563eb"}, {"from": 3, "to": 2, "label": "200 OK", "caption": "The emergency call is answered.", "color": "#15803d"}, {"from": 0, "to": 3, "label": "RTP", "caption": "Speech to the call taker. Do not park or queue this call.", "color": "#c2410c"}]};
+  })();
+  </script>
+</section>
+
+<h2>Architecture</h2>
+<section class="arch"><h3>Emergency call wires</h3><svg viewBox="0 0 808 258" role="img" aria-label="Emergency call wires"><title>Emergency call wires</title><rect x="16" y="16" width="160" height="72" rx="14" fill="#ffedd5" stroke="#c2410c" stroke-width="4"/><text x="26" y="46" fill="#1a2332" font-size="14" font-weight="700">Phone</text><text x="26" y="66" fill="#1a2332" font-size="11">192.0.2.10</text><rect x="224" y="16" width="160" height="72" rx="14" fill="#fde68a" stroke="#e8a317" stroke-width="4"/><text x="234" y="46" fill="#1a2332" font-size="14" font-weight="700">CUCM</text><text x="234" y="66" fill="#1a2332" font-size="11">ELIN map</text><rect x="432" y="16" width="160" height="72" rx="14" fill="#ffe4dc" stroke="#ff7a59" stroke-width="4"/><text x="442" y="46" fill="#1a2332" font-size="14" font-weight="700">SBC</text><text x="442" y="66" fill="#1a2332" font-size="11">edge</text><rect x="640" y="16" width="160" height="72" rx="14" fill="#fee2e2" stroke="#b91c1c" stroke-width="4"/><text x="650" y="46" fill="#1a2332" font-size="14" font-weight="700">PSAP path</text><text x="650" y="66" fill="#1a2332" font-size="11">emergency</text><line x1="176" y1="118" x2="224" y2="118" stroke="#c2410c" stroke-width="3"/><text x="200.0" y="112" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">SIP 5060/5061  INVITE to 911</text><line x1="384" y1="154" x2="432" y2="154" stroke="#c2410c" stroke-width="3"/><text x="408.0" y="148" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">SIP + Geolocation RFC 6442</text><line x1="592" y1="190" x2="640" y2="190" stroke="#b91c1c" stroke-width="3"/><text x="616.0" y="184" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">SIP or legacy trunks toward the emergency network</text></svg></section>
+<section class="tree"><h3>Failure tree</h3><details><summary>911 asks for a prefix</summary><p><strong>Checks.</strong> Dial plan on the phone and the PBX.</p><p class="cause"><strong>Likely cause.</strong> A trunk access code is required before 911. That fails Kari&#x27;s Law.</p><p><strong>Fix.</strong> Accept 911 as dialed. Keep a notification to the site.</p></details><details><summary>Call connects and the location is the wrong building</summary><p><strong>Checks.</strong> Which ELIN or PIDF-LO was attached to this phone&#x27;s network location.</p><p class="cause"><strong>Likely cause.</strong> The phone moved and the location record did not.</p><p><strong>Fix.</strong> Tie location to the place the phone is, and test after every move.</p></details><details><summary>Notification never reaches the front desk</summary><p><strong>Checks.</strong> The notify target, separate from the PSAP leg.</p><p class="cause"><strong>Likely cause.</strong> The PSAP call works and the on-site notify target is empty or unreachable.</p><p><strong>Fix.</strong> Fix the notify target. It is a different leg from the emergency call.</p></details></section>
+<section><h3>Location objects (names only where the text was checked)</h3><div class="wrap-x"><table class="matrix"><thead><tr><th>Item</th><th>What it is</th><th>Citation printed here</th></tr></thead><tbody><tr><td>Kari&#x27;s Law</td><td>Direct 911 and on-site notification for MLTS</td><td>Public Law 115-127</td></tr><tr><td>RAY BAUM&#x27;S Act §506</td><td>Dispatchable location</td><td>Public Law 115-141, Division P</td></tr><tr><td>PIDF-LO</td><td>Location document</td><td>RFC 4119, RFC 5139, RFC 5491</td></tr><tr><td>SIP location</td><td>How SIP carries location</td><td>RFC 6442</td></tr><tr><td>ELIN</td><td>Cisco name for an emergency callback number mapped to a location</td><td>Cisco term, not an RFC</td></tr><tr><td>47 CFR 9.16 text</td><td>not stated</td><td>Part 9 not re-fetched from ecfr.gov</td></tr></tbody></table></div></section>
+<section><h3>Flip cards</h3><div class="cards"><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">Kari&#x27;s Law</span><span class="face back">Dial 911 directly. Notify someone on site. Public Law 115-127.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">Dispatchable location</span><span class="face back">A location the emergency caller can be found at. RAY BAUM&#x27;S Act section 506.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">PIDF-LO</span><span class="face back">RFC 4119 presence document that holds civic or coordinate location.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">RFC 6442</span><span class="face back">Geolocation and Geolocation-Routing headers in SIP.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">ELIN</span><span class="face back">Cisco term. A number mapped to a zone so the PSAP can call back.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">Do not queue 911</span><span class="face back">Emergency calls are not contact-center queues.</span></span></button></div></section>
+<section class="sources"><h3>Sources</h3><ul><li><a href="https://www.congress.gov/bill/115th-congress/house-bill/582">Public Law 115-127 Kari&#x27;s Law</a></li><li><a href="https://www.congress.gov/bill/115th-congress/house-bill/4986">RAY BAUM&#x27;S Act</a></li><li><a href="https://www.ecfr.gov/current/title-47/chapter-I/subchapter-A/part-9">47 CFR Part 9</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc4119">RFC 4119 PIDF-LO</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc5139">RFC 5139</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc5491">RFC 5491</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc6442">RFC 6442</a></li><li><a href="https://www.nena.org/">NENA</a></li></ul></section>
+</main>
+<footer class="site">Ordinary https anchors are for reading later. This page does not load remote code, fonts, or images.</footer>
+<script src="../assets/atlas.js"></script>
+</body>
+</html>

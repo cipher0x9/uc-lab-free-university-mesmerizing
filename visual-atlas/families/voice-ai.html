@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Voice AI — UC Visual Atlas</title>
+<link rel="stylesheet" href="../assets/atlas.css">
+<style>
+@media (prefers-reduced-motion: reduce) { .packet { display: none; } }
+@media print { .flow-controls, .tools { display: none; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <div>
+    <h1>Voice AI</h1>
+    <p>UC Visual Atlas · offline · synthetic addresses from RFC 5737 only</p>
+  </div>
+  <div class="tools">
+    <nav class="crumbs" aria-label="Atlas">
+      <a href="../index.html">Map</a>
+      <a href="../timeline.html">Timeline</a>
+      <a href="../glossary.html">Glossary</a>
+      <a href="../drills.html">Drills</a>
+      <a href="../matrices.html">Matrices</a>
+    </nav>
+    <button type="button" id="theme-toggle">Dark theme</button>
+  </div>
+</header>
+<main id="main">
+<p class="lede">Speech can be forked from a live call to a recognizer (ASR) and a synthesizer (TTS) can play prompts back. The same fork can feed a transcript to an agent desktop (agent assist). None of this requires a published accuracy number, and this page prints none. Vendor feature names are omitted unless a vendor document was opened; none were re-fetched on 2026-10-03.</p>
+<h2>Call flows</h2>
+
+<section class="flow-panel" aria-label="Fork media to a recognizer, show text to the agent">
+  <h3>Fork media to a recognizer, show text to the agent</h3>
+  <div class="flow-controls">
+    <button type="button" data-act="prev">Prev</button>
+    <button type="button" class="primary" data-act="next">Next</button>
+    <button type="button" data-act="play">Play</button>
+    <button type="button" data-act="reset">Reset</button>
+    <span class="flow-status mono" aria-live="polite"></span>
+  </div>
+  <p class="step-caption" aria-live="polite"></p>
+  <div class="ladder"><svg class="ladder-svg"></svg></div>
+  <p>Keyboard: focus this panel, then Left, Right, Space, Home.</p>
+  <div class="transcript"><strong>Transcript</strong><ol></ol></div>
+  <script>
+  (function () {
+    var panel = document.currentScript.closest(".flow-panel");
+    panel._flow = {"title": "Fork media to a recognizer, show text to the agent", "parties": ["Caller", "Voice platform", "Speech service", "Agent desktop"], "steps": [{"from": 0, "to": 1, "label": "INVITE", "caption": "The call arrives at the platform that can fork media.", "color": "#2563eb"}, {"from": 1, "to": 0, "label": "200 OK", "caption": "The call is answered or queued.", "color": "#15803d"}, {"from": 1, "to": 2, "label": "Media fork", "caption": "A copy of RTP, or a SIPREC session, is sent to the speech service. No accuracy claim.", "color": "#2563eb"}, {"from": 2, "to": 1, "label": "Text", "caption": "The service returns a transcript stream. The transport is the vendor's. It is not specified here.", "color": "#7c3aed"}, {"from": 1, "to": 3, "label": "Transcript", "caption": "Agent assist shows the text beside the call. The agent still hears the audio.", "color": "#15803d"}, {"from": 1, "to": 0, "label": "TTS prompt", "caption": "If the platform plays a prompt, TTS audio is just RTP back to the caller.", "color": "#c2410c"}]};
+  })();
+  </script>
+</section>
+
+<h2>Architecture</h2>
+<section class="arch"><h3>A fork, not a new telephone network</h3><svg viewBox="0 0 808 258" role="img" aria-label="A fork, not a new telephone network"><title>A fork, not a new telephone network</title><rect x="16" y="16" width="160" height="72" rx="14" fill="#e0e7ff" stroke="#4f46e5" stroke-width="4"/><text x="26" y="46" fill="#1a2332" font-size="14" font-weight="700">Caller</text><text x="26" y="66" fill="#1a2332" font-size="11">RTP</text><rect x="224" y="16" width="160" height="72" rx="14" fill="#c7d2fe" stroke="#4338ca" stroke-width="4"/><text x="234" y="46" fill="#1a2332" font-size="14" font-weight="700">Platform</text><text x="234" y="66" fill="#1a2332" font-size="11">fork</text><rect x="432" y="16" width="160" height="72" rx="14" fill="#ddd6fe" stroke="#5b21b6" stroke-width="4"/><text x="442" y="46" fill="#1a2332" font-size="14" font-weight="700">ASR / TTS</text><text x="442" y="66" fill="#1a2332" font-size="11">speech</text><rect x="640" y="16" width="160" height="72" rx="14" fill="#ecfccb" stroke="#7bc142" stroke-width="4"/><text x="650" y="46" fill="#1a2332" font-size="14" font-weight="700">Agent</text><text x="650" y="66" fill="#1a2332" font-size="11">desktop</text><line x1="176" y1="118" x2="224" y2="118" stroke="#2563eb" stroke-width="3"/><text x="200.0" y="112" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">SIP + RTP</text><line x1="384" y1="154" x2="432" y2="154" stroke="#2563eb" stroke-width="3"/><text x="408.0" y="148" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">media fork or SIPREC</text><line x1="384" y1="190" x2="640" y2="190" stroke="#2563eb" stroke-width="3"/><text x="512.0" y="184" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">transcript beside CTI  (no score)</text></svg></section>
+<section class="tree"><h3>Failure tree</h3><details><summary>The agent hears audio and the transcript is empty</summary><p><strong>Checks.</strong> Is the fork established, and is the speech service receiving RTP?</p><p class="cause"><strong>Likely cause.</strong> Signaling to the desktop is up and the media fork is not.</p><p><strong>Fix.</strong> Fix the fork before you blame the recognizer.</p></details><details><summary>Prompts play and barge-in never works</summary><p><strong>Checks.</strong> Is caller RTP reaching the recognizer during the prompt?</p><p class="cause"><strong>Likely cause.</strong> TTS is playing and caller media is not mixed back to ASR.</p><p><strong>Fix.</strong> Send caller audio to the recognizer while the prompt plays, if the design calls for barge-in.</p></details><details><summary>Someone asks for a percent accurate</summary><p><strong>Checks.</strong> This atlas does not print accuracy, latency SLAs, or MOS.</p><p class="cause"><strong>Likely cause.</strong> Those numbers are benchmarks. They are out of scope.</p><p><strong>Fix.</strong> Read the vendor&#x27;s own evaluation report. Do not invent one.</p></details></section>
+<section><h3>Functions, without vendor scores</h3><div class="wrap-x"><table class="matrix"><thead><tr><th>Function</th><th>What moves</th><th>Number printed</th></tr></thead><tbody><tr><td>ASR</td><td>speech in, text out</td><td>none</td></tr><tr><td>TTS</td><td>text in, speech out</td><td>none</td></tr><tr><td>Agent assist</td><td>transcript to the desktop</td><td>none</td></tr><tr><td>Conversational IVR</td><td>ASR plus dialog plus TTS</td><td>none</td></tr><tr><td>Real-time transcription</td><td>a stream during the call</td><td>none</td></tr></tbody></table></div></section>
+<section><h3>Flip cards</h3><div class="cards"><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">ASR</span><span class="face back">Automatic speech recognition. Audio to text.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">TTS</span><span class="face back">Text to speech. Prompts without a recorded file for every sentence.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">Agent assist</span><span class="face back">Show the agent a transcript or a suggestion during the call.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">Media fork</span><span class="face back">A copy of RTP. The caller is not transferred to the recognizer.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">No scores</span><span class="face back">Accuracy and MOS are omitted on purpose.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">SIPREC as a fork</span><span class="face back">RFC 7866 is one standard way to hand the copy to another system.</span></span></button></div></section>
+<section class="sources"><h3>Sources</h3><ul><li><a href="https://www.rfc-editor.org/rfc/rfc7866">RFC 7866 SIPREC</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc3550">RFC 3550 RTP</a></li></ul></section>
+</main>
+<footer class="site">Ordinary https anchors are for reading later. This page does not load remote code, fonts, or images.</footer>
+<script src="../assets/atlas.js"></script>
+</body>
+</html>

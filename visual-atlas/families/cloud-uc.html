@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cloud UC — UC Visual Atlas</title>
+<link rel="stylesheet" href="../assets/atlas.css">
+<style>
+@media (prefers-reduced-motion: reduce) { .packet { display: none; } }
+@media print { .flow-controls, .tools { display: none; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <div>
+    <h1>Cloud UC</h1>
+    <p>UC Visual Atlas · offline · synthetic addresses from RFC 5737 only</p>
+  </div>
+  <div class="tools">
+    <nav class="crumbs" aria-label="Atlas">
+      <a href="../index.html">Map</a>
+      <a href="../timeline.html">Timeline</a>
+      <a href="../glossary.html">Glossary</a>
+      <a href="../drills.html">Drills</a>
+      <a href="../matrices.html">Matrices</a>
+    </nav>
+    <button type="button" id="theme-toggle">Dark theme</button>
+  </div>
+</header>
+<main id="main">
+<p class="lede">Cloud calling keeps registration in the provider cloud and reaches the PSTN through a carrier plan, an operator connection, or a customer SBC. Cisco documents Local Gateway (often CUBE) for Webex Calling. Microsoft documents three Teams Phone PSTN models: Calling Plans, Direct Routing, and Operator Connect. Zoom Phone, RingCentral, 8x8, Dialpad, and Google Voice are other cloud voice services. Media port ranges are omitted because the vendor pages were not re-fetched on 2026-10-03.</p>
+<h2>Call flows</h2>
+
+<section class="flow-panel" aria-label="Teams Phone Direct Routing via SBC">
+  <h3>Teams Phone Direct Routing via SBC</h3>
+  <div class="flow-controls">
+    <button type="button" data-act="prev">Prev</button>
+    <button type="button" class="primary" data-act="next">Next</button>
+    <button type="button" data-act="play">Play</button>
+    <button type="button" data-act="reset">Reset</button>
+    <span class="flow-status mono" aria-live="polite"></span>
+  </div>
+  <p class="step-caption" aria-live="polite"></p>
+  <div class="ladder"><svg class="ladder-svg"></svg></div>
+  <p>Keyboard: focus this panel, then Left, Right, Space, Home.</p>
+  <div class="transcript"><strong>Transcript</strong><ol></ol></div>
+  <script>
+  (function () {
+    var panel = document.currentScript.closest(".flow-panel");
+    panel._flow = {"title": "Teams Phone Direct Routing via SBC", "parties": ["Teams user", "Teams Phone System", "Customer SBC", "PSTN"], "steps": [{"from": 0, "to": 1, "label": "Call request", "caption": "The user places a call inside Teams. This hop is the client to Microsoft, not SIP on your SBC.", "color": "#2563eb"}, {"from": 1, "to": 2, "label": "SIP INVITE (TLS)", "caption": "Direct Routing sends SIP over TLS toward the customer SBC. SIP TLS uses port 5061 (RFC 3261). Microsoft media ranges are not printed.", "color": "#2563eb"}, {"from": 2, "to": 3, "label": "INVITE", "caption": "The SBC places the call on the customer's PSTN trunk.", "color": "#2563eb"}, {"from": 3, "to": 2, "label": "180 Ringing", "caption": "The PSTN is alerting.", "color": "#7c3aed"}, {"from": 2, "to": 1, "label": "180 Ringing", "caption": "The SBC relays alerting toward Teams.", "color": "#7c3aed"}, {"from": 3, "to": 2, "label": "200 OK", "caption": "Answer from the PSTN.", "color": "#15803d"}, {"from": 2, "to": 1, "label": "200 OK", "caption": "Answer toward Teams Phone System.", "color": "#15803d"}, {"from": 1, "to": 2, "label": "RTP via SBC", "caption": "Media is anchored or passed according to the SBC design. The numeric range is not stated here.", "color": "#c2410c"}]};
+  })();
+  </script>
+</section>
+
+
+<section class="flow-panel" aria-label="Webex Calling Local Gateway">
+  <h3>Webex Calling Local Gateway</h3>
+  <div class="flow-controls">
+    <button type="button" data-act="prev">Prev</button>
+    <button type="button" class="primary" data-act="next">Next</button>
+    <button type="button" data-act="play">Play</button>
+    <button type="button" data-act="reset">Reset</button>
+    <span class="flow-status mono" aria-live="polite"></span>
+  </div>
+  <p class="step-caption" aria-live="polite"></p>
+  <div class="ladder"><svg class="ladder-svg"></svg></div>
+  <p>Keyboard: focus this panel, then Left, Right, Space, Home.</p>
+  <div class="transcript"><strong>Transcript</strong><ol></ol></div>
+  <script>
+  (function () {
+    var panel = document.currentScript.closest(".flow-panel");
+    panel._flow = {"title": "Webex Calling Local Gateway", "parties": ["Webex app", "Webex Calling", "Local Gateway", "PSTN"], "steps": [{"from": 0, "to": 1, "label": "Call in the cloud", "caption": "The app is registered to Webex Calling, not to CUCM.", "color": "#2563eb"}, {"from": 1, "to": 2, "label": "SIP INVITE", "caption": "Webex Calling sends the PSTN call to the Local Gateway. Cisco documents CUBE in this role.", "color": "#2563eb"}, {"from": 2, "to": 3, "label": "INVITE or Q.931", "caption": "The gateway steps onto a SIP ITSP or a PRI.", "color": "#2563eb"}, {"from": 3, "to": 2, "label": "200 OK or CONNECT", "caption": "The PSTN answered.", "color": "#15803d"}, {"from": 2, "to": 1, "label": "200 OK", "caption": "The Local Gateway answers the Webex dialog.", "color": "#15803d"}, {"from": 1, "to": 0, "label": "Media", "caption": "Speech between the app and the gateway. Webex media ranges are not printed on this page.", "color": "#c2410c"}]};
+  })();
+  </script>
+</section>
+
+<h2>Architecture</h2>
+<section class="arch"><h3>Cloud calling edge</h3><svg viewBox="0 0 808 258" role="img" aria-label="Cloud calling edge"><title>Cloud calling edge</title><rect x="16" y="16" width="160" height="72" rx="14" fill="#ede9fe" stroke="#8b5cf6" stroke-width="4"/><text x="26" y="46" fill="#1a2332" font-size="14" font-weight="700">App</text><text x="26" y="66" fill="#1a2332" font-size="11">cloud user</text><rect x="224" y="16" width="160" height="72" rx="14" fill="#ddd6fe" stroke="#6d28d9" stroke-width="4"/><text x="234" y="46" fill="#1a2332" font-size="14" font-weight="700">Cloud UC</text><text x="234" y="66" fill="#1a2332" font-size="11">provider</text><rect x="432" y="16" width="160" height="72" rx="14" fill="#ffe4dc" stroke="#ff7a59" stroke-width="4"/><text x="442" y="46" fill="#1a2332" font-size="14" font-weight="700">SBC / LG</text><text x="442" y="66" fill="#1a2332" font-size="11">customer</text><rect x="640" y="16" width="160" height="72" rx="14" fill="#e0f2fe" stroke="#0369a1" stroke-width="4"/><text x="650" y="46" fill="#1a2332" font-size="14" font-weight="700">PSTN</text><text x="650" y="66" fill="#1a2332" font-size="11">carrier</text><line x1="176" y1="118" x2="224" y2="118" stroke="#2563eb" stroke-width="3"/><text x="200.0" y="112" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">provider client signaling (not printed as a port)</text><line x1="384" y1="154" x2="432" y2="154" stroke="#2563eb" stroke-width="3"/><text x="408.0" y="148" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">SIP TLS 5061 on Direct Routing and typical Local Gateway</text><line x1="592" y1="190" x2="640" y2="190" stroke="#2563eb" stroke-width="3"/><text x="616.0" y="184" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">SIP or PRI toward the carrier</text></svg></section>
+<section class="tree"><h3>Failure tree</h3><details><summary>Direct Routing trunk stays down</summary><p><strong>Checks.</strong> TLS certificate, FQDN, and SIP OPTIONS toward Microsoft. Do not invent the FQDN.</p><p class="cause"><strong>Likely cause.</strong> The name on the certificate does not match the trunk, or 5061 is blocked.</p><p><strong>Fix.</strong> Match the name Microsoft provisioned. Media ranges come from the current Microsoft Learn page.</p></details><details><summary>Inbound calls fail, outbound works</summary><p><strong>Checks.</strong> Which numbers are assigned to the trunk or Local Gateway.</p><p class="cause"><strong>Likely cause.</strong> The cloud still points the DID at the old route.</p><p><strong>Fix.</strong> Move the number in the provider admin, then test one DID.</p></details><details><summary>Local Gateway registers and calls return 404</summary><p><strong>Checks.</strong> Dial-peer or route on the gateway, and the called-number format the cloud sends.</p><p class="cause"><strong>Likely cause.</strong> The cloud sends E.164 and the gateway expects a different digit string.</p><p><strong>Fix.</strong> Normalize on the gateway. Keep a sample INVITE.</p></details></section>
+<section><h3>Cloud UC PSTN attachment (checked 2026-10-03)</h3><div class="wrap-x"><table class="matrix"><thead><tr><th>Service</th><th>Where calling runs</th><th>Customer SBC role</th><th>Notes</th></tr></thead><tbody><tr><td>Webex Calling</td><td>Cisco cloud</td><td>Local Gateway (CUBE documented)</td><td>media ranges not stated here</td></tr><tr><td>Teams Phone</td><td>Microsoft 365</td><td>Direct Routing SBC</td><td>also Calling Plans and Operator Connect</td></tr><tr><td>Zoom Phone</td><td>Zoom cloud</td><td>not stated</td><td>premise media ranges not fetched</td></tr><tr><td>RingCentral</td><td>RingCentral cloud</td><td>not stated</td><td>not stated</td></tr><tr><td>8x8</td><td>8x8 cloud</td><td>not stated</td><td>not stated</td></tr><tr><td>Dialpad</td><td>Dialpad cloud</td><td>not stated</td><td>not stated</td></tr><tr><td>Google Voice</td><td>Google voice service</td><td>not stated</td><td>not stated</td></tr></tbody></table></div></section>
+<section><h3>Flip cards</h3><div class="cards"><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">Calling Plans</span><span class="face back">Microsoft is the PSTN carrier for that user. No customer SBC.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">Direct Routing</span><span class="face back">Your SBC speaks SIP to Teams Phone System. You bring the carrier.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">Operator Connect</span><span class="face back">A participating operator attaches the trunk. You do not stand up Direct Routing for that path.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">Local Gateway</span><span class="face back">The on-prem SBC Cisco documents for Webex Calling PSTN.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">5061</span><span class="face back">SIP over TLS. RFC 3261 default for SIPS. Used on these trunks; it is not a media port.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">Media ranges</span><span class="face back">Webex and Teams publish ranges that change. This atlas leaves the numbers off until the current page is checked.</span></span></button></div></section>
+<section class="sources"><h3>Sources</h3><ul><li><a href="https://help.webex.com/">Webex Calling</a></li><li><a href="https://learn.microsoft.com/en-us/microsoftteams/pstn-connectivity">Microsoft Teams PSTN connectivity</a></li><li><a href="https://www.zoom.com/en/products/voip-phone/">Zoom Phone</a></li><li><a href="https://www.ringcentral.com/">RingCentral</a></li><li><a href="https://www.8x8.com/">8x8</a></li><li><a href="https://www.dialpad.com/">Dialpad</a></li><li><a href="https://workspace.google.com/products/voice/">Google Voice</a></li></ul></section>
+</main>
+<footer class="site">Ordinary https anchors are for reading later. This page does not load remote code, fonts, or images.</footer>
+<script src="../assets/atlas.js"></script>
+</body>
+</html>

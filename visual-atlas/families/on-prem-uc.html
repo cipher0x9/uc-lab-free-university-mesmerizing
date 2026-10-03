@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>On-prem PBX / UC — UC Visual Atlas</title>
+<link rel="stylesheet" href="../assets/atlas.css">
+<style>
+@media (prefers-reduced-motion: reduce) { .packet { display: none; } }
+@media print { .flow-controls, .tools { display: none; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <div>
+    <h1>On-prem PBX / UC</h1>
+    <p>UC Visual Atlas · offline · synthetic addresses from RFC 5737 only</p>
+  </div>
+  <div class="tools">
+    <nav class="crumbs" aria-label="Atlas">
+      <a href="../index.html">Map</a>
+      <a href="../timeline.html">Timeline</a>
+      <a href="../glossary.html">Glossary</a>
+      <a href="../drills.html">Drills</a>
+      <a href="../matrices.html">Matrices</a>
+    </nav>
+    <button type="button" id="theme-toggle">Dark theme</button>
+  </div>
+</header>
+<main id="main">
+<p class="lede">Cisco Unified Communications Manager is a cluster: a publisher holds the database, subscribers run call processing, TFTP serves phone files, and CTI serves desk applications. Unity Connection is voicemail. IM and Presence is the Cisco presence service. Expressway is the edge. CME is call processing on IOS for a small site. Avaya Aura Communication Manager, Mitel, and NEC are other PBX families. Asterisk and FreeSWITCH are open-source call platforms. Kamailio is a SIP proxy, not a PBX.</p>
+<h2>Call flows</h2>
+
+<section class="flow-panel" aria-label="SIP phone registration to CUCM">
+  <h3>SIP phone registration to CUCM</h3>
+  <div class="flow-controls">
+    <button type="button" data-act="prev">Prev</button>
+    <button type="button" class="primary" data-act="next">Next</button>
+    <button type="button" data-act="play">Play</button>
+    <button type="button" data-act="reset">Reset</button>
+    <span class="flow-status mono" aria-live="polite"></span>
+  </div>
+  <p class="step-caption" aria-live="polite"></p>
+  <div class="ladder"><svg class="ladder-svg"></svg></div>
+  <p>Keyboard: focus this panel, then Left, Right, Space, Home.</p>
+  <div class="transcript"><strong>Transcript</strong><ol></ol></div>
+  <script>
+  (function () {
+    var panel = document.currentScript.closest(".flow-panel");
+    panel._flow = {"title": "SIP phone registration to CUCM", "parties": ["Phone 192.0.2.10", "CUCM"], "steps": [{"from": 0, "to": 1, "label": "REGISTER", "caption": "The line registers to CUCM. SIP is UDP/TCP 5060 or TLS 5061.", "color": "#2563eb"}, {"from": 1, "to": 0, "label": "401 Unauthorized", "caption": "CUCM challenges the phone.", "color": "#7c3aed"}, {"from": 0, "to": 1, "label": "REGISTER (credentials)", "caption": "The phone repeats REGISTER with the digest response.", "color": "#2563eb"}, {"from": 1, "to": 0, "label": "200 OK", "caption": "The contact is bound. Skinny phones use TCP 2000 instead of this SIP exchange.", "color": "#15803d"}, {"from": 0, "to": 1, "label": "INVITE", "caption": "A later call uses the registered contact.", "color": "#2563eb"}]};
+  })();
+  </script>
+</section>
+
+<h2>Architecture</h2>
+<section class="arch"><h3>CUCM cluster wires</h3><svg viewBox="0 0 808 294" role="img" aria-label="CUCM cluster wires"><title>CUCM cluster wires</title><rect x="16" y="16" width="160" height="72" rx="14" fill="#fde68a" stroke="#e8a317" stroke-width="4"/><text x="26" y="46" fill="#1a2332" font-size="14" font-weight="700">Phone</text><text x="26" y="66" fill="#1a2332" font-size="11">192.0.2.10</text><rect x="224" y="16" width="160" height="72" rx="14" fill="#fde68a" stroke="#e8a317" stroke-width="4"/><text x="234" y="46" fill="#1a2332" font-size="14" font-weight="700">CUCM</text><text x="234" y="66" fill="#1a2332" font-size="11">publisher</text><rect x="432" y="16" width="160" height="72" rx="14" fill="#fef3c7" stroke="#a16207" stroke-width="4"/><text x="442" y="46" fill="#1a2332" font-size="14" font-weight="700">TFTP</text><text x="442" y="66" fill="#1a2332" font-size="11">files</text><rect x="640" y="16" width="160" height="72" rx="14" fill="#ecfccb" stroke="#7bc142" stroke-width="4"/><text x="650" y="46" fill="#1a2332" font-size="14" font-weight="700">CTI</text><text x="650" y="66" fill="#1a2332" font-size="11">desktop</text><line x1="176" y1="118" x2="224" y2="118" stroke="#2563eb" stroke-width="3"/><text x="200.0" y="112" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">SIP 5060/5061 or SCCP TCP 2000</text><line x1="176" y1="154" x2="432" y2="154" stroke="#2563eb" stroke-width="3"/><text x="304.0" y="148" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">TFTP UDP 69</text><line x1="384" y1="190" x2="640" y2="190" stroke="#2563eb" stroke-width="3"/><text x="512.0" y="184" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">CTI TCP 2748</text><line x1="176" y1="226" x2="224" y2="226" stroke="#c2410c" stroke-width="3"/><text x="200.0" y="220" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">RTP UDP 16384–32767 Cisco phone default</text></svg></section>
+<section class="tree"><h3>Failure tree</h3><details><summary>Phone cycles and never registers</summary><p><strong>Checks.</strong> TFTP file, then SIP or SCCP toward the node in that file.</p><p class="cause"><strong>Likely cause.</strong> The phone got a file from the wrong cluster, or signaling to CUCM is blocked.</p><p><strong>Fix.</strong> Confirm the TFTP server, then the signaling port for the protocol the phone actually runs.</p></details><details><summary>Desktop app cannot control the phone</summary><p><strong>Checks.</strong> CTI TCP 2748 from the application to CTI Manager.</p><p class="cause"><strong>Likely cause.</strong> The app is pointed at a node that is not running CTI Manager, or the user is not allowed.</p><p><strong>Fix.</strong> Move the CTI connection to a node that runs the service.</p></details><details><summary>Calls work on the LAN and fail after a WAN move</summary><p><strong>Checks.</strong> RTP range 16384–32767 UDP, not just SIP 5060.</p><p class="cause"><strong>Likely cause.</strong> Signaling is open and the media range is not.</p><p><strong>Fix.</strong> Permit the Cisco phone RTP range both ways.</p></details></section>
+<section><h3>On-prem call platforms (roles only; checked 2026-10-03)</h3><div class="wrap-x"><table class="matrix"><thead><tr><th></th><th>CUCM</th><th>Avaya CM</th><th>Mitel</th><th>NEC</th><th>Asterisk</th><th>FreeSWITCH</th><th>Kamailio</th></tr></thead><tbody><tr><td>Class</td><td>Cisco UC call control</td><td>Avaya Aura call control</td><td>Mitel communications portfolio</td><td>NEC communications portfolio</td><td>Open-source PBX</td><td>Open-source softswitch</td><td>SIP proxy / SIP server</td></tr><tr><td>PBX / call control</td><td>yes</td><td>yes</td><td>yes</td><td>yes</td><td>yes</td><td>yes</td><td>no — proxy, not a PBX</td></tr><tr><td>SIP</td><td>yes</td><td>yes</td><td>yes</td><td>yes</td><td>yes</td><td>yes</td><td>yes</td></tr><tr><td>Open source</td><td>no</td><td>no</td><td>no</td><td>no</td><td>yes</td><td>yes</td><td>yes</td></tr><tr><td>Feature parity</td><td>not stated</td><td>not stated</td><td>not stated</td><td>not stated</td><td>not stated</td><td>not stated</td><td>not a phone feature server</td></tr></tbody></table></div></section>
+<section><h3>Flip cards</h3><div class="cards"><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">Publisher / subscriber</span><span class="face back">The publisher owns the database copy of record. Subscribers process calls and need the database.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">TFTP UDP 69</span><span class="face back">Phones download configuration. Confirm the guide for your CUCM version before opening extra ports.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">CTI TCP 2748</span><span class="face back">Cisco CTI Manager. Desk CTI uses this port in the CUCM port-usage guides.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">SCCP TCP 2000</span><span class="face back">Cisco Skinny. Not SS7 SCCP. Not an IETF standard.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">Unity Connection</span><span class="face back">Cisco voicemail and automated attendant platform. Product color on this atlas is cyan.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">Kamailio</span><span class="face back">A SIP server used as proxy, registrar, or load balancer. It does not replace a PBX by itself.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">CSS and partition</span><span class="face back">Cisco dial-plan constructs. A partition groups patterns. A calling search space lists which partitions a caller may reach.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">CME</span><span class="face back">Cisco call processing on a router for a small site. Not the same cluster as CUCM.</span></span></button></div></section>
+<section class="sources"><h3>Sources</h3><ul><li><a href="https://www.cisco.com/c/en/us/support/unified-communications/unified-communications-manager-callmanager/series.html">Cisco Unified Communications Manager</a></li><li><a href="https://www.cisco.com/c/en/us/support/unified-communications/unified-communications-manager-callmanager/products-maintenance-guides-list.html">Cisco TCP and UDP Port Usage (confirm your release)</a></li><li><a href="https://www.asterisk.org/">Asterisk</a></li><li><a href="https://freeswitch.com/">FreeSWITCH</a></li><li><a href="https://www.kamailio.org/">Kamailio</a></li><li><a href="https://www.avaya.com/">Avaya</a></li><li><a href="https://www.mitel.com/">Mitel</a></li><li><a href="https://www.nec.com/">NEC</a></li></ul></section>
+</main>
+<footer class="site">Ordinary https anchors are for reading later. This page does not load remote code, fonts, or images.</footer>
+<script src="../assets/atlas.js"></script>
+</body>
+</html>

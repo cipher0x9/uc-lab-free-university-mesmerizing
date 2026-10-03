@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mobile voice — UC Visual Atlas</title>
+<link rel="stylesheet" href="../assets/atlas.css">
+<style>
+@media (prefers-reduced-motion: reduce) { .packet { display: none; } }
+@media print { .flow-controls, .tools { display: none; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <div>
+    <h1>Mobile voice</h1>
+    <p>UC Visual Atlas · offline · synthetic addresses from RFC 5737 only</p>
+  </div>
+  <div class="tools">
+    <nav class="crumbs" aria-label="Atlas">
+      <a href="../index.html">Map</a>
+      <a href="../timeline.html">Timeline</a>
+      <a href="../glossary.html">Glossary</a>
+      <a href="../drills.html">Drills</a>
+      <a href="../matrices.html">Matrices</a>
+    </nav>
+    <button type="button" id="theme-toggle">Dark theme</button>
+  </div>
+</header>
+<main id="main">
+<p class="lede">IMS (3GPP TS 23.228) places P-CSCF, I-CSCF, and S-CSCF in the signaling path and keeps the subscriber profile in the HSS. Diameter (RFC 6733) is the AAA protocol on TCP or SCTP port 3868. VoLTE is the GSMA IR.92 profile of IMS voice over LTE. VoNR uses IMS over the 5G system; the GSMA document id for VoNR was not re-fetched in this run, so it is not printed. EPS fallback and SRVCC are 3GPP voice-continuity mechanisms; their procedure steps are omitted here for the same reason.</p>
+<h2>Call flows</h2>
+
+<section class="flow-panel" aria-label="VoLTE IMS registration (high level)">
+  <h3>VoLTE IMS registration (high level)</h3>
+  <div class="flow-controls">
+    <button type="button" data-act="prev">Prev</button>
+    <button type="button" class="primary" data-act="next">Next</button>
+    <button type="button" data-act="play">Play</button>
+    <button type="button" data-act="reset">Reset</button>
+    <span class="flow-status mono" aria-live="polite"></span>
+  </div>
+  <p class="step-caption" aria-live="polite"></p>
+  <div class="ladder"><svg class="ladder-svg"></svg></div>
+  <p>Keyboard: focus this panel, then Left, Right, Space, Home.</p>
+  <div class="transcript"><strong>Transcript</strong><ol></ol></div>
+  <script>
+  (function () {
+    var panel = document.currentScript.closest(".flow-panel");
+    panel._flow = {"title": "VoLTE IMS registration (high level)", "parties": ["UE", "P-CSCF", "I-CSCF", "S-CSCF"], "steps": [{"from": 0, "to": 1, "label": "REGISTER", "caption": "The handset sends SIP REGISTER to the P-CSCF it discovered. This ladder stops at the IMS SIP roles in TS 23.228.", "color": "#2563eb"}, {"from": 1, "to": 2, "label": "REGISTER", "caption": "P-CSCF forwards toward the home network's I-CSCF.", "color": "#2563eb"}, {"from": 2, "to": 3, "label": "REGISTER", "caption": "I-CSCF selects an S-CSCF. The HSS query is Diameter (RFC 6733), not shown as a fifth hop because the AVP list was not re-fetched.", "color": "#2563eb"}, {"from": 3, "to": 2, "label": "401 Unauthorized", "caption": "The S-CSCF challenges the UE.", "color": "#7c3aed"}, {"from": 2, "to": 1, "label": "401 Unauthorized", "caption": "The challenge returns toward the UE.", "color": "#7c3aed"}, {"from": 1, "to": 0, "label": "401 Unauthorized", "caption": "The UE will register again with credentials.", "color": "#7c3aed"}, {"from": 0, "to": 1, "label": "REGISTER (challenge response)", "caption": "Second REGISTER carries the authentication response.", "color": "#2563eb"}, {"from": 1, "to": 3, "label": "REGISTER", "caption": "The path is repeated to the S-CSCF.", "color": "#2563eb"}, {"from": 3, "to": 0, "label": "200 OK", "caption": "The subscriber is registered. A service route is stored for later INVITEs.", "color": "#15803d"}]};
+  })();
+  </script>
+</section>
+
+<h2>Architecture</h2>
+<section class="arch"><h3>IMS registration roles</h3><svg viewBox="0 0 808 258" role="img" aria-label="IMS registration roles"><title>IMS registration roles</title><rect x="16" y="16" width="160" height="72" rx="14" fill="#ede9fe" stroke="#7c3aed" stroke-width="4"/><text x="26" y="46" fill="#1a2332" font-size="14" font-weight="700">UE</text><text x="26" y="66" fill="#1a2332" font-size="11">VoLTE</text><rect x="224" y="16" width="160" height="72" rx="14" fill="#ddd6fe" stroke="#7c3aed" stroke-width="4"/><text x="234" y="46" fill="#1a2332" font-size="14" font-weight="700">P-CSCF</text><text x="234" y="66" fill="#1a2332" font-size="11">proxy</text><rect x="432" y="16" width="160" height="72" rx="14" fill="#c4b5fd" stroke="#5b21b6" stroke-width="4"/><text x="442" y="46" fill="#1a2332" font-size="14" font-weight="700">I/S-CSCF</text><text x="442" y="66" fill="#1a2332" font-size="11">home</text><rect x="640" y="16" width="160" height="72" rx="14" fill="#fde68a" stroke="#e8a317" stroke-width="4"/><text x="650" y="46" fill="#1a2332" font-size="14" font-weight="700">HSS</text><text x="650" y="66" fill="#1a2332" font-size="11">profile</text><line x1="176" y1="118" x2="224" y2="118" stroke="#2563eb" stroke-width="3"/><text x="200.0" y="112" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">SIP  (IMS; port follows the operator P-CSCF)</text><line x1="384" y1="154" x2="432" y2="154" stroke="#2563eb" stroke-width="3"/><text x="408.0" y="148" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">SIP between CSCFs</text><line x1="592" y1="190" x2="640" y2="190" stroke="#2563eb" stroke-width="3"/><text x="616.0" y="184" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">Diameter TCP/SCTP 3868  RFC 6733</text></svg></section>
+<section class="tree"><h3>Failure tree</h3><details><summary>UE never registers</summary><p><strong>Checks.</strong> Is there a default bearer, and did the UE learn a P-CSCF?</p><p class="cause"><strong>Likely cause.</strong> LTE attach succeeded but IMS PDN or P-CSCF discovery failed.</p><p><strong>Fix.</strong> Check the IMS APN and P-CSCF discovery before reading SIP response codes.</p></details><details><summary>401 then a second 401</summary><p><strong>Checks.</strong> Algorithm and synchronization on the second REGISTER.</p><p class="cause"><strong>Likely cause.</strong> Authentication response does not match the HSS vector.</p><p><strong>Fix.</strong> The fault is subscriber data or time sync, not the RTP path.</p></details><details><summary>Registered, but no inbound calls</summary><p><strong>Checks.</strong> Is the S-CSCF still holding a contact and a service route?</p><p class="cause"><strong>Likely cause.</strong> Registration expired, or the terminating path has no reachable contact.</p><p><strong>Fix.</strong> Look at the registration lifetime before opening a media ticket.</p></details></section>
+<section><h3>What this page will and will not claim</h3><div class="wrap-x"><table class="matrix"><thead><tr><th>Topic</th><th>Statement in this atlas</th></tr></thead><tbody><tr><td>IMS roles</td><td>P-CSCF, I-CSCF, S-CSCF, HSS — 3GPP TS 23.228</td></tr><tr><td>VoLTE profile</td><td>GSMA IR.92</td></tr><tr><td>VoNR profile id</td><td>not stated — document id not re-fetched</td></tr><tr><td>EPS fallback steps</td><td>not stated — specification not re-fetched</td></tr><tr><td>SRVCC steps</td><td>not stated — specification not re-fetched</td></tr><tr><td>Diameter port</td><td>3868 TCP/SCTP — RFC 6733 and IANA</td></tr></tbody></table></div></section>
+<section><h3>Flip cards</h3><div class="cards"><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">P-CSCF</span><span class="face back">First IMS contact for the UE. Sits in the visited or home network and forwards SIP.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">I-CSCF</span><span class="face back">Entry to the home network. Asks the HSS which S-CSCF to use.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">S-CSCF</span><span class="face back">Session control and registrar for the subscriber.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">HSS</span><span class="face back">Home subscriber server. Profile and authentication data.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">Diameter</span><span class="face back">RFC 6733. AAA for IMS. IANA port 3868 on TCP and SCTP.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">VoLTE</span><span class="face back">Voice over LTE using IMS, profiled by GSMA IR.92.</span></span></button></div></section>
+<section class="sources"><h3>Sources</h3><ul><li><a href="https://www.3gpp.org/dynareport/23228.htm">3GPP TS 23.228 IMS</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc6733">RFC 6733 Diameter</a></li><li><a href="https://www.gsma.com/">GSMA IR.92</a></li></ul></section>
+</main>
+<footer class="site">Ordinary https anchors are for reading later. This page does not load remote code, fonts, or images.</footer>
+<script src="../assets/atlas.js"></script>
+</body>
+</html>

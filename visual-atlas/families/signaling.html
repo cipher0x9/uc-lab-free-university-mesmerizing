@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Signaling — UC Visual Atlas</title>
+<link rel="stylesheet" href="../assets/atlas.css">
+<style>
+@media (prefers-reduced-motion: reduce) { .packet { display: none; } }
+@media print { .flow-controls, .tools { display: none; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <div>
+    <h1>Signaling</h1>
+    <p>UC Visual Atlas · offline · synthetic addresses from RFC 5737 only</p>
+  </div>
+  <div class="tools">
+    <nav class="crumbs" aria-label="Atlas">
+      <a href="../index.html">Map</a>
+      <a href="../timeline.html">Timeline</a>
+      <a href="../glossary.html">Glossary</a>
+      <a href="../drills.html">Drills</a>
+      <a href="../matrices.html">Matrices</a>
+    </nav>
+    <button type="button" id="theme-toggle">Dark theme</button>
+  </div>
+</header>
+<main id="main">
+<p class="lede">SIP (RFC 3261) is the default session protocol: methods, responses, dialogs, and SDP offer/answer (RFC 3264). H.323 uses H.225.0 for RAS and Q.931-based call signaling, and H.245 for media control. MGCP (RFC 3435) lets a call agent drive a gateway. Cisco SCCP is proprietary. H.248/Megaco is the ITU gateway-control protocol. WebRTC media is set up with ICE, STUN, TURN, and DTLS-SRTP; SIP can ride WebSocket (RFC 7118).</p>
+<h2>Call flows</h2>
+
+<section class="flow-panel" aria-label="SIP basic call with SDP offer/answer">
+  <h3>SIP basic call with SDP offer/answer</h3>
+  <div class="flow-controls">
+    <button type="button" data-act="prev">Prev</button>
+    <button type="button" class="primary" data-act="next">Next</button>
+    <button type="button" data-act="play">Play</button>
+    <button type="button" data-act="reset">Reset</button>
+    <span class="flow-status mono" aria-live="polite"></span>
+  </div>
+  <p class="step-caption" aria-live="polite"></p>
+  <div class="ladder"><svg class="ladder-svg"></svg></div>
+  <p>Keyboard: focus this panel, then Left, Right, Space, Home.</p>
+  <div class="transcript"><strong>Transcript</strong><ol></ol></div>
+  <script>
+  (function () {
+    var panel = document.currentScript.closest(".flow-panel");
+    panel._flow = {"title": "SIP basic call with SDP offer/answer", "parties": ["Alice 192.0.2.10", "Proxy 198.51.100.10", "Bob 203.0.113.20"], "steps": [{"from": 0, "to": 1, "label": "INVITE (SDP offer)", "caption": "Early offer. Alice puts the media offer in the INVITE body (RFC 3264).", "color": "#2563eb"}, {"from": 1, "to": 2, "label": "INVITE (SDP offer)", "caption": "The proxy forwards the request. Via and Record-Route are added as required by RFC 3261.", "color": "#2563eb"}, {"from": 2, "to": 1, "label": "100 Trying", "caption": "Hop-by-hop. Stops Alice's retransmissions. Not forwarded reliably as a dialog response.", "color": "#7c3aed"}, {"from": 1, "to": 0, "label": "100 Trying", "caption": "The proxy tells Alice the INVITE is being handled.", "color": "#7c3aed"}, {"from": 2, "to": 1, "label": "180 Ringing", "caption": "Bob is alerting. A response, not a new request.", "color": "#7c3aed"}, {"from": 1, "to": 0, "label": "180 Ringing", "caption": "Alice plays local ringback unless early media was negotiated.", "color": "#7c3aed"}, {"from": 2, "to": 1, "label": "200 OK (SDP answer)", "caption": "Bob accepts and answers the offer in SDP.", "color": "#15803d"}, {"from": 1, "to": 0, "label": "200 OK (SDP answer)", "caption": "The answer reaches Alice. The dialog is confirmed.", "color": "#15803d"}, {"from": 0, "to": 1, "label": "ACK", "caption": "ACK completes the INVITE transaction. For a 200 OK it is end-to-end.", "color": "#15803d"}, {"from": 1, "to": 2, "label": "ACK", "caption": "Bob's UAS receives the ACK.", "color": "#2563eb"}, {"from": 0, "to": 2, "label": "RTP Alice to Bob", "caption": "Media follows the answer. Addresses are the example addresses in SDP, not the SIP proxy.", "color": "#c2410c"}, {"from": 2, "to": 0, "label": "RTP Bob to Alice", "caption": "RTP is bidirectional. One-way audio means one of these streams is missing.", "color": "#c2410c"}, {"from": 0, "to": 1, "label": "BYE", "caption": "Alice ends the dialog.", "color": "#2563eb"}, {"from": 1, "to": 2, "label": "BYE", "caption": "The proxy routes the BYE along the dialog path.", "color": "#2563eb"}, {"from": 2, "to": 1, "label": "200 OK", "caption": "Bob confirms the BYE.", "color": "#15803d"}, {"from": 1, "to": 0, "label": "200 OK", "caption": "The dialog is gone.", "color": "#15803d"}]};
+  })();
+  </script>
+</section>
+
+
+<section class="flow-panel" aria-label="Delayed offer">
+  <h3>Delayed offer</h3>
+  <div class="flow-controls">
+    <button type="button" data-act="prev">Prev</button>
+    <button type="button" class="primary" data-act="next">Next</button>
+    <button type="button" data-act="play">Play</button>
+    <button type="button" data-act="reset">Reset</button>
+    <span class="flow-status mono" aria-live="polite"></span>
+  </div>
+  <p class="step-caption" aria-live="polite"></p>
+  <div class="ladder"><svg class="ladder-svg"></svg></div>
+  <p>Keyboard: focus this panel, then Left, Right, Space, Home.</p>
+  <div class="transcript"><strong>Transcript</strong><ol></ol></div>
+  <script>
+  (function () {
+    var panel = document.currentScript.closest(".flow-panel");
+    panel._flow = {"title": "Delayed offer", "parties": ["Alice", "Bob"], "steps": [{"from": 0, "to": 1, "label": "INVITE (no SDP)", "caption": "Delayed offer. The INVITE has no session description (RFC 3264 section 5 still allows the answerer to offer).", "color": "#2563eb"}, {"from": 1, "to": 0, "label": "180 Ringing", "caption": "Alerting can happen before media is negotiated.", "color": "#7c3aed"}, {"from": 1, "to": 0, "label": "200 OK (SDP offer)", "caption": "Bob places the offer in the 200 OK.", "color": "#15803d"}, {"from": 0, "to": 1, "label": "ACK (SDP answer)", "caption": "Alice's answer is in the ACK. Media can start only after this.", "color": "#2563eb"}, {"from": 0, "to": 1, "label": "RTP", "caption": "Both directions use the negotiated addresses.", "color": "#c2410c"}]};
+  })();
+  </script>
+</section>
+
+
+<section class="flow-panel" aria-label="H.323 fast start">
+  <h3>H.323 fast start</h3>
+  <div class="flow-controls">
+    <button type="button" data-act="prev">Prev</button>
+    <button type="button" class="primary" data-act="next">Next</button>
+    <button type="button" data-act="play">Play</button>
+    <button type="button" data-act="reset">Reset</button>
+    <span class="flow-status mono" aria-live="polite"></span>
+  </div>
+  <p class="step-caption" aria-live="polite"></p>
+  <div class="ladder"><svg class="ladder-svg"></svg></div>
+  <p>Keyboard: focus this panel, then Left, Right, Space, Home.</p>
+  <div class="transcript"><strong>Transcript</strong><ol></ol></div>
+  <script>
+  (function () {
+    var panel = document.currentScript.closest(".flow-panel");
+    panel._flow = {"title": "H.323 fast start", "parties": ["Endpoint A", "Gatekeeper", "Endpoint B"], "steps": [{"from": 0, "to": 1, "label": "ARQ", "caption": "Registration Admission Status. RAS uses UDP 1719 (IANA h323gatestat).", "color": "#7c3aed"}, {"from": 1, "to": 0, "label": "ACF", "caption": "Admission confirm. The gatekeeper allows the call.", "color": "#15803d"}, {"from": 0, "to": 2, "label": "SETUP + fastStart", "caption": "H.225.0 call signaling on TCP 1720. fastStart carries H.245 open-logical-channel proposals inside SETUP.", "color": "#2563eb"}, {"from": 2, "to": 0, "label": "ALERTING", "caption": "Called side is ringing.", "color": "#7c3aed"}, {"from": 2, "to": 0, "label": "CONNECT + fastStart", "caption": "The answer to the fast-start proposal is in CONNECT. A separate H.245 session is not required when fast start completes.", "color": "#15803d"}, {"from": 0, "to": 2, "label": "RTP", "caption": "Media uses the channels opened by fast start.", "color": "#c2410c"}]};
+  })();
+  </script>
+</section>
+
+
+<section class="flow-panel" aria-label="H.323 slow start">
+  <h3>H.323 slow start</h3>
+  <div class="flow-controls">
+    <button type="button" data-act="prev">Prev</button>
+    <button type="button" class="primary" data-act="next">Next</button>
+    <button type="button" data-act="play">Play</button>
+    <button type="button" data-act="reset">Reset</button>
+    <span class="flow-status mono" aria-live="polite"></span>
+  </div>
+  <p class="step-caption" aria-live="polite"></p>
+  <div class="ladder"><svg class="ladder-svg"></svg></div>
+  <p>Keyboard: focus this panel, then Left, Right, Space, Home.</p>
+  <div class="transcript"><strong>Transcript</strong><ol></ol></div>
+  <script>
+  (function () {
+    var panel = document.currentScript.closest(".flow-panel");
+    panel._flow = {"title": "H.323 slow start", "parties": ["Endpoint A", "Endpoint B"], "steps": [{"from": 0, "to": 1, "label": "SETUP", "caption": "H.225.0 SETUP on TCP 1720 with no usable fastStart element.", "color": "#2563eb"}, {"from": 1, "to": 0, "label": "CONNECT", "caption": "Call signaling is up. Media is not open yet.", "color": "#15803d"}, {"from": 0, "to": 1, "label": "H.245 TCS", "caption": "TerminalCapabilitySet. Slow start exchanges capabilities on H.245.", "color": "#2563eb"}, {"from": 1, "to": 0, "label": "H.245 TCSAck", "caption": "Capabilities accepted.", "color": "#15803d"}, {"from": 0, "to": 1, "label": "OpenLogicalChannel", "caption": "Each direction needs an open logical channel.", "color": "#2563eb"}, {"from": 1, "to": 0, "label": "OLC Ack", "caption": "The channel is open. RTP can start.", "color": "#15803d"}, {"from": 0, "to": 1, "label": "RTP", "caption": "Media follows the H.245 channel addresses.", "color": "#c2410c"}]};
+  })();
+  </script>
+</section>
+
+
+<section class="flow-panel" aria-label="MGCP gateway call">
+  <h3>MGCP gateway call</h3>
+  <div class="flow-controls">
+    <button type="button" data-act="prev">Prev</button>
+    <button type="button" class="primary" data-act="next">Next</button>
+    <button type="button" data-act="play">Play</button>
+    <button type="button" data-act="reset">Reset</button>
+    <span class="flow-status mono" aria-live="polite"></span>
+  </div>
+  <p class="step-caption" aria-live="polite"></p>
+  <div class="ladder"><svg class="ladder-svg"></svg></div>
+  <p>Keyboard: focus this panel, then Left, Right, Space, Home.</p>
+  <div class="transcript"><strong>Transcript</strong><ol></ol></div>
+  <script>
+  (function () {
+    var panel = document.currentScript.closest(".flow-panel");
+    panel._flow = {"title": "MGCP gateway call", "parties": ["Call agent", "Gateway"], "steps": [{"from": 0, "to": 1, "label": "CRCX", "caption": "CreateConnection (RFC 3435). The call agent tells the gateway to reserve a connection. Gateway listens on UDP 2427; the call agent uses UDP 2727.", "color": "#2563eb"}, {"from": 1, "to": 0, "label": "200 (SDP)", "caption": "The gateway returns its local media description.", "color": "#15803d"}, {"from": 0, "to": 1, "label": "MDCX (remote SDP)", "caption": "ModifyConnection installs the far-end address.", "color": "#2563eb"}, {"from": 1, "to": 0, "label": "200", "caption": "The connection is modified.", "color": "#15803d"}, {"from": 1, "to": 1, "label": "RTP on the bearer", "caption": "The gateway sends and receives RTP on the connection. Signaling stays with the call agent.", "color": "#c2410c"}, {"from": 0, "to": 1, "label": "DLCX", "caption": "DeleteConnection tears the bearer down.", "color": "#2563eb"}, {"from": 1, "to": 0, "label": "200", "caption": "The endpoint is idle.", "color": "#15803d"}]};
+  })();
+  </script>
+</section>
+
+
+<section class="flow-panel" aria-label="REFER blind transfer">
+  <h3>REFER blind transfer</h3>
+  <div class="flow-controls">
+    <button type="button" data-act="prev">Prev</button>
+    <button type="button" class="primary" data-act="next">Next</button>
+    <button type="button" data-act="play">Play</button>
+    <button type="button" data-act="reset">Reset</button>
+    <span class="flow-status mono" aria-live="polite"></span>
+  </div>
+  <p class="step-caption" aria-live="polite"></p>
+  <div class="ladder"><svg class="ladder-svg"></svg></div>
+  <p>Keyboard: focus this panel, then Left, Right, Space, Home.</p>
+  <div class="transcript"><strong>Transcript</strong><ol></ol></div>
+  <script>
+  (function () {
+    var panel = document.currentScript.closest(".flow-panel");
+    panel._flow = {"title": "REFER blind transfer", "parties": ["Alice", "Bob", "Carol"], "steps": [{"from": 0, "to": 1, "label": "REFER", "caption": "RFC 3515. Refer-To holds Carol's URI. Alice is the transferor; Bob is the transferee.", "color": "#2563eb"}, {"from": 1, "to": 0, "label": "202 Accepted", "caption": "Bob accepted the REFER. The transfer is not finished.", "color": "#15803d"}, {"from": 1, "to": 2, "label": "INVITE", "caption": "Bob calls Carol because of the REFER.", "color": "#2563eb"}, {"from": 2, "to": 1, "label": "200 OK", "caption": "Carol answered.", "color": "#15803d"}, {"from": 1, "to": 2, "label": "ACK", "caption": "Bob completes the new dialog.", "color": "#2563eb"}, {"from": 1, "to": 0, "label": "NOTIFY (sipfrag 200)", "caption": "Bob reports the result of the referred INVITE in a NOTIFY body.", "color": "#2563eb"}, {"from": 0, "to": 1, "label": "200 OK", "caption": "Alice accepts the NOTIFY.", "color": "#15803d"}, {"from": 0, "to": 1, "label": "BYE", "caption": "Alice drops the original dialog with Bob.", "color": "#2563eb"}, {"from": 1, "to": 0, "label": "200 OK", "caption": "The original dialog is gone. Bob and Carol remain.", "color": "#15803d"}]};
+  })();
+  </script>
+</section>
+
+<h2>Architecture</h2>
+<section class="arch"><h3>Signaling ports on the wires</h3><svg viewBox="0 0 808 258" role="img" aria-label="Signaling ports on the wires"><title>Signaling ports on the wires</title><rect x="16" y="16" width="160" height="72" rx="14" fill="#dbeafe" stroke="#2563eb" stroke-width="4"/><text x="26" y="46" fill="#1a2332" font-size="14" font-weight="700">SIP UA</text><text x="26" y="66" fill="#1a2332" font-size="11">192.0.2.10</text><rect x="224" y="16" width="160" height="72" rx="14" fill="#ede9fe" stroke="#7c3aed" stroke-width="4"/><text x="234" y="46" fill="#1a2332" font-size="14" font-weight="700">H.323 EP</text><text x="234" y="66" fill="#1a2332" font-size="11">RAS + H.225</text><rect x="432" y="16" width="160" height="72" rx="14" fill="#ffe4dc" stroke="#ff7a59" stroke-width="4"/><text x="442" y="46" fill="#1a2332" font-size="14" font-weight="700">MGCP GW</text><text x="442" y="66" fill="#1a2332" font-size="11">gateway</text><rect x="640" y="16" width="160" height="72" rx="14" fill="#fde68a" stroke="#e8a317" stroke-width="4"/><text x="650" y="46" fill="#1a2332" font-size="14" font-weight="700">Call agent</text><text x="650" y="66" fill="#1a2332" font-size="11">MGCP CA</text><line x1="176" y1="118" x2="224" y2="118" stroke="#2563eb" stroke-width="3"/><text x="200.0" y="112" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">SIP 5060 UDP/TCP · 5061 TLS  RFC 3261</text><line x1="384" y1="154" x2="432" y2="154" stroke="#2563eb" stroke-width="3"/><text x="408.0" y="148" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">H.323 RAS UDP 1719 · H.225 TCP 1720</text><line x1="592" y1="190" x2="640" y2="190" stroke="#2563eb" stroke-width="3"/><text x="616.0" y="184" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">MGCP GW UDP 2427 · CA UDP 2727  RFC 3435</text></svg></section>
+<section class="tree"><h3>Failure tree</h3><details><summary>INVITE retransmits, no 100</summary><p><strong>Checks.</strong> Does the next hop answer UDP 5060 or TCP 5060? Is the Via address one the next hop can reach?</p><p class="cause"><strong>Likely cause.</strong> The request is not arriving, or the response is routed to the wrong address.</p><p><strong>Fix.</strong> Check the listening port and that rport (RFC 3581) or a correct Via is in use on UDP.</p></details><details><summary>200 OK, then the call drops</summary><p><strong>Checks.</strong> Was ACK sent, and did it follow the Contact / Route set?</p><p class="cause"><strong>Likely cause.</strong> ACK never reached the UAS, so the UAS retransmits the 200 and then gives up.</p><p><strong>Fix.</strong> Capture both legs. ACK for a 2xx is end-to-end and is a new transaction.</p></details><details><summary>Transfer completes one way only</summary><p><strong>Checks.</strong> REFER response, then the NOTIFY sipfrag, then the new INVITE.</p><p class="cause"><strong>Likely cause.</strong> The transferee sent 202 but the referred INVITE failed, or NOTIFY was blocked.</p><p><strong>Fix.</strong> Read the sipfrag status in NOTIFY before clearing the original dialog.</p></details></section>
+<section><h3>Signaling families (standards and the Cisco proprietary line)</h3><div class="wrap-x"><table class="matrix"><thead><tr><th></th><th>SIP</th><th>H.323</th><th>MGCP</th><th>SCCP (Cisco)</th><th>H.248</th><th>WebRTC</th></tr></thead><tbody><tr><td>Specification</td><td>RFC 3261</td><td>ITU-T H.323 / H.225.0 / H.245</td><td>RFC 3435</td><td>Cisco proprietary</td><td>ITU-T H.248.1</td><td>RFC 8829 JSEP, RFC 8445 ICE, RFC 8834</td></tr><tr><td>Default signaling port</td><td>5060; 5061 TLS</td><td>RAS UDP 1719; call TCP 1720</td><td>2427 gateway; 2727 call agent</td><td>TCP 2000 (Cisco port guide)</td><td>IANA megaco-h248 2944</td><td>Signaling is separate; media uses ICE/DTLS</td></tr><tr><td>Media negotiation</td><td>SDP offer/answer RFC 3264</td><td>H.245 or fast start</td><td>SDP inside MGCP</td><td>Call agent instructs the phone</td><td>Descriptors in H.248</td><td>SDP negotiated by the application (JSEP)</td></tr><tr><td>Who is in charge</td><td>Peers, or a B2BUA</td><td>Peers plus optional gatekeeper</td><td>Call agent</td><td>CUCM</td><td>Media gateway controller</td><td>The web application and the browser</td></tr></tbody></table></div></section>
+<section><h3>Flip cards</h3><div class="cards"><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">Early offer</span><span class="face back">SDP offer is in the INVITE. The answer is in a reliable response, usually the 200 OK.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">Delayed offer</span><span class="face back">INVITE has no SDP. The callee offers in the 200 OK. The caller answers in the ACK.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">PRACK</span><span class="face back">RFC 3262. Reliable provisional responses when 100rel was required. Used when early media must not be lost.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">UPDATE</span><span class="face back">RFC 3311. Changes the session before the INVITE finishes. Not a re-INVITE.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">PAI</span><span class="face back">RFC 3325. P-Asserted-Identity is inserted by a trusted network, not by an untrusted caller.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">Session timers</span><span class="face back">RFC 4028. Session-Expires refreshes a dialog so a dead peer is detected.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">Fast start</span><span class="face back">H.245 logical-channel proposals carried inside H.225 SETUP, so media can open without a full H.245 exchange.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">WebRTC signaling</span><span class="face back">RFC 7118 puts SIP on WebSocket. ICE is RFC 8445, STUN is RFC 8489, TURN is RFC 8656, DTLS-SRTP is RFC 5764.</span></span></button></div></section>
+<section class="sources"><h3>Sources</h3><ul><li><a href="https://www.rfc-editor.org/rfc/rfc3261">RFC 3261 SIP</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc3263">RFC 3263 SRV</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc3264">RFC 3264 offer/answer</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc3262">RFC 3262 PRACK</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc3311">RFC 3311 UPDATE</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc3515">RFC 3515 REFER</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc3891">RFC 3891 Replaces</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc4028">RFC 4028 session timers</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc3325">RFC 3325 PAI</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc3581">RFC 3581 rport</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc8866">RFC 8866 SDP</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc3435">RFC 3435 MGCP</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc7118">RFC 7118 SIP over WebSocket</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc8445">RFC 8445 ICE</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc8489">RFC 8489 STUN</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc8656">RFC 8656 TURN</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc7874">RFC 7874 WebRTC audio</a></li><li><a href="https://www.itu.int/rec/T-REC-H.323">ITU-T H.323</a></li><li><a href="https://www.itu.int/rec/T-REC-H.225.0">ITU-T H.225.0</a></li><li><a href="https://www.itu.int/rec/T-REC-H.245">ITU-T H.245</a></li><li><a href="https://www.itu.int/rec/T-REC-H.248.1">ITU-T H.248.1</a></li></ul></section>
+</main>
+<footer class="site">Ordinary https anchors are for reading later. This page does not load remote code, fonts, or images.</footer>
+<script src="../assets/atlas.js"></script>
+</body>
+</html>

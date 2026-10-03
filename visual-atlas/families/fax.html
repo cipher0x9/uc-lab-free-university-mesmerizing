@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fax over IP — UC Visual Atlas</title>
+<link rel="stylesheet" href="../assets/atlas.css">
+<style>
+@media (prefers-reduced-motion: reduce) { .packet { display: none; } }
+@media print { .flow-controls, .tools { display: none; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <div>
+    <h1>Fax over IP</h1>
+    <p>UC Visual Atlas · offline · synthetic addresses from RFC 5737 only</p>
+  </div>
+  <div class="tools">
+    <nav class="crumbs" aria-label="Atlas">
+      <a href="../index.html">Map</a>
+      <a href="../timeline.html">Timeline</a>
+      <a href="../glossary.html">Glossary</a>
+      <a href="../drills.html">Drills</a>
+      <a href="../matrices.html">Matrices</a>
+    </nav>
+    <button type="button" id="theme-toggle">Dark theme</button>
+  </div>
+</header>
+<main id="main">
+<p class="lede">Group 3 fax on the wire is ITU-T T.30. T.38 carries that session over IP by relaying the fax frames instead of hoping the tones survive RTP. G.711 pass-through leaves the tones in audio and breaks when there is loss, jitter, or a voice codec. RFC 3362 registers the SDP media type image/t38.</p>
+<h2>Call flows</h2>
+
+<section class="flow-panel" aria-label="T.38 re-INVITE switch-over">
+  <h3>T.38 re-INVITE switch-over</h3>
+  <div class="flow-controls">
+    <button type="button" data-act="prev">Prev</button>
+    <button type="button" class="primary" data-act="next">Next</button>
+    <button type="button" data-act="play">Play</button>
+    <button type="button" data-act="reset">Reset</button>
+    <span class="flow-status mono" aria-live="polite"></span>
+  </div>
+  <p class="step-caption" aria-live="polite"></p>
+  <div class="ladder"><svg class="ladder-svg"></svg></div>
+  <p>Keyboard: focus this panel, then Left, Right, Space, Home.</p>
+  <div class="transcript"><strong>Transcript</strong><ol></ol></div>
+  <script>
+  (function () {
+    var panel = document.currentScript.closest(".flow-panel");
+    panel._flow = {"title": "T.38 re-INVITE switch-over", "parties": ["Calling fax", "Gateway", "Called fax"], "steps": [{"from": 0, "to": 1, "label": "INVITE (G.711)", "caption": "The call starts as voice. Fax tone has not switched the media yet.", "color": "#2563eb"}, {"from": 1, "to": 2, "label": "INVITE (G.711)", "caption": "The far gateway is in the audio path.", "color": "#2563eb"}, {"from": 2, "to": 1, "label": "200 OK", "caption": "Voice path is up.", "color": "#15803d"}, {"from": 1, "to": 0, "label": "200 OK", "caption": "Both fax machines are in a voice call.", "color": "#15803d"}, {"from": 0, "to": 1, "label": "CED / CNG in audio", "caption": "Calling or answering tone is heard in the G.711 stream.", "color": "#7c3aed"}, {"from": 1, "to": 2, "label": "re-INVITE image/t38", "caption": "RFC 3362. The gateway asks to replace audio with T.38.", "color": "#2563eb"}, {"from": 2, "to": 1, "label": "200 OK (image/t38)", "caption": "The far side accepts T.38.", "color": "#15803d"}, {"from": 1, "to": 0, "label": "re-INVITE image/t38", "caption": "The near side is switched as well.", "color": "#2563eb"}, {"from": 0, "to": 2, "label": "T.38 IFP", "caption": "Fax frames, not PCM. ITU-T T.38.", "color": "#c2410c"}]};
+  })();
+  </script>
+</section>
+
+<h2>Architecture</h2>
+<section class="arch"><h3>Fax paths</h3><svg viewBox="0 0 808 258" role="img" aria-label="Fax paths"><title>Fax paths</title><rect x="16" y="16" width="160" height="72" rx="14" fill="#f1f5f9" stroke="#64748b" stroke-width="4"/><text x="26" y="46" fill="#1a2332" font-size="14" font-weight="700">Fax A</text><text x="26" y="66" fill="#1a2332" font-size="11">T.30</text><rect x="224" y="16" width="160" height="72" rx="14" fill="#e2e8f0" stroke="#475569" stroke-width="4"/><text x="234" y="46" fill="#1a2332" font-size="14" font-weight="700">Gateway</text><text x="234" y="66" fill="#1a2332" font-size="11">T.38</text><rect x="432" y="16" width="160" height="72" rx="14" fill="#e2e8f0" stroke="#475569" stroke-width="4"/><text x="442" y="46" fill="#1a2332" font-size="14" font-weight="700">Gateway</text><text x="442" y="66" fill="#1a2332" font-size="11">T.38</text><rect x="640" y="16" width="160" height="72" rx="14" fill="#f1f5f9" stroke="#64748b" stroke-width="4"/><text x="650" y="46" fill="#1a2332" font-size="14" font-weight="700">Fax B</text><text x="650" y="66" fill="#1a2332" font-size="11">T.30</text><line x1="176" y1="118" x2="224" y2="118" stroke="#64748b" stroke-width="3"/><text x="200.0" y="112" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">analog T.30 tones toward the gateway</text><line x1="384" y1="154" x2="432" y2="154" stroke="#475569" stroke-width="3"/><text x="408.0" y="148" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">UDPTL/RTP image/t38  RFC 3362</text><line x1="592" y1="190" x2="640" y2="190" stroke="#64748b" stroke-width="3"/><text x="616.0" y="184" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">analog T.30 toward the far fax</text></svg></section>
+<section class="tree"><h3>Failure tree</h3><details><summary>Fax works on a quiet LAN and fails on the WAN</summary><p><strong>Checks.</strong> Loss and jitter on a G.711 pass-through call.</p><p class="cause"><strong>Likely cause.</strong> T.30 cannot tolerate the loss that speech can hide.</p><p><strong>Fix.</strong> Switch to T.38, or reserve a clean G.711 path with no VAD.</p></details><details><summary>re-INVITE for image/t38 is rejected</summary><p><strong>Checks.</strong> 488 or 415 on the re-INVITE.</p><p class="cause"><strong>Likely cause.</strong> The far side has no T.38, or the SDP version is not agreed.</p><p><strong>Fix.</strong> Fall back to G.711 pass-through only if the path is clean. Otherwise fail the fax.</p></details><details><summary>Only the first page arrives</summary><p><strong>Checks.</strong> High-speed training and error correction.</p><p class="cause"><strong>Likely cause.</strong> A codec change or packet loss hit the page data.</p><p><strong>Fix.</strong> Keep a single media type for the whole session and capture both gateways.</p></details></section>
+<section><h3>Two ways to carry fax on IP</h3><div class="wrap-x"><table class="matrix"><thead><tr><th></th><th>T.38</th><th>G.711 pass-through</th></tr></thead><tbody><tr><td>What is in the packets</td><td>Fax relay frames</td><td>PCM audio of the tones</td></tr><tr><td>Standard</td><td>ITU-T T.38; SDP image/t38 is RFC 3362</td><td>ITU-T T.30 tones inside G.711</td></tr><tr><td>Loss</td><td>Designed to survive IP loss better than tones</td><td>Small loss can fail the page</td></tr><tr><td>When to use</td><td>IP path between gateways</td><td>Only a short, clean path</td></tr></tbody></table></div></section>
+<section><h3>Flip cards</h3><div class="cards"><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">T.30</span><span class="face back">ITU-T procedure for Group 3 fax over the telephone network.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">T.38</span><span class="face back">ITU-T procedure for relaying that fax across IP.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">image/t38</span><span class="face back">RFC 3362 media type used in the SDP re-INVITE.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">Pass-through</span><span class="face back">Leave the fax in G.711. No relay. Fragile.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">CNG</span><span class="face back">Calling tone from the sending fax. Gateways listen for it to decide to switch.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">VAD</span><span class="face back">Silence suppression. It clips fax tones. Turn it off on a pass-through call.</span></span></button></div></section>
+<section class="sources"><h3>Sources</h3><ul><li><a href="https://www.itu.int/rec/T-REC-T.30">ITU-T T.30</a></li><li><a href="https://www.itu.int/rec/T-REC-T.38">ITU-T T.38</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc3362">RFC 3362 image/t38</a></li><li><a href="https://www.itu.int/rec/T-REC-G.711">ITU-T G.711</a></li></ul></section>
+</main>
+<footer class="site">Ordinary https anchors are for reading later. This page does not load remote code, fonts, or images.</footer>
+<script src="../assets/atlas.js"></script>
+</body>
+</html>

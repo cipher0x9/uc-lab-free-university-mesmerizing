@@ -1,0 +1,1644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UC Visual Atlas — voice technology world map</title>
+  <link rel="stylesheet" href="assets/atlas.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site">
+    <div>
+      <h1>UC Visual Atlas</h1>
+      <p>Offline world map of voice technology. Synthetic examples only.</p>
+    </div>
+    <div class="tools">
+      <nav class="crumbs" aria-label="Atlas">
+        <a href="timeline.html">Timeline</a>
+        <a href="glossary.html">Glossary</a>
+        <a href="drills.html">Drills</a>
+        <a href="matrices.html">Matrices</a>
+      </nav>
+      <button type="button" id="theme-toggle">Dark theme</button>
+    </div>
+  </header>
+  <main id="main">
+    <p class="lede">Nineteen families of voice technology, joined by the protocols that carry calls. Hover an island, then open its page. Facts on each page cite a standard or a vendor document.</p>
+    <div class="search-wrap">
+      <label for="atlas-search">Search pages, flows, and glossary terms</label><br>
+      <input id="atlas-search" type="search" placeholder="Try INVITE, DSCP, CUBE, E911" autocomplete="off">
+      <ul id="search-results"></ul>
+    </div>
+    <div class="legend" aria-label="Product colours">
+      <span class="swatch"><i class="dot" style="background:var(--cucm)"></i> CUCM saffron</span>
+      <span class="swatch"><i class="dot" style="background:var(--unity)"></i> Unity cyan</span>
+      <span class="swatch"><i class="dot" style="background:var(--uccx)"></i> UCCX lime</span>
+      <span class="swatch"><i class="dot" style="background:var(--webex)"></i> Webex purple</span>
+      <span class="swatch"><i class="dot" style="background:var(--cube)"></i> CUBE coral</span>
+      <span class="swatch"><i class="dot" style="background:var(--e911)"></i> E911 red-gold</span>
+      <span class="swatch"><i class="dot" style="background:var(--stir)"></i> STIR/SHAKEN teal</span>
+      <span class="swatch"><i class="dot" style="background:var(--teams)"></i> Teams indigo</span>
+      <span class="swatch"><i class="dot" style="background:var(--avaya)"></i> Avaya rose</span>
+      <span class="swatch"><i class="dot" style="background:var(--genesys)"></i> Genesys orange</span>
+      <span class="swatch"><i class="dot" style="background:var(--amazon)"></i> Connect amber</span>
+      <span class="swatch"><i class="dot" style="background:var(--twilio)"></i> Twilio raspberry</span>
+      <span class="swatch"><i class="dot" style="background:var(--oss)"></i> Open source green</span>
+    </div>
+    <div class="map-wrap">
+      <svg viewBox="0 0 1100 640" role="img" aria-label="World map of voice technology families">
+        <title>Voice technology families</title>
+        <text x="24" y="28" fill="currentColor" font-size="14">Trade routes = protocols that join the families</text>
+        <line x1="180" y1="150" x2="420" y2="150" stroke="#2563eb" stroke-width="3"/>
+        <text x="250" y="142" fill="#2563eb" font-size="12" font-family="ui-monospace, Menlo, monospace">SIP</text>
+        <line x1="420" y1="180" x2="700" y2="180" stroke="#0891b2" stroke-width="3"/>
+        <text x="520" y="172" fill="#0891b2" font-size="12" font-family="ui-monospace, Menlo, monospace">RTP</text>
+        <line x1="160" y1="220" x2="160" y2="360" stroke="#0369a1" stroke-width="3"/>
+        <text x="168" y="300" fill="#0369a1" font-size="12" font-family="ui-monospace, Menlo, monospace">TDM</text>
+        <a class="island" href="families/pstn-tdm.html" data-blurb="PSTN and TDM: DS0, T1/E1, PRI, Q.931, SS7 ISUP, SIGTRAN.">
+          <rect x="40" y="70" width="200" height="90" rx="18" fill="#e0f2fe" stroke="#0369a1" stroke-width="4"/>
+          <text x="58" y="108" fill="#0c4a6e" font-size="16" font-weight="700">1 PSTN / TDM</text>
+          <text x="58" y="130" fill="#0c4a6e" font-size="12">DS0 · PRI · SS7</text>
+        </a>
+        <a class="island" href="families/analog.html" data-blurb="Analog: FXS provides battery and dial tone; FXO faces the line. Loop start and ground start.">
+          <rect x="40" y="180" width="160" height="70" rx="16" fill="#fef3c7" stroke="#a16207" stroke-width="4"/>
+          <text x="54" y="220" fill="#713f12" font-size="15" font-weight="700">2 Analog</text>
+        </a>
+        <a class="island" href="families/signaling.html" data-blurb="Signaling: SIP, H.323, MGCP, SCCP, H.248, WebRTC.">
+          <rect x="280" y="70" width="210" height="100" rx="18" fill="#dbeafe" stroke="#2563eb" stroke-width="4"/>
+          <text x="298" y="112" fill="#1e3a8a" font-size="16" font-weight="700">3 Signaling</text>
+          <text x="298" y="136" fill="#1e3a8a" font-size="12">SIP · H.323 · MGCP</text>
+        </a>
+        <a class="island" href="families/mobile.html" data-blurb="Mobile voice: IMS P/I/S-CSCF, VoLTE, Diameter.">
+          <rect x="520" y="60" width="180" height="80" rx="16" fill="#ede9fe" stroke="#7c3aed" stroke-width="4"/>
+          <text x="536" y="106" fill="#4c1d95" font-size="15" font-weight="700">4 Mobile voice</text>
+        </a>
+        <a class="island" href="families/media.html" data-blurb="Media: RTP, SRTP, codecs, DTMF, jitter buffers.">
+          <rect x="730" y="70" width="180" height="90" rx="16" fill="#cffafe" stroke="#0891b2" stroke-width="4"/>
+          <text x="748" y="110" fill="#155e75" font-size="15" font-weight="700">5 Media</text>
+          <text x="748" y="132" fill="#155e75" font-size="12">RTP · codecs</text>
+        </a>
+        <a class="island" href="families/sbc-edge.html" data-blurb="SBCs and edge: topology hiding, interworking, CUBE, Expressway.">
+          <rect x="280" y="210" width="190" height="80" rx="16" fill="#ffe4dc" stroke="#ff7a59" stroke-width="4"/>
+          <text x="298" y="256" fill="#7c2d12" font-size="15" font-weight="700">6 SBC / edge</text>
+        </a>
+        <a class="island" href="families/on-prem-uc.html" data-blurb="On-prem PBX and UC: CUCM, Unity, Avaya, Mitel, NEC, Asterisk, FreeSWITCH, Kamailio.">
+          <rect x="500" y="200" width="210" height="90" rx="16" fill="#fde68a" stroke="#e8a317" stroke-width="4"/>
+          <text x="516" y="240" fill="#713f12" font-size="15" font-weight="700">7 On-prem UC</text>
+          <text x="516" y="262" fill="#713f12" font-size="12">CUCM · PBX</text>
+        </a>
+        <a class="island" href="families/cloud-uc.html" data-blurb="Cloud UC: Webex Calling, Teams Phone, Zoom Phone, and others.">
+          <rect x="740" y="200" width="190" height="80" rx="16" fill="#ede9fe" stroke="#8b5cf6" stroke-width="4"/>
+          <text x="756" y="246" fill="#4c1d95" font-size="15" font-weight="700">8 Cloud UC</text>
+        </a>
+        <a class="island" href="families/contact-center.html" data-blurb="Contact center and CCaaS: ACD, IVR, routing, CTI.">
+          <rect x="40" y="300" width="200" height="80" rx="16" fill="#ecfccb" stroke="#7bc142" stroke-width="4"/>
+          <text x="56" y="346" fill="#365314" font-size="15" font-weight="700">9 Contact center</text>
+        </a>
+        <a class="island" href="families/cpaas.html" data-blurb="CPaaS: programmable voice and SIP trunking (Twilio, Vonage, Bandwidth).">
+          <rect x="270" y="330" width="160" height="70" rx="16" fill="#fce7f3" stroke="#db2777" stroke-width="4"/>
+          <text x="286" y="372" fill="#831843" font-size="15" font-weight="700">10 CPaaS</text>
+        </a>
+        <a class="island" href="families/fax.html" data-blurb="Fax over IP: T.38 versus G.711 pass-through.">
+          <rect x="460" y="330" width="150" height="70" rx="16" fill="#f1f5f9" stroke="#64748b" stroke-width="4"/>
+          <text x="476" y="372" fill="#334155" font-size="15" font-weight="700">11 Fax</text>
+        </a>
+        <a class="island" href="families/e911.html" data-blurb="Emergency calling: Kari's Law, RAY BAUM'S Act, PIDF-LO.">
+          <rect x="640" y="320" width="180" height="80" rx="16" fill="#ffedd5" stroke="#c2410c" stroke-width="4"/>
+          <text x="656" y="366" fill="#7c2d12" font-size="15" font-weight="700">12 Emergency</text>
+        </a>
+        <a class="island" href="families/caller-id.html" data-blurb="Caller-ID trust: STIR/SHAKEN, PASSporT, attestation A/B/C.">
+          <rect x="850" y="320" width="200" height="80" rx="16" fill="#ccfbf1" stroke="#0f766e" stroke-width="4"/>
+          <text x="866" y="366" fill="#134e4a" font-size="15" font-weight="700">13 Caller-ID trust</text>
+        </a>
+        <a class="island" href="families/qos.html" data-blurb="QoS: DSCP EF for voice, trust boundary, LLQ.">
+          <rect x="40" y="430" width="160" height="70" rx="16" fill="#cffafe" stroke="#0e7490" stroke-width="4"/>
+          <text x="56" y="472" fill="#164e63" font-size="15" font-weight="700">14 QoS</text>
+        </a>
+        <a class="island" href="families/security.html" data-blurb="Security: SIP TLS, SRTP, SDES, DTLS-SRTP, toll fraud.">
+          <rect x="220" y="440" width="170" height="70" rx="16" fill="#fee2e2" stroke="#b91c1c" stroke-width="4"/>
+          <text x="236" y="482" fill="#7f1d1d" font-size="15" font-weight="700">15 Security</text>
+        </a>
+        <a class="island" href="families/recording.html" data-blurb="Recording: built-in bridge, SPAN, SIPREC.">
+          <rect x="410" y="440" width="170" height="70" rx="16" fill="#f3e8ff" stroke="#9333ea" stroke-width="4"/>
+          <text x="426" y="482" fill="#581c87" font-size="15" font-weight="700">16 Recording</text>
+        </a>
+        <a class="island" href="families/voice-ai.html" data-blurb="Voice AI: ASR, TTS, agent assist, media forking. No accuracy numbers.">
+          <rect x="600" y="440" width="160" height="70" rx="16" fill="#e0e7ff" stroke="#4f46e5" stroke-width="4"/>
+          <text x="616" y="482" fill="#312e81" font-size="15" font-weight="700">17 Voice AI</text>
+        </a>
+        <a class="island" href="families/migrations.html" data-blurb="Migrations: TDM to SIP, CUCM to Webex Calling, on-prem CC to CCaaS.">
+          <rect x="780" y="440" width="170" height="70" rx="16" fill="#ffedd5" stroke="#b45309" stroke-width="4"/>
+          <text x="796" y="482" fill="#7c2d12" font-size="15" font-weight="700">18 Migrations</text>
+        </a>
+        <a class="island" href="families/troubleshooting.html" data-blurb="Troubleshooting: Wireshark, sngrep, RTMT, CUBE debugs, ladder reading.">
+          <rect x="400" y="540" width="280" height="70" rx="16" fill="#ccfbf1" stroke="#0f766e" stroke-width="4"/>
+          <text x="420" y="582" fill="#134e4a" font-size="15" font-weight="700">19 Troubleshooting tools</text>
+        </a>
+      </svg>
+    </div>
+    <p id="island-blurb" class="blurb" role="status">Hover or focus an island to read what that family covers.</p>
+    <h2>Open a family</h2>
+    <div class="grid" id="family-grid"></div>
+  </main>
+  <footer class="site">Offline atlas. Educational links leave this page only when you choose them. No runtime network.</footer>
+  <!-- ATLAS_INDEX_START -->
+  <script>
+    window.ATLAS_INDEX = [
+  {
+    "title": "PSTN / TDM",
+    "href": "families/pstn-tdm.html",
+    "blurb": "Circuit voice: a DS0 is 64 kbit/s. North American T1 carries 24 channels at 1.544 Mbit/s. E1 carries 32 timeslots at 2.048 Mbit/s. PRI is 23B+D on T1 and 30B+D on E1. Call setup on",
+    "tags": "pstn-tdm"
+  },
+  {
+    "title": "ISDN PRI Q.931 call",
+    "href": "families/pstn-tdm.html",
+    "blurb": "PSTN / TDM flow",
+    "tags": "flow ISDN PRI Q.931 call"
+  },
+  {
+    "title": "SS7 ISUP basic call",
+    "href": "families/pstn-tdm.html",
+    "blurb": "PSTN / TDM flow",
+    "tags": "flow SS7 ISUP basic call"
+  },
+  {
+    "title": "Analog",
+    "href": "families/analog.html",
+    "blurb": "FXS and FXO describe which side provides battery and dial tone. An FXS port feeds a telephone. An FXO port faces the line and draws battery from the far side. Loop start signals se",
+    "tags": "analog"
+  },
+  {
+    "title": "Loop-start call from a phone",
+    "href": "families/analog.html",
+    "blurb": "Analog flow",
+    "tags": "flow Loop-start call from a phone"
+  },
+  {
+    "title": "Signaling",
+    "href": "families/signaling.html",
+    "blurb": "SIP (RFC 3261) is the default session protocol: methods, responses, dialogs, and SDP offer/answer (RFC 3264). H.323 uses H.225.0 for RAS and Q.931-based call signaling, and H.245 f",
+    "tags": "signaling"
+  },
+  {
+    "title": "SIP basic call with SDP offer/answer",
+    "href": "families/signaling.html",
+    "blurb": "Signaling flow",
+    "tags": "flow SIP basic call with SDP offer/answer"
+  },
+  {
+    "title": "Delayed offer",
+    "href": "families/signaling.html",
+    "blurb": "Signaling flow",
+    "tags": "flow Delayed offer"
+  },
+  {
+    "title": "H.323 fast start",
+    "href": "families/signaling.html",
+    "blurb": "Signaling flow",
+    "tags": "flow H.323 fast start"
+  },
+  {
+    "title": "H.323 slow start",
+    "href": "families/signaling.html",
+    "blurb": "Signaling flow",
+    "tags": "flow H.323 slow start"
+  },
+  {
+    "title": "MGCP gateway call",
+    "href": "families/signaling.html",
+    "blurb": "Signaling flow",
+    "tags": "flow MGCP gateway call"
+  },
+  {
+    "title": "REFER blind transfer",
+    "href": "families/signaling.html",
+    "blurb": "Signaling flow",
+    "tags": "flow REFER blind transfer"
+  },
+  {
+    "title": "Mobile voice",
+    "href": "families/mobile.html",
+    "blurb": "IMS (3GPP TS 23.228) places P-CSCF, I-CSCF, and S-CSCF in the signaling path and keeps the subscriber profile in the HSS. Diameter (RFC 6733) is the AAA protocol on TCP or SCTP por",
+    "tags": "mobile"
+  },
+  {
+    "title": "VoLTE IMS registration (high level)",
+    "href": "families/mobile.html",
+    "blurb": "Mobile voice flow",
+    "tags": "flow VoLTE IMS registration (high level)"
+  },
+  {
+    "title": "Media",
+    "href": "families/media.html",
+    "blurb": "RTP (RFC 3550) carries the speech. RTCP reports quality. SRTP (RFC 3711) encrypts RTP. RTCP-mux (RFC 5761) puts RTCP on the RTP port. DTMF prefers RFC 4733 telephone-events over in",
+    "tags": "media"
+  },
+  {
+    "title": "RTP after the SIP answer",
+    "href": "families/media.html",
+    "blurb": "Media flow",
+    "tags": "flow RTP after the SIP answer"
+  },
+  {
+    "title": "SBCs / edge",
+    "href": "families/sbc-edge.html",
+    "blurb": "A session border controller hides topology, interworks mismatched SIP, anchors media, and is the place you apply trunk policy. Cisco CUBE is the IOS XE SBC and is Cisco's documente",
+    "tags": "sbc-edge"
+  },
+  {
+    "title": "CUCM to CUBE to ITSP",
+    "href": "families/sbc-edge.html",
+    "blurb": "SBCs / edge flow",
+    "tags": "flow CUCM to CUBE to ITSP"
+  },
+  {
+    "title": "One-way audio from NAT, ALG, or a bad c= line",
+    "href": "families/sbc-edge.html",
+    "blurb": "SBCs / edge flow",
+    "tags": "flow One-way audio from NAT, ALG, or a bad c= line"
+  },
+  {
+    "title": "Expressway MRA registration",
+    "href": "families/sbc-edge.html",
+    "blurb": "SBCs / edge flow",
+    "tags": "flow Expressway MRA registration"
+  },
+  {
+    "title": "On-prem PBX / UC",
+    "href": "families/on-prem-uc.html",
+    "blurb": "Cisco Unified Communications Manager is a cluster: a publisher holds the database, subscribers run call processing, TFTP serves phone files, and CTI serves desk applications. Unity",
+    "tags": "on-prem-uc"
+  },
+  {
+    "title": "SIP phone registration to CUCM",
+    "href": "families/on-prem-uc.html",
+    "blurb": "On-prem PBX / UC flow",
+    "tags": "flow SIP phone registration to CUCM"
+  },
+  {
+    "title": "Cloud UC",
+    "href": "families/cloud-uc.html",
+    "blurb": "Cloud calling keeps registration in the provider cloud and reaches the PSTN through a carrier plan, an operator connection, or a customer SBC. Cisco documents Local Gateway (often ",
+    "tags": "cloud-uc"
+  },
+  {
+    "title": "Teams Phone Direct Routing via SBC",
+    "href": "families/cloud-uc.html",
+    "blurb": "Cloud UC flow",
+    "tags": "flow Teams Phone Direct Routing via SBC"
+  },
+  {
+    "title": "Webex Calling Local Gateway",
+    "href": "families/cloud-uc.html",
+    "blurb": "Cloud UC flow",
+    "tags": "flow Webex Calling Local Gateway"
+  },
+  {
+    "title": "Contact center / CCaaS",
+    "href": "families/contact-center.html",
+    "blurb": "A contact center answers, plays treatment, queues, and delivers the call to an agent. ACD chooses the agent. IVR collects digits or speech. CTI updates the desktop. WFO records and",
+    "tags": "contact-center"
+  },
+  {
+    "title": "Call into queue, then an agent",
+    "href": "families/contact-center.html",
+    "blurb": "Contact center / CCaaS flow",
+    "tags": "flow Call into queue, then an agent"
+  },
+  {
+    "title": "CPaaS",
+    "href": "families/cpaas.html",
+    "blurb": "Communications platform as a service lets an application ask the platform to place or receive calls. Twilio, Vonage, and Bandwidth publish programmable voice and SIP trunking. A we",
+    "tags": "cpaas"
+  },
+  {
+    "title": "Programmable voice, both parties called",
+    "href": "families/cpaas.html",
+    "blurb": "CPaaS flow",
+    "tags": "flow Programmable voice, both parties called"
+  },
+  {
+    "title": "Fax over IP",
+    "href": "families/fax.html",
+    "blurb": "Group 3 fax on the wire is ITU-T T.30. T.38 carries that session over IP by relaying the fax frames instead of hoping the tones survive RTP. G.711 pass-through leaves the tones in ",
+    "tags": "fax"
+  },
+  {
+    "title": "T.38 re-INVITE switch-over",
+    "href": "families/fax.html",
+    "blurb": "Fax over IP flow",
+    "tags": "flow T.38 re-INVITE switch-over"
+  },
+  {
+    "title": "Emergency (E911)",
+    "href": "families/e911.html",
+    "blurb": "Kari's Law (Public Law 115-127) requires multi-line telephone systems to allow a caller to dial 911 without a prefix and to notify a central place on site when a 911 call is made. ",
+    "tags": "e911"
+  },
+  {
+    "title": "E911 call with location",
+    "href": "families/e911.html",
+    "blurb": "Emergency (E911) flow",
+    "tags": "flow E911 call with location"
+  },
+  {
+    "title": "Caller-ID trust",
+    "href": "families/caller-id.html",
+    "blurb": "STIR (RFC 8224) puts a PASSporT (RFC 8225) in the SIP Identity header, signed with a certificate (RFC 8226). SHAKEN is the profile in RFC 8588 and ATIS-1000074. Attestation A means",
+    "tags": "caller-id"
+  },
+  {
+    "title": "STIR/SHAKEN sign and verify",
+    "href": "families/caller-id.html",
+    "blurb": "Caller-ID trust flow",
+    "tags": "flow STIR/SHAKEN sign and verify"
+  },
+  {
+    "title": "QoS / network",
+    "href": "families/qos.html",
+    "blurb": "Differentiated services mark packets with a DSCP. Expedited Forwarding (RFC 3246) is DSCP 46 and is the PHB used for voice. RFC 4594 assigns telephony to EF and signaling to CS5. C",
+    "tags": "qos"
+  },
+  {
+    "title": "Marking at the trust boundary",
+    "href": "families/qos.html",
+    "blurb": "QoS / network flow",
+    "tags": "flow Marking at the trust boundary"
+  },
+  {
+    "title": "Security",
+    "href": "families/security.html",
+    "blurb": "SIP over TLS uses port 5061 (RFC 3261). SRTP (RFC 3711) protects media. SDES (RFC 4568) puts the key in SDP. DTLS-SRTP (RFC 5764) exchanges the key in DTLS and is what WebRTC uses.",
+    "tags": "security"
+  },
+  {
+    "title": "A locked trunk versus an open one",
+    "href": "families/security.html",
+    "blurb": "Security flow",
+    "tags": "flow A locked trunk versus an open one"
+  },
+  {
+    "title": "Recording",
+    "href": "families/recording.html",
+    "blurb": "SIPREC (RFC 7866) lets a session recording client send a copy of a call to a session recording server, with metadata in RFC 7865. A Cisco built-in bridge forks from the phone. A SP",
+    "tags": "recording"
+  },
+  {
+    "title": "SIPREC fork",
+    "href": "families/recording.html",
+    "blurb": "Recording flow",
+    "tags": "flow SIPREC fork"
+  },
+  {
+    "title": "Voice AI",
+    "href": "families/voice-ai.html",
+    "blurb": "Speech can be forked from a live call to a recognizer (ASR) and a synthesizer (TTS) can play prompts back. The same fork can feed a transcript to an agent desktop (agent assist). N",
+    "tags": "voice-ai"
+  },
+  {
+    "title": "Fork media to a recognizer, show text to the agent",
+    "href": "families/voice-ai.html",
+    "blurb": "Voice AI flow",
+    "tags": "flow Fork media to a recognizer, show text to the agent"
+  },
+  {
+    "title": "Migrations",
+    "href": "families/migrations.html",
+    "blurb": "Move one failure domain at a time. A TDM trunk becomes a SIP trunk. A CUCM site can keep its phones while PSTN shifts to a Webex Calling Local Gateway, or the phones can move later",
+    "tags": "migrations"
+  },
+  {
+    "title": "Phased cutover",
+    "href": "families/migrations.html",
+    "blurb": "Migrations flow",
+    "tags": "flow Phased cutover"
+  },
+  {
+    "title": "Troubleshooting tools",
+    "href": "families/troubleshooting.html",
+    "blurb": "Read the ladder before you read a codec. Wireshark's Telephony VoIP Calls window builds that ladder from a capture, and RTP Stream Analysis shows loss and jitter. sngrep shows SIP ",
+    "tags": "troubleshooting"
+  },
+  {
+    "title": "Reading a ladder that ends in 486",
+    "href": "families/troubleshooting.html",
+    "blurb": "Troubleshooting tools flow",
+    "tags": "flow Reading a ladder that ends in 486"
+  },
+  {
+    "title": "ACK",
+    "href": "glossary.html",
+    "blurb": "Confirms a final response to INVITE. For 200 OK it is end to end.",
+    "tags": "signaling RFC 3261"
+  },
+  {
+    "title": "ACM",
+    "href": "glossary.html",
+    "blurb": "Address Complete Message. The ISUP destination has the full number and is alerting.",
+    "tags": "pstn-tdm ITU-T Q.763"
+  },
+  {
+    "title": "ACD",
+    "href": "glossary.html",
+    "blurb": "Automatic call distribution. Selects an agent for a queued call.",
+    "tags": "contact-center "
+  },
+  {
+    "title": "AF41",
+    "href": "glossary.html",
+    "blurb": "Assured Forwarding class 4, drop precedence 1. DSCP 34. Cisco's usual interactive-video mark.",
+    "tags": "qos RFC 2597"
+  },
+  {
+    "title": "ALG",
+    "href": "glossary.html",
+    "blurb": "Application layer gateway. A device that rewrites SIP. A common cause of one-way audio.",
+    "tags": "sbc-edge "
+  },
+  {
+    "title": "AMI",
+    "href": "glossary.html",
+    "blurb": "Alternate mark inversion. A T1 line code. The carrier's choice must match the PBX.",
+    "tags": "pstn-tdm ITU-T G.703"
+  },
+  {
+    "title": "AMR-WB",
+    "href": "glossary.html",
+    "blurb": "Adaptive Multi-Rate Wideband payload in RTP. Modes are listed in the RFC, not scored here.",
+    "tags": "media RFC 4867"
+  },
+  {
+    "title": "ANI",
+    "href": "glossary.html",
+    "blurb": "Automatic number identification. The calling number delivered by the network.",
+    "tags": "pstn-tdm "
+  },
+  {
+    "title": "ANM",
+    "href": "glossary.html",
+    "blurb": "Answer Message. The called party answered an ISUP call.",
+    "tags": "pstn-tdm ITU-T Q.763"
+  },
+  {
+    "title": "ASR",
+    "href": "glossary.html",
+    "blurb": "Automatic speech recognition. Audio in, text out. No accuracy figure is printed in this atlas.",
+    "tags": "voice-ai "
+  },
+  {
+    "title": "Attestation A",
+    "href": "glossary.html",
+    "blurb": "Full attestation. The provider knows the customer and that they may use the number.",
+    "tags": "caller-id ATIS-1000074"
+  },
+  {
+    "title": "Attestation B",
+    "href": "glossary.html",
+    "blurb": "Partial attestation. The customer is known. The number is not verified.",
+    "tags": "caller-id ATIS-1000074"
+  },
+  {
+    "title": "Attestation C",
+    "href": "glossary.html",
+    "blurb": "Gateway attestation. The provider did not authenticate the origin.",
+    "tags": "caller-id ATIS-1000074"
+  },
+  {
+    "title": "B channel",
+    "href": "glossary.html",
+    "blurb": "Bearer channel. 64 kbit/s of user traffic on PRI.",
+    "tags": "pstn-tdm ITU-T Q.931"
+  },
+  {
+    "title": "B2BUA",
+    "href": "glossary.html",
+    "blurb": "Back-to-back user agent. Two dialogs joined by a server that is a UAS on one side and a UAC on the other.",
+    "tags": "signaling RFC 3261"
+  },
+  {
+    "title": "Battery",
+    "href": "glossary.html",
+    "blurb": "DC feed on an analog line. FXS provides it. FXO expects it.",
+    "tags": "analog "
+  },
+  {
+    "title": "BIB",
+    "href": "glossary.html",
+    "blurb": "Built-in bridge. A Cisco phone forks a copy of its media.",
+    "tags": "recording "
+  },
+  {
+    "title": "BRI",
+    "href": "glossary.html",
+    "blurb": "Basic rate interface. Two B channels and one D channel.",
+    "tags": "pstn-tdm ITU-T Q.931"
+  },
+  {
+    "title": "BYE",
+    "href": "glossary.html",
+    "blurb": "Ends a SIP dialog.",
+    "tags": "signaling RFC 3261"
+  },
+  {
+    "title": "CPaaS",
+    "href": "glossary.html",
+    "blurb": "Communications platform as a service. An application asks the platform to place or receive calls.",
+    "tags": "cpaas "
+  },
+  {
+    "title": "CCaaS",
+    "href": "glossary.html",
+    "blurb": "Contact center as a service. The ACD and IVR are operated in the vendor cloud.",
+    "tags": "contact-center "
+  },
+  {
+    "title": "CALL PROCEEDING",
+    "href": "glossary.html",
+    "blurb": "The network has the SETUP and is working on it.",
+    "tags": "pstn-tdm ITU-T Q.931"
+  },
+  {
+    "title": "CANCEL",
+    "href": "glossary.html",
+    "blurb": "Gives up an INVITE that has not received a final response.",
+    "tags": "signaling RFC 3261"
+  },
+  {
+    "title": "CAS",
+    "href": "glossary.html",
+    "blurb": "Channel associated signaling. Bits on the voice channel, including robbed-bit on T1.",
+    "tags": "pstn-tdm "
+  },
+  {
+    "title": "CED",
+    "href": "glossary.html",
+    "blurb": "Called terminal identification tone. The answering fax sends it.",
+    "tags": "fax ITU-T T.30"
+  },
+  {
+    "title": "CNG",
+    "href": "glossary.html",
+    "blurb": "Calling tone. The sending fax uses it. Gateways listen for it.",
+    "tags": "fax ITU-T T.30"
+  },
+  {
+    "title": "CONNECT",
+    "href": "glossary.html",
+    "blurb": "The called party answered. The B channel is cut through.",
+    "tags": "pstn-tdm ITU-T Q.931"
+  },
+  {
+    "title": "CONNECT ACK",
+    "href": "glossary.html",
+    "blurb": "Acknowledges CONNECT. Not required in every national ISDN variant.",
+    "tags": "pstn-tdm ITU-T Q.931"
+  },
+  {
+    "title": "CS3",
+    "href": "glossary.html",
+    "blurb": "Class selector 3, DSCP 24. Cisco's long-standing call-signaling mark. RFC 4594 uses CS5 instead.",
+    "tags": "qos "
+  },
+  {
+    "title": "CS5",
+    "href": "glossary.html",
+    "blurb": "Class selector 5, DSCP 40. The signaling PHB in RFC 4594.",
+    "tags": "qos RFC 4594"
+  },
+  {
+    "title": "CSS",
+    "href": "glossary.html",
+    "blurb": "Calling search space. Cisco list of partitions a caller is allowed to reach.",
+    "tags": "on-prem-uc "
+  },
+  {
+    "title": "CTI",
+    "href": "glossary.html",
+    "blurb": "Computer telephony integration. Cisco CTI Manager listens on TCP 2748 in the port-usage guides.",
+    "tags": "on-prem-uc "
+  },
+  {
+    "title": "CUBE",
+    "href": "glossary.html",
+    "blurb": "Cisco Unified Border Element. The IOS XE session border controller.",
+    "tags": "sbc-edge "
+  },
+  {
+    "title": "CUCM",
+    "href": "glossary.html",
+    "blurb": "Cisco Unified Communications Manager. Cluster call control.",
+    "tags": "on-prem-uc "
+  },
+  {
+    "title": "Calling Plans",
+    "href": "glossary.html",
+    "blurb": "Microsoft is the PSTN carrier for the Teams user. No customer SBC on that path.",
+    "tags": "cloud-uc "
+  },
+  {
+    "title": "Codec",
+    "href": "glossary.html",
+    "blurb": "Coder-decoder. Turns speech into a bitstream and back.",
+    "tags": "media "
+  },
+  {
+    "title": "Contact",
+    "href": "glossary.html",
+    "blurb": "The URI where a UA wants later requests in the dialog.",
+    "tags": "signaling RFC 3261"
+  },
+  {
+    "title": "D channel",
+    "href": "glossary.html",
+    "blurb": "Signaling channel on PRI. Q.931 rides here.",
+    "tags": "pstn-tdm ITU-T Q.931"
+  },
+  {
+    "title": "DLCX",
+    "href": "glossary.html",
+    "blurb": "MGCP DeleteConnection. Tears down a gateway connection.",
+    "tags": "signaling RFC 3435"
+  },
+  {
+    "title": "DS0",
+    "href": "glossary.html",
+    "blurb": "64 kbit/s digital voice channel. 8000 samples per second, 8 bits each.",
+    "tags": "pstn-tdm ITU-T G.711"
+  },
+  {
+    "title": "DSCP",
+    "href": "glossary.html",
+    "blurb": "Differentiated services code point. Six bits in the IP header.",
+    "tags": "qos RFC 2474"
+  },
+  {
+    "title": "DTLS-SRTP",
+    "href": "glossary.html",
+    "blurb": "Keys SRTP with a DTLS handshake. The WebRTC approach.",
+    "tags": "security RFC 5764"
+  },
+  {
+    "title": "DTMF",
+    "href": "glossary.html",
+    "blurb": "Dual-tone multi-frequency digits. On IP, prefer telephone-events to in-band tones.",
+    "tags": "media RFC 4733"
+  },
+  {
+    "title": "Dialog",
+    "href": "glossary.html",
+    "blurb": "A peer-to-peer SIP relationship. Call-ID, local tag, and remote tag.",
+    "tags": "signaling RFC 3261"
+  },
+  {
+    "title": "Dial tone",
+    "href": "glossary.html",
+    "blurb": "The sound an FXS port plays when a phone goes off-hook.",
+    "tags": "analog "
+  },
+  {
+    "title": "Diameter",
+    "href": "glossary.html",
+    "blurb": "AAA protocol used by IMS. IANA port 3868 on TCP and SCTP.",
+    "tags": "mobile RFC 6733"
+  },
+  {
+    "title": "DID",
+    "href": "glossary.html",
+    "blurb": "Direct inward dial. A public number that reaches an extension.",
+    "tags": "pstn-tdm "
+  },
+  {
+    "title": "Direct Routing",
+    "href": "glossary.html",
+    "blurb": "Teams Phone PSTN model where the customer's SBC speaks SIP to Microsoft.",
+    "tags": "cloud-uc "
+  },
+  {
+    "title": "Delayed offer",
+    "href": "glossary.html",
+    "blurb": "INVITE has no SDP. The callee offers in the 200 OK. The caller answers in the ACK.",
+    "tags": "signaling RFC 3264"
+  },
+  {
+    "title": "DISCONNECT",
+    "href": "glossary.html",
+    "blurb": "Starts clearing a PRI call. Carries a cause value.",
+    "tags": "pstn-tdm ITU-T Q.931"
+  },
+  {
+    "title": "Dispatchable location",
+    "href": "glossary.html",
+    "blurb": "A location the emergency services can use to find the caller.",
+    "tags": "e911 RAY BAUM'S Act §506"
+  },
+  {
+    "title": "E1",
+    "href": "glossary.html",
+    "blurb": "32 timeslots, 2.048 Mbit/s. PRI is 30B+D.",
+    "tags": "pstn-tdm ITU-T G.704"
+  },
+  {
+    "title": "EF",
+    "href": "glossary.html",
+    "blurb": "Expedited Forwarding. DSCP 46. The voice per-hop behavior.",
+    "tags": "qos RFC 3246"
+  },
+  {
+    "title": "ELIN",
+    "href": "glossary.html",
+    "blurb": "Cisco term. Emergency location identification number mapped to a place.",
+    "tags": "e911 "
+  },
+  {
+    "title": "EPS fallback",
+    "href": "glossary.html",
+    "blurb": "A 3GPP way to move a voice call from 5G to LTE. Procedure steps are not printed here.",
+    "tags": "mobile "
+  },
+  {
+    "title": "EVS",
+    "href": "glossary.html",
+    "blurb": "Enhanced Voice Services codec. Bitrate table is left in the 3GPP spec.",
+    "tags": "media 3GPP TS 26.441"
+  },
+  {
+    "title": "Early media",
+    "href": "glossary.html",
+    "blurb": "Media before the call is answered, often with 183 Session Progress.",
+    "tags": "signaling RFC 3261"
+  },
+  {
+    "title": "Early offer",
+    "href": "glossary.html",
+    "blurb": "The SDP offer is in the INVITE.",
+    "tags": "signaling RFC 3264"
+  },
+  {
+    "title": "Expressway-C",
+    "href": "glossary.html",
+    "blurb": "Cisco edge node that sits next to CUCM for MRA.",
+    "tags": "sbc-edge "
+  },
+  {
+    "title": "Expressway-E",
+    "href": "glossary.html",
+    "blurb": "Cisco edge node that sits on the outside for MRA. Traversal ports are not printed here.",
+    "tags": "sbc-edge "
+  },
+  {
+    "title": "FXO",
+    "href": "glossary.html",
+    "blurb": "Foreign exchange office. Faces the line and receives battery and dial tone.",
+    "tags": "analog "
+  },
+  {
+    "title": "FXS",
+    "href": "glossary.html",
+    "blurb": "Foreign exchange station. Feeds a phone with battery, dial tone, and ringing.",
+    "tags": "analog "
+  },
+  {
+    "title": "Fast start",
+    "href": "glossary.html",
+    "blurb": "H.245 open-logical-channel proposals carried inside H.225 SETUP.",
+    "tags": "signaling ITU-T H.323"
+  },
+  {
+    "title": "Forking",
+    "href": "glossary.html",
+    "blurb": "A proxy sends one INVITE to several targets.",
+    "tags": "signaling RFC 3261"
+  },
+  {
+    "title": "G.711",
+    "href": "glossary.html",
+    "blurb": "PCM at 64 kbit/s, 8 kHz. µ-law or A-law.",
+    "tags": "media ITU-T G.711"
+  },
+  {
+    "title": "G.722",
+    "href": "glossary.html",
+    "blurb": "Wideband speech. 16 kHz sampling. 64, 56, or 48 kbit/s.",
+    "tags": "media ITU-T G.722"
+  },
+  {
+    "title": "G.729",
+    "href": "glossary.html",
+    "blurb": "8 kbit/s speech codec at 8 kHz.",
+    "tags": "media ITU-T G.729"
+  },
+  {
+    "title": "Geolocation",
+    "href": "glossary.html",
+    "blurb": "SIP header that points at a location value or a reference.",
+    "tags": "e911 RFC 6442"
+  },
+  {
+    "title": "Ground start",
+    "href": "glossary.html",
+    "blurb": "Trunk seizure that grounds one lead so both ends can see who started.",
+    "tags": "analog "
+  },
+  {
+    "title": "H.225.0",
+    "href": "glossary.html",
+    "blurb": "RAS and Q.931-based call signaling for H.323. Call signaling TCP port 1720.",
+    "tags": "signaling ITU-T H.225.0"
+  },
+  {
+    "title": "H.245",
+    "href": "glossary.html",
+    "blurb": "Media control for H.323. Capabilities and logical channels.",
+    "tags": "signaling ITU-T H.245"
+  },
+  {
+    "title": "H.248",
+    "href": "glossary.html",
+    "blurb": "Megaco. A controller drives a media gateway. IANA port 2944.",
+    "tags": "signaling ITU-T H.248.1"
+  },
+  {
+    "title": "H.323",
+    "href": "glossary.html",
+    "blurb": "Packet multimedia system. Uses H.225.0 and H.245.",
+    "tags": "signaling ITU-T H.323"
+  },
+  {
+    "title": "HSS",
+    "href": "glossary.html",
+    "blurb": "Home subscriber server. Profile and authentication for IMS.",
+    "tags": "mobile 3GPP TS 23.228"
+  },
+  {
+    "title": "IAM",
+    "href": "glossary.html",
+    "blurb": "Initial Address Message. Seizes an ISUP circuit and carries the numbers.",
+    "tags": "pstn-tdm ITU-T Q.763"
+  },
+  {
+    "title": "ICE",
+    "href": "glossary.html",
+    "blurb": "Interactive Connectivity Establishment. Finds a working path between two peers.",
+    "tags": "signaling RFC 8445"
+  },
+  {
+    "title": "IM&P",
+    "href": "glossary.html",
+    "blurb": "Cisco IM and Presence service beside CUCM.",
+    "tags": "on-prem-uc "
+  },
+  {
+    "title": "IMS",
+    "href": "glossary.html",
+    "blurb": "IP Multimedia Subsystem. SIP core for carrier voice, including VoLTE.",
+    "tags": "mobile 3GPP TS 23.228"
+  },
+  {
+    "title": "INFO",
+    "href": "glossary.html",
+    "blurb": "Mid-dialog information. Some vendors send DTMF here. RFC 4733 is the better DTMF method.",
+    "tags": "signaling RFC 6086"
+  },
+  {
+    "title": "INVITE",
+    "href": "glossary.html",
+    "blurb": "Creates a SIP session.",
+    "tags": "signaling RFC 3261"
+  },
+  {
+    "title": "ISUP",
+    "href": "glossary.html",
+    "blurb": "ISDN User Part. Call control between telephone exchanges over SS7.",
+    "tags": "pstn-tdm ITU-T Q.761"
+  },
+  {
+    "title": "IVR",
+    "href": "glossary.html",
+    "blurb": "Interactive voice response. Prompts and input before or instead of an agent.",
+    "tags": "contact-center "
+  },
+  {
+    "title": "Identity",
+    "href": "glossary.html",
+    "blurb": "SIP header that carries a PASSporT.",
+    "tags": "caller-id RFC 8224"
+  },
+  {
+    "title": "JSEP",
+    "href": "glossary.html",
+    "blurb": "JavaScript Session Establishment Protocol. How a browser handles SDP for WebRTC.",
+    "tags": "signaling RFC 8829"
+  },
+  {
+    "title": "Jitter buffer",
+    "href": "glossary.html",
+    "blurb": "Holds RTP so playout survives delay variation.",
+    "tags": "media RFC 3550"
+  },
+  {
+    "title": "KPML",
+    "href": "glossary.html",
+    "blurb": "Key Press Markup Language. A SIP package for digits. Not the same as RFC 4733.",
+    "tags": "media RFC 4730"
+  },
+  {
+    "title": "Kari's Law",
+    "href": "glossary.html",
+    "blurb": "Direct dial of 911 on multi-line systems, plus on-site notification.",
+    "tags": "e911 Public Law 115-127"
+  },
+  {
+    "title": "Kamailio",
+    "href": "glossary.html",
+    "blurb": "Open-source SIP server. A proxy and registrar, not a PBX.",
+    "tags": "on-prem-uc "
+  },
+  {
+    "title": "LLQ",
+    "href": "glossary.html",
+    "blurb": "Low-latency queuing. Cisco priority queue used to serve EF voice.",
+    "tags": "qos "
+  },
+  {
+    "title": "Local Gateway",
+    "href": "glossary.html",
+    "blurb": "Customer SBC, documented by Cisco as CUBE, that connects Webex Calling to the PSTN.",
+    "tags": "cloud-uc "
+  },
+  {
+    "title": "Loop start",
+    "href": "glossary.html",
+    "blurb": "Seizure by closing the loop. Right for phones. Weak on two-way trunks.",
+    "tags": "analog "
+  },
+  {
+    "title": "M3UA",
+    "href": "glossary.html",
+    "blurb": "SIGTRAN layer that carries MTP3-user parts such as ISUP over SCTP.",
+    "tags": "pstn-tdm RFC 4666"
+  },
+  {
+    "title": "MDCX",
+    "href": "glossary.html",
+    "blurb": "MGCP ModifyConnection. Installs the remote media address.",
+    "tags": "signaling RFC 3435"
+  },
+  {
+    "title": "MGCP",
+    "href": "glossary.html",
+    "blurb": "Media Gateway Control Protocol. Call agent on UDP 2727, gateway on UDP 2427.",
+    "tags": "signaling RFC 3435"
+  },
+  {
+    "title": "MLTS",
+    "href": "glossary.html",
+    "blurb": "Multi-line telephone system. The kind of PBX Kari's Law addresses.",
+    "tags": "e911 Kari's Law"
+  },
+  {
+    "title": "MRA",
+    "href": "glossary.html",
+    "blurb": "Mobile and Remote Access. Cisco phones register through Expressway-E and Expressway-C.",
+    "tags": "sbc-edge "
+  },
+  {
+    "title": "MTP",
+    "href": "glossary.html",
+    "blurb": "Message Transfer Part. The SS7 packet layer under ISUP.",
+    "tags": "pstn-tdm ITU-T Q.700"
+  },
+  {
+    "title": "Max-Forwards",
+    "href": "glossary.html",
+    "blurb": "Hop limit on a SIP request.",
+    "tags": "signaling RFC 3261"
+  },
+  {
+    "title": "Media anchoring",
+    "href": "glossary.html",
+    "blurb": "RTP terminates on the SBC so each side sends to a known address.",
+    "tags": "sbc-edge "
+  },
+  {
+    "title": "NOTIFY",
+    "href": "glossary.html",
+    "blurb": "Delivers an event. Also carries the REFER result as a sipfrag.",
+    "tags": "signaling RFC 6665"
+  },
+  {
+    "title": "Offer/answer",
+    "href": "glossary.html",
+    "blurb": "One SDP offer, one SDP answer. That is the whole media negotiation.",
+    "tags": "signaling RFC 3264"
+  },
+  {
+    "title": "Operator Connect",
+    "href": "glossary.html",
+    "blurb": "A Teams Phone PSTN model where a participating operator attaches the trunk.",
+    "tags": "cloud-uc "
+  },
+  {
+    "title": "Opus",
+    "href": "glossary.html",
+    "blurb": "Interactive audio codec. RTP payload is RFC 7587. Bitrate is variable.",
+    "tags": "media RFC 6716"
+  },
+  {
+    "title": "OPTIONS",
+    "href": "glossary.html",
+    "blurb": "Asks a UA what it supports. Also used as a SIP keepalive.",
+    "tags": "signaling RFC 3261"
+  },
+  {
+    "title": "P-CSCF",
+    "href": "glossary.html",
+    "blurb": "Proxy CSCF. First IMS SIP hop for the handset.",
+    "tags": "mobile 3GPP TS 23.228"
+  },
+  {
+    "title": "PAI",
+    "href": "glossary.html",
+    "blurb": "P-Asserted-Identity. Inserted by a trusted network.",
+    "tags": "signaling RFC 3325"
+  },
+  {
+    "title": "PASSporT",
+    "href": "glossary.html",
+    "blurb": "Personal assertion token. The signed object in STIR.",
+    "tags": "caller-id RFC 8225"
+  },
+  {
+    "title": "PCMU",
+    "href": "glossary.html",
+    "blurb": "Static payload type 0. G.711 µ-law.",
+    "tags": "media RFC 3551"
+  },
+  {
+    "title": "PCMA",
+    "href": "glossary.html",
+    "blurb": "Static payload type 8. G.711 A-law.",
+    "tags": "media RFC 3551"
+  },
+  {
+    "title": "PIDF-LO",
+    "href": "glossary.html",
+    "blurb": "Presence document that carries civic or coordinate location.",
+    "tags": "e911 RFC 4119"
+  },
+  {
+    "title": "PLC",
+    "href": "glossary.html",
+    "blurb": "Packet loss concealment. The decoder hides a missing packet. It is not a substitute for QoS.",
+    "tags": "media "
+  },
+  {
+    "title": "PRACK",
+    "href": "glossary.html",
+    "blurb": "Provisional acknowledgement. Makes 1xx responses reliable when 100rel is used.",
+    "tags": "signaling RFC 3262"
+  },
+  {
+    "title": "PRI",
+    "href": "glossary.html",
+    "blurb": "Primary rate interface. 23B+D on T1, 30B+D on E1.",
+    "tags": "pstn-tdm ITU-T Q.931"
+  },
+  {
+    "title": "PSAP",
+    "href": "glossary.html",
+    "blurb": "Public safety answering point. The call center that answers emergency calls.",
+    "tags": "e911 "
+  },
+  {
+    "title": "Partition",
+    "href": "glossary.html",
+    "blurb": "Cisco grouping of directory numbers and patterns.",
+    "tags": "on-prem-uc "
+  },
+  {
+    "title": "Packetization",
+    "href": "glossary.html",
+    "blurb": "How many milliseconds of speech go in one RTP packet. 20 ms of G.711 is 160 bytes.",
+    "tags": "media RFC 3551"
+  },
+  {
+    "title": "Publisher",
+    "href": "glossary.html",
+    "blurb": "The CUCM node that holds the database copy of record.",
+    "tags": "on-prem-uc "
+  },
+  {
+    "title": "Q.931",
+    "href": "glossary.html",
+    "blurb": "ISDN layer 3 call control. SETUP through RELEASE COMPLETE.",
+    "tags": "pstn-tdm ITU-T Q.931"
+  },
+  {
+    "title": "RAS",
+    "href": "glossary.html",
+    "blurb": "Registration, Admission, and Status. H.323 UDP port 1719.",
+    "tags": "signaling ITU-T H.225.0"
+  },
+  {
+    "title": "REFER",
+    "href": "glossary.html",
+    "blurb": "Asks another UA to send a request, usually an INVITE for a transfer.",
+    "tags": "signaling RFC 3515"
+  },
+  {
+    "title": "REGISTER",
+    "href": "glossary.html",
+    "blurb": "Binds a contact to an address-of-record.",
+    "tags": "signaling RFC 3261"
+  },
+  {
+    "title": "REL",
+    "href": "glossary.html",
+    "blurb": "ISUP Release. Carries a cause.",
+    "tags": "pstn-tdm ITU-T Q.763"
+  },
+  {
+    "title": "RELEASE",
+    "href": "glossary.html",
+    "blurb": "Frees the PRI channel after DISCONNECT.",
+    "tags": "pstn-tdm ITU-T Q.931"
+  },
+  {
+    "title": "RELEASE COMPLETE",
+    "href": "glossary.html",
+    "blurb": "The PRI channel is idle.",
+    "tags": "pstn-tdm ITU-T Q.931"
+  },
+  {
+    "title": "RFC 4733",
+    "href": "glossary.html",
+    "blurb": "Telephone events in RTP. The DTMF method to prefer on IP. Obsoletes RFC 2833.",
+    "tags": "media RFC 4733"
+  },
+  {
+    "title": "RLC",
+    "href": "glossary.html",
+    "blurb": "ISUP Release Complete. The circuit is free.",
+    "tags": "pstn-tdm ITU-T Q.763"
+  },
+  {
+    "title": "RTCP",
+    "href": "glossary.html",
+    "blurb": "Control protocol beside RTP. Receiver reports.",
+    "tags": "media RFC 3550"
+  },
+  {
+    "title": "RTCP XR",
+    "href": "glossary.html",
+    "blurb": "Extended RTCP reports. More detail than a basic receiver report.",
+    "tags": "media RFC 3611"
+  },
+  {
+    "title": "RTCP-mux",
+    "href": "glossary.html",
+    "blurb": "RTCP on the same port as RTP.",
+    "tags": "media RFC 5761"
+  },
+  {
+    "title": "RTP",
+    "href": "glossary.html",
+    "blurb": "Real-time transport for media. Sequence number, timestamp, payload.",
+    "tags": "media RFC 3550"
+  },
+  {
+    "title": "Record-Route",
+    "href": "glossary.html",
+    "blurb": "A proxy asks to stay on the path for later requests in the dialog.",
+    "tags": "signaling RFC 3261"
+  },
+  {
+    "title": "Replaces",
+    "href": "glossary.html",
+    "blurb": "Header that lets an INVITE replace an existing dialog. Used with attended transfer.",
+    "tags": "signaling RFC 3891"
+  },
+  {
+    "title": "Ring voltage",
+    "href": "glossary.html",
+    "blurb": "The high voltage an FXS port uses to ring a phone. FXO detects it.",
+    "tags": "analog "
+  },
+  {
+    "title": "Robbed-bit",
+    "href": "glossary.html",
+    "blurb": "T1 CAS that takes the least significant bit of certain frames for signaling.",
+    "tags": "pstn-tdm "
+  },
+  {
+    "title": "Route pattern",
+    "href": "glossary.html",
+    "blurb": "Cisco pattern that matches dialed digits and sends the call onward.",
+    "tags": "on-prem-uc "
+  },
+  {
+    "title": "S-CSCF",
+    "href": "glossary.html",
+    "blurb": "Serving CSCF. Registrar and session control for the IMS subscriber.",
+    "tags": "mobile 3GPP TS 23.228"
+  },
+  {
+    "title": "SBC",
+    "href": "glossary.html",
+    "blurb": "Session border controller. Topology hiding, interworking, policy, and often media anchoring.",
+    "tags": "sbc-edge "
+  },
+  {
+    "title": "SCCP (Cisco)",
+    "href": "glossary.html",
+    "blurb": "Skinny Client Control Protocol. Cisco proprietary phone signaling on TCP 2000.",
+    "tags": "on-prem-uc "
+  },
+  {
+    "title": "SCCP (SS7)",
+    "href": "glossary.html",
+    "blurb": "Signaling Connection Control Part. An SS7 layer. Not Cisco Skinny.",
+    "tags": "pstn-tdm ITU-T Q.713"
+  },
+  {
+    "title": "SCTP",
+    "href": "glossary.html",
+    "blurb": "Stream Control Transmission Protocol. RFC 9260 obsoletes RFC 4960. Used by SIGTRAN and Diameter.",
+    "tags": "pstn-tdm RFC 9260"
+  },
+  {
+    "title": "SDES",
+    "href": "glossary.html",
+    "blurb": "Security descriptions. SRTP keys in SDP. The SIP hop must be protected too.",
+    "tags": "security RFC 4568"
+  },
+  {
+    "title": "SDP",
+    "href": "glossary.html",
+    "blurb": "Session Description Protocol. RFC 8866 obsoletes RFC 4566.",
+    "tags": "signaling RFC 8866"
+  },
+  {
+    "title": "SHAKEN",
+    "href": "glossary.html",
+    "blurb": "The telephone-network profile of STIR, with ATIS-1000074.",
+    "tags": "caller-id RFC 8588"
+  },
+  {
+    "title": "SIGTRAN",
+    "href": "glossary.html",
+    "blurb": "The family of protocols that carry SS7 signaling over IP. M3UA is the ISUP path.",
+    "tags": "pstn-tdm RFC 4666"
+  },
+  {
+    "title": "SIP",
+    "href": "glossary.html",
+    "blurb": "Session Initiation Protocol.",
+    "tags": "signaling RFC 3261"
+  },
+  {
+    "title": "SIPREC",
+    "href": "glossary.html",
+    "blurb": "Recording protocol from a session recording client to a session recording server.",
+    "tags": "recording RFC 7866"
+  },
+  {
+    "title": "SIPS",
+    "href": "glossary.html",
+    "blurb": "A SIP URI scheme that asks for TLS. RFC 5630 explains the limits of that request.",
+    "tags": "security RFC 5630"
+  },
+  {
+    "title": "SIP trunk",
+    "href": "glossary.html",
+    "blurb": "SIP between two administrative domains, usually with a B2BUA in the middle.",
+    "tags": "sbc-edge RFC 3261"
+  },
+  {
+    "title": "SRTP",
+    "href": "glossary.html",
+    "blurb": "Secure RTP. Encrypted and authenticated media.",
+    "tags": "security RFC 3711"
+  },
+  {
+    "title": "SRV",
+    "href": "glossary.html",
+    "blurb": "DNS service records used to find a SIP server.",
+    "tags": "signaling RFC 3263"
+  },
+  {
+    "title": "SRVCC",
+    "href": "glossary.html",
+    "blurb": "Single Radio Voice Call Continuity. A 3GPP handoff of a voice call. Steps are not printed here.",
+    "tags": "mobile "
+  },
+  {
+    "title": "SS7",
+    "href": "glossary.html",
+    "blurb": "Signaling System No. 7. The network of exchanges, STPs, and ISUP.",
+    "tags": "pstn-tdm ITU-T Q.700"
+  },
+  {
+    "title": "SETUP",
+    "href": "glossary.html",
+    "blurb": "The message that starts an ISDN call.",
+    "tags": "pstn-tdm ITU-T Q.931"
+  },
+  {
+    "title": "SPAN",
+    "href": "glossary.html",
+    "blurb": "Switch port mirror. Copies frames. Does not understand SIP.",
+    "tags": "recording "
+  },
+  {
+    "title": "STIR",
+    "href": "glossary.html",
+    "blurb": "Secure Telephone Identity Revisited. Signed calling-number assertions.",
+    "tags": "caller-id RFC 8224"
+  },
+  {
+    "title": "STUN",
+    "href": "glossary.html",
+    "blurb": "Session Traversal Utilities for NAT. Default port 3478.",
+    "tags": "signaling RFC 8489"
+  },
+  {
+    "title": "Session-Expires",
+    "href": "glossary.html",
+    "blurb": "The header that sets a SIP session timer.",
+    "tags": "signaling RFC 4028"
+  },
+  {
+    "title": "Slow start",
+    "href": "glossary.html",
+    "blurb": "H.323 media setup that runs a full H.245 exchange after CONNECT.",
+    "tags": "signaling ITU-T H.245"
+  },
+  {
+    "title": "Subscriber",
+    "href": "glossary.html",
+    "blurb": "A CUCM node that processes calls against the cluster database.",
+    "tags": "on-prem-uc "
+  },
+  {
+    "title": "T.30",
+    "href": "glossary.html",
+    "blurb": "Group 3 fax procedure on the telephone network.",
+    "tags": "fax ITU-T T.30"
+  },
+  {
+    "title": "T.38",
+    "href": "glossary.html",
+    "blurb": "Procedure for relaying Group 3 fax over IP.",
+    "tags": "fax ITU-T T.38"
+  },
+  {
+    "title": "T1",
+    "href": "glossary.html",
+    "blurb": "24 channels, 1.544 Mbit/s. PRI is 23B+D.",
+    "tags": "pstn-tdm ITU-T G.704"
+  },
+  {
+    "title": "TCAP",
+    "href": "glossary.html",
+    "blurb": "Transaction Capabilities Application Part. SS7 queries, not the voice call itself.",
+    "tags": "pstn-tdm ITU-T Q.771"
+  },
+  {
+    "title": "TFTP",
+    "href": "glossary.html",
+    "blurb": "Trivial File Transfer Protocol. UDP 69. CUCM phones load their files this way.",
+    "tags": "on-prem-uc RFC 1350"
+  },
+  {
+    "title": "TLS",
+    "href": "glossary.html",
+    "blurb": "Transport Layer Security. SIP uses it on port 5061.",
+    "tags": "security RFC 8446"
+  },
+  {
+    "title": "TRACED Act",
+    "href": "glossary.html",
+    "blurb": "2019 United States statute on caller-ID authentication. Moving FCC dates are not listed.",
+    "tags": "caller-id Public Law 116-105"
+  },
+  {
+    "title": "TTS",
+    "href": "glossary.html",
+    "blurb": "Text to speech. No quality score is printed in this atlas.",
+    "tags": "voice-ai "
+  },
+  {
+    "title": "TURN",
+    "href": "glossary.html",
+    "blurb": "Traversal Using Relays around NAT. Default port 3478. TLS is 5349.",
+    "tags": "signaling RFC 8656"
+  },
+  {
+    "title": "Tip and ring",
+    "href": "glossary.html",
+    "blurb": "The two wires of an analog pair.",
+    "tags": "analog "
+  },
+  {
+    "title": "Topology hiding",
+    "href": "glossary.html",
+    "blurb": "The outside sees the SBC, not the enterprise addresses.",
+    "tags": "sbc-edge "
+  },
+  {
+    "title": "Trust boundary",
+    "href": "glossary.html",
+    "blurb": "The point where you stop believing incoming DSCP marks.",
+    "tags": "qos RFC 4594"
+  },
+  {
+    "title": "UPDATE",
+    "href": "glossary.html",
+    "blurb": "Changes a session before the original INVITE has finished.",
+    "tags": "signaling RFC 3311"
+  },
+  {
+    "title": "Unity Connection",
+    "href": "glossary.html",
+    "blurb": "Cisco voicemail and automated attendant.",
+    "tags": "on-prem-uc "
+  },
+  {
+    "title": "Via",
+    "href": "glossary.html",
+    "blurb": "The path a SIP response takes back to the requester.",
+    "tags": "signaling RFC 3261"
+  },
+  {
+    "title": "VoLTE",
+    "href": "glossary.html",
+    "blurb": "Voice over LTE using the IMS profile in IR.92.",
+    "tags": "mobile GSMA IR.92"
+  },
+  {
+    "title": "VoNR",
+    "href": "glossary.html",
+    "blurb": "Voice over new radio, IMS on 5G. The GSMA document id was not re-fetched, so it is not printed.",
+    "tags": "mobile "
+  },
+  {
+    "title": "WFO",
+    "href": "glossary.html",
+    "blurb": "Workforce optimization. Recording and evaluation around the contact center. Product detail is not stated.",
+    "tags": "contact-center "
+  },
+  {
+    "title": "WebRTC",
+    "href": "glossary.html",
+    "blurb": "Browser real-time media. Audio codec requirements are RFC 7874.",
+    "tags": "signaling RFC 8825"
+  },
+  {
+    "title": "Webhook",
+    "href": "glossary.html",
+    "blurb": "An HTTPS callback from a platform to an application. No secret is shown in this atlas.",
+    "tags": "cpaas "
+  },
+  {
+    "title": "c= line",
+    "href": "glossary.html",
+    "blurb": "The connection address in SDP. If the far end cannot route it, audio is one-way.",
+    "tags": "media RFC 8866"
+  },
+  {
+    "title": "iLBC",
+    "href": "glossary.html",
+    "blurb": "Internet Low Bitrate Codec. 15.2 kbit/s at 20 ms or 13.33 kbit/s at 30 ms.",
+    "tags": "media RFC 3951"
+  },
+  {
+    "title": "image/t38",
+    "href": "glossary.html",
+    "blurb": "SDP media type for a T.38 session.",
+    "tags": "fax RFC 3362"
+  },
+  {
+    "title": "m= line",
+    "href": "glossary.html",
+    "blurb": "The media line in SDP. Port, protocol, and payload types.",
+    "tags": "media RFC 8866"
+  },
+  {
+    "title": "ptime",
+    "href": "glossary.html",
+    "blurb": "Packet time in SDP, in milliseconds.",
+    "tags": "media RFC 8866"
+  },
+  {
+    "title": "rport",
+    "href": "glossary.html",
+    "blurb": "Asks the next hop to send the response to the source port it actually saw.",
+    "tags": "signaling RFC 3581"
+  },
+  {
+    "title": "100 Trying",
+    "href": "glossary.html",
+    "blurb": "Hop-by-hop provisional response. Stops INVITE retransmissions.",
+    "tags": "signaling RFC 3261"
+  },
+  {
+    "title": "180 Ringing",
+    "href": "glossary.html",
+    "blurb": "The far end is alerting.",
+    "tags": "signaling RFC 3261"
+  },
+  {
+    "title": "183 Session Progress",
+    "href": "glossary.html",
+    "blurb": "Progress, often with early media SDP.",
+    "tags": "signaling RFC 3261"
+  },
+  {
+    "title": "200 OK",
+    "href": "glossary.html",
+    "blurb": "Success. On INVITE, the call is answered and the dialog is confirmed after ACK.",
+    "tags": "signaling RFC 3261"
+  },
+  {
+    "title": "401 Unauthorized",
+    "href": "glossary.html",
+    "blurb": "The registrar or UAS wants a digest response.",
+    "tags": "signaling RFC 3261"
+  },
+  {
+    "title": "407 Proxy Authentication Required",
+    "href": "glossary.html",
+    "blurb": "The proxy, not the UAS, wants credentials.",
+    "tags": "signaling RFC 3261"
+  },
+  {
+    "title": "486 Busy Here",
+    "href": "glossary.html",
+    "blurb": "The called UAS is busy. A final response. There will be no RTP.",
+    "tags": "signaling RFC 3261"
+  },
+  {
+    "title": "487 Request Terminated",
+    "href": "glossary.html",
+    "blurb": "The request ended because of a CANCEL or a similar abort.",
+    "tags": "signaling RFC 3261"
+  },
+  {
+    "title": "488 Not Acceptable Here",
+    "href": "glossary.html",
+    "blurb": "The SDP or the request body was refused. Often a codec or SRTP mismatch.",
+    "tags": "signaling RFC 3261"
+  },
+  {
+    "title": "603 Decline",
+    "href": "glossary.html",
+    "blurb": "The called party declined. Unlike 486, proxies should not hunt further.",
+    "tags": "signaling RFC 3261"
+  },
+  {
+    "title": "Glossary",
+    "href": "glossary.html",
+    "blurb": "A to Z voice terms",
+    "tags": "glossary"
+  },
+  {
+    "title": "Timeline",
+    "href": "timeline.html",
+    "blurb": "Dated history of voice",
+    "tags": "history"
+  },
+  {
+    "title": "Drills",
+    "href": "drills.html",
+    "blurb": "Flip cards for codes, ports, codecs, DSCP",
+    "tags": "drill"
+  },
+  {
+    "title": "Matrices",
+    "href": "matrices.html",
+    "blurb": "Vendor and standards matrices",
+    "tags": "matrix"
+  }
+];
+  </script>
+  <!-- ATLAS_INDEX_END -->
+  <script src="assets/atlas.js"></script>
+  <script>
+    (function () {
+      var grid = document.getElementById("family-grid");
+      var items = window.ATLAS_INDEX.filter(function (item) {
+        return item.href.indexOf("families/") === 0;
+      });
+      items.forEach(function (item, n) {
+        var a = document.createElement("a");
+        a.className = "tile";
+        a.href = item.href;
+        a.innerHTML = "<strong>" + (n + 1) + " " + item.title + "</strong><span>" + item.blurb + "</span>";
+        grid.appendChild(a);
+      });
+    })();
+  </script>
+</body>
+</html>

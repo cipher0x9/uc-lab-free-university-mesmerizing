@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Caller-ID trust — UC Visual Atlas</title>
+<link rel="stylesheet" href="../assets/atlas.css">
+<style>
+@media (prefers-reduced-motion: reduce) { .packet { display: none; } }
+@media print { .flow-controls, .tools { display: none; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <div>
+    <h1>Caller-ID trust</h1>
+    <p>UC Visual Atlas · offline · synthetic addresses from RFC 5737 only</p>
+  </div>
+  <div class="tools">
+    <nav class="crumbs" aria-label="Atlas">
+      <a href="../index.html">Map</a>
+      <a href="../timeline.html">Timeline</a>
+      <a href="../glossary.html">Glossary</a>
+      <a href="../drills.html">Drills</a>
+      <a href="../matrices.html">Matrices</a>
+    </nav>
+    <button type="button" id="theme-toggle">Dark theme</button>
+  </div>
+</header>
+<main id="main">
+<p class="lede">STIR (RFC 8224) puts a PASSporT (RFC 8225) in the SIP Identity header, signed with a certificate (RFC 8226). SHAKEN is the profile in RFC 8588 and ATIS-1000074. Attestation A means the provider knows the customer and that they may use the number. Attestation B means the customer is known and the number is not verified. Attestation C is a gateway call the provider did not authenticate. The Pallone-Thune TRACED Act is Public Law 116-105 (2019). Shifting FCC deadline dates are omitted.</p>
+<h2>Call flows</h2>
+
+<section class="flow-panel" aria-label="STIR/SHAKEN sign and verify">
+  <h3>STIR/SHAKEN sign and verify</h3>
+  <div class="flow-controls">
+    <button type="button" data-act="prev">Prev</button>
+    <button type="button" class="primary" data-act="next">Next</button>
+    <button type="button" data-act="play">Play</button>
+    <button type="button" data-act="reset">Reset</button>
+    <span class="flow-status mono" aria-live="polite"></span>
+  </div>
+  <p class="step-caption" aria-live="polite"></p>
+  <div class="ladder"><svg class="ladder-svg"></svg></div>
+  <p>Keyboard: focus this panel, then Left, Right, Space, Home.</p>
+  <div class="transcript"><strong>Transcript</strong><ol></ol></div>
+  <script>
+  (function () {
+    var panel = document.currentScript.closest(".flow-panel");
+    panel._flow = {"title": "STIR/SHAKEN sign and verify", "parties": ["Calling UA", "Originating SP", "Terminating SP", "Called UA"], "steps": [{"from": 0, "to": 1, "label": "INVITE", "caption": "The customer sends a normal INVITE. The customer does not sign SHAKEN.", "color": "#2563eb"}, {"from": 1, "to": 2, "label": "INVITE + Identity", "caption": "The originating service provider signs a PASSporT (RFC 8225) in the Identity header (RFC 8224) and sets attestation A, B, or C.", "color": "#2563eb"}, {"from": 2, "to": 2, "label": "Verify", "caption": "The terminating service provider checks the signature and the certificate (RFC 8226).", "color": "#7c3aed"}, {"from": 2, "to": 3, "label": "INVITE", "caption": "The call is delivered. How the verification result is shown to the user is a provider choice; the parameter name is not printed here.", "color": "#2563eb"}, {"from": 3, "to": 2, "label": "200 OK", "caption": "The called party answered. Signing does not change the media path.", "color": "#15803d"}]};
+  })();
+  </script>
+</section>
+
+<h2>Architecture</h2>
+<section class="arch"><h3>Signing path</h3><svg viewBox="0 0 808 258" role="img" aria-label="Signing path"><title>Signing path</title><rect x="16" y="16" width="160" height="72" rx="14" fill="#ccfbf1" stroke="#0f766e" stroke-width="4"/><text x="26" y="46" fill="#1a2332" font-size="14" font-weight="700">Customer</text><text x="26" y="66" fill="#1a2332" font-size="11">does not sign</text><rect x="224" y="16" width="160" height="72" rx="14" fill="#99f6e4" stroke="#115e59" stroke-width="4"/><text x="234" y="46" fill="#1a2332" font-size="14" font-weight="700">Orig SP</text><text x="234" y="66" fill="#1a2332" font-size="11">signs</text><rect x="432" y="16" width="160" height="72" rx="14" fill="#5eead4" stroke="#134e4a" stroke-width="4"/><text x="442" y="46" fill="#1a2332" font-size="14" font-weight="700">Term SP</text><text x="442" y="66" fill="#1a2332" font-size="11">verifies</text><rect x="640" y="16" width="160" height="72" rx="14" fill="#ccfbf1" stroke="#0f766e" stroke-width="4"/><text x="650" y="46" fill="#1a2332" font-size="14" font-weight="700">Called UA</text><text x="650" y="66" fill="#1a2332" font-size="11">displays</text><line x1="176" y1="118" x2="224" y2="118" stroke="#2563eb" stroke-width="3"/><text x="200.0" y="112" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">SIP INVITE 5060/5061</text><line x1="384" y1="154" x2="432" y2="154" stroke="#2563eb" stroke-width="3"/><text x="408.0" y="148" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">SIP + Identity header  RFC 8224</text><line x1="592" y1="190" x2="640" y2="190" stroke="#2563eb" stroke-width="3"/><text x="616.0" y="184" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">SIP toward the called user</text></svg></section>
+<section class="tree"><h3>Failure tree</h3><details><summary>Calls arrive with no verification</summary><p><strong>Checks.</strong> Is the inbound INVITE missing Identity, or is verification failing?</p><p class="cause"><strong>Likely cause.</strong> The originating provider did not sign, or the certificate chain failed.</p><p><strong>Fix.</strong> Capture the Identity header. Do not strip it on your SBC.</p></details><details><summary>Attestation is always C</summary><p><strong>Checks.</strong> Is this traffic entering through a gateway the provider does not authenticate?</p><p class="cause"><strong>Likely cause.</strong> Gateway attestation is what ATIS-1000074 calls C.</p><p><strong>Fix.</strong> C is a label, not a reason to block by itself. Policy is the provider&#x27;s.</p></details><details><summary>Your SBC removes Identity</summary><p><strong>Checks.</strong> Header manipulation on the trunk.</p><p class="cause"><strong>Likely cause.</strong> A normalization rule treats Identity as unknown and drops it.</p><p><strong>Fix.</strong> Pass Identity and the required date and certificate fields untouched.</p></details></section>
+<section><h3>Attestation (ATIS-1000074 meanings)</h3><div class="wrap-x"><table class="matrix"><thead><tr><th>Level</th><th>Customer authenticated</th><th>Number authorized</th></tr></thead><tbody><tr><td>A Full</td><td>yes</td><td>yes</td></tr><tr><td>B Partial</td><td>yes</td><td>no</td></tr><tr><td>C Gateway</td><td>no</td><td>no</td></tr></tbody></table></div></section>
+<section><h3>Flip cards</h3><div class="cards"><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">PASSporT</span><span class="face back">RFC 8225. The token that asserts the calling number and attestation.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">Identity header</span><span class="face back">RFC 8224. Where the PASSporT rides in SIP.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">RFC 8226</span><span class="face back">Certificates for STIR.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">A / B / C</span><span class="face back">Full, partial, and gateway attestation.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">SHAKEN</span><span class="face back">RFC 8588 profile of STIR for the telephone network, with ATIS-1000074.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">TRACED Act</span><span class="face back">Public Law 116-105 (2019). Deadline dates that moved are not listed.</span></span></button></div></section>
+<section class="sources"><h3>Sources</h3><ul><li><a href="https://www.rfc-editor.org/rfc/rfc8224">RFC 8224</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc8225">RFC 8225 PASSporT</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc8226">RFC 8226</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc8588">RFC 8588 SHAKEN</a></li><li><a href="https://www.atis.org/">ATIS-1000074</a></li><li><a href="https://www.congress.gov/bill/116th-congress/senate-bill/151">TRACED Act, Public Law 116-105</a></li></ul></section>
+</main>
+<footer class="site">Ordinary https anchors are for reading later. This page does not load remote code, fonts, or images.</footer>
+<script src="../assets/atlas.js"></script>
+</body>
+</html>

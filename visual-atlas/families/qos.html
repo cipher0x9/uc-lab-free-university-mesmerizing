@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QoS / network — UC Visual Atlas</title>
+<link rel="stylesheet" href="../assets/atlas.css">
+<style>
+@media (prefers-reduced-motion: reduce) { .packet { display: none; } }
+@media print { .flow-controls, .tools { display: none; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <div>
+    <h1>QoS / network</h1>
+    <p>UC Visual Atlas · offline · synthetic addresses from RFC 5737 only</p>
+  </div>
+  <div class="tools">
+    <nav class="crumbs" aria-label="Atlas">
+      <a href="../index.html">Map</a>
+      <a href="../timeline.html">Timeline</a>
+      <a href="../glossary.html">Glossary</a>
+      <a href="../drills.html">Drills</a>
+      <a href="../matrices.html">Matrices</a>
+    </nav>
+    <button type="button" id="theme-toggle">Dark theme</button>
+  </div>
+</header>
+<main id="main">
+<p class="lede">Differentiated services mark packets with a DSCP. Expedited Forwarding (RFC 3246) is DSCP 46 and is the PHB used for voice. RFC 4594 assigns telephony to EF and signaling to CS5. Cisco enterprise QoS baselines have long used EF for voice, AF41 (DSCP 34) for interactive video, and CS3 (DSCP 24) for call signaling. Confirm the current Cisco QoS design guide before you copy CS3 into a policy. A trust boundary is the place you decide which marks to believe. LLQ is the Cisco scheduler that serves a priority queue for that EF traffic.</p>
+<h2>Call flows</h2>
+
+<section class="flow-panel" aria-label="Marking at the trust boundary">
+  <h3>Marking at the trust boundary</h3>
+  <div class="flow-controls">
+    <button type="button" data-act="prev">Prev</button>
+    <button type="button" class="primary" data-act="next">Next</button>
+    <button type="button" data-act="play">Play</button>
+    <button type="button" data-act="reset">Reset</button>
+    <span class="flow-status mono" aria-live="polite"></span>
+  </div>
+  <p class="step-caption" aria-live="polite"></p>
+  <div class="ladder"><svg class="ladder-svg"></svg></div>
+  <p>Keyboard: focus this panel, then Left, Right, Space, Home.</p>
+  <div class="transcript"><strong>Transcript</strong><ol></ol></div>
+  <script>
+  (function () {
+    var panel = document.currentScript.closest(".flow-panel");
+    panel._flow = {"title": "Marking at the trust boundary", "parties": ["Phone", "Access switch", "WAN router"], "steps": [{"from": 0, "to": 1, "label": "Voice packet", "caption": "The phone may mark EF. The switch decides whether that mark is trusted.", "color": "#2563eb"}, {"from": 1, "to": 1, "label": "Trust or remark", "caption": "If the port is trusted, EF stays. If not, the switch writes the policy mark.", "color": "#7c3aed"}, {"from": 1, "to": 2, "label": "EF toward the WAN", "caption": "DSCP 46 enters the router. RFC 3246 defines the EF PHB.", "color": "#15803d"}, {"from": 2, "to": 2, "label": "LLQ", "caption": "The priority queue serves EF ahead of ordinary data. Size the queue for the calls you actually admit.", "color": "#7c3aed"}]};
+  })();
+  </script>
+</section>
+
+<h2>Architecture</h2>
+<section class="arch"><h3>Trust boundary</h3><svg viewBox="0 0 720 222" role="img" aria-label="Trust boundary"><title>Trust boundary</title><rect x="16" y="16" width="160" height="72" rx="14" fill="#cffafe" stroke="#0e7490" stroke-width="4"/><text x="26" y="46" fill="#1a2332" font-size="14" font-weight="700">Phone</text><text x="26" y="66" fill="#1a2332" font-size="11">may mark EF</text><rect x="224" y="16" width="160" height="72" rx="14" fill="#a5f3fc" stroke="#155e75" stroke-width="4"/><text x="234" y="46" fill="#1a2332" font-size="14" font-weight="700">Switch</text><text x="234" y="66" fill="#1a2332" font-size="11">trust point</text><rect x="432" y="16" width="160" height="72" rx="14" fill="#e0f2fe" stroke="#0369a1" stroke-width="4"/><text x="442" y="46" fill="#1a2332" font-size="14" font-weight="700">Router</text><text x="442" y="66" fill="#1a2332" font-size="11">LLQ</text><line x1="176" y1="118" x2="224" y2="118" stroke="#0e7490" stroke-width="3"/><text x="200.0" y="112" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">RTP UDP  voice VLAN</text><line x1="384" y1="154" x2="432" y2="154" stroke="#0369a1" stroke-width="3"/><text x="408.0" y="148" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">DSCP EF 46 if trusted  RFC 3246</text></svg></section>
+<section class="tree"><h3>Failure tree</h3><details><summary>Voice is marked EF on the phone and AF11 on the WAN</summary><p><strong>Checks.</strong> The mark on the phone port and on the WAN interface.</p><p class="cause"><strong>Likely cause.</strong> The access port does not trust the phone, or a later hop rewrites DSCP.</p><p><strong>Fix.</strong> Trust the voice VLAN only, and stop rewriting EF.</p></details><details><summary>Priority queue drops even at low call counts</summary><p><strong>Checks.</strong> How many calls, which codec, and the priority bandwidth.</p><p class="cause"><strong>Likely cause.</strong> The queue is smaller than the calls you admitted. A G.711 call is 64 kbit/s of payload plus RTP/UDP/IP overhead.</p><p><strong>Fix.</strong> Admit calls to match the queue. Do not invent a per-call overhead number you have not measured.</p></details><details><summary>Signaling lags and media is fine</summary><p><strong>Checks.</strong> DSCP on SIP versus RTP.</p><p class="cause"><strong>Likely cause.</strong> Media is EF and signaling was left at 0, or the reverse of your policy.</p><p><strong>Fix.</strong> Mark signaling on purpose. RFC 4594 says CS5. Cisco baselines have used CS3. Pick one and document it.</p></details></section>
+<section><h3>DSCP values used in voice designs</h3><div class="wrap-x"><table class="matrix"><thead><tr><th>Traffic</th><th>DSCP</th><th>PHB name</th><th>Where it is written</th></tr></thead><tbody><tr><td>Voice media</td><td>46</td><td>EF</td><td>RFC 3246; RFC 4594 telephony</td></tr><tr><td>Interactive video</td><td>34</td><td>AF41</td><td>Cisco baseline; confirm current guide</td></tr><tr><td>Call signaling (Cisco baseline)</td><td>24</td><td>CS3</td><td>Cisco QoS baseline; confirm current guide</td></tr><tr><td>Signaling (RFC 4594)</td><td>40</td><td>CS5</td><td>RFC 4594</td></tr></tbody></table></div></section>
+<section><h3>Flip cards</h3><div class="cards"><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">EF / 46</span><span class="face back">Expedited Forwarding. RFC 3246. The voice mark.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">AF41 / 34</span><span class="face back">Assured Forwarding class 4, low drop. Cisco&#x27;s usual interactive-video mark.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">CS3 / 24</span><span class="face back">Class selector 3. Cisco&#x27;s long-standing call-signaling mark. Not the RFC 4594 signaling mark.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">CS5 / 40</span><span class="face back">The signaling PHB in RFC 4594.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">Trust boundary</span><span class="face back">The last place you accept someone else&#x27;s DSCP.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">LLQ</span><span class="face back">Low-latency queue. Cisco priority queue for EF. It is a scheduler, not a DSCP.</span></span></button></div></section>
+<section class="sources"><h3>Sources</h3><ul><li><a href="https://www.rfc-editor.org/rfc/rfc3246">RFC 3246 EF</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc4594">RFC 4594 guidelines</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc2597">RFC 2597 AF</a></li><li><a href="https://www.cisco.com/c/en/us/tech/quality-of-service-qos/index.html">Cisco QoS</a></li></ul></section>
+</main>
+<footer class="site">Ordinary https anchors are for reading later. This page does not load remote code, fonts, or images.</footer>
+<script src="../assets/atlas.js"></script>
+</body>
+</html>

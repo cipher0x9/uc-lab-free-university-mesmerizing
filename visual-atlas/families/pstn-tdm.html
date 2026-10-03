@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PSTN / TDM — UC Visual Atlas</title>
+<link rel="stylesheet" href="../assets/atlas.css">
+<style>
+@media (prefers-reduced-motion: reduce) { .packet { display: none; } }
+@media print { .flow-controls, .tools { display: none; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <div>
+    <h1>PSTN / TDM</h1>
+    <p>UC Visual Atlas · offline · synthetic addresses from RFC 5737 only</p>
+  </div>
+  <div class="tools">
+    <nav class="crumbs" aria-label="Atlas">
+      <a href="../index.html">Map</a>
+      <a href="../timeline.html">Timeline</a>
+      <a href="../glossary.html">Glossary</a>
+      <a href="../drills.html">Drills</a>
+      <a href="../matrices.html">Matrices</a>
+    </nav>
+    <button type="button" id="theme-toggle">Dark theme</button>
+  </div>
+</header>
+<main id="main">
+<p class="lede">Circuit voice: a DS0 is 64 kbit/s. North American T1 carries 24 channels at 1.544 Mbit/s. E1 carries 32 timeslots at 2.048 Mbit/s. PRI is 23B+D on T1 and 30B+D on E1. Call setup on the D channel is ITU-T Q.931. Between exchanges, ISUP runs over SS7, and SIGTRAN carries MTP3 signaling over IP with M3UA and SCTP.</p>
+<h2>Call flows</h2>
+
+<section class="flow-panel" aria-label="ISDN PRI Q.931 call">
+  <h3>ISDN PRI Q.931 call</h3>
+  <div class="flow-controls">
+    <button type="button" data-act="prev">Prev</button>
+    <button type="button" class="primary" data-act="next">Next</button>
+    <button type="button" data-act="play">Play</button>
+    <button type="button" data-act="reset">Reset</button>
+    <span class="flow-status mono" aria-live="polite"></span>
+  </div>
+  <p class="step-caption" aria-live="polite"></p>
+  <div class="ladder"><svg class="ladder-svg"></svg></div>
+  <p>Keyboard: focus this panel, then Left, Right, Space, Home.</p>
+  <div class="transcript"><strong>Transcript</strong><ol></ol></div>
+  <script>
+  (function () {
+    var panel = document.currentScript.closest(".flow-panel");
+    panel._flow = {"title": "ISDN PRI Q.931 call", "parties": ["PBX 192.0.2.10", "CO switch"], "steps": [{"from": 0, "to": 1, "label": "SETUP", "caption": "Calling party offers the call on the D channel. Bearer capability and called number are in the Q.931 information elements (ITU-T Q.931).", "color": "#2563eb"}, {"from": 1, "to": 0, "label": "CALL PROCEEDING", "caption": "The network has accepted the SETUP and is processing the call. No end-to-end alerting yet.", "color": "#7c3aed"}, {"from": 1, "to": 0, "label": "ALERTING", "caption": "The far end is being alerted. This is the Q.931 equivalent of ringing.", "color": "#7c3aed"}, {"from": 1, "to": 0, "label": "CONNECT", "caption": "The called party answered. The B channel is cut through for speech.", "color": "#15803d"}, {"from": 0, "to": 1, "label": "CONNECT ACK", "caption": "The user acknowledges CONNECT. Some networks do not require it in every national variant.", "color": "#15803d"}, {"from": 0, "to": 1, "label": "DISCONNECT", "caption": "Either side clears. Cause value explains why (normal clearing is cause 16).", "color": "#2563eb"}, {"from": 1, "to": 0, "label": "RELEASE", "caption": "The channel is being freed.", "color": "#15803d"}, {"from": 0, "to": 1, "label": "RELEASE COMPLETE", "caption": "The B channel returns to idle.", "color": "#15803d"}]};
+  })();
+  </script>
+</section>
+
+
+<section class="flow-panel" aria-label="SS7 ISUP basic call">
+  <h3>SS7 ISUP basic call</h3>
+  <div class="flow-controls">
+    <button type="button" data-act="prev">Prev</button>
+    <button type="button" class="primary" data-act="next">Next</button>
+    <button type="button" data-act="play">Play</button>
+    <button type="button" data-act="reset">Reset</button>
+    <span class="flow-status mono" aria-live="polite"></span>
+  </div>
+  <p class="step-caption" aria-live="polite"></p>
+  <div class="ladder"><svg class="ladder-svg"></svg></div>
+  <p>Keyboard: focus this panel, then Left, Right, Space, Home.</p>
+  <div class="transcript"><strong>Transcript</strong><ol></ol></div>
+  <script>
+  (function () {
+    var panel = document.currentScript.closest(".flow-panel");
+    panel._flow = {"title": "SS7 ISUP basic call", "parties": ["Exchange A", "Exchange B"], "steps": [{"from": 0, "to": 1, "label": "IAM", "caption": "Initial Address Message. Seizes the circuit and carries the called and calling numbers (ITU-T Q.763 / Q.764).", "color": "#2563eb"}, {"from": 1, "to": 0, "label": "ACM", "caption": "Address Complete Message. The destination exchange has enough digits and is alerting.", "color": "#7c3aed"}, {"from": 1, "to": 0, "label": "ANM", "caption": "Answer Message. The called party answered. Charging may start here.", "color": "#15803d"}, {"from": 0, "to": 1, "label": "REL", "caption": "Release. A cause code says why the call is clearing.", "color": "#2563eb"}, {"from": 1, "to": 0, "label": "RLC", "caption": "Release Complete. The circuit is idle at both ends.", "color": "#15803d"}]};
+  })();
+  </script>
+</section>
+
+<h2>Architecture</h2>
+<section class="arch"><h3>PRI and SIGTRAN wires</h3><svg viewBox="0 0 808 258" role="img" aria-label="PRI and SIGTRAN wires"><title>PRI and SIGTRAN wires</title><rect x="16" y="16" width="160" height="72" rx="14" fill="#e0f2fe" stroke="#0369a1" stroke-width="4"/><text x="26" y="46" fill="#1a2332" font-size="14" font-weight="700">PBX</text><text x="26" y="66" fill="#1a2332" font-size="11">Q.931 user</text><rect x="224" y="16" width="160" height="72" rx="14" fill="#ffe4dc" stroke="#ff7a59" stroke-width="4"/><text x="234" y="46" fill="#1a2332" font-size="14" font-weight="700">Gateway</text><text x="234" y="66" fill="#1a2332" font-size="11">TDM and IP</text><rect x="432" y="16" width="160" height="72" rx="14" fill="#dbeafe" stroke="#2563eb" stroke-width="4"/><text x="442" y="46" fill="#1a2332" font-size="14" font-weight="700">STP / SG</text><text x="442" y="66" fill="#1a2332" font-size="11">SIGTRAN</text><rect x="640" y="16" width="160" height="72" rx="14" fill="#e0f2fe" stroke="#0369a1" stroke-width="4"/><text x="650" y="46" fill="#1a2332" font-size="14" font-weight="700">Exchange</text><text x="650" y="66" fill="#1a2332" font-size="11">ISUP</text><line x1="176" y1="118" x2="224" y2="118" stroke="#2563eb" stroke-width="3"/><text x="200.0" y="112" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">PRI D: Q.931 on the D channel (23B+D or 30B+D)</text><line x1="384" y1="154" x2="432" y2="154" stroke="#2563eb" stroke-width="3"/><text x="408.0" y="148" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">M3UA / SCTP  RFC 4666, RFC 9260</text><line x1="592" y1="190" x2="640" y2="190" stroke="#2563eb" stroke-width="3"/><text x="616.0" y="184" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">ISUP over MTP  ITU-T Q.761–Q.764</text></svg></section>
+<section class="tree"><h3>Failure tree</h3><details><summary>PRI stays down after a carrier test</summary><p><strong>Checks.</strong> Layer 1 framing and line code, then Q.921 on the D channel (SABME / UA), then Q.931.</p><p class="cause"><strong>Likely cause.</strong> Framing mismatch (ESF vs SF, or B8ZS vs AMI) or the D channel is not in multiple-frame established state.</p><p><strong>Fix.</strong> Match the carrier&#x27;s framing and line code. Confirm Q.921 is up before debugging Q.931 SETUP.</p></details><details><summary>Calls ring but have no talk path</summary><p><strong>Checks.</strong> Which B channel was assigned in the CONNECT, and whether both sides use the same channel numbering.</p><p class="cause"><strong>Likely cause.</strong> One side is counting B channels from a different timeslot map (NFAS or a shifted E1 map).</p><p><strong>Fix.</strong> Compare the channel ID information element with the trunk timeslot map.</p></details><details><summary>ISUP call releases at once</summary><p><strong>Checks.</strong> REL cause code.</p><p class="cause"><strong>Likely cause.</strong> Unallocated number, congestion, or a missing circuit group.</p><p><strong>Fix.</strong> Read the cause. Do not change the dial plan until the cause matches the symptom.</p></details></section>
+<section><h3>T1 PRI and E1 PRI (standards, not vendors)</h3><div class="wrap-x"><table class="matrix"><thead><tr><th></th><th>T1 / 23B+D</th><th>E1 / 30B+D</th></tr></thead><tbody><tr><td>Aggregate rate</td><td>1.544 Mbit/s</td><td>2.048 Mbit/s</td></tr><tr><td>Timeslots</td><td>24 (23 bearer + 1 D)</td><td>32 (30 bearer + 1 D + framing)</td></tr><tr><td>Speech channel</td><td>DS0 64 kbit/s</td><td>DS0 64 kbit/s</td></tr><tr><td>Call control</td><td>ITU-T Q.931</td><td>ITU-T Q.931</td></tr><tr><td>CAS alternative</td><td>Robbed-bit on T1</td><td>Channel associated signaling on E1 timeslot 16</td></tr></tbody></table></div></section>
+<section><h3>Flip cards</h3><div class="cards"><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">DS0</span><span class="face back">64 kbit/s. One PCM voice channel: 8000 samples/s × 8 bits (ITU-T G.711).</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">T1</span><span class="face back">24 channels, 1.544 Mbit/s. PRI uses 23 B channels plus one D channel.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">E1</span><span class="face back">32 timeslots, 2.048 Mbit/s. PRI uses 30 B channels plus a D channel.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">CAS / robbed-bit</span><span class="face back">Signaling bits are stolen from the voice channel. No separate D channel.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">Q.931</span><span class="face back">ISDN user-network layer 3: SETUP, CALL PROCEEDING, ALERTING, CONNECT, DISCONNECT, RELEASE.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">ISUP vs Cisco SCCP</span><span class="face back">ISUP is SS7 call control (Q.761–Q.764). Cisco Skinny is a different protocol that shares the letters SCCP.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">M3UA</span><span class="face back">RFC 4666. Carries MTP3-user signaling (such as ISUP) over SCTP.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">SCTP</span><span class="face back">RFC 9260 obsoletes RFC 4960. Multi-homed, message-oriented transport used by SIGTRAN.</span></span></button></div></section>
+<section class="sources"><h3>Sources</h3><ul><li><a href="https://www.itu.int/rec/T-REC-G.703">ITU-T G.703</a></li><li><a href="https://www.itu.int/rec/T-REC-G.704">ITU-T G.704</a></li><li><a href="https://www.itu.int/rec/T-REC-Q.931">ITU-T Q.931</a></li><li><a href="https://www.itu.int/rec/T-REC-Q.700">ITU-T Q.700 series</a></li><li><a href="https://www.itu.int/rec/T-REC-Q.764">ITU-T Q.761–Q.764</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc4666">RFC 4666 M3UA</a></li><li><a href="https://www.rfc-editor.org/rfc/rfc9260">RFC 9260 SCTP</a></li></ul></section>
+</main>
+<footer class="site">Ordinary https anchors are for reading later. This page does not load remote code, fonts, or images.</footer>
+<script src="../assets/atlas.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Analog — UC Visual Atlas</title>
+<link rel="stylesheet" href="../assets/atlas.css">
+<style>
+@media (prefers-reduced-motion: reduce) { .packet { display: none; } }
+@media print { .flow-controls, .tools { display: none; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <div>
+    <h1>Analog</h1>
+    <p>UC Visual Atlas · offline · synthetic addresses from RFC 5737 only</p>
+  </div>
+  <div class="tools">
+    <nav class="crumbs" aria-label="Atlas">
+      <a href="../index.html">Map</a>
+      <a href="../timeline.html">Timeline</a>
+      <a href="../glossary.html">Glossary</a>
+      <a href="../drills.html">Drills</a>
+      <a href="../matrices.html">Matrices</a>
+    </nav>
+    <button type="button" id="theme-toggle">Dark theme</button>
+  </div>
+</header>
+<main id="main">
+<p class="lede">FXS and FXO describe which side provides battery and dial tone. An FXS port feeds a telephone. An FXO port faces the line and draws battery from the far side. Loop start signals seizure by closing the loop. Ground start is used on trunks so both ends can detect glare. Tip and ring are the two wires of the pair.</p>
+<h2>Call flows</h2>
+
+<section class="flow-panel" aria-label="Loop-start call from a phone">
+  <h3>Loop-start call from a phone</h3>
+  <div class="flow-controls">
+    <button type="button" data-act="prev">Prev</button>
+    <button type="button" class="primary" data-act="next">Next</button>
+    <button type="button" data-act="play">Play</button>
+    <button type="button" data-act="reset">Reset</button>
+    <span class="flow-status mono" aria-live="polite"></span>
+  </div>
+  <p class="step-caption" aria-live="polite"></p>
+  <div class="ladder"><svg class="ladder-svg"></svg></div>
+  <p>Keyboard: focus this panel, then Left, Right, Space, Home.</p>
+  <div class="transcript"><strong>Transcript</strong><ol></ol></div>
+  <script>
+  (function () {
+    var panel = document.currentScript.closest(".flow-panel");
+    panel._flow = {"title": "Loop-start call from a phone", "parties": ["Handset", "FXS port", "Far end"], "steps": [{"from": 0, "to": 1, "label": "Off-hook", "caption": "The phone closes the loop. The FXS port sees current and is the side that had been supplying battery.", "color": "#2563eb"}, {"from": 1, "to": 0, "label": "Dial tone", "caption": "The FXS port (station side) provides dial tone. An FXO port does not invent dial tone; it receives it from the line.", "color": "#15803d"}, {"from": 0, "to": 1, "label": "Digits", "caption": "DTMF or pulses. The port collects the address.", "color": "#2563eb"}, {"from": 1, "to": 2, "label": "Seizure / ring", "caption": "The call is offered toward the far end.", "color": "#2563eb"}, {"from": 2, "to": 1, "label": "Answer", "caption": "Loop current or a battery reversal, depending on the trunk, means the far end answered.", "color": "#15803d"}, {"from": 0, "to": 1, "label": "On-hook", "caption": "The station opens the loop. Disconnect supervision must be long enough for the far end to clear.", "color": "#2563eb"}]};
+  })();
+  </script>
+</section>
+
+<h2>Architecture</h2>
+<section class="arch"><h3>Station and trunk sides</h3><svg viewBox="0 0 808 258" role="img" aria-label="Station and trunk sides"><title>Station and trunk sides</title><rect x="16" y="16" width="160" height="72" rx="14" fill="#fef3c7" stroke="#a16207" stroke-width="4"/><text x="26" y="46" fill="#1a2332" font-size="14" font-weight="700">Phone</text><text x="26" y="66" fill="#1a2332" font-size="11">tip / ring</text><rect x="224" y="16" width="160" height="72" rx="14" fill="#fde68a" stroke="#a16207" stroke-width="4"/><text x="234" y="46" fill="#1a2332" font-size="14" font-weight="700">FXS</text><text x="234" y="66" fill="#1a2332" font-size="11">battery, tone</text><rect x="432" y="16" width="160" height="72" rx="14" fill="#ffedd5" stroke="#c2410c" stroke-width="4"/><text x="442" y="46" fill="#1a2332" font-size="14" font-weight="700">FXO</text><text x="442" y="66" fill="#1a2332" font-size="11">faces the line</text><rect x="640" y="16" width="160" height="72" rx="14" fill="#e0f2fe" stroke="#0369a1" stroke-width="4"/><text x="650" y="46" fill="#1a2332" font-size="14" font-weight="700">CO / PBX</text><text x="650" y="66" fill="#1a2332" font-size="11">battery source</text><line x1="176" y1="118" x2="224" y2="118" stroke="#a16207" stroke-width="3"/><text x="200.0" y="112" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">tip/ring  loop current  (no IP port)</text><line x1="384" y1="154" x2="432" y2="154" stroke="#a16207" stroke-width="3"/><text x="408.0" y="148" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">gateway internal  analog to call control</text><line x1="592" y1="190" x2="640" y2="190" stroke="#0369a1" stroke-width="3"/><text x="616.0" y="184" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">FXO toward line  far end provides battery</text></svg></section>
+<section class="tree"><h3>Failure tree</h3><details><summary>No dial tone at the phone</summary><p><strong>Checks.</strong> Is the pair on an FXS port? Is the phone on-hook voltage present?</p><p class="cause"><strong>Likely cause.</strong> The port is FXO, or the pair is open.</p><p><strong>Fix.</strong> Move the phone to FXS. FXO is the trunk side and will not feed a phone.</p></details><details><summary>Trunks glare (both ends seize)</summary><p><strong>Checks.</strong> Is the trunk loop start on a two-way trunk?</p><p class="cause"><strong>Likely cause.</strong> Loop start cannot reliably show who seized first.</p><p><strong>Fix.</strong> Use ground start or a supervised digital trunk for two-way trunks.</p></details><details><summary>Call does not clear when the caller hangs up</summary><p><strong>Checks.</strong> Disconnect supervision timing on the FXO port.</p><p class="cause"><strong>Likely cause.</strong> The far end opened the loop too briefly, or supervision is disabled.</p><p><strong>Fix.</strong> Enable disconnect supervision and match the open interval the carrier sends.</p></details></section>
+<section><h3>FXS and FXO</h3><div class="wrap-x"><table class="matrix"><thead><tr><th></th><th>FXS</th><th>FXO</th></tr></thead><tbody><tr><td>Faces</td><td>A telephone</td><td>The line / central office</td></tr><tr><td>Battery and dial tone</td><td>Provides them</td><td>Receives them</td></tr><tr><td>Ringing</td><td>Rings the phone</td><td>Detects ringing from the line</td></tr><tr><td>Typical use</td><td>Station port</td><td>Trunk port</td></tr></tbody></table></div></section>
+<section><h3>Flip cards</h3><div class="cards"><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">FXS</span><span class="face back">Foreign exchange station. Provides battery, dial tone, and ring voltage to a phone.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">FXO</span><span class="face back">Foreign exchange office. Sits on the station side of a line and expects the far end to provide battery.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">Loop start</span><span class="face back">Seizure is a closed loop. Fine for phones. Weak for two-way trunks because of glare.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">Ground start</span><span class="face back">Seizure uses a ground on one lead so both ends can see the request. Preferred on analog trunks.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">Tip and ring</span><span class="face back">The two conductors. Names come from the plug on a manual switchboard cord.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">Disconnect supervision</span><span class="face back">The far end signals hang-up (open loop or battery reversal) so the local port can clear.</span></span></button></div></section>
+<section class="sources"><h3>Sources</h3><ul><li><a href="https://www.itu.int/rec/T-REC-G.711">ITU-T G.711 PCM used on the digital side of a gateway</a></li><li><a href="https://www.itu.int/rec/T-REC-Q.551">Analog interfaces have no IETF RFC; this page describes the interface behavior only</a></li></ul></section>
+</main>
+<footer class="site">Ordinary https anchors are for reading later. This page does not load remote code, fonts, or images.</footer>
+<script src="../assets/atlas.js"></script>
+</body>
+</html>

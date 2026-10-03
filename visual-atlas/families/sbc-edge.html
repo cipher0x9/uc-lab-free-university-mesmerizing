@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SBCs / edge — UC Visual Atlas</title>
+<link rel="stylesheet" href="../assets/atlas.css">
+<style>
+@media (prefers-reduced-motion: reduce) { .packet { display: none; } }
+@media print { .flow-controls, .tools { display: none; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <div>
+    <h1>SBCs / edge</h1>
+    <p>UC Visual Atlas · offline · synthetic addresses from RFC 5737 only</p>
+  </div>
+  <div class="tools">
+    <nav class="crumbs" aria-label="Atlas">
+      <a href="../index.html">Map</a>
+      <a href="../timeline.html">Timeline</a>
+      <a href="../glossary.html">Glossary</a>
+      <a href="../drills.html">Drills</a>
+      <a href="../matrices.html">Matrices</a>
+    </nav>
+    <button type="button" id="theme-toggle">Dark theme</button>
+  </div>
+</header>
+<main id="main">
+<p class="lede">A session border controller hides topology, interworks mismatched SIP, anchors media, and is the place you apply trunk policy. Cisco CUBE is the IOS XE SBC and is Cisco&#x27;s documented Local Gateway for Webex Calling. Expressway-C and Expressway-E are the Cisco edge for Mobile and Remote Access and for business-to-business SIP. Ribbon, AudioCodes, and Oracle sell SBC product families; feature cells that need a current manual are marked not stated because those manuals were not re-fetched on 2026-10-03. Expressway numeric traversal and media ranges are omitted until the Expressway IP Port Usage guide for the release is checked.</p>
+<h2>Call flows</h2>
+
+<section class="flow-panel" aria-label="CUCM to CUBE to ITSP">
+  <h3>CUCM to CUBE to ITSP</h3>
+  <div class="flow-controls">
+    <button type="button" data-act="prev">Prev</button>
+    <button type="button" class="primary" data-act="next">Next</button>
+    <button type="button" data-act="play">Play</button>
+    <button type="button" data-act="reset">Reset</button>
+    <span class="flow-status mono" aria-live="polite"></span>
+  </div>
+  <p class="step-caption" aria-live="polite"></p>
+  <div class="ladder"><svg class="ladder-svg"></svg></div>
+  <p>Keyboard: focus this panel, then Left, Right, Space, Home.</p>
+  <div class="transcript"><strong>Transcript</strong><ol></ol></div>
+  <script>
+  (function () {
+    var panel = document.currentScript.closest(".flow-panel");
+    panel._flow = {"title": "CUCM to CUBE to ITSP", "parties": ["Phone", "CUCM", "CUBE", "ITSP"], "steps": [{"from": 0, "to": 1, "label": "INVITE", "caption": "A SIP line toward CUCM. The phone is not talking to the carrier.", "color": "#2563eb"}, {"from": 1, "to": 2, "label": "INVITE", "caption": "CUCM sends a trunk INVITE to CUBE. CUBE is a B2BUA, so this is a new dialog.", "color": "#2563eb"}, {"from": 2, "to": 3, "label": "INVITE", "caption": "CUBE normalizes headers and SDP, then offers the call to the ITSP at example.net.", "color": "#2563eb"}, {"from": 3, "to": 2, "label": "100 Trying", "caption": "The carrier accepted the INVITE into processing.", "color": "#7c3aed"}, {"from": 3, "to": 2, "label": "183 Session Progress", "caption": "Early media. SDP here is the carrier's ringback or announcement address.", "color": "#7c3aed"}, {"from": 2, "to": 1, "label": "183 Session Progress", "caption": "CUBE may anchor that media and rewrite SDP toward CUCM.", "color": "#7c3aed"}, {"from": 1, "to": 0, "label": "183 Session Progress", "caption": "The phone hears early media if the offer/answer state allows it.", "color": "#7c3aed"}, {"from": 3, "to": 2, "label": "200 OK", "caption": "The called party answered.", "color": "#15803d"}, {"from": 2, "to": 1, "label": "200 OK", "caption": "Answer propagated on the CUCM-facing dialog.", "color": "#15803d"}, {"from": 1, "to": 0, "label": "200 OK", "caption": "The phone answers its dialog.", "color": "#15803d"}, {"from": 0, "to": 1, "label": "ACK", "caption": "ACK hops back toward the carrier on each dialog.", "color": "#2563eb"}, {"from": 2, "to": 3, "label": "RTP", "caption": "Media is anchored on CUBE when media flow-around is not in use.", "color": "#c2410c"}]};
+  })();
+  </script>
+</section>
+
+
+<section class="flow-panel" aria-label="One-way audio from NAT, ALG, or a bad c= line">
+  <h3>One-way audio from NAT, ALG, or a bad c= line</h3>
+  <div class="flow-controls">
+    <button type="button" data-act="prev">Prev</button>
+    <button type="button" class="primary" data-act="next">Next</button>
+    <button type="button" data-act="play">Play</button>
+    <button type="button" data-act="reset">Reset</button>
+    <span class="flow-status mono" aria-live="polite"></span>
+  </div>
+  <p class="step-caption" aria-live="polite"></p>
+  <div class="ladder"><svg class="ladder-svg"></svg></div>
+  <p>Keyboard: focus this panel, then Left, Right, Space, Home.</p>
+  <div class="transcript"><strong>Transcript</strong><ol></ol></div>
+  <script>
+  (function () {
+    var panel = document.currentScript.closest(".flow-panel");
+    panel._flow = {"title": "One-way audio from NAT, ALG, or a bad c= line", "parties": ["Phone", "CUBE", "ITSP"], "steps": [{"from": 0, "to": 1, "label": "INVITE", "caption": "The phone's SDP c= line contains an address the ITSP cannot route back to. Example of a reachable address: 192.0.2.10.", "color": "#2563eb"}, {"from": 1, "to": 2, "label": "INVITE (bad c=)", "caption": "CUBE or a SIP ALG forwarded that unusable address instead of the address the ITSP should use.", "color": "#2563eb"}, {"from": 2, "to": 1, "label": "200 OK c=203.0.113.20", "caption": "The carrier's answer is a documentation address the phone can send to.", "color": "#15803d"}, {"from": 0, "to": 2, "label": "RTP toward ITSP", "caption": "This direction works, because the phone learned 203.0.113.20.", "color": "#c2410c"}, {"from": 2, "to": 0, "label": "RTP dropped", "caption": "The carrier sends RTP to the bad c= address. Those packets never reach the phone.", "color": "#c2410c"}]};
+  })();
+  </script>
+</section>
+
+
+<section class="flow-panel" aria-label="Expressway MRA registration">
+  <h3>Expressway MRA registration</h3>
+  <div class="flow-controls">
+    <button type="button" data-act="prev">Prev</button>
+    <button type="button" class="primary" data-act="next">Next</button>
+    <button type="button" data-act="play">Play</button>
+    <button type="button" data-act="reset">Reset</button>
+    <span class="flow-status mono" aria-live="polite"></span>
+  </div>
+  <p class="step-caption" aria-live="polite"></p>
+  <div class="ladder"><svg class="ladder-svg"></svg></div>
+  <p>Keyboard: focus this panel, then Left, Right, Space, Home.</p>
+  <div class="transcript"><strong>Transcript</strong><ol></ol></div>
+  <script>
+  (function () {
+    var panel = document.currentScript.closest(".flow-panel");
+    panel._flow = {"title": "Expressway MRA registration", "parties": ["Endpoint", "Expressway-E", "Expressway-C", "CUCM"], "steps": [{"from": 0, "to": 1, "label": "SIP REGISTER (TLS)", "caption": "The remote endpoint registers to Expressway-E. Traversal port numbers are omitted; use the Expressway IP Port Usage guide for the release.", "color": "#2563eb"}, {"from": 1, "to": 2, "label": "REGISTER across traversal", "caption": "Expressway-E meets Expressway-C on the traversal zone. No port is printed on this hop.", "color": "#2563eb"}, {"from": 2, "to": 3, "label": "REGISTER", "caption": "Expressway-C presents the registration to CUCM.", "color": "#2563eb"}, {"from": 3, "to": 2, "label": "200 OK", "caption": "CUCM accepts the endpoint.", "color": "#15803d"}, {"from": 2, "to": 0, "label": "200 OK", "caption": "The success returns along the same path.", "color": "#15803d"}]};
+  })();
+  </script>
+</section>
+
+<h2>Architecture</h2>
+<section class="arch"><h3>Enterprise edge</h3><svg viewBox="0 0 808 258" role="img" aria-label="Enterprise edge"><title>Enterprise edge</title><rect x="16" y="16" width="160" height="72" rx="14" fill="#fde68a" stroke="#e8a317" stroke-width="4"/><text x="26" y="46" fill="#1a2332" font-size="14" font-weight="700">Phone</text><text x="26" y="66" fill="#1a2332" font-size="11">inside</text><rect x="224" y="16" width="160" height="72" rx="14" fill="#fde68a" stroke="#e8a317" stroke-width="4"/><text x="234" y="46" fill="#1a2332" font-size="14" font-weight="700">CUCM</text><text x="234" y="66" fill="#1a2332" font-size="11">call control</text><rect x="432" y="16" width="160" height="72" rx="14" fill="#ffe4dc" stroke="#ff7a59" stroke-width="4"/><text x="442" y="46" fill="#1a2332" font-size="14" font-weight="700">CUBE</text><text x="442" y="66" fill="#1a2332" font-size="11">SBC</text><rect x="640" y="16" width="160" height="72" rx="14" fill="#e0f2fe" stroke="#0369a1" stroke-width="4"/><text x="650" y="46" fill="#1a2332" font-size="14" font-weight="700">ITSP</text><text x="650" y="66" fill="#1a2332" font-size="11">example.net</text><line x1="176" y1="118" x2="224" y2="118" stroke="#2563eb" stroke-width="3"/><text x="200.0" y="112" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">SIP 5060 UDP/TCP or 5061 TLS</text><line x1="384" y1="154" x2="432" y2="154" stroke="#2563eb" stroke-width="3"/><text x="408.0" y="148" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">SIP trunk 5060/5061</text><line x1="592" y1="190" x2="640" y2="190" stroke="#2563eb" stroke-width="3"/><text x="616.0" y="184" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">SIP 5061 TLS typical toward carrier; RTP anchored</text></svg></section>
+<section class="tree"><h3>Failure tree</h3><details><summary>One-way audio right after cutover</summary><p><strong>Checks.</strong> Compare SDP c= and m= on both sides of the SBC. Look for a SIP ALG on the firewall.</p><p class="cause"><strong>Likely cause.</strong> The address or port in SDP is not the address that receives RTP.</p><p><strong>Fix.</strong> Disable the ALG. Make the SBC rewrite SDP to the address the far end can reach.</p></details><details><summary>Carrier sends 488</summary><p><strong>Checks.</strong> Codec list and packetization in the offer.</p><p class="cause"><strong>Likely cause.</strong> No common codec, or a required ptime the carrier rejects.</p><p><strong>Fix.</strong> Offer a codec the carrier documented, usually including G.711.</p></details><details><summary>MRA phone registers, then calls fail</summary><p><strong>Checks.</strong> Registration 200 OK is not the same as a completed traversal media path.</p><p class="cause"><strong>Likely cause.</strong> Signaling works and media ports do not. This page does not guess the media range.</p><p><strong>Fix.</strong> Open the media range in the Expressway IP Port Usage guide for that software version.</p></details></section>
+<section><h3>SBC and edge roles (checked 2026-10-03; feature cells without a fetched manual say not stated)</h3><div class="wrap-x"><table class="matrix"><thead><tr><th></th><th>Cisco CUBE</th><th>Ribbon SBC</th><th>AudioCodes</th><th>Oracle SBC</th><th>Expressway C/E</th></tr></thead><tbody><tr><td>Role</td><td>IOS XE session border controller</td><td>SBC product family</td><td>SBC and gateway family</td><td>Session border controller family</td><td>Cisco edge for MRA and B2B</td></tr><tr><td>SIP B2BUA</td><td>yes</td><td>yes (product class)</td><td>yes (product class)</td><td>yes (product class)</td><td>B2B is SIP; MRA is registration traversal</td></tr><tr><td>Webex Calling Local Gateway</td><td>Cisco documents CUBE for this role</td><td>not stated</td><td>not stated</td><td>not stated</td><td>not the Local Gateway role</td></tr><tr><td>Media anchoring</td><td>supported when configured</td><td>not stated</td><td>not stated</td><td>not stated</td><td>traversal media; range not printed</td></tr><tr><td>Open source</td><td>no</td><td>no</td><td>no</td><td>no</td><td>no</td></tr></tbody></table></div></section>
+<section><h3>Flip cards</h3><div class="cards"><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">Topology hiding</span><span class="face back">The SBC presents its own address. The enterprise addresses stay off the carrier side.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">Normalization</span><span class="face back">Rewrite headers, numbers, and SDP so two SIP implementations can interwork.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">Media anchoring</span><span class="face back">RTP terminates on the SBC. Use it when the far end must send to a known address.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">SIP ALG</span><span class="face back">A firewall that rewrites SIP. A frequent cause of one-way audio. Turn it off in front of an SBC.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">CUBE</span><span class="face back">Cisco IOS XE SBC. Also the usual Local Gateway in Cisco&#x27;s Webex Calling documents.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">Expressway-E / C</span><span class="face back">E sits on the outside. C sits next to CUCM. Together they provide MRA. Ports: see the release&#x27;s IP Port Usage guide.</span></span></button></div></section>
+<section class="sources"><h3>Sources</h3><ul><li><a href="https://www.rfc-editor.org/rfc/rfc3261">RFC 3261 B2BUA definition</a></li><li><a href="https://www.cisco.com/c/en/us/support/unified-communications/unified-border-element/series.html">Cisco CUBE configuration guide home</a></li><li><a href="https://www.cisco.com/c/en/us/support/unified-communications/expressway-series/series.html">Cisco Expressway</a></li><li><a href="https://ribboncommunications.com/">Ribbon</a></li><li><a href="https://www.audiocodes.com/">AudioCodes</a></li><li><a href="https://www.oracle.com/communications/">Oracle Communications</a></li></ul></section>
+</main>
+<footer class="site">Ordinary https anchors are for reading later. This page does not load remote code, fonts, or images.</footer>
+<script src="../assets/atlas.js"></script>
+</body>
+</html>

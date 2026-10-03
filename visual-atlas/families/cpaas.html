@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CPaaS — UC Visual Atlas</title>
+<link rel="stylesheet" href="../assets/atlas.css">
+<style>
+@media (prefers-reduced-motion: reduce) { .packet { display: none; } }
+@media print { .flow-controls, .tools { display: none; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <div>
+    <h1>CPaaS</h1>
+    <p>UC Visual Atlas · offline · synthetic addresses from RFC 5737 only</p>
+  </div>
+  <div class="tools">
+    <nav class="crumbs" aria-label="Atlas">
+      <a href="../index.html">Map</a>
+      <a href="../timeline.html">Timeline</a>
+      <a href="../glossary.html">Glossary</a>
+      <a href="../drills.html">Drills</a>
+      <a href="../matrices.html">Matrices</a>
+    </nav>
+    <button type="button" id="theme-toggle">Dark theme</button>
+  </div>
+</header>
+<main id="main">
+<p class="lede">Communications platform as a service lets an application ask the platform to place or receive calls. Twilio, Vonage, and Bandwidth publish programmable voice and SIP trunking. A webhook is an HTTPS callback to your application when a call event happens. This page has no API keys, no sample credentials, and no request signatures.</p>
+<h2>Call flows</h2>
+
+<section class="flow-panel" aria-label="Programmable voice, both parties called">
+  <h3>Programmable voice, both parties called</h3>
+  <div class="flow-controls">
+    <button type="button" data-act="prev">Prev</button>
+    <button type="button" class="primary" data-act="next">Next</button>
+    <button type="button" data-act="play">Play</button>
+    <button type="button" data-act="reset">Reset</button>
+    <span class="flow-status mono" aria-live="polite"></span>
+  </div>
+  <p class="step-caption" aria-live="polite"></p>
+  <div class="ladder"><svg class="ladder-svg"></svg></div>
+  <p>Keyboard: focus this panel, then Left, Right, Space, Home.</p>
+  <div class="transcript"><strong>Transcript</strong><ol></ol></div>
+  <script>
+  (function () {
+    var panel = document.currentScript.closest(".flow-panel");
+    panel._flow = {"title": "Programmable voice, both parties called", "parties": ["Application", "CPaaS", "Phone A", "Phone B"], "steps": [{"from": 0, "to": 1, "label": "Create call (concept)", "caption": "The application asks the platform to connect two parties. No API path or key is shown.", "color": "#2563eb"}, {"from": 1, "to": 2, "label": "INVITE", "caption": "The platform calls phone A over its SIP or PSTN edge.", "color": "#2563eb"}, {"from": 2, "to": 1, "label": "200 OK", "caption": "A answered.", "color": "#15803d"}, {"from": 1, "to": 3, "label": "INVITE", "caption": "The platform calls phone B.", "color": "#2563eb"}, {"from": 3, "to": 1, "label": "200 OK", "caption": "B answered.", "color": "#15803d"}, {"from": 2, "to": 3, "label": "RTP bridged", "caption": "The platform bridges media. Addresses on the wire are the platform's, not the application's.", "color": "#c2410c"}, {"from": 1, "to": 0, "label": "Webhook (concept)", "caption": "The platform notifies the application of the event over HTTPS. The URL on a real system is yours; none is configured here.", "color": "#7c3aed"}]};
+  })();
+  </script>
+</section>
+
+<h2>Architecture</h2>
+<section class="arch"><h3>CPaaS edges</h3><svg viewBox="0 0 808 258" role="img" aria-label="CPaaS edges"><title>CPaaS edges</title><rect x="16" y="16" width="160" height="72" rx="14" fill="#fce7f3" stroke="#db2777" stroke-width="4"/><text x="26" y="46" fill="#1a2332" font-size="14" font-weight="700">Your app</text><text x="26" y="66" fill="#1a2332" font-size="11">no secrets here</text><rect x="224" y="16" width="160" height="72" rx="14" fill="#fbcfe8" stroke="#9d174d" stroke-width="4"/><text x="234" y="46" fill="#1a2332" font-size="14" font-weight="700">CPaaS</text><text x="234" y="66" fill="#1a2332" font-size="11">voice API</text><rect x="432" y="16" width="160" height="72" rx="14" fill="#e0f2fe" stroke="#0369a1" stroke-width="4"/><text x="442" y="46" fill="#1a2332" font-size="14" font-weight="700">SIP trunk</text><text x="442" y="66" fill="#1a2332" font-size="11">carrier</text><rect x="640" y="16" width="160" height="72" rx="14" fill="#cffafe" stroke="#0891b2" stroke-width="4"/><text x="650" y="46" fill="#1a2332" font-size="14" font-weight="700">Phone</text><text x="650" y="66" fill="#1a2332" font-size="11">PSTN or SIP</text><line x1="176" y1="118" x2="224" y2="118" stroke="#2563eb" stroke-width="3"/><text x="200.0" y="112" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">HTTPS callback concept only  (no key)</text><line x1="384" y1="154" x2="432" y2="154" stroke="#2563eb" stroke-width="3"/><text x="408.0" y="148" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">SIP 5060/5061 trunk</text><line x1="592" y1="190" x2="640" y2="190" stroke="#2563eb" stroke-width="3"/><text x="616.0" y="184" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">SIP or PSTN</text></svg></section>
+<section class="tree"><h3>Failure tree</h3><details><summary>The platform calls A and never calls B</summary><p><strong>Checks.</strong> Did A actually answer, and did the application return the next instruction?</p><p class="cause"><strong>Likely cause.</strong> The webhook did not answer, so the platform has no instruction for leg B.</p><p><strong>Fix.</strong> Fix the application response. Do not put a real auth token in a lab note.</p></details><details><summary>Calls connect and the webhook never fires</summary><p><strong>Checks.</strong> Can the platform reach the application&#x27;s HTTPS endpoint?</p><p class="cause"><strong>Likely cause.</strong> The callback URL is private or the certificate fails.</p><p><strong>Fix.</strong> Use an address the platform can reach. Keep tokens out of the atlas.</p></details><details><summary>One-way audio on a trunk call</summary><p><strong>Checks.</strong> SDP from the platform to your SIP side.</p><p class="cause"><strong>Likely cause.</strong> The same c= problem as any other SIP trunk.</p><p><strong>Fix.</strong> Treat it as an SBC media problem. See the SBC page.</p></details></section>
+<section><h3>CPaaS role (checked 2026-10-03)</h3><div class="wrap-x"><table class="matrix"><thead><tr><th></th><th>Twilio</th><th>Vonage</th><th>Bandwidth</th></tr></thead><tbody><tr><td>Programmable voice</td><td>published product</td><td>published product</td><td>published product</td></tr><tr><td>SIP trunking</td><td>published product</td><td>published product</td><td>published product</td></tr><tr><td>Webhooks</td><td>yes, as a concept</td><td>yes, as a concept</td><td>yes, as a concept</td></tr><tr><td>Specific API fields</td><td>not stated</td><td>not stated</td><td>not stated</td></tr></tbody></table></div></section>
+<section><h3>Flip cards</h3><div class="cards"><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">CPaaS</span><span class="face back">A platform that places communications under an application you write.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">Webhook</span><span class="face back">The platform calls your application when something happens. Concept only on this page.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">SIP trunking</span><span class="face back">The same platform can also present a SIP trunk to a PBX, without your writing a call script.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">No keys</span><span class="face back">An API key is a secret. It does not belong in a public atlas or in an example.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">Bridge</span><span class="face back">The platform, not your server, usually mixes or relays the audio.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">Twilio / Vonage / Bandwidth</span><span class="face back">Three vendors that publish both programmable voice and SIP trunking.</span></span></button></div></section>
+<section class="sources"><h3>Sources</h3><ul><li><a href="https://www.twilio.com/docs/voice">Twilio voice</a></li><li><a href="https://developer.vonage.com/">Vonage</a></li><li><a href="https://www.bandwidth.com/">Bandwidth</a></li></ul></section>
+</main>
+<footer class="site">Ordinary https anchors are for reading later. This page does not load remote code, fonts, or images.</footer>
+<script src="../assets/atlas.js"></script>
+</body>
+</html>

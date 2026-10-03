@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Troubleshooting tools — UC Visual Atlas</title>
+<link rel="stylesheet" href="../assets/atlas.css">
+<style>
+@media (prefers-reduced-motion: reduce) { .packet { display: none; } }
+@media print { .flow-controls, .tools { display: none; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+  <div>
+    <h1>Troubleshooting tools</h1>
+    <p>UC Visual Atlas · offline · synthetic addresses from RFC 5737 only</p>
+  </div>
+  <div class="tools">
+    <nav class="crumbs" aria-label="Atlas">
+      <a href="../index.html">Map</a>
+      <a href="../timeline.html">Timeline</a>
+      <a href="../glossary.html">Glossary</a>
+      <a href="../drills.html">Drills</a>
+      <a href="../matrices.html">Matrices</a>
+    </nav>
+    <button type="button" id="theme-toggle">Dark theme</button>
+  </div>
+</header>
+<main id="main">
+<p class="lede">Read the ladder before you read a codec. Wireshark&#x27;s Telephony VoIP Calls window builds that ladder from a capture, and RTP Stream Analysis shows loss and jitter. sngrep shows SIP on a host in a terminal. Cisco RTMT shows cluster counters. On CUBE, debug ccsip messages prints SIP, and show sip-ua status shows the user agent. Example addresses only: 192.0.2.10, 198.51.100.10, 203.0.113.20.</p>
+<h2>Call flows</h2>
+
+<section class="flow-panel" aria-label="Reading a ladder that ends in 486">
+  <h3>Reading a ladder that ends in 486</h3>
+  <div class="flow-controls">
+    <button type="button" data-act="prev">Prev</button>
+    <button type="button" class="primary" data-act="next">Next</button>
+    <button type="button" data-act="play">Play</button>
+    <button type="button" data-act="reset">Reset</button>
+    <span class="flow-status mono" aria-live="polite"></span>
+  </div>
+  <p class="step-caption" aria-live="polite"></p>
+  <div class="ladder"><svg class="ladder-svg"></svg></div>
+  <p>Keyboard: focus this panel, then Left, Right, Space, Home.</p>
+  <div class="transcript"><strong>Transcript</strong><ol></ol></div>
+  <script>
+  (function () {
+    var panel = document.currentScript.closest(".flow-panel");
+    panel._flow = {"title": "Reading a ladder that ends in 486", "parties": ["Alice 192.0.2.10", "Proxy 198.51.100.10", "Bob 203.0.113.20"], "steps": [{"from": 0, "to": 1, "label": "INVITE", "caption": "Start here. Note Call-ID, the Request-URI, and whether SDP is present.", "color": "#2563eb"}, {"from": 1, "to": 2, "label": "INVITE", "caption": "If this hop is missing, the proxy never forwarded. The fault is not Bob's phone.", "color": "#2563eb"}, {"from": 2, "to": 1, "label": "486 Busy Here", "caption": "Bob's UAS rejected the call because it is busy. RFC 3261. This is not a timeout.", "color": "#2563eb"}, {"from": 1, "to": 0, "label": "486 Busy Here", "caption": "The proxy forwards the final response.", "color": "#2563eb"}, {"from": 0, "to": 1, "label": "ACK", "caption": "ACK for a non-2xx is hop-by-hop. The call is over. There is no RTP to debug.", "color": "#15803d"}]};
+  })();
+  </script>
+</section>
+
+<h2>Architecture</h2>
+<section class="arch"><h3>What each tool sees</h3><svg viewBox="0 0 808 258" role="img" aria-label="What each tool sees"><title>What each tool sees</title><rect x="16" y="16" width="160" height="72" rx="14" fill="#ccfbf1" stroke="#0f766e" stroke-width="4"/><text x="26" y="46" fill="#1a2332" font-size="14" font-weight="700">sngrep</text><text x="26" y="66" fill="#1a2332" font-size="11">SIP on a host</text><rect x="224" y="16" width="160" height="72" rx="14" fill="#99f6e4" stroke="#115e59" stroke-width="4"/><text x="234" y="46" fill="#1a2332" font-size="14" font-weight="700">Wireshark</text><text x="234" y="66" fill="#1a2332" font-size="11">packets</text><rect x="432" y="16" width="160" height="72" rx="14" fill="#fde68a" stroke="#e8a317" stroke-width="4"/><text x="442" y="46" fill="#1a2332" font-size="14" font-weight="700">RTMT</text><text x="442" y="66" fill="#1a2332" font-size="11">CUCM counters</text><rect x="640" y="16" width="160" height="72" rx="14" fill="#ffe4dc" stroke="#ff7a59" stroke-width="4"/><text x="650" y="46" fill="#1a2332" font-size="14" font-weight="700">CUBE CLI</text><text x="650" y="66" fill="#1a2332" font-size="11">debug ccsip</text><line x1="176" y1="118" x2="224" y2="118" stroke="#2563eb" stroke-width="3"/><text x="200.0" y="112" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">same SIP, two views</text><line x1="432" y1="154" x2="592" y2="154" stroke="#e8a317" stroke-width="3"/><text x="512.0" y="148" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">no packets — cluster counters</text><line x1="640" y1="190" x2="800" y2="190" stroke="#ff7a59" stroke-width="3"/><text x="720.0" y="184" text-anchor="middle" fill="currentColor" font-size="12" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">show sip-ua  ·  debug ccsip messages</text></svg></section>
+<section class="tree"><h3>Failure tree</h3><details><summary>The ladder shows 486 and the ticket says one-way audio</summary><p><strong>Checks.</strong> There is no 200 OK and no RTP.</p><p class="cause"><strong>Likely cause.</strong> The call was busy. Audio was never negotiated.</p><p><strong>Fix.</strong> Close the audio theory. Find out why the destination sent 486.</p></details><details><summary>Wireshark shows RTP and sngrep shows nothing</summary><p><strong>Checks.</strong> Which host you ran sngrep on.</p><p class="cause"><strong>Likely cause.</strong> sngrep sees SIP on that host. Media-only hops will not appear.</p><p><strong>Fix.</strong> Capture on the device that has both, or use Wireshark for RTP.</p></details><details><summary>debug ccsip messages is empty</summary><p><strong>Checks.</strong> Are you on the CUBE that receives the call, and is the terminal monitor on?</p><p class="cause"><strong>Likely cause.</strong> The call is on a different router, or logging is not displayed.</p><p><strong>Fix.</strong> Confirm the hop with show sip-ua status, then debug on that box, then turn the debug off.</p></details></section>
+<section><h3>Tools and the layer they show</h3><div class="wrap-x"><table class="matrix"><thead><tr><th>Tool</th><th>Shows</th><th>Does not show</th></tr></thead><tbody><tr><td>Wireshark VoIP Calls</td><td>SIP ladder from a capture</td><td>CUCM service health by itself</td></tr><tr><td>Wireshark RTP analysis</td><td>loss, jitter, payload type</td><td>why a 486 was sent</td></tr><tr><td>sngrep</td><td>live SIP on a host</td><td>RTP quality</td></tr><tr><td>RTMT</td><td>CUCM counters and alerts</td><td>SDP on the wire</td></tr><tr><td>debug ccsip messages</td><td>SIP on that CUBE</td><td>packets on another hop</td></tr><tr><td>show sip-ua status</td><td>whether the IOS SIP UA is up</td><td>a single call&#x27;s SDP</td></tr></tbody></table></div></section>
+<section><h3>Flip cards</h3><div class="cards"><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">Call-ID</span><span class="face back">The dialog&#x27;s name in the ladder. Filter on it.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">486 Busy Here</span><span class="face back">A final response. The called UAS is busy. ACK and stop.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">100 Trying</span><span class="face back">Hop-by-hop. It only means the next hop saw the INVITE.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">VoIP Calls</span><span class="face back">Wireshark Telephony menu. Builds the ladder.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">RTP Stream Analysis</span><span class="face back">Wireshark view of loss and jitter for one stream.</span></span></button><button type="button" class="flip" aria-pressed="false"><span class="flip-inner"><span class="face front">Turn debug off</span><span class="face back">debug ccsip messages is loud. Disable it when you have the ladder.</span></span></button></div></section>
+<section class="sources"><h3>Sources</h3><ul><li><a href="https://www.rfc-editor.org/rfc/rfc3261">RFC 3261 response codes</a></li><li><a href="https://www.wireshark.org/docs/">Wireshark</a></li><li><a href="https://github.com/irontec/sngrep">sngrep</a></li><li><a href="https://www.cisco.com/c/en/us/support/unified-communications/unified-communications-manager-callmanager/products-maintenance-guides-list.html">Cisco RTMT</a></li><li><a href="https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/voice/cube/configuration/cube-book.html">Cisco IOS SIP debug reference</a></li></ul></section>
+</main>
+<footer class="site">Ordinary https anchors are for reading later. This page does not load remote code, fonts, or images.</footer>
+<script src="../assets/atlas.js"></script>
+</body>
+</html>
