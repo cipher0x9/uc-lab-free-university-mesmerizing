@@ -11,13 +11,13 @@ Or open `index.html` in any browser. Nothing is fetched at load. Educational lin
 ## What is here
 
 - `index.html` — hub map, search, legend
-- `families/` — 19 family pages, 28 step-through flows, 122 flip cards
+- `families/` — 19 family pages, 28 step-through flows, 156 flip cards
 - `matrices.html` — capability matrices, dated 2026-10-03
-- `timeline.html` — dated events with source links
+- `timeline.html` — 23 dated events with source links
 - `glossary.html` — 195 terms
-- `drills.html` — response codes, ports, codecs, DSCP, 3 am traps
+- `drills.html` — response codes, ports, codecs, DSCP, 3 am traps (56 cards)
 - `assets/atlas.css`, `assets/atlas.js` — local theme, flow engine, drills
-- `SOURCES.md` — fact ledger and omissions
+- `SOURCES.md` — fact ledger, including the 2026-10-03 box facts (E1–E5, W1–W6, T1–T6, F1–F6, S1–S8, M1–M3, P1–P8)
 - `tools/check_atlas.py` — offline checker
 - `tools/build_pages.py` — regenerates HTML from the catalogs
 

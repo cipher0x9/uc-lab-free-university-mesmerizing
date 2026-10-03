@@ -121,14 +121,45 @@ A row marked Y means the claim is the ordinary statement of that specification o
 | Troubleshooting tools: Cisco RTMT | https://www.cisco.com/c/en/us/support/unified-communications/unified-communications-manager-callmanager/products-maintenance-guides-list.html | Y | 2026-10-03 |
 | Troubleshooting tools: Cisco IOS SIP debug reference | https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/voice/cube/configuration/cube-book.html | Y | 2026-10-03 |
 
+## Port and regulation facts (checked 2026-10-03)
+
+Each row is printed on the atlas.
+
+| Claim | Source | Verified | Date |
+|---|---|---|---|
+| E1 Expressway first traversal server zone SIP TCP 7001 (then 7002, 7003) | https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/expressway/config_guide/X15-0/ip-port/exwy_b_cisco-expressway-ip-port-usage-configuration-guide-x15/exwy_m_default-port-ranges.html | Y, verified 2026-10-03 | 2026-10-03 |
+| E2 Expressway first traversal server zone H.323 UDP 6001 | https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/expressway/admin_guide/X15-0/exwy_b_cisco-expressway-administrator-guide-x15/exwy_m_firewall-traversal.html | Y, verified 2026-10-03 | 2026-10-03 |
+| E3 Expressway traversal media UDP 36000–59999, set on Expressway-C | E1 page and E2 page | Y, verified 2026-10-03 | 2026-10-03 |
+| E4 Large Expressway-E multiplexed media UDP 36000–36011 | E1 page and https://www.cisco.com/c/en/us/td/docs/voice_ip_comm/expressway/config_guide/X15-0/ip-port/exwy_b_cisco-expressway-ip-port-usage-configuration-guide-x15/exwy_m_provisioning-registrations-authentication-and-calls.html | Y, verified 2026-10-03 | 2026-10-03 |
+| E5 Small/Medium Expressway-E demux UDP 2776/2777 or 36000/36001 | same as E4 | Y, verified 2026-10-03 | 2026-10-03 |
+| W1 Webex App media UDP 8500–8699 (audio 8500–8599, video 8600–8699) | https://help.webex.com/en-us/article/b2exve/Port-Reference-Information-for-Webex-Calling | Y, verified 2026-10-03 | 2026-10-03 |
+| W2 Webex Calling cloud media UDP 5004, 9000, 8500–8699, 19560–65535 | same as W1 | Y, verified 2026-10-03 | 2026-10-03 |
+| W3 direct device media after ICE UDP 19560–19661 | same as W1 | Y, verified 2026-10-03 | 2026-10-03 |
+| W4 cloud to certificate-based Local Gateway, source UDP 19560–65535 | same as W1 | Y, verified 2026-10-03 | 2026-10-03 |
+| W5 Local Gateway external NIC media source UDP 8000–48199 | same as W1 | Y, verified 2026-10-03 | 2026-10-03 |
+| W6 Webex Calling SIP-TLS TCP 5062 and TCP 8934 | same as W1; FedRAMP cross-check https://help.webex.com/en-us/article/WBX9000034164/Network-Requirements-for-Webex-for-Government-FedRAMP | Y, verified 2026-10-03 | 2026-10-03 |
+| T1 Teams client media UDP 3478–3481 to 52.112.0.0/14, 52.122.0.0/15, 2603:1063::/38 | https://learn.microsoft.com/en-us/microsoft-365/enterprise/urls-and-ip-address-ranges?view=o365-worldwide | Y, verified 2026-10-03 | 2026-10-03 |
+| T2 Teams signaling TCP 443, TCP 80, UDP 443 | same as T1 | Y, verified 2026-10-03 | 2026-10-03 |
+| T3 Direct Routing SIP connection points sip.pstnhub.microsoft.com, sip2, sip3 | https://learn.microsoft.com/en-us/microsoftteams/direct-routing-plan | Y, verified 2026-10-03 | 2026-10-03 |
+| T4 Direct Routing SIP/TLS TCP 5061; return source 1024–65535 | T3 page and https://learn.microsoft.com/en-us/microsoftteams/direct-routing-plan-media-bypass | Y, verified 2026-10-03 | 2026-10-03 |
+| T5 Direct Routing media UDP/SRTP 3478–3481 and 49152–53247 | https://learn.microsoft.com/en-us/microsoftteams/direct-routing-plan-media-bypass | Y, verified 2026-10-03 | 2026-10-03 |
+| T6 Direct Routing ranges 52.112.0.0/14 and 52.120.0.0/14 | https://learn.microsoft.com/en-us/microsoftteams/direct-routing-plan | Y, verified 2026-10-03 | 2026-10-03 |
+| F1–F6 47 CFR §9.16 and §9.17(b) MLTS 911 rules and dates 2020-02-16, 2021-01-06, 2022-01-06 | https://www.ecfr.gov/current/title-47/chapter-I/subchapter-A/part-9/subpart-F | Y, verified 2026-10-03 | 2026-10-03 |
+| S1 full STIR/SHAKEN in IP networks not later than 2021-06-30 | https://www.ecfr.gov/current/title-47/chapter-I/subchapter-B/part-64/subpart-HH/section-64.6301 | Y, verified 2026-10-03 | 2026-10-03 |
+| S2 small providers exempt through 2023-06-30; S3 non-facilities-based small providers only until 2022-06-30; S6 non-IP extension | https://www.ecfr.gov/current/title-47/chapter-I/subchapter-B/part-64/subpart-HH/section-64.6304 | Y, verified 2026-10-03 | 2026-10-03 |
+| S4 gateway robocall mitigation as of 2023-01-11; S5 gateway authentication by 2023-06-30; S7 TRACED Act Pub. L. No. 116-105, 133 Stat. 3274 (2019) | https://docs.fcc.gov/public/attachments/DA-23-458A1.pdf | Y, verified 2026-10-03 | 2026-10-03 |
+| S8 SHAKEN framework ATIS-1000074, current version ATIS-1000074.v003 | https://atis.org/resources/signature-based-handling-of-asserted-information-using-tokens-shaken-atis-1000074-e/ | Y, verified 2026-10-03 | 2026-10-03 |
+| M1 GSMA NG.114 VoNR profile; VoLTE remains IR.92 | https://www.gsma.com/newsroom/gsma_resources/ng-114-ims-profile-for-voice-video-and-messaging-over-5gs-v-8-1/ | Y, verified 2026-10-03 | 2026-10-03 |
+| M2 EPS fallback, setup-time 5GS to EPS, 3GPP TS 23.502 clause 4.13.6.1 | https://www.etsi.org/deliver/etsi_ts/123500_123599/123502/16.10.00_60/ts_123502v161000p.pdf | Y, verified 2026-10-03 | 2026-10-03 |
+| M3 SRVCC mid-call to CS, 3GPP TS 23.216 | https://www.etsi.org/deliver/etsi_TS/123200_123299/123216/19.00.00_60/ts_123216v190000p.pdf | Y, verified 2026-10-03 | 2026-10-03 |
+| P1–P8 IANA well-known ports: sip 5060, sips 5061, cisco-sccp 2000, h323gatestat 1719, h323hostcall 1720, mgcp-gateway 2427, mgcp-callagent 2727, tftp 69, stun/turn 3478, diameter 3868 | https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.csv | Y, verified 2026-10-03 | 2026-10-03 |
+
 ## Omissions (not printed as facts)
 
-- Expressway traversal port TCP 7001 and media range 36000–59999. The Expressway IP Port Usage guide was not fetched.
-- Webex Calling and Microsoft Teams media port ranges. The current vendor pages were not fetched.
-- 47 CFR §9.16 paragraph text. Part 9 is linked; the subsection was not re-read on ecfr.gov.
-- FCC STIR/SHAKEN implementation deadlines. They moved; they are not printed.
-- GSMA VoNR document id. VoNR is named; the document id is not printed.
-- EPS fallback and SRVCC procedure steps. The names are defined; the ladders are not drawn.
-- Vendor feature matrices beyond product class (transcoding, specific recording SKUs, prices, market share, MOS).
+- Webex Contact Center media port ranges. The network-connectivity page lists HTTPS 443 domains only.
+- Cisco CTI TCP 2748. IANA does not assign that port to Cisco CTI. The pass 1 drill card still names it; this pass does not cite it as an IANA fact.
+- Vendor feature cells that need a current manual. Those cells stay "not stated". Zoom, RingCentral, 8x8, Dialpad, and Google Voice media ranges stay unstated.
+- Message-by-message EPS fallback and SRVCC ladders. The pages stay at the M2 and M3 summary.
+- SKUs, prices, market share, MOS scores.
 - Any port marked VERIFY in local campus notes, unless it is also an IANA or RFC default printed above.
 
