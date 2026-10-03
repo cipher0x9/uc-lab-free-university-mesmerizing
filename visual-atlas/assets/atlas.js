@@ -26,15 +26,26 @@
     }
   }
 
-  function renderLadder(svg, flow, visibleCount) {
+  function accentColor() {
+    var raw = "";
+    try { raw = getComputedStyle(document.body).getPropertyValue("--accent"); } catch (e) { raw = ""; }
+    raw = (raw || "").trim();
+    return raw || "#2563eb";
+  }
+
+  function renderLadder(svg, flow, visibleCount, opts) {
+    opts = opts || {};
+    var showAll = !!opts.showAll;
+    var animatePacket = !!opts.animatePacket;
     var parties = flow.parties;
     var steps = flow.steps;
     var w = 760;
     var colW = (w - 80) / parties.length;
-    var top = 48;
+    var top = 56;
     var rowH = 46;
-    var h = top + 28 + steps.length * rowH + 24;
+    var h = top + 28 + Math.max(steps.length, 1) * rowH + 24;
     var ns = "http://www.w3.org/2000/svg";
+    var lane = accentColor();
     while (svg.firstChild) svg.removeChild(svg.firstChild);
     svg.setAttribute("viewBox", "0 0 " + w + " " + h);
     svg.setAttribute("role", "img");
@@ -46,9 +57,20 @@
 
     parties.forEach(function (name, i) {
       var x = 40 + i * colW + colW / 2;
+      var chipW = Math.min(148, colW - 8);
+      var chip = document.createElementNS(ns, "rect");
+      chip.setAttribute("class", "lane-chip");
+      chip.setAttribute("x", x - chipW / 2);
+      chip.setAttribute("y", 8);
+      chip.setAttribute("width", chipW);
+      chip.setAttribute("height", 28);
+      chip.setAttribute("rx", 8);
+      chip.setAttribute("fill", lane);
+      chip.setAttribute("opacity", "0.28");
+      svg.appendChild(chip);
       var label = document.createElementNS(ns, "text");
       label.setAttribute("x", x);
-      label.setAttribute("y", 22);
+      label.setAttribute("y", 27);
       label.setAttribute("text-anchor", "middle");
       label.setAttribute("font-size", "13");
       label.setAttribute("font-weight", "700");
@@ -60,8 +82,8 @@
       line.setAttribute("x2", x);
       line.setAttribute("y1", top);
       line.setAttribute("y2", h - 16);
-      line.setAttribute("stroke", "currentColor");
-      line.setAttribute("stroke-opacity", "0.35");
+      line.setAttribute("stroke", lane);
+      line.setAttribute("stroke-opacity", "0.45");
       line.setAttribute("stroke-dasharray", "4 4");
       svg.appendChild(line);
     });
@@ -71,9 +93,10 @@
       var y = top + 18 + idx * rowH;
       var x1 = 40 + step.from * colW + colW / 2;
       var x2 = 40 + step.to * colW + colW / 2;
+      var on = showAll || idx < visibleCount;
       var g = document.createElementNS(ns, "g");
-      g.setAttribute("class", idx < visibleCount ? "step-on" : "step-hidden");
-      if (idx >= visibleCount) g.setAttribute("opacity", "0");
+      g.setAttribute("class", on ? "step-on" : "step-hidden");
+      if (!on) g.setAttribute("opacity", "0");
       var path = document.createElementNS(ns, "line");
       path.setAttribute("x1", x1);
       path.setAttribute("y1", y);
@@ -96,23 +119,23 @@
       g.appendChild(ah);
       var t = document.createElementNS(ns, "text");
       t.setAttribute("x", (x1 + x2) / 2);
-      t.setAttribute("y", y - 6);
+      t.setAttribute("y", y - 8);
       t.setAttribute("text-anchor", "middle");
       t.setAttribute("font-family", "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace");
       t.setAttribute("font-size", "12");
       t.setAttribute("fill", "currentColor");
       t.textContent = step.label;
       g.appendChild(t);
-      if (!reduce && idx === visibleCount - 1) {
+      if (!reduce && animatePacket && !showAll && idx === visibleCount - 1 && visibleCount > 0) {
         var packet = document.createElementNS(ns, "circle");
         packet.setAttribute("class", "packet");
-        packet.setAttribute("r", "5");
+        packet.setAttribute("r", "6");
         packet.setAttribute("cy", y);
         packet.setAttribute("fill", step.color || "#2563eb");
         var anim = document.createElementNS(ns, "animate");
         anim.setAttribute("attributeName", "cx");
-        anim.setAttribute("from", x1);
-        anim.setAttribute("to", x2);
+        anim.setAttribute("from", String(x1));
+        anim.setAttribute("to", String(x2));
         anim.setAttribute("dur", "0.7s");
         anim.setAttribute("fill", "freeze");
         packet.appendChild(anim);
@@ -133,22 +156,44 @@
     var caption = root.querySelector(".step-caption");
     var status = root.querySelector(".flow-status");
     var transcript = root.querySelector(".transcript ol");
-    var i = 0;
+    var cursor = flow.steps.length;
+    var mode = "static";
 
-    function show(n) {
-      i = Math.max(0, Math.min(n, flow.steps.length));
-      renderLadder(svg, flow, i);
-      if (i === 0) {
-        caption.textContent = "Press Next or Play. " + flow.steps.length + " steps.";
+    function paint() {
+      var showAll = mode === "static";
+      renderLadder(svg, flow, showAll ? flow.steps.length : cursor, {
+        showAll: showAll,
+        animatePacket: mode === "step"
+      });
+      if (showAll) {
+        caption.textContent = "All " + flow.steps.length + " steps are on the ladder. Play animates them. Next walks from the first step.";
+        if (status) status.textContent = flow.steps.length + " / " + flow.steps.length;
+      } else if (cursor === 0) {
+        caption.textContent = "Parties are on the ladder. Press Next for the first arrow.";
+        if (status) status.textContent = "0 / " + flow.steps.length;
       } else {
-        var step = flow.steps[i - 1];
-        caption.textContent = "Step " + i + " of " + flow.steps.length + ": " + step.label + " — " + (step.caption || "");
+        var step = flow.steps[cursor - 1];
+        caption.textContent = "Step " + cursor + " of " + flow.steps.length + ": " + step.label + " — " + (step.caption || "");
+        if (status) status.textContent = cursor + " / " + flow.steps.length;
       }
-      if (status) status.textContent = i + " / " + flow.steps.length;
       var prev = root.querySelector("[data-act=prev]");
       var next = root.querySelector("[data-act=next]");
-      if (prev) prev.disabled = i === 0;
-      if (next) next.disabled = i === flow.steps.length;
+      if (prev) prev.disabled = mode === "step" && cursor === 0;
+      if (next) next.disabled = false;
+      root.classList.toggle("is-static", showAll);
+    }
+
+    function showAllSteps() {
+      stop();
+      mode = "static";
+      cursor = flow.steps.length;
+      paint();
+    }
+
+    function showStep(n) {
+      cursor = Math.max(0, Math.min(n, flow.steps.length));
+      mode = cursor >= flow.steps.length ? "static" : "step";
+      paint();
     }
 
     if (transcript) {
@@ -163,9 +208,15 @@
       var btn = ev.target.closest("button[data-act]");
       if (!btn || !root.contains(btn)) return;
       var act = btn.getAttribute("data-act");
-      if (act === "prev") show(i - 1);
-      if (act === "next") show(i + 1);
-      if (act === "reset") { stop(); show(0); }
+      if (act === "prev") {
+        if (mode === "static") showStep(flow.steps.length - 1);
+        else showStep(cursor - 1);
+      }
+      if (act === "next") {
+        if (mode === "static") showStep(1);
+        else showStep(cursor + 1);
+      }
+      if (act === "reset") showAllSteps();
       if (act === "play") play();
     });
 
@@ -177,32 +228,55 @@
     }
     function play() {
       if (timer) { stop(); return; }
-      if (i >= flow.steps.length) show(0);
+      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (reduce) { showAllSteps(); return; }
+      if (mode === "static" || cursor >= flow.steps.length) {
+        mode = "step";
+        cursor = 0;
+        paint();
+      }
       var playBtn = root.querySelector("[data-act=play]");
       if (playBtn) playBtn.textContent = "Pause";
-      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      if (reduce) { show(flow.steps.length); stop(); return; }
       timer = setInterval(function () {
-        if (i >= flow.steps.length) { stop(); return; }
-        show(i + 1);
+        if (cursor >= flow.steps.length) {
+          stop();
+          showAllSteps();
+          return;
+        }
+        showStep(cursor + 1);
       }, 900);
     }
 
     root.tabIndex = 0;
     root.addEventListener("keydown", function (ev) {
       if (ev.target.tagName === "INPUT" || ev.target.tagName === "TEXTAREA") return;
-      if (ev.key === "ArrowRight") { ev.preventDefault(); show(i + 1); }
-      if (ev.key === "ArrowLeft") { ev.preventDefault(); show(i - 1); }
+      if (ev.key === "ArrowRight") {
+        ev.preventDefault();
+        if (mode === "static") showStep(1);
+        else showStep(cursor + 1);
+      }
+      if (ev.key === "ArrowLeft") {
+        ev.preventDefault();
+        if (mode === "static") showStep(flow.steps.length - 1);
+        else showStep(cursor - 1);
+      }
       if (ev.key === " " || ev.key === "Spacebar") { ev.preventDefault(); play(); }
-      if (ev.key === "Home") { ev.preventDefault(); stop(); show(0); }
+      if (ev.key === "Home") { ev.preventDefault(); showAllSteps(); }
     });
 
-    show(0);
-    root._flowApi = { show: show, play: play, stop: stop };
+    paint();
+    root._flowApi = { show: showStep, showStep: showStep, showAll: showAllSteps, play: play, stop: stop };
   }
 
   function initFlows() {
-    document.querySelectorAll(".flow-panel").forEach(mountFlow);
+    var panels = document.querySelectorAll(".flow-panel");
+    panels.forEach(mountFlow);
+    var first = panels[0];
+    if (!first || !first._flowApi) return;
+    var params = new URLSearchParams(location.search);
+    var step = params.get("step");
+    if (step && /^\d+$/.test(step)) first._flowApi.showStep(parseInt(step, 10));
+    if (params.get("play") === "1") first._flowApi.play();
   }
 
   function markDrill(btn) {

@@ -10,11 +10,11 @@
 @media print { .flow-controls, .tools { display: none; } }
 </style>
 </head>
-<body>
+<body class="family" data-accent="webex">
 <a class="skip" href="#main">Skip to content</a>
 <header class="site">
   <div>
-    <h1>Cloud UC</h1>
+    <h1 data-emoji="☁️">Cloud UC</h1>
     <p>UC Visual Atlas · offline · synthetic addresses from RFC 5737 only</p>
   </div>
   <div class="tools">
@@ -29,7 +29,14 @@
   </div>
 </header>
 <main id="main">
-<p class="lede">Cloud calling keeps registration in the provider cloud and reaches the PSTN through a carrier plan, an operator connection, or a customer SBC. Cisco documents Local Gateway (often CUBE) for Webex Calling. Microsoft documents three Teams Phone PSTN models: Calling Plans, Direct Routing, and Operator Connect. Zoom Phone, RingCentral, 8x8, Dialpad, and Google Voice are other cloud voice services. Webex App media is UDP 8500–8699 (audio 8500–8599, video 8600–8699). Webex Calling cloud media destinations are UDP 5004, 9000, 8500–8699, and 19560–65535. Certificate-based Local Gateway SIP is TCP 5062; registration-based is TCP 8934. Teams client media is UDP 3478–3481 toward 52.112.0.0/14, 52.122.0.0/15, and 2603:1063::/38. Direct Routing SIP is TCP 5061 to sip.pstnhub.microsoft.com, sip2.pstnhub.microsoft.com, and sip3.pstnhub.microsoft.com. Zoom, RingCentral, 8x8, Dialpad, and Google Voice media ranges are still not stated.</p>
+<p class="lede">Cloud calling keeps registration in the provider cloud and reaches the PSTN through a carrier plan, an operator connection, or a customer SBC. Cisco documents Local Gateway (often CUBE) for Webex Calling. Microsoft documents three Teams Phone PSTN models: Calling Plans, Direct Routing, and Operator Connect. Zoom Phone, RingCentral, 8x8, Dialpad, and Google Voice are other cloud voice services. Their media ranges are still not stated.</p>
+<ul class="port-list mono">
+<li>W1 Webex App media: UDP 8500–8699 (audio 8500–8599, video 8600–8699)</li>
+<li>W2 Webex Calling cloud media: UDP 5004, 9000, 8500–8699, 19560–65535</li>
+<li>W6 Local Gateway SIP-TLS: TCP 5062 certificate-based, TCP 8934 registration-based</li>
+<li>T1 Teams client media: UDP 3478–3481 to 52.112.0.0/14, 52.122.0.0/15, 2603:1063::/38</li>
+<li>T3–T4 Direct Routing SIP: TCP 5061 to sip.pstnhub.microsoft.com, sip2.pstnhub.microsoft.com, sip3.pstnhub.microsoft.com</li>
+</ul>
 <h2>Call flows</h2>
 
 <section class="flow-panel" aria-label="Teams Phone Direct Routing via SBC">

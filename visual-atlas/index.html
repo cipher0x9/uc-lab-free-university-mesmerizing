@@ -6,7 +6,7 @@
   <title>UC Visual Atlas — voice technology world map</title>
   <link rel="stylesheet" href="assets/atlas.css">
 </head>
-<body>
+<body class="page-home">
   <a class="skip" href="#main">Skip to content</a>
   <header class="site">
     <div>
@@ -48,94 +48,115 @@
     <div class="map-wrap">
       <svg viewBox="0 0 1100 640" role="img" aria-label="World map of voice technology families">
         <title>Voice technology families</title>
-        <text x="24" y="28" fill="currentColor" font-size="14">Trade routes = protocols that join the families</text>
-        <line x1="180" y1="150" x2="420" y2="150" stroke="#2563eb" stroke-width="3"/>
-        <text x="250" y="142" fill="#2563eb" font-size="12" font-family="ui-monospace, Menlo, monospace">SIP</text>
-        <line x1="420" y1="180" x2="700" y2="180" stroke="#0891b2" stroke-width="3"/>
-        <text x="520" y="172" fill="#0891b2" font-size="12" font-family="ui-monospace, Menlo, monospace">RTP</text>
-        <line x1="160" y1="220" x2="160" y2="360" stroke="#0369a1" stroke-width="3"/>
-        <text x="168" y="300" fill="#0369a1" font-size="12" font-family="ui-monospace, Menlo, monospace">TDM</text>
+        <defs>
+          <radialGradient id="ocean" cx="40%" cy="36%" r="78%">
+            <stop offset="0%" stop-color="#f7fcff"/>
+            <stop offset="46%" stop-color="#c9e9f8"/>
+            <stop offset="100%" stop-color="#7eb6d4"/>
+          </radialGradient>
+          <filter id="isle" x="-35%" y="-35%" width="170%" height="190%">
+            <feDropShadow dx="0" dy="8" stdDeviation="3.2" flood-color="#0c4a6e" flood-opacity="0.32"/>
+          </filter>
+          <filter id="glow" x="-45%" y="-45%" width="190%" height="190%">
+            <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#38bdf8" flood-opacity="0.9"/>
+          </filter>
+        </defs>
+        <rect class="ocean" x="0" y="0" width="1100" height="640" rx="28"/>
+        <path class="trade sip" d="M 250 108 C 420 18, 700 18, 900 108"/>
+        <path class="trade rtp" d="M 900 175 C 1060 210, 1060 390, 960 430"/>
+        <path class="trade tdm" d="M 22 130 C 4 230, 4 400, 28 500"/>
+        <path class="trade dia" d="M 700 115 C 760 170, 620 200, 520 230"/>
         <a class="island" href="families/pstn-tdm.html" data-blurb="PSTN and TDM: DS0, T1/E1, PRI, Q.931, SS7 ISUP, SIGTRAN.">
-          <rect x="40" y="70" width="200" height="90" rx="18" fill="#e0f2fe" stroke="#0369a1" stroke-width="4"/>
+          <rect class="depth" x="47" y="79" width="200" height="90" rx="18" fill="#0c4a6e"/><rect class="land" x="40" y="70" width="200" height="90" rx="18" fill="#e0f2fe" stroke="#0369a1" stroke-width="4"/>
           <text x="58" y="108" fill="#0c4a6e" font-size="16" font-weight="700">1 PSTN / TDM</text>
           <text x="58" y="130" fill="#0c4a6e" font-size="12">DS0 · PRI · SS7</text>
         </a>
         <a class="island" href="families/analog.html" data-blurb="Analog: FXS provides battery and dial tone; FXO faces the line. Loop start and ground start.">
-          <rect x="40" y="180" width="160" height="70" rx="16" fill="#fef3c7" stroke="#a16207" stroke-width="4"/>
+          <rect class="depth" x="47" y="189" width="160" height="70" rx="16" fill="#0c4a6e"/><rect class="land" x="40" y="180" width="160" height="70" rx="16" fill="#fef3c7" stroke="#a16207" stroke-width="4"/>
           <text x="54" y="220" fill="#713f12" font-size="15" font-weight="700">2 Analog</text>
         </a>
         <a class="island" href="families/signaling.html" data-blurb="Signaling: SIP, H.323, MGCP, SCCP, H.248, WebRTC.">
-          <rect x="280" y="70" width="210" height="100" rx="18" fill="#dbeafe" stroke="#2563eb" stroke-width="4"/>
+          <rect class="depth" x="287" y="79" width="210" height="100" rx="18" fill="#0c4a6e"/><rect class="land" x="280" y="70" width="210" height="100" rx="18" fill="#dbeafe" stroke="#2563eb" stroke-width="4"/>
           <text x="298" y="112" fill="#1e3a8a" font-size="16" font-weight="700">3 Signaling</text>
           <text x="298" y="136" fill="#1e3a8a" font-size="12">SIP · H.323 · MGCP</text>
         </a>
         <a class="island" href="families/mobile.html" data-blurb="Mobile voice: IMS P/I/S-CSCF, VoLTE, Diameter.">
-          <rect x="520" y="60" width="180" height="80" rx="16" fill="#ede9fe" stroke="#7c3aed" stroke-width="4"/>
+          <rect class="depth" x="527" y="69" width="180" height="80" rx="16" fill="#0c4a6e"/><rect class="land" x="520" y="60" width="180" height="80" rx="16" fill="#ede9fe" stroke="#7c3aed" stroke-width="4"/>
           <text x="536" y="106" fill="#4c1d95" font-size="15" font-weight="700">4 Mobile voice</text>
         </a>
         <a class="island" href="families/media.html" data-blurb="Media: RTP, SRTP, codecs, DTMF, jitter buffers.">
-          <rect x="730" y="70" width="180" height="90" rx="16" fill="#cffafe" stroke="#0891b2" stroke-width="4"/>
+          <rect class="depth" x="737" y="79" width="180" height="90" rx="16" fill="#0c4a6e"/><rect class="land" x="730" y="70" width="180" height="90" rx="16" fill="#cffafe" stroke="#0891b2" stroke-width="4"/>
           <text x="748" y="110" fill="#155e75" font-size="15" font-weight="700">5 Media</text>
           <text x="748" y="132" fill="#155e75" font-size="12">RTP · codecs</text>
         </a>
         <a class="island" href="families/sbc-edge.html" data-blurb="SBCs and edge: topology hiding, interworking, CUBE, Expressway.">
-          <rect x="280" y="210" width="190" height="80" rx="16" fill="#ffe4dc" stroke="#ff7a59" stroke-width="4"/>
+          <rect class="depth" x="287" y="219" width="190" height="80" rx="16" fill="#0c4a6e"/><rect class="land" x="280" y="210" width="190" height="80" rx="16" fill="#ffe4dc" stroke="#ff7a59" stroke-width="4"/>
           <text x="298" y="256" fill="#7c2d12" font-size="15" font-weight="700">6 SBC / edge</text>
         </a>
         <a class="island" href="families/on-prem-uc.html" data-blurb="On-prem PBX and UC: CUCM, Unity, Avaya, Mitel, NEC, Asterisk, FreeSWITCH, Kamailio.">
-          <rect x="500" y="200" width="210" height="90" rx="16" fill="#fde68a" stroke="#e8a317" stroke-width="4"/>
+          <rect class="depth" x="507" y="209" width="210" height="90" rx="16" fill="#0c4a6e"/><rect class="land" x="500" y="200" width="210" height="90" rx="16" fill="#fde68a" stroke="#e8a317" stroke-width="4"/>
           <text x="516" y="240" fill="#713f12" font-size="15" font-weight="700">7 On-prem UC</text>
           <text x="516" y="262" fill="#713f12" font-size="12">CUCM · PBX</text>
         </a>
         <a class="island" href="families/cloud-uc.html" data-blurb="Cloud UC: Webex Calling, Teams Phone, Zoom Phone, and others.">
-          <rect x="740" y="200" width="190" height="80" rx="16" fill="#ede9fe" stroke="#8b5cf6" stroke-width="4"/>
+          <rect class="depth" x="747" y="209" width="190" height="80" rx="16" fill="#0c4a6e"/><rect class="land" x="740" y="200" width="190" height="80" rx="16" fill="#ede9fe" stroke="#8b5cf6" stroke-width="4"/>
           <text x="756" y="246" fill="#4c1d95" font-size="15" font-weight="700">8 Cloud UC</text>
         </a>
         <a class="island" href="families/contact-center.html" data-blurb="Contact center and CCaaS: ACD, IVR, routing, CTI.">
-          <rect x="40" y="300" width="200" height="80" rx="16" fill="#ecfccb" stroke="#7bc142" stroke-width="4"/>
+          <rect class="depth" x="47" y="309" width="200" height="80" rx="16" fill="#0c4a6e"/><rect class="land" x="40" y="300" width="200" height="80" rx="16" fill="#ecfccb" stroke="#7bc142" stroke-width="4"/>
           <text x="56" y="346" fill="#365314" font-size="15" font-weight="700">9 Contact center</text>
         </a>
         <a class="island" href="families/cpaas.html" data-blurb="CPaaS: programmable voice and SIP trunking (Twilio, Vonage, Bandwidth).">
-          <rect x="270" y="330" width="160" height="70" rx="16" fill="#fce7f3" stroke="#db2777" stroke-width="4"/>
+          <rect class="depth" x="277" y="339" width="160" height="70" rx="16" fill="#0c4a6e"/><rect class="land" x="270" y="330" width="160" height="70" rx="16" fill="#fce7f3" stroke="#db2777" stroke-width="4"/>
           <text x="286" y="372" fill="#831843" font-size="15" font-weight="700">10 CPaaS</text>
         </a>
         <a class="island" href="families/fax.html" data-blurb="Fax over IP: T.38 versus G.711 pass-through.">
-          <rect x="460" y="330" width="150" height="70" rx="16" fill="#f1f5f9" stroke="#64748b" stroke-width="4"/>
+          <rect class="depth" x="467" y="339" width="150" height="70" rx="16" fill="#0c4a6e"/><rect class="land" x="460" y="330" width="150" height="70" rx="16" fill="#f1f5f9" stroke="#64748b" stroke-width="4"/>
           <text x="476" y="372" fill="#334155" font-size="15" font-weight="700">11 Fax</text>
         </a>
         <a class="island" href="families/e911.html" data-blurb="Emergency calling: Kari's Law, RAY BAUM'S Act, PIDF-LO.">
-          <rect x="640" y="320" width="180" height="80" rx="16" fill="#ffedd5" stroke="#c2410c" stroke-width="4"/>
+          <rect class="depth" x="647" y="329" width="180" height="80" rx="16" fill="#0c4a6e"/><rect class="land" x="640" y="320" width="180" height="80" rx="16" fill="#ffedd5" stroke="#c2410c" stroke-width="4"/>
           <text x="656" y="366" fill="#7c2d12" font-size="15" font-weight="700">12 Emergency</text>
         </a>
         <a class="island" href="families/caller-id.html" data-blurb="Caller-ID trust: STIR/SHAKEN, PASSporT, attestation A/B/C.">
-          <rect x="850" y="320" width="200" height="80" rx="16" fill="#ccfbf1" stroke="#0f766e" stroke-width="4"/>
+          <rect class="depth" x="857" y="329" width="200" height="80" rx="16" fill="#0c4a6e"/><rect class="land" x="850" y="320" width="200" height="80" rx="16" fill="#ccfbf1" stroke="#0f766e" stroke-width="4"/>
           <text x="866" y="366" fill="#134e4a" font-size="15" font-weight="700">13 Caller-ID trust</text>
         </a>
         <a class="island" href="families/qos.html" data-blurb="QoS: DSCP EF for voice, trust boundary, LLQ.">
-          <rect x="40" y="430" width="160" height="70" rx="16" fill="#cffafe" stroke="#0e7490" stroke-width="4"/>
+          <rect class="depth" x="47" y="439" width="160" height="70" rx="16" fill="#0c4a6e"/><rect class="land" x="40" y="430" width="160" height="70" rx="16" fill="#cffafe" stroke="#0e7490" stroke-width="4"/>
           <text x="56" y="472" fill="#164e63" font-size="15" font-weight="700">14 QoS</text>
         </a>
         <a class="island" href="families/security.html" data-blurb="Security: SIP TLS, SRTP, SDES, DTLS-SRTP, toll fraud.">
-          <rect x="220" y="440" width="170" height="70" rx="16" fill="#fee2e2" stroke="#b91c1c" stroke-width="4"/>
+          <rect class="depth" x="227" y="449" width="170" height="70" rx="16" fill="#0c4a6e"/><rect class="land" x="220" y="440" width="170" height="70" rx="16" fill="#fee2e2" stroke="#b91c1c" stroke-width="4"/>
           <text x="236" y="482" fill="#7f1d1d" font-size="15" font-weight="700">15 Security</text>
         </a>
         <a class="island" href="families/recording.html" data-blurb="Recording: built-in bridge, SPAN, SIPREC.">
-          <rect x="410" y="440" width="170" height="70" rx="16" fill="#f3e8ff" stroke="#9333ea" stroke-width="4"/>
+          <rect class="depth" x="417" y="449" width="170" height="70" rx="16" fill="#0c4a6e"/><rect class="land" x="410" y="440" width="170" height="70" rx="16" fill="#f3e8ff" stroke="#9333ea" stroke-width="4"/>
           <text x="426" y="482" fill="#581c87" font-size="15" font-weight="700">16 Recording</text>
         </a>
         <a class="island" href="families/voice-ai.html" data-blurb="Voice AI: ASR, TTS, agent assist, media forking. No accuracy numbers.">
-          <rect x="600" y="440" width="160" height="70" rx="16" fill="#e0e7ff" stroke="#4f46e5" stroke-width="4"/>
+          <rect class="depth" x="607" y="449" width="160" height="70" rx="16" fill="#0c4a6e"/><rect class="land" x="600" y="440" width="160" height="70" rx="16" fill="#e0e7ff" stroke="#4f46e5" stroke-width="4"/>
           <text x="616" y="482" fill="#312e81" font-size="15" font-weight="700">17 Voice AI</text>
         </a>
         <a class="island" href="families/migrations.html" data-blurb="Migrations: TDM to SIP, CUCM to Webex Calling, on-prem CC to CCaaS.">
-          <rect x="780" y="440" width="170" height="70" rx="16" fill="#ffedd5" stroke="#b45309" stroke-width="4"/>
+          <rect class="depth" x="787" y="449" width="170" height="70" rx="16" fill="#0c4a6e"/><rect class="land" x="780" y="440" width="170" height="70" rx="16" fill="#ffedd5" stroke="#b45309" stroke-width="4"/>
           <text x="796" y="482" fill="#7c2d12" font-size="15" font-weight="700">18 Migrations</text>
         </a>
         <a class="island" href="families/troubleshooting.html" data-blurb="Troubleshooting: Wireshark, sngrep, RTMT, CUBE debugs, ladder reading.">
-          <rect x="400" y="540" width="280" height="70" rx="16" fill="#ccfbf1" stroke="#0f766e" stroke-width="4"/>
+          <rect class="depth" x="407" y="549" width="280" height="70" rx="16" fill="#0c4a6e"/><rect class="land" x="400" y="540" width="280" height="70" rx="16" fill="#ccfbf1" stroke="#0f766e" stroke-width="4"/>
           <text x="420" y="582" fill="#134e4a" font-size="15" font-weight="700">19 Troubleshooting tools</text>
         </a>
+              <circle class="map-packet sip" r="6"/>
+        <circle class="map-packet rtp" r="6"/>
+        <circle class="map-packet tdm" r="5"/>
+        <circle class="map-packet dia" r="5"/>
       </svg>
+    </div>
+    <div class="legend" aria-label="Trade routes">
+      <span class="swatch"><i class="dot" style="background:#2563eb"></i> SIP</span>
+      <span class="swatch"><i class="dot" style="background:#0891b2"></i> RTP</span>
+      <span class="swatch"><i class="dot" style="background:#0369a1"></i> TDM</span>
+      <span class="swatch"><i class="dot" style="background:#7c3aed"></i> Diameter</span>
     </div>
     <p id="island-blurb" class="blurb" role="status">Hover or focus an island to read what that family covers.</p>
     <h2>Open a family</h2>
